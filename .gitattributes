@@ -1,0 +1,7 @@
+# Keep LF in the repo regardless of the checkout platform.
+# CNAME in particular must be a bare domain with a Unix newline - GitHub Pages
+# can fail to parse it if CRLF sneaks in from a Windows checkout.
+* text=auto eol=lf
+CNAME text eol=lf
+*.html text eol=lf
+*.md text eol=lf
