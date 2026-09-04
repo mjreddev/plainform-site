@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plainform — Android apps that respect your device</title>
+<meta name="description" content="Plainform builds privacy-first Android utilities. No ads, no tracking, no subscriptions. Everything runs on your device.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<style>
+  :root {
+    --ink: #16202b;
+    --muted: #5b6b7c;
+    --line: #dde4ea;
+    --accent: #1F3A5F;
+    --amber: #C77800;
+    --bg: #ffffff;
+    --card: #f7f9fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8edf2; --muted: #9fb0c0; --line: #26313d;
+      --accent: #9FB6D4; --amber: #E0921F; --bg: #0f151b; --card: #161e26;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 72px 0 48px; }
+  .mark {
+    display: inline-flex; align-items: center; gap: 11px;
+    font-weight: 700; font-size: 20px; letter-spacing: -0.015em;
+    text-decoration: none; color: var(--ink);
+  }
+  .mark svg { display: block; border-radius: 8px; }
+  h1 {
+    font-size: 34px; line-height: 1.25; letter-spacing: -0.022em;
+    margin: 32px 0 12px; font-weight: 700;
+  }
+  .lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 34em; }
+  h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.09em;
+    color: var(--muted); margin: 0 0 16px; font-weight: 600;
+  }
+  section { padding: 36px 0; border-top: 1px solid var(--line); }
+  .app {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 12px;
+  }
+  .app h3 { margin: 0 0 4px; font-size: 17px; }
+  .app p { margin: 0; color: var(--muted); font-size: 15px; }
+  .app .tag {
+    display: inline-block; margin-top: 10px; font-size: 12px;
+    color: var(--accent); border: 1px solid var(--line);
+    border-radius: 999px; padding: 2px 10px;
+  }
+  ul.principles { list-style: none; padding: 0; margin: 0; }
+  ul.principles li {
+    padding: 10px 0 10px 26px; position: relative; color: var(--muted);
+  }
+  ul.principles li::before {
+    content: "—"; position: absolute; left: 0; color: var(--amber);
+  }
+  ul.principles strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--accent); }
+  .contact { font-size: 16px; }
+  footer {
+    padding: 36px 0 72px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 14px;
+  }
+  footer a { margin-right: 18px; }
+  footer p { margin: 14px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="mark" href="/">
+      <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="20" fill="#1F3A5F"/>
+        <rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/>
+        <rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/>
+        <rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/>
+      </svg>
+      Plainform
+    </a>
+    <h1>Android apps that respect your device.</h1>
+    <p class="lede">
+      Plainform builds focused utilities for Android. Everything runs on your
+      phone. No ads, no tracking, no accounts, no subscriptions.
+    </p>
+  </header>
+
+  <section>
+    <h2>Apps</h2>
+
+    <div class="app">
+      <h3>CallShield</h3>
+      <p>Call and SMS blocking with rules you control. All matching happens on
+         the device — no numbers are ever uploaded or looked up remotely.</p>
+      <span class="tag">Android</span>
+    </div>
+
+    <div class="app">
+      <h3>File Zone</h3>
+      <p>A file explorer for local storage and network shares, with search that
+         reads inside documents. Nothing leaves your device unless you send it.</p>
+      <span class="tag">Android</span>
+    </div>
+
+    <div class="app">
+      <h3>SiteProof</h3>
+      <p>Jobsite photo documentation for contractors. GPS and timestamp stamped
+         onto every photo, and a branded PDF report generated on site — fully
+         offline, one-time purchase.</p>
+      <span class="tag">In development</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>How these are built</h2>
+    <ul class="principles">
+      <li><strong>On-device processing.</strong> The work happens on your phone,
+          not on a server we run.</li>
+      <li><strong>No advertising or analytics SDKs.</strong> There is no tracking
+          code in these apps.</li>
+      <li><strong>Buy once.</strong> Paid features are a one-time purchase, not a
+          subscription.</li>
+      <li><strong>Least permissions.</strong> Each app requests only what its
+          features actually require, and explains why.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p class="contact">
+      Support and enquiries:
+      <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="mailto:mjred.dev@gmail.com">Contact</a>
+    <p>Plainform is a trading name of <strong>MJRed Dev LLC</strong>.</p>
+    <p>&copy; 2026 MJRed Dev LLC. All rights reserved.</p>
+  </footer>
+
+</div>
+</body>
+</html>
