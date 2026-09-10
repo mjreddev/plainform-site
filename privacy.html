@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Plainform</title>
-<meta name="description" content="Privacy policy for Plainform Android apps, published by MJRed Dev LLC. No data collection, no ads, no tracking.">
+<meta name="description" content="Privacy policy for Plainform Android apps, published by MJRed Dev LLC. No sale of personal information, no ads, and no tracking.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
 <style>
   :root {
@@ -63,13 +63,14 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Plainform &middot; MJRed Dev LLC &middot; Last updated 4 September 2026</p>
+  <p class="updated">Plainform &middot; MJRed Dev LLC &middot; Last updated 9 September 2026</p>
 
   <div class="summary">
-    <p><strong>The short version.</strong> Our apps do not collect your personal
-       data. We do not operate servers that receive it, we do not include
-       advertising or analytics SDKs, and we do not sell or share information
-       with third parties. What the apps process stays on your device.</p>
+    <p><strong>The short version.</strong> Our apps do not sell personal
+       information, serve advertising, or include analytics or tracking SDKs.
+       Most processing happens on your device. Information leaves the device
+       only when needed for a service you request or when you choose to export,
+       share, or send it, as described below.</p>
     <p>The rest of this page explains, per app, exactly what data is handled and
        why.</p>
   </div>
@@ -81,28 +82,52 @@
      <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>.</p>
 
   <h2>2. Data we collect</h2>
-  <p><strong>We do not collect personal data.</strong> Our apps have no user
-     accounts, no login, and no backend service that receives your information.
-     We have no ability to see the contents of your device, your files, your
-     photos, your call history, or your location.</p>
+  <p>Our apps have no user accounts or login and do not automatically upload
+     app content or diagnostics to us. We cannot see information processed only
+     on your device. We receive information only if you deliberately send it to
+     us, such as by emailing feedback or a problem report.</p>
   <p>We do not include advertising networks, analytics or crash-reporting SDKs,
      or any other third-party tracking libraries in our applications.</p>
 
   <h2>3. Data the apps process on your device</h2>
   <p>Our apps need access to certain information in order to function. That
-     information is processed locally and is not transmitted to us.</p>
+     information is primarily processed locally. Any user-requested transfer to
+     another service or app is described in section 5.</p>
 
-  <h3>CallShield</h3>
+  <h3>CallRules</h3>
   <ul>
-    <li><strong>Phone and call log access</strong> — to identify an incoming
-        number and decide whether one of your rules blocks it. Evaluation happens
-        entirely on the device.</li>
-    <li><strong>Contacts</strong> — optional, used only to let you allow calls
-        from people you know. Contact data is never uploaded.</li>
-    <li><strong>SMS</strong> — where enabled, to apply your blocking rules to
-        messages.</li>
-    <li>Your rules and blocked-call history are stored in a private database on
-        the device and are removed when you uninstall the app.</li>
+    <li><strong>Incoming-call information and contacts</strong> — to identify
+        callers and evaluate your blocking and allow rules. This processing
+        happens on the device. CallRules does not handle SMS or MMS. Cloud spam
+        lookup is disabled for this release, and incoming phone numbers are not
+        automatically sent to a cloud spam service.</li>
+    <li><strong>Location</strong> — optional approximate or precise location is
+        used only to evaluate location-constrained rules. If you enable those
+        rules, background location may be needed so they can work when the app
+        is not open. Saved locations remain on the device unless you include
+        them in a configuration export.</li>
+    <li><strong>Microphone</strong> — optional, used only when you start a voice
+        command. On supported devices CallRules uses Android's on-device speech
+        recognizer and does not silently substitute online recognition. Speech
+        transcripts are not stored in diagnostics.</li>
+    <li>Blocked numbers, whitelist entries, call-blocking rules, saved
+        locations, settings, and limited call history may be stored in the
+        app's private storage on the device.</li>
+    <li><strong>Diagnostics</strong> — attaching a report requires your explicit
+        choice. A report may include structured event identifiers, timestamps,
+        screening outcomes and duration,
+        permission or role status, location availability, purchase error codes,
+        import failure codes, and sanitized crash stack frames. They exclude
+        phone numbers, contact names, rule names and patterns, coordinates,
+        speech transcripts, purchase tokens, and raw exception messages.
+        Reports describe CallRules's decisions; they cannot establish what a
+        carrier or another phone component subsequently did.</li>
+    <li><strong>Exports and imports</strong> — configuration exports are created
+        only when you request them and may include enabled and disabled rules,
+        blocked numbers, whitelist entries, saved locations, and selected
+        settings. They exclude purchase entitlements, Android permission grants,
+        call history, and diagnostic history. Google Sheets imports occur only
+        when you supply a published sheet URL.</li>
   </ul>
 
   <h3>File Zone</h3>
@@ -134,12 +159,13 @@
   <h2>4. Purchases</h2>
   <p>Paid features are sold as one-time in-app purchases through Google Play
      Billing. Payments are processed by Google; we never see or store your
-     payment details. We receive only an anonymous confirmation of whether a
-     purchase is active.</p>
+     payment details. CallRules stores only the resulting ownership state for
+     offline access and excludes purchase tokens from diagnostics and
+     configuration exports.</p>
 
   <h2>5. Third-party services</h2>
-  <p>We do not embed third-party trackers. Two Google services are used in a
-     limited way:</p>
+  <p>We do not embed third-party trackers. Our apps use or hand information to
+     platform and third-party services only to complete actions you request:</p>
   <ul>
     <li><strong>Google Play Billing</strong> — to process in-app purchases and
         verify entitlements.</li>
@@ -149,20 +175,37 @@
         <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
         The feature degrades gracefully when offline: the app records
         coordinates only.</li>
+    <li><strong>Android system geocoding</strong> (CallRules, when requested) —
+        may send the address query to the device's configured geocoder to return
+        coordinates.</li>
+    <li><strong>Google Sheets import</strong> (CallRules, when requested) —
+        retrieves the published sheet URL you provide. The service receives the
+        network request needed to return that sheet.</li>
+    <li><strong>Maps, email, and sharing apps</strong> (CallRules, when you
+        choose them) — receive the location, feedback, problem report,
+        diagnostic attachment, or exported file you direct CallRules to hand
+        off. You control whether to complete sending in the selected app.
+        Opening another app does not by itself mean a report was delivered.</li>
   </ul>
 
   <h2>6. Data sharing and sale</h2>
-  <p>We do not sell, rent, or share personal information with anyone. There is no
-     data to sell, because we do not collect any.</p>
+  <p>We do not sell or rent personal information. We do not automatically upload
+     call data or diagnostics. Information is disclosed to a platform service or
+     destination app only when needed for an action you request, as described in
+     section 5.</p>
 
   <h2>7. Data retention and deletion</h2>
-  <p>All app data lives on your device. Uninstalling an app removes its data.
-     Where an app offers an export or backup feature, copies you have made to a
-     location of your choosing are under your control, and we cannot access or
-     delete them.</p>
-  <p>Because we hold no personal data about you, there is nothing for us to
-     delete on request. If you have any question about this, contact us at the
-     address below.</p>
+  <p>App-private data remains on your device and is removed when you uninstall
+     the app according to Android behavior. Where an app offers an export or
+     backup feature, copies you create are under your control and must be
+     deleted through the app or location where you saved them.</p>
+  <p>While CallRules is running, it opportunistically removes diagnostic records
+     older than seven days and generated sharing files older than 24 hours, and
+     enforces a 1 MiB diagnostic-log limit when recording. Files may remain
+     longer while CallRules is inactive. You can clear diagnostics and generated
+     sharing files in the app at any time.</p>
+  <p>We do not maintain an account or app-content database about you. If you send
+     us an email, you may contact us to request deletion of that correspondence.</p>
 
   <h2>8. Children</h2>
   <p>Our apps are general-purpose utilities and are not directed at children
@@ -176,9 +219,10 @@
 
   <h2>10. Your rights</h2>
   <p>Privacy laws including the GDPR and the CCPA give you rights to access,
-     correct, and delete personal data held about you. We hold none, so these
-     rights are satisfied by default. You retain full control of the data on your
-     own device.</p>
+     correct, and delete personal data held about you. Most information described
+     here remains under your control on your own device. For information you
+     deliberately send us, contact us using the address below to exercise any
+     applicable rights.</p>
 
   <h2>11. Changes to this policy</h2>
   <p>If this policy changes, we will update this page and revise the date at the
