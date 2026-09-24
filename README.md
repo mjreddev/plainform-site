@@ -2,10 +2,12 @@
 
 Static site for **Plainform** — the trading name of MJRed Dev LLC.
 
-Two pages, no build step, no dependencies:
+Four pages, no build step, no dependencies:
 
 - `index.html` — landing page (the organization website Google Play asks for)
 - `privacy.html` — privacy policy (Play requires one per app; this covers all)
+- `callrules.html` — public CallRules feature and setup help
+- `callrules-troubleshooting.html` — public conditional troubleshooting guide
 
 ---
 

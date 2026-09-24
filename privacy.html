@@ -63,7 +63,7 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Plainform &middot; MJRed Dev LLC &middot; Last updated 9 September 2026</p>
+  <p class="updated">Plainform &middot; MJRed Dev LLC &middot; Last updated 23 September 2026</p>
 
   <div class="summary">
     <p><strong>The short version.</strong> Our apps do not sell personal
@@ -96,38 +96,41 @@
 
   <h3>CallRules</h3>
   <ul>
-    <li><strong>Incoming-call information and contacts</strong> — to identify
-        callers and evaluate your blocking and allow rules. This processing
-        happens on the device. CallRules does not handle SMS or MMS. Cloud spam
-        lookup is disabled for this release, and incoming phone numbers are not
-        automatically sent to a cloud spam service.</li>
+    <li><strong>Incoming and outgoing call information and contacts</strong> —
+        to evaluate the directional blocking, Allow, Silence, and confirmation
+        rules you create. This processing happens on the device. CallRules does
+        not handle SMS or MMS, provide a cloud spam lookup, or automatically
+        send phone numbers to the developer.</li>
     <li><strong>Location</strong> — optional approximate or precise location is
         used only to evaluate location-constrained rules. If you enable those
         rules, background location may be needed so they can work when the app
         is not open. Saved locations remain on the device unless you include
         them in a configuration export.</li>
     <li><strong>Microphone</strong> — optional, used only when you start a voice
-        command. On supported devices CallRules uses Android's on-device speech
-        recognizer and does not silently substitute online recognition. Speech
-        transcripts are not stored in diagnostics.</li>
-    <li>Blocked numbers, whitelist entries, call-blocking rules, saved
-        locations, settings, and limited call history may be stored in the
-        app's private storage on the device.</li>
+        rule or problem-report dictation. On supported devices CallRules uses
+        Android's on-device speech recognizer and does not silently substitute
+        online recognition. Speech transcripts are not stored in diagnostics.</li>
+    <li>Blocked numbers, whitelist entries, directional Call Rules, saved
+        locations, settings, limited call history, and an optional salted PIN
+        hash may be stored in app-private storage. The PIN itself is not stored.
+        Pending outgoing approvals and one-use redial authorizations remain in
+        memory and expire automatically.</li>
     <li><strong>Diagnostics</strong> — attaching a report requires your explicit
         choice. A report may include structured event identifiers, timestamps,
         screening outcomes and duration,
         permission or role status, location availability, purchase error codes,
         import failure codes, and sanitized crash stack frames. They exclude
         phone numbers, contact names, rule names and patterns, coordinates,
-        speech transcripts, purchase tokens, and raw exception messages.
+        speech transcripts, PIN data, purchase tokens, and raw exception messages.
         Reports describe CallRules's decisions; they cannot establish what a
         carrier or another phone component subsequently did.</li>
     <li><strong>Exports and imports</strong> — configuration exports are created
         only when you request them and may include enabled and disabled rules,
-        blocked numbers, whitelist entries, saved locations, and selected
-        settings. They exclude purchase entitlements, Android permission grants,
-        call history, and diagnostic history. Google Sheets imports occur only
-        when you supply a published sheet URL.</li>
+        rule direction and per-rule PIN requirement, blocked numbers, whitelist
+        entries, saved locations, and selected settings. They exclude the PIN
+        hash and attempt state, outgoing authorizations, purchase entitlements,
+        Android permission grants, call history, and diagnostic history. Google
+        Sheets imports occur only when you supply a published sheet URL.</li>
   </ul>
 
   <h3>File Zone</h3>
@@ -235,6 +238,7 @@
 
   <footer>
     <a href="/">&larr; Plainform</a>
+    <a href="/callrules.html">CallRules Help</a>
     <p>&copy; 2026 MJRed Dev LLC.</p>
   </footer>
 

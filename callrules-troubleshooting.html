@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CallRules Troubleshooting — Plainform</title>
+<meta name="description" content="Troubleshoot CallRules incoming screening, outgoing protection, location rules, and purchases.">
+<style>:root{--ink:#16202b;--muted:#5b6b7c;--line:#dde4ea;--accent:#1f3a5f;--bg:#fff}@media(prefers-color-scheme:dark){:root{--ink:#e8edf2;--muted:#9fb0c0;--line:#26313d;--accent:#9fb6d4;--bg:#0f151b}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,sans-serif}.wrap{max-width:760px;margin:auto;padding:32px 24px 72px}.brand{color:var(--ink);font-weight:700;text-decoration:none}h1{font-size:32px;line-height:1.2;margin:32px 0 8px}h2{font-size:20px;margin:34px 0 8px}.lede,footer{color:var(--muted)}a{color:var(--accent)}li{margin:.45em 0}footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}</style>
+</head>
+<body><div class="wrap">
+<a class="brand" href="/">Plainform</a>
+<h1>CallRules Troubleshooting</h1>
+<p class="lede">Start with Settings → Troubleshoot issues. Its cards reflect the features configured on your device and offer safe fixes.</p>
+<h2>Incoming calls are not blocked</h2><ul><li>Confirm CallRules holds Android's Call Screening role and the Dashboard says protection is active.</li><li>Make sure Call Rules are not paused and the intended Incoming or Both rule is enabled.</li><li>Review Allow rules and the whitelist, which take priority over blocking.</li></ul>
+<h2>Outgoing rules do not run</h2><ul><li>Open Settings → Outgoing call protection and grant the Call Redirection role.</li><li>Enable outgoing-rule evaluation and confirm the rule direction is Outgoing or Both.</li><li>If a PIN-required imported rule reports setup required, create the shared PIN.</li><li>For an approved replacement call, grant Phone permission. CallRules does not need Call Log or obsolete outgoing-call permissions.</li><li>Allow notifications so a waiting confirmation is visible when Android cannot open CallRules directly.</li></ul>
+<h2>Confirmation was cancelled, expired, or did not redial</h2><p>The original call is cancelled before confirmation. Cancelling the screen or waiting about 60 seconds places no call. After approval, CallRules rechecks the current rules, role, confirmation method, and Phone permission. If anything changed—or Android could not place the call—correct the reported issue and dial again. An approval is one-use only.</p>
+<h2>Location rule does not match</h2><p>Location permissions are needed only when an enabled incoming rule has a location constraint. Allow foreground location first, then choose Android's background option if the rule must work while CallRules is closed or locked. If access is denied, the location condition is treated as unmet.</p>
+<h2>Lifetime Pro or Restore is unavailable</h2><ul><li>Use the Play-installed build and the same Google account that owns the purchase.</li><li>Check Play Store connectivity, then use Retry Google Play or Restore purchase.</li><li>The product can be unavailable for an ineligible account, region, or unpublished test build. Pending purchases unlock only after Google Play completes them.</li></ul>
+<h2>Still need help?</h2><p>In Settings, choose Report a problem. Review the text before sending and attach sanitized diagnostics only if you want to. Dictation and sharing are user initiated.</p>
+<footer><a href="/callrules.html">CallRules Help</a> · <a href="mailto:mjred.dev@gmail.com">Support</a></footer>
+</div></body></html>
