@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CallRules help — How to use CallRules</title>
+<meta name="description" content="The complete CallRules guide: rules, contacts, voice commands, places and schedules, settings, outgoing protection, and privacy.">
+<link rel="canonical" href="https://plainform.app/callrules-help.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:title" content="CallRules help — How to use CallRules">
+<meta property="og:description" content="The complete CallRules guide: rules, contacts, voice commands, places and schedules, settings, outgoing protection, and privacy.">
+<meta property="og:url" content="https://plainform.app/callrules-help.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html" aria-current="page">Help</a>
+      <a href="callrules-troubleshooting.html">Troubleshooting</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap docs">
+<nav class="toc-side" aria-label="Guide contents">
+  <p><a href="#getting-started">Getting started</a></p>
+  <ul>
+    <li><a href="#first-run">First-run setup</a></li>
+    <li><a href="#home-dashboard">Home dashboard</a></li>
+    <li><a href="#call-history">Call history</a></li>
+  </ul>
+  <p><a href="#rules">Rules</a></p>
+  <ul>
+    <li><a href="#rules-basics">Rules basics</a></li>
+    <li><a href="#rule-types">Rule types</a></li>
+    <li><a href="#rule-options">Rule options</a></li>
+    <li><a href="#rule-order">How rules are decided</a></li>
+    <li><a href="#rule-check">Rule check</a></li>
+    <li><a href="#whitelist-blocked">Whitelist and blocked numbers</a></li>
+  </ul>
+  <p><a href="#contacts">Contacts &amp; names</a></p>
+  <ul>
+    <li><a href="#contact-rules">Contact, group, and caller-name rules</a></li>
+    <li><a href="#caller-names">How callers are named</a></li>
+  </ul>
+  <p><a href="#voice">Voice commands</a></p>
+  <ul>
+    <li><a href="#voice-basics">Using voice commands</a></li>
+    <li><a href="#voice-add-rules">Add rules by voice</a></li>
+    <li><a href="#voice-contacts">Contacts by voice</a></li>
+    <li><a href="#voice-remove-rules">Remove or pause rules</a></li>
+    <li><a href="#voice-lists">Whitelist and blocked numbers by voice</a></li>
+    <li><a href="#voice-settings">Settings by voice</a></li>
+    <li><a href="#voice-questions">Questions and undo</a></li>
+  </ul>
+  <p><a href="#places">Places &amp; schedules</a></p>
+  <ul>
+    <li><a href="#saved-places">Saved places</a></li>
+    <li><a href="#voice-places">Saved places by voice</a></li>
+    <li><a href="#location-rules">Location rules</a></li>
+    <li><a href="#schedules">Schedules</a></li>
+  </ul>
+  <p><a href="#settings">Settings &amp; notifications</a></p>
+  <ul>
+    <li><a href="#blocking-settings">Blocking settings</a></li>
+    <li><a href="#quiet-hours">Quiet hours</a></li>
+    <li><a href="#notifications">Notifications</a></li>
+    <li><a href="#outgoing">Outgoing protection</a></li>
+    <li><a href="#backups">Import, export, and backups</a></li>
+    <li><a href="#appearance">Appearance</a></li>
+  </ul>
+  <p><a href="#help">Help, plans &amp; privacy</a></p>
+  <ul>
+    <li><a href="#troubleshooting">Troubleshooting and support</a></li>
+    <li><a href="#free-vs-pro">Free vs Pro</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="doc-hero">
+  <p class="eyebrow">CallRules help</p>
+  <h1>How to use CallRules</h1>
+  <p class="lede">The same guide as <strong>Settings › How to use CallRules</strong> in the app: 7 sections and 31 topics. Topics marked <span class="pro">PRO</span> need Lifetime Pro.</p>
+  <div class="search" id="search-box" hidden>
+    <label class="eyebrow" for="guide-search">Search the guide</label>
+    <input id="guide-search" type="search" placeholder="Try “quiet hours” or “area code”" autocomplete="off">
+    <p class="search-status" id="search-status" role="status" aria-live="polite"></p>
+  </div>
+  <nav class="toc-chips" aria-label="Guide sections"><ul class="chips">
+    <li><a href="#getting-started">Getting started</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#contacts">Contacts &amp; names</a></li>
+    <li><a href="#voice">Voice commands</a></li>
+    <li><a href="#places">Places &amp; schedules</a></li>
+    <li><a href="#settings">Settings &amp; notifications</a></li>
+    <li><a href="#help">Help, plans &amp; privacy</a></li>
+  </ul></nav>
+  <p class="muted">Something not working? See <a href="callrules-troubleshooting.html">CallRules troubleshooting</a>.</p>
+</header>
+<section class="category" id="getting-started">
+  <h2>Getting started</h2>
+  <ul class="category-topics">
+    <li><a href="#first-run">First-run setup</a></li>
+    <li><a href="#home-dashboard">Home dashboard</a></li>
+    <li><a href="#call-history">Call history</a></li>
+  </ul>
+  <article class="topic" id="first-run">
+    <h3>First-run setup <a class="anchor" href="#first-run" aria-label="Link to First-run setup">#</a></h3>
+    <p class="summary">Setup steps, permissions, and the four tabs</p>
+    <p>First-run setup walks you through “Enable Call Screening” (set CallRules as your Caller ID &amp; spam app), “Include Saved Contacts”, “Stay Informed” (notifications), and a privacy summary. You can skip any step.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>CallRules can't screen calls until it is your Caller ID &amp; spam app. If it isn't, Home shows “Setup required”; tap Enable.</p></div>
+    <p>Phone, call-redirection, and location access are asked for later, only when you turn on a feature that needs them.</p>
+    <p>The bottom bar has four tabs: Home, Blocked (call history), Rules, and Settings.</p>
+  </article>
+  <article class="topic" id="home-dashboard">
+    <h3>Home dashboard <a class="anchor" href="#home-dashboard" aria-label="Link to Home dashboard">#</a></h3>
+    <p class="summary">The shield switch, counts, and banners</p>
+    <ul>
+      <li>Tap the shield to turn protection on or off (“Protection Active” / “Protection Off”). This is the same switch as Settings › Call protection.</li>
+      <li>Today, This week, and All time count the calls CallRules blocked or silenced. Time saved is an estimate of 2 minutes per blocked call.</li>
+      <li>Voice command opens voice commands (Pro).</li>
+      <li>“Setup required” appears when CallRules isn't your Caller ID &amp; spam app.</li>
+      <li>A rule-issue card appears when the rule check has unresolved warnings. Tap Review to open Rule check.</li>
+    </ul>
+  </article>
+  <article class="topic" id="call-history">
+    <h3>Call history <a class="anchor" href="#call-history" aria-label="Link to Call history">#</a></h3>
+    <p class="summary">The Blocked and Recent tabs</p>
+    <p>The Blocked tab opens Call History, which has two tabs.</p>
+    <ul>
+      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Verification failed, Unknown number, Private number, or Quiet hours. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
+      <li>Recent lists incoming calls that CallRules let through. Tap Block to add the caller to Blocked numbers; UNDO appears briefly. Clear empties the Recent list. Allow contact access if you want calls from your contacts to appear here too.</li>
+    </ul>
+    <p class="in-app"><span>In the app:</span> Blocked tab</p>
+  </article>
+</section>
+<section class="category" id="rules">
+  <h2>Rules</h2>
+  <ul class="category-topics">
+    <li><a href="#rules-basics">Rules basics</a></li>
+    <li><a href="#rule-types">Rule types</a></li>
+    <li><a href="#rule-options">Rule options</a></li>
+    <li><a href="#rule-order">How rules are decided</a></li>
+    <li><a href="#rule-check">Rule check</a></li>
+    <li><a href="#whitelist-blocked">Whitelist and blocked numbers</a></li>
+  </ul>
+  <article class="topic" id="rules-basics">
+    <h3>Rules basics <a class="anchor" href="#rules-basics" aria-label="Link to Rules basics">#</a></h3>
+    <p class="summary">The Rules tab, adding and editing rules</p>
+    <p>The Rules tab (“Call Rules”) lists each rule with its type, pattern, direction, schedule, and expiry. Each rule has Edit, Delete, and an on/off switch. The top bar has a microphone (voice commands, Pro), Whitelist, Blocked numbers, and Check rules.</p>
+    <ol>
+      <li>Tap +.</li>
+      <li>Choose Block or Allow and pick a Call direction.</li>
+      <li>Enter a Rule name, pick a Rule type and pattern, and set any options.</li>
+      <li>Tap “Save Block Rule” or “Save Allow Rule”.</li>
+    </ol>
+    <p>CallRules won't save a rule that's identical to an existing one. The free version allows 10 rules.</p>
+    <p>When you edit a rule you can change its name, pattern, direction, and options. To change Block/Allow, the rule type, or Reject/Silence, delete the rule and create a new one.</p>
+    <p class="in-app"><span>In the app:</span> Rules tab</p>
+  </article>
+  <article class="topic" id="rule-types">
+    <h3>Rule types <a class="anchor" href="#rule-types" aria-label="Link to Rule types">#</a></h3>
+    <p class="summary">Numbers, prefixes, area codes, places, patterns, and hidden callers</p>
+    <ul>
+      <li><strong>Exact number:</strong> one phone number. Set Calling country for numbers typed without a + code.</li>
+      <li><strong>Starts with (prefix):</strong> every number that begins with an international prefix such as +1555. Include the +.</li>
+      <li><strong>Area code:</strong> for example 555, with its Calling country. Turn on “Area-code group” to cover a whole US state, Canadian province, Canada, the United States, or another NANP country in one rule. Codes you list in “Except area codes” are skipped by that rule. Skipping a code doesn't allow its calls.</li>
+      <li><strong>City / telephone area:</strong> choose a country or calling plan, search for a place, and select one result. The rule matches that place's telephone prefixes.</li>
+      <li><strong>Country code:</strong> for example +44.</li>
+      <li><strong>Wildcard pattern (Pro):</strong> * matches any digits, ? matches one optional digit, and X or # matches exactly one digit. Example: +1555*.</li>
+      <li><strong>Regular expression (Pro):</strong> matched against the full international number, for example \+1555\d{7}.</li>
+      <li><strong>Private / hidden callers:</strong> matches incoming calls that hide their caller ID. Use it to block, silence, or allow hidden callers, for example only on a schedule or at a place. Private rules apply to incoming calls only.</li>
+      <li>Unknown numbers (created by voice or Rules CSV): matches every caller that the whitelist, your contacts, and allow rules haven't already let through.</li>
+      <li>Contact, Contact group, and Caller name rules: see Contacts &amp; names.</li>
+    </ul>
+    <p>Area-code, country, and city rules match number prefixes. They can't tell where a caller physically is.</p>
+  </article>
+  <article class="topic" id="rule-options">
+    <h3>Rule options <a class="anchor" href="#rule-options" aria-label="Link to Rule options">#</a></h3>
+    <p class="summary">Reject or Silence, direction, Temporary, PIN, and overrides</p>
+    <ul>
+      <li><strong>Reject call vs Silence call:</strong> Reject declines the call, so the caller hears the line end. Silence lets the call ring on the caller's end while your phone stays quiet. Both are logged. Silence works only for incoming calls.</li>
+      <li><strong>Call direction:</strong> Incoming, Outgoing, or Both. Outgoing rules work only when Outgoing call protection is on. They support number matching, schedules, and Temporary, but not Silence, location, or unknown/private callers.</li>
+      <li><strong>Temporary:</strong> the rule expires after a number of minutes, hours, or days. Rules shows “Expires in…” and then “Expired”, and deletes expired rules about a day later.</li>
+      <li><strong>Schedule and Location (Pro):</strong> see Places &amp; schedules.</li>
+      <li><strong>Require PIN (outgoing allow rules):</strong> matching outgoing calls need the shared PIN. Set the PIN first in Outgoing call protection.</li>
+      <li><strong>Override allow rules (block rules):</strong> blocks matching calls even when the whitelist, your contacts, or an allow rule would let them through. If you save a block rule without it and allowed numbers would get past the rule, CallRules asks “Allowed numbers match this rule”. Choose Override or Keep allow rules; dismissing the prompt cancels the save.</li>
+      <li><strong>Rule overlap:</strong> while you add or edit a rule, a “Rule overlap” note lists existing rules that overlap it. It's for information only; you can still save.</li>
+    </ul>
+  </article>
+  <article class="topic" id="rule-order">
+    <h3>How rules are decided <a class="anchor" href="#rule-order" aria-label="Link to How rules are decided">#</a></h3>
+    <p class="summary">The order CallRules checks each call</p>
+    <p>For each incoming call, CallRules takes these steps in order and stops at the first one that decides the call:</p>
+    <ol class="flow-steps">
+      <li><span class="step-title">Protection is off or paused</span><span class="outcome rings">Rings</span><span class="detail">The call rings.</span></li>
+      <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block private numbers is on and rings otherwise.</span></li>
+      <li><span class="step-title">Block rules with “Override allow rules” on</span><span class="outcome blocks">Blocks</span> <span class="tag">Override allow rules</span><span class="detail">Silence rules before Reject rules.</span></li>
+      <li><span class="step-title">Your whitelist</span><span class="outcome rings">Rings</span><span class="detail">Lets the call ring.</span></li>
+      <li><span class="step-title">Your contacts</span><span class="outcome rings">Rings</span><span class="detail">Ring, depending on the Contact whitelist setting.</span></li>
+      <li><span class="step-title">Allow rules</span><span class="outcome rings">Rings</span><span class="detail">Let the call ring.</span></li>
+      <li><span class="step-title">Other block rules</span><span class="outcome blocks">Blocks</span><span class="detail">Silence before Reject.</span></li>
+      <li><span class="step-title">Blocked numbers</span><span class="outcome blocks">Blocks</span></li>
+      <li><span class="step-title">Carrier verification</span><span class="outcome blocks">Blocks</span></li>
+      <li><span class="step-title">Block unknown numbers</span><span class="outcome blocks">Blocks</span><span class="detail">Callers not in your contacts.</span></li>
+      <li><span class="step-title">The local spam list</span><span class="outcome blocks">Blocks</span><span class="detail">It's empty in this version, so this step blocks nothing.</span></li>
+      <li><span class="step-title">Quiet hours</span><span class="outcome blocks">Blocks</span></li>
+    </ol>
+    <p>If no step decides the call, it rings.</p>
+    <p>Steps 3, 6, and 7 are skipped while Rules enabled is off. Contact, group, and caller-name rules take part in steps 3, 6, and 7 like any other rule, so a contact block rule doesn't block a caller that step 5 lets through unless it has “Override allow rules” on.</p>
+    <p>A rule is also skipped when it's switched off, expired, outside its schedule, or away from its location. If CallRules can't decide within about 3.5 seconds, the call rings.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>For outgoing calls, a matching block rule with “Override allow rules” on cancels the call. Otherwise, a matching allow rule lets the call through (asking for the PIN if the rule requires it), and a matching block rule cancels it.</p></div>
+  </article>
+  <article class="topic" id="rule-check">
+    <h3>Rule check <a class="anchor" href="#rule-check" aria-label="Link to Rule check">#</a></h3>
+    <p class="summary">Find rules that overlap or contradict each other</p>
+    <p>Rule check finds rules that overlap or contradict each other. Open it with Check rules on Rules, from the card on Home, or from its notification. It runs when you open it; tap Run check to run it again.</p>
+    <ul>
+      <li><strong>Warnings:</strong> “Block rule is bypassed” means allow rules, whitelisted numbers, or contacts get past a block rule. “Allow rule never applies” means a block rule with “Override allow rules” on covers it.</li>
+      <li>“Contact not found” and “Contact group not found” warn about a contact or group rule whose contact or group was deleted, so it matches nobody. Edit it or delete it.</li>
+      <li><strong>Info:</strong> “Duplicate rules”, “Silence and reject rules overlap”, and “Rules may conflict” (possible overlaps involving wildcards, regular expressions, caller names, schedules, or locations).</li>
+    </ul>
+    <p>Each issue offers fixes, such as turning “Override allow rules” on or off, disabling or deleting a rule, removing a whitelist entry, or Edit. Ignore hides a warning; turn on “Show ignored” and tap Restore to bring it back.</p>
+    <p>After calls, CallRules checks again automatically, but only if your rules, whitelist, contact settings, or contacts have changed. When Rule check alerts is on, it sends a quiet notification for new warnings. The Rules tab badge and banner show how many warnings are unresolved.</p>
+    <p class="in-app"><span>In the app:</span> Rules › Check rules</p>
+  </article>
+  <article class="topic" id="whitelist-blocked">
+    <h3>Whitelist and blocked numbers <a class="anchor" href="#whitelist-blocked" aria-label="Link to Whitelist and blocked numbers">#</a></h3>
+    <p class="summary">Numbers that always ring or are always blocked</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Open both from the icons at the top of Rules. Tap an entry's remove icon to delete it.</p></div>
+    <ul>
+      <li><strong>Whitelist:</strong> these numbers always ring unless a block rule has “Override allow rules” on. To add a number, tap “Allow this number” in Call history, say “always allow 555 123 4567”, or import a JSON backup. The free version allows 20 entries.</li>
+      <li><strong>Blocked numbers:</strong> these numbers are always blocked unless something earlier lets them through. To add a number, tap Block on a Recent call, say “block the last call” or “add 555 123 4567 to my blocked numbers”, or import a JSON backup. The free version allows 50 entries.</li>
+    </ul>
+    <p>An Exact number rule does the same job, but it counts toward your rule limit instead.</p>
+    <p class="in-app"><span>In the app:</span> Rules › Whitelist</p>
+    <p class="in-app"><span>In the app:</span> Rules › Blocked numbers</p>
+  </article>
+</section>
+<section class="category" id="contacts">
+  <h2>Contacts &amp; names</h2>
+  <ul class="category-topics">
+    <li><a href="#contact-rules">Contact, group, and caller-name rules</a></li>
+    <li><a href="#caller-names">How callers are named</a></li>
+  </ul>
+  <article class="topic" id="contact-rules">
+    <h3>Contact, group, and caller-name rules <a class="anchor" href="#contact-rules" aria-label="Link to Contact, group, and caller-name rules">#</a></h3>
+    <p class="summary">Rules that follow a person, a group, or a caller's name</p>
+    <ul>
+      <li><strong>Contact:</strong> tap Choose contact and pick a person. The rule matches all of that person's numbers, including numbers you add or change later. The rule name starts as the contact's name. If the contact is deleted, Edit shows “Contact not found” and Rule check warns you.</li>
+      <li><strong>Contact group (Pro):</strong> pick a contacts group or label, such as Family or Work, from the list with its member count. Membership is read at call time, so people you add to the group later are included.</li>
+      <li><strong>Caller name (Pro):</strong> choose Contains, Starts with, or Is exactly, and type the text. It matches your contact's saved name, or for callers who aren't contacts, the caller-ID name the carrier sends (such as “SCAM LIKELY”). Case and accents are ignored.</li>
+    </ul>
+    <p>Contact rules need contacts access; CallRules asks when you choose a contact or group.</p>
+  </article>
+  <article class="topic" id="caller-names">
+    <h3>How callers are named <a class="anchor" href="#caller-names" aria-label="Link to How callers are named">#</a></h3>
+    <p class="summary">Contact names and caller ID in lists and alerts</p>
+    <p>Both Call history tabs show the caller's name first when there is one: your contact's name, or else the name your carrier sent with the call (caller ID, such as “SCAM LIKELY”). The number follows, formatted for your Calling country. Blocked-call notifications name the caller the same way.</p>
+    <p>Whitelist and Blocked numbers entries that belong to a contact show the contact's name first, then the number. Number rules on Rules do the same.</p>
+  </article>
+</section>
+<section class="category" id="voice">
+  <h2>Voice commands</h2>
+  <ul class="category-topics">
+    <li><a href="#voice-basics">Using voice commands</a></li>
+    <li><a href="#voice-add-rules">Add rules by voice</a></li>
+    <li><a href="#voice-contacts">Contacts by voice</a></li>
+    <li><a href="#voice-remove-rules">Remove or pause rules</a></li>
+    <li><a href="#voice-lists">Whitelist and blocked numbers by voice</a></li>
+    <li><a href="#voice-settings">Settings by voice</a></li>
+    <li><a href="#voice-questions">Questions and undo</a></li>
+  </ul>
+  <article class="topic" id="voice-basics">
+    <h3>Using voice commands <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Link to Using voice commands">#</a></h3>
+    <p class="summary">Speak or type, then confirm</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Tap the microphone on Home or Rules and speak, or type in “Type a command”. CallRules shows what it understood; tap Confirm to apply it.</p></div>
+    <p>Questions and “undo” run right away. Commands are understood in English, Spanish, French, German, and Italian. In English, filler words such as “um”, “uh” or “please” are fine. If CallRules had to correct a word or leave out one it didn't expect, the card asks “Did you mean …?” and shows what it removed or fixed; tap Confirm only if that is what you meant.</p>
+    <p>Speech is recognized only by Android's on-device recognizer; if that isn't available, type the command instead.</p>
+    <p>If a new block rule would be bypassed by allowed numbers, you're asked whether to override them.</p>
+  </article>
+  <article class="topic" id="voice-add-rules">
+    <h3>Add rules by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-add-rules" aria-label="Link to Add rules by voice">#</a></h3>
+    <p class="summary">Area codes, prefixes, countries, cities, and more</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>block area code 307</li>
+        <li>silence numbers starting with 1800</li>
+        <li>block calls from India</li>
+        <li>block international calls</li>
+        <li>block numbers from Chicago</li>
+        <li>block Kansas area codes except 316</li>
+        <li>block area code 307 for 2 hours</li>
+        <li>block outgoing calls to country code 44</li>
+        <li>allow both directions for 202 555 0114 with PIN</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-contacts">
+    <h3>Contacts by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-contacts" aria-label="Link to Contacts by voice">#</a></h3>
+    <p class="summary">Block or allow people, groups, and caller names</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>block calls from Uncle Bob</li>
+        <li>allow Mom</li>
+        <li>silence my Work group</li>
+        <li>block callers named scam</li>
+        <li>block names containing spam</li>
+        <li>block names starting with win</li>
+      </ul>
+    </div>
+    <p>Group and caller-name commands (“silence my Work group”, “block names containing spam”) need Pro. CallRules finds the contact or group before the card, which shows it, for example “Contact: Uncle Bob (2 numbers)”. If several contacts match, it lists them so you can say the full name.</p>
+    <p>Numbers, countries, and cities come first: “block calls from India” blocks the country, not a contact named India.</p>
+  </article>
+  <article class="topic" id="voice-remove-rules">
+    <h3>Remove or pause rules <span class="pro">PRO</span> <a class="anchor" href="#voice-remove-rules" aria-label="Link to Remove or pause rules">#</a></h3>
+    <p class="summary">Unblock, disable, or pause by voice</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>remove the 307 area code rule</li>
+        <li>unblock Texas area codes</li>
+        <li>disable the area code 307 rule</li>
+        <li>pause all rules</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-lists">
+    <h3>Whitelist and blocked numbers by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-lists" aria-label="Link to Whitelist and blocked numbers by voice">#</a></h3>
+    <p class="summary">Add and remove numbers from your lists</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>always allow 555 123 4567</li>
+        <li>remove 555 123 4567 from whitelist</li>
+        <li>block the last call</li>
+        <li>add 555 123 4567 to my blocked numbers</li>
+        <li>unblock the number 555 123 4567</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-settings">
+    <h3>Settings by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-settings" aria-label="Link to Settings by voice">#</a></h3>
+    <p class="summary">Private numbers, quiet hours, verification, and pausing</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>turn on private number blocking</li>
+        <li>turn on quiet hours</li>
+        <li>set quiet hours from 10 pm to 7 am</li>
+        <li>allow starred contacts during quiet hours</li>
+        <li>whitelist starred contacts</li>
+        <li>set carrier verification to strict</li>
+        <li>turn off notifications</li>
+        <li>pause blocking for 1 hour</li>
+        <li>resume protection</li>
+        <li>set sensitivity to high</li>
+      </ul>
+    </div>
+    <p>“Set sensitivity to high” changes the local spam list threshold; “aggressive” also blocks unknown numbers.</p>
+  </article>
+  <article class="topic" id="voice-questions">
+    <h3>Questions and undo <span class="pro">PRO</span> <a class="anchor" href="#voice-questions" aria-label="Link to Questions and undo">#</a></h3>
+    <p class="summary">Ask about your calls and rules, or undo a change</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>how many calls were blocked today</li>
+        <li>what rules do I have</li>
+        <li>is 555 123 4567 blocked</li>
+        <li>what places do I have</li>
+        <li>undo</li>
+      </ul>
+    </div>
+    <p>Undo: say “undo”, or tap Undo after a command, to reverse the last change.</p>
+  </article>
+</section>
+<section class="category" id="places">
+  <h2>Places &amp; schedules</h2>
+  <ul class="category-topics">
+    <li><a href="#saved-places">Saved places</a></li>
+    <li><a href="#voice-places">Saved places by voice</a></li>
+    <li><a href="#location-rules">Location rules</a></li>
+    <li><a href="#schedules">Schedules</a></li>
+  </ul>
+  <article class="topic" id="saved-places">
+    <h3>Saved places <a class="anchor" href="#saved-places" aria-label="Link to Saved places">#</a></h3>
+    <p class="summary">Name places like Home or Work for rules and voice</p>
+    <p>Name places such as Home or Work, with a radius, using the same address search or current location as a rule. Adding and renaming them requires Pro. Pick them when you add a location rule; voice commands use them by name and can add, rename, move, delete or list them (“save this place as Home”).</p>
+    <p>Rules made from a place stay linked to it, so moving, resizing or renaming the place updates them; deleting a place unlinks its rules, which keep its last location.</p>
+    <p>Phrases like “when I'm at home” need a saved place with that name. Add places by voice or in Settings › Rules › Saved places.</p>
+    <p class="in-app"><span>In the app:</span> Settings › Rules › Saved places</p>
+  </article>
+  <article class="topic" id="voice-places">
+    <h3>Saved places by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-places" aria-label="Link to Saved places by voice">#</a></h3>
+    <p class="summary">Save, rename, move, delete, and list places</p>
+    <div class="voice">
+      <p class="voice-label">Try saying</p>
+      <ul class="chips">
+        <li>save this place as Home</li>
+        <li>save my location as Mom's House with a radius of 300 meters</li>
+        <li>add a place called Church at 500 Oak Ave</li>
+        <li>save 123 Main Street Springfield as Office</li>
+        <li>rename place Home to House</li>
+        <li>move place Office to here</li>
+        <li>delete place Gym</li>
+        <li>what places do I have</li>
+      </ul>
+    </div>
+    <p>CallRules finds your current location or looks up the address first, then shows the name, address or coordinates, radius (200 m unless you say one; 30 m to 5 km) and location accuracy. Nothing is saved until you tap Confirm.</p>
+    <p>Using where you are needs location access; the card offers Grant location. Adding, renaming and moving places requires Pro; deleting doesn't, and rules that used a deleted place keep its location.</p>
+  </article>
+  <article class="topic" id="location-rules">
+    <h3>Location rules <span class="pro">PRO</span> <a class="anchor" href="#location-rules" aria-label="Link to Location rules">#</a></h3>
+    <p class="summary">Rules that apply only at a place</p>
+    <p>Location (Pro, incoming only): tap Pick Location, then search for an address or paste coordinates, tap Use Current Location, or choose one of your Saved places. Then set the radius (30 m to 5 km).</p>
+    <p>The rule applies only when your last known location is clearly inside that area. If your location is missing or too imprecise, that rule is skipped. Allow background location if the rule must work while CallRules is closed or the phone is locked.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Settings › Location rules shows whether location access is ready. Use “Allow location for location rules” or “Set up background location” to grant it.</p></div>
+  </article>
+  <article class="topic" id="schedules">
+    <h3>Schedules <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Link to Schedules">#</a></h3>
+    <p class="summary">Rules that apply only at certain times</p>
+    <p>Schedule (Pro): the rule applies only between Start and End on the Active days you pick (none selected means every day), in the Timezone you choose. You can use 12h or 24h time. A schedule can cross midnight, such as 22:00 to 07:00.</p>
+  </article>
+</section>
+<section class="category" id="settings">
+  <h2>Settings &amp; notifications</h2>
+  <ul class="category-topics">
+    <li><a href="#blocking-settings">Blocking settings</a></li>
+    <li><a href="#quiet-hours">Quiet hours</a></li>
+    <li><a href="#notifications">Notifications</a></li>
+    <li><a href="#outgoing">Outgoing protection</a></li>
+    <li><a href="#backups">Import, export, and backups</a></li>
+    <li><a href="#appearance">Appearance</a></li>
+  </ul>
+  <article class="topic" id="blocking-settings">
+    <h3>Blocking settings <a class="anchor" href="#blocking-settings" aria-label="Link to Blocking settings">#</a></h3>
+    <p class="summary">Protection, calling country, private and unknown callers</p>
+    <ul>
+      <li><strong>Call protection:</strong> turns incoming screening on or off.</li>
+      <li><strong>Calling country:</strong> how CallRules reads numbers you type without a + code, in rules, voice commands, and imports.</li>
+      <li><strong>Block private numbers:</strong> rejects calls with hidden caller ID unless a Private rule decides the call first.</li>
+      <li><strong>Block unknown numbers:</strong> blocks callers who aren't in your contacts, unless the whitelist or an allow rule lets them through. This needs contact access.</li>
+      <li><strong>Contact whitelist:</strong> choose All contacts, Starred only, or None to set which contacts always ring.</li>
+      <li><strong>Rules enabled:</strong> turning this off pauses all incoming block and allow rules.</li>
+      <li>Advanced › Carrier verification uses the STIR/SHAKEN result your carrier attaches to each call. Off ignores it, Standard blocks calls that fail verification, and Strict also blocks calls with no verification. Strict may block real calls from small carriers, VoIP services, and some international numbers. The whitelist, your contacts, and allow rules still let calls through.</li>
+    </ul>
+    <p class="in-app"><span>In the app:</span> Settings tab</p>
+  </article>
+  <article class="topic" id="quiet-hours">
+    <h3>Quiet hours <span class="pro">PRO</span> <a class="anchor" href="#quiet-hours" aria-label="Link to Quiet hours">#</a></h3>
+    <p class="summary">Block calls during set hours</p>
+    <p>“Enable quiet hours” blocks every call between Start and End that nothing earlier has already allowed. The whitelist, contacts under Contact whitelist, and allow rules still ring. Tap Start or End to pick a time; the period can cross midnight, such as 22:00 to 07:00.</p>
+    <p>“Allow starred contacts” lets starred contacts ring during quiet hours even when Contact whitelist is set to None. Calls blocked this way appear in Call history as “Quiet hours”.</p>
+  </article>
+  <article class="topic" id="notifications">
+    <h3>Notifications <a class="anchor" href="#notifications" aria-label="Link to Notifications">#</a></h3>
+    <p class="summary">Blocked-call alerts and rule check alerts</p>
+    <ul>
+      <li><strong>Show blocked call alerts:</strong> shows a low-priority “Call blocked” notification with the number and reason. Tap it to open Call history. Its Unblock button only removes the number from Blocked numbers. It doesn't change rules or other settings, so a rule may still block the next call. It may ask for your PIN.</li>
+      <li><strong>Rule check alerts:</strong> shows a quiet notification when rules start to overlap or get bypassed.</li>
+      <li>An outgoing call that needs your approval shows “Call waiting for your confirmation”.</li>
+    </ul>
+    <p>Allow Android's notification permission during setup, or use Troubleshoot to fix it later.</p>
+  </article>
+  <article class="topic" id="outgoing">
+    <h3>Outgoing protection <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Link to Outgoing protection">#</a></h3>
+    <p class="summary">Outgoing rules, PIN, and long press</p>
+    <p>Open Settings › Outgoing call protection.</p>
+    <ul>
+      <li><strong>Enable outgoing rules:</strong> checks your Outgoing and Both rules before a call is placed. A blocked call is cancelled.</li>
+      <li>Require PIN for all outgoing calls, or Require long press (hold for 1.5 seconds). A PIN, whether global or from a rule, takes priority over long press.</li>
+      <li><strong>PIN-protect rules and settings:</strong> every saved change to rules, lists, settings, or imports asks for the PIN. This doesn't require Pro.</li>
+      <li><strong>Shared PIN:</strong> Set PIN, Change PIN, or Remove PIN (4 to 8 digits). After 5 wrong attempts, PIN entry locks for 30 seconds. You can't remove the PIN while a setting or rule still needs it.</li>
+      <li><strong>Android setup:</strong> tap “Allow call redirection” and “Allow Phone permission” (needed to redial approved calls).</li>
+    </ul>
+    <p>When a call needs approval, CallRules cancels it and opens “Confirm outgoing call”. After the correct PIN or a completed hold, it places one replacement call. If you tap Cancel call or wait 60 seconds, no call is placed. Android excludes emergency calls and some gateway calls.</p>
+    <p>This isn't tamper-proof: uninstalling CallRules, clearing its data, or revoking the Android role turns it off.</p>
+    <p class="in-app"><span>In the app:</span> Settings › Outgoing call protection</p>
+  </article>
+  <article class="topic" id="backups">
+    <h3>Import, export, and backups <a class="anchor" href="#backups" aria-label="Link to Import, export, and backups">#</a></h3>
+    <p class="summary">Rules CSV, JSON backups, and Google Sheets</p>
+    <ul>
+      <li><strong>“Import Rules CSV or JSON”:</strong> pick a Rules CSV or a CallRules JSON backup (up to 2 MB). “Review import” shows what will be added and what will be skipped; tap Apply import. Duplicates and invalid items are skipped, and free limits apply. Without Pro, wildcard and regular-expression rules, schedules, and locations are skipped. A JSON backup also restores its settings.</li>
+      <li><strong>Import from Google Sheets (Pro):</strong> paste the link to a sheet that's public or shared by link and uses the Rules CSV columns.</li>
+      <li>Export (Pro) offers three formats. Rules CSV includes every rule, enabled or disabled. Blocked numbers CSV is for spreadsheets and can't be imported back. JSON (full backup) includes rules, blocked numbers, whitelist, saved places, and settings.</li>
+    </ul>
+    <p>Backups can contain phone numbers and places, so store and share them carefully. They never include PIN data, purchases, permissions, call history, or diagnostics.</p>
+  </article>
+  <article class="topic" id="appearance">
+    <h3>Appearance <a class="anchor" href="#appearance" aria-label="Link to Appearance">#</a></h3>
+    <p class="summary">Colors, wallpaper colors, and dark mode</p>
+    <p>Settings › Appearance: turn on “Use wallpaper colors” (Android 12 and later) to match your device palette. When it's off, pick a Color: Blue, Red, Green, Yellow, Pink, Purple, or Teal. Mode can be Follow system, Light, or Dark. The palette preview shows the result.</p>
+  </article>
+</section>
+<section class="category" id="help">
+  <h2>Help, plans &amp; privacy</h2>
+  <ul class="category-topics">
+    <li><a href="#troubleshooting">Troubleshooting and support</a></li>
+    <li><a href="#free-vs-pro">Free vs Pro</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+  </ul>
+  <article class="topic" id="troubleshooting">
+    <h3>Troubleshooting and support <a class="anchor" href="#troubleshooting" aria-label="Link to Troubleshooting and support">#</a></h3>
+    <p class="summary">Fix problems, send feedback, and export diagnostics</p>
+    <ul>
+      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, location access, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
+      <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether the whitelist, your contacts, or an allow rule is letting the call through.</li>
+      <li>Online help and Online troubleshooting open the CallRules web pages.</li>
+      <li><strong>Send feedback and Report a problem:</strong> type, or tap the microphone to dictate on the device. You can attach diagnostics. Tap Preview, then send with an email or sharing app, or use Copy or Save.</li>
+      <li>Export diagnostics lets you preview, share, save, copy, or clear the local log. The log leaves out phone numbers, contacts, rules, coordinates, speech, and purchase tokens, and it keeps about seven days of records.</li>
+      <li>Rate CallRules opens Google Play. Share with friends sends a link.</li>
+    </ul>
+    <p class="in-app"><span>In the app:</span> Settings › Troubleshoot issues</p>
+  </article>
+  <article class="topic" id="free-vs-pro">
+    <h3>Free vs Pro <a class="anchor" href="#free-vs-pro" aria-label="Link to Free vs Pro">#</a></h3>
+    <p class="summary">What's included, and restoring a purchase</p>
+    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 whitelist entries; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; Contact whitelist; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
+    <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and whitelist entries; wildcard, regular-expression, contact group, and caller-name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; and outgoing protection (outgoing rules, PIN, and long press).</p>
+    <p>Google Play shows the price in your currency. After reinstalling or switching phones with the same Play account, use Upgrade › Restore purchase. If Pro isn't active, any Pro schedules, locations, and patterns already saved on rules stay but can't be changed.</p>
+    <p class="in-app"><span>In the app:</span> Settings › Upgrade to CallRules Pro</p>
+  </article>
+  <article class="topic" id="privacy">
+    <h3>Privacy <a class="anchor" href="#privacy" aria-label="Link to Privacy">#</a></h3>
+    <p class="summary">What stays on your phone, and when the network is used</p>
+    <p>CallRules checks calls on your phone, and your rules, lists, and call history stay there. There are no accounts or ads, and no cloud spam lookup.</p>
+    <p>CallRules uses the network only for Google Play Billing, address searches you run in the location picker, Google Sheets import, links you open (online help, Google Maps, Google Play), and apps you choose to share with.</p>
+    <p>Voice commands and dictation use Android's on-device recognizer. Settings › Privacy policy has the details.</p>
+  </article>
+</section>
+<p class="muted" id="no-results" hidden>No topics match. Try another word, or see <a href="callrules-troubleshooting.html">troubleshooting</a>.</p>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Help</a>
+      <a href="callrules-troubleshooting.html">Troubleshooting</a>
+      <a href="callrules-privacy.html">Privacy Policy</a>
+      <a href="mailto:mjred.dev@gmail.com">Contact</a>
+    </nav>
+    <p>Plainform is a trading name of MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var box = document.getElementById('search-box');
+  var input = document.getElementById('guide-search');
+  var status = document.getElementById('search-status');
+  var none = document.getElementById('no-results');
+  if (!box || !input || !''.normalize) return;
+  box.hidden = false;
+  function fold(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      .replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
+  }
+  var topics = Array.prototype.slice.call(document.querySelectorAll('article.topic'));
+  var texts = topics.map(function (t) { return fold(t.textContent); });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.category'));
+  function run() {
+    var q = fold(input.value.trim());
+    var count = 0;
+    topics.forEach(function (t, i) {
+      var hit = !q || texts[i].indexOf(q) >= 0;
+      t.hidden = !hit;
+      if (hit) count++;
+    });
+    sections.forEach(function (s) {
+      s.hidden = !s.querySelector('article.topic:not([hidden])');
+    });
+    none.hidden = !q || count > 0;
+    status.textContent = !q ? '' : count === 1 ? '1 topic matches' : count + ' topics match';
+  }
+  input.addEventListener('input', run);
+  var params = new URLSearchParams(location.search);
+  if (params.get('q')) { input.value = params.get('q'); run(); }
+})();
+</script>
+</body>
+</html>

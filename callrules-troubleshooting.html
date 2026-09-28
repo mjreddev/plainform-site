@@ -1,20 +1,370 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CallRules Troubleshooting — Plainform</title>
-<meta name="description" content="Troubleshoot CallRules incoming screening, outgoing protection, location rules, and purchases.">
-<style>:root{--ink:#16202b;--muted:#5b6b7c;--line:#dde4ea;--accent:#1f3a5f;--bg:#fff}@media(prefers-color-scheme:dark){:root{--ink:#e8edf2;--muted:#9fb0c0;--line:#26313d;--accent:#9fb6d4;--bg:#0f151b}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,sans-serif}.wrap{max-width:760px;margin:auto;padding:32px 24px 72px}.brand{color:var(--ink);font-weight:700;text-decoration:none}h1{font-size:32px;line-height:1.2;margin:32px 0 8px}h2{font-size:20px;margin:34px 0 8px}.lede,footer{color:var(--muted)}a{color:var(--accent)}li{margin:.45em 0}footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CallRules troubleshooting</title>
+<meta name="description" content="Fix CallRules problems: calls not blocked, outgoing rules, location rules, notifications, voice commands, and Lifetime Pro.">
+<link rel="canonical" href="https://plainform.app/callrules-troubleshooting.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:title" content="CallRules troubleshooting">
+<meta property="og:description" content="Fix CallRules problems: calls not blocked, outgoing rules, location rules, notifications, voice commands, and Lifetime Pro.">
+<meta property="og:url" content="https://plainform.app/callrules-troubleshooting.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body><div class="wrap">
-<a class="brand" href="/">Plainform</a>
-<h1>CallRules Troubleshooting</h1>
-<p class="lede">Start with Settings → Troubleshoot issues. Its cards reflect the features configured on your device and offer safe fixes.</p>
-<h2>Incoming calls are not blocked</h2><ul><li>Confirm CallRules holds Android's Call Screening role and the Dashboard says protection is active.</li><li>Make sure Call Rules are not paused and the intended Incoming or Both rule is enabled.</li><li>Review Allow rules and the whitelist, which take priority over blocking.</li></ul>
-<h2>Outgoing rules do not run</h2><ul><li>Open Settings → Outgoing call protection and grant the Call Redirection role.</li><li>Enable outgoing-rule evaluation and confirm the rule direction is Outgoing or Both.</li><li>If a PIN-required imported rule reports setup required, create the shared PIN.</li><li>For an approved replacement call, grant Phone permission. CallRules does not need Call Log or obsolete outgoing-call permissions.</li><li>Allow notifications so a waiting confirmation is visible when Android cannot open CallRules directly.</li></ul>
-<h2>Confirmation was cancelled, expired, or did not redial</h2><p>The original call is cancelled before confirmation. Cancelling the screen or waiting about 60 seconds places no call. After approval, CallRules rechecks the current rules, role, confirmation method, and Phone permission. If anything changed—or Android could not place the call—correct the reported issue and dial again. An approval is one-use only.</p>
-<h2>Location rule does not match</h2><p>Location permissions are needed only when an enabled incoming rule has a location constraint. Allow foreground location first, then choose Android's background option if the rule must work while CallRules is closed or locked. If access is denied, the location condition is treated as unmet.</p>
-<h2>Lifetime Pro or Restore is unavailable</h2><ul><li>Use the Play-installed build and the same Google account that owns the purchase.</li><li>Check Play Store connectivity, then use Retry Google Play or Restore purchase.</li><li>The product can be unavailable for an ineligible account, region, or unpublished test build. Pending purchases unlock only after Google Play completes them.</li></ul>
-<h2>Still need help?</h2><p>In Settings, choose Report a problem. Review the text before sending and attach sanitized diagnostics only if you want to. Dictation and sharing are user initiated.</p>
-<footer><a href="/callrules.html">CallRules Help</a> · <a href="mailto:mjred.dev@gmail.com">Support</a></footer>
-</div></body></html>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Help</a>
+      <a href="callrules-troubleshooting.html" aria-current="page">Troubleshooting</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap narrow">
+<header class="doc-hero">
+  <p class="eyebrow">CallRules help</p>
+  <h1>CallRules troubleshooting</h1>
+  <p class="lede">Fixes for common problems, and what each card on the app's Troubleshoot screen means.</p>
+  <div class="card start-card">
+    <p class="in-app"><span>Start in the app:</span> Settings › Troubleshoot issues</p>
+    <p>CallRules checks your setup and identifies issues that might prevent blocking from working correctly. Where a card offers <strong>Fix</strong>, tap it. The refresh icon runs the checks again.</p>
+  </div>
+  <nav class="toc-chips" aria-label="On this page"><ul class="chips">
+    <li><a href="#common-problems">Common problems</a></li>
+    <li><a href="#checks">What Troubleshoot checks</a></li>
+    <li><a href="callrules-help.html">Full guide</a></li>
+  </ul></nav>
+</header>
+<section class="category" id="common-problems">
+  <h2>Common problems</h2>
+  <ul class="category-topics">
+    <li><a href="#not-blocked">A call wasn't blocked</a></li>
+    <li><a href="#allowed-caller-rings">A contact or allowed number still rings</a></li>
+    <li><a href="#rule-ignored">A rule seems to be ignored</a></li>
+    <li><a href="#contact-rule">A contact or group rule matches nobody</a></li>
+    <li><a href="#outgoing">Outgoing rules don't run</a></li>
+    <li><a href="#confirmation">An outgoing confirmation was cancelled, expired, or didn't redial</a></li>
+    <li><a href="#location">A location rule doesn't match</a></li>
+    <li><a href="#no-alerts">No blocked-call notifications</a></li>
+    <li><a href="#voice">Voice commands don't work</a></li>
+    <li><a href="#pro">Lifetime Pro is unavailable or won't restore</a></li>
+    <li><a href="#more-help">Still need help?</a></li>
+  </ul>
+  <div class="problem-list">
+  <article class="card problem" id="not-blocked">
+    <h3>A call wasn't blocked</h3>
+    <ul>
+      <li>Check that CallRules is your Caller ID &amp; spam app and that Home shows “Protection Active”.</li>
+      <li>Check that Settings › Call protection and Rules enabled are on.</li>
+      <li>Check that the rule is switched on, covers Incoming calls, hasn't expired, and is inside its schedule and at its location.</li>
+      <li>Open Rules › Check rules. “Block rule is bypassed” means the whitelist, your contacts, or an allow rule lets the call through first.</li>
+      <li>If CallRules can't decide within about 3.5 seconds, the call rings rather than risk blocking it wrongly.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="allowed-caller-rings">
+    <h3>A contact or allowed number still rings</h3>
+    <ul>
+      <li>The whitelist, your contacts (under Settings › Contact whitelist), and allow rules are checked before ordinary block rules and blocked numbers.</li>
+      <li>To block such a caller anyway, edit the block rule and turn on “Override allow rules”, or remove the number from the whitelist.</li>
+      <li>A contact, group, or caller-name block rule follows the same order, so it needs “Override allow rules” to block a contact the Contact whitelist lets through.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="rule-ignored">
+    <h3>A rule seems to be ignored</h3>
+    <ul>
+      <li>Temporary rules show “Expired” on Rules when their time runs out; expired rules are deleted about a day later.</li>
+      <li>Rules with a schedule apply only between Start and End on their active days, in the rule's timezone.</li>
+      <li>Rules with a location apply only when your last known location is clearly inside the area. See “Location rules” below.</li>
+      <li>Outgoing rules need Outgoing call protection. Silence, location, and private or unknown callers apply to incoming calls only.</li>
+      <li>If Lifetime Pro isn't active, schedules, locations, and patterns already saved on rules stay but can't be changed.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="contact-rule">
+    <h3>A contact or group rule matches nobody</h3>
+    <ul>
+      <li>Contact rules need contacts access. CallRules asks for it when you choose a contact or group.</li>
+      <li>If the contact or group was deleted, the rule's Edit screen shows “Contact not found” and Rule check warns “Contact not found” or “Contact group not found”. Edit the rule or delete it.</li>
+      <li>Caller-name rules match your contact's saved name, or the caller-ID name your carrier sends. Not every carrier sends names.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="outgoing">
+    <h3>Outgoing rules don't run</h3>
+    <ul>
+      <li>Outgoing protection needs Lifetime Pro.</li>
+      <li>Open Settings › Outgoing call protection, tap “Allow call redirection”, and turn on “Enable outgoing rules”.</li>
+      <li>Check that the rule's Call direction is Outgoing or Both.</li>
+      <li>If a rule or setting requires a PIN, set the shared PIN first.</li>
+      <li>For approved calls, tap “Allow Phone permission”. CallRules doesn't need Call Log or older outgoing-call permissions.</li>
+      <li>Allow notifications, so a waiting confirmation still shows when Android can't open CallRules directly.</li>
+      <li>Android never sends emergency calls, and some gateway calls, to CallRules.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="confirmation">
+    <h3>An outgoing confirmation was cancelled, expired, or didn't redial</h3>
+    <ul>
+      <li>CallRules cancels the original call before asking. Tapping Cancel call or waiting 60 seconds places no call.</li>
+      <li>After the correct PIN or a completed hold, CallRules checks your rules, the role, and the Phone permission again, then places one replacement call.</li>
+      <li>Each approval works once. If something changed or Android couldn't place the call, fix the reported issue and dial again.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="location">
+    <h3>A location rule doesn't match</h3>
+    <ul>
+      <li>Location access is needed only for enabled incoming rules that have a location.</li>
+      <li>Allow location first, then choose Android's “Allow all the time” option if the rule must work while CallRules is closed or the phone is locked.</li>
+      <li>If access is denied or your location is missing or too imprecise, the rule is skipped.</li>
+      <li>Location rules match where your phone is, not where the caller is. Area-code, country, and city rules match number prefixes.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="no-alerts">
+    <h3>No blocked-call notifications</h3>
+    <ul>
+      <li>Turn on Settings › Show blocked call alerts.</li>
+      <li>Allow Android's notification permission for CallRules. The Notifications check offers Fix.</li>
+      <li>Blocked-call alerts are low priority, so some phones group or hide them. Every blocked call is still listed in Call history.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="voice">
+    <h3>Voice commands don't work</h3>
+    <ul>
+      <li>Voice commands need Lifetime Pro.</li>
+      <li>Speech uses only Android's on-device recognizer. If your phone doesn't have one, type in “Type a command” instead.</li>
+      <li>If the card asks “Did you mean …?”, CallRules changed or left out a word. Tap Confirm only if the card shows what you meant.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="pro">
+    <h3>Lifetime Pro is unavailable or won't restore</h3>
+    <ul>
+      <li>Use CallRules installed from Google Play and the same Google account that bought Pro.</li>
+      <li>Check your connection, then open Upgrade and tap “Retry Google Play” or “Restore purchase”.</li>
+      <li>Lifetime Pro can be unavailable for some accounts or regions, and in test builds that aren't published.</li>
+      <li>A pending purchase unlocks Pro only after Google Play completes it.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="more-help">
+    <h3>Still need help?</h3>
+    <ul>
+      <li>Open Settings › Report a problem. Type or dictate what happened, then tap Preview and send it with an email or sharing app.</li>
+      <li>You can attach diagnostics. The log leaves out phone numbers, contacts, rules, coordinates, speech, and purchase tokens.</li>
+    </ul>
+  </article>
+  </div>
+</section>
+<section class="category" id="checks">
+  <h2>What the Troubleshoot screen checks</h2>
+  <p class="muted">The screen shows only the cards that apply to your setup. Each result below is the exact text the card shows.</p>
+  <div class="check-list">
+    <article class="card check" id="screening-role">
+      <h3>Call screening role</h3>
+      <p class="meta"><strong>Checks:</strong> Whether CallRules is your Caller ID &amp; spam app. Android sends calls only to that app for screening.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules is set as your caller ID &amp; spam app</li>
+        <li><span class="status error">Problem</span>CallRules is NOT set as your caller ID &amp; spam app — calls won't be blocked<span class="fix">Fix: Asks Android to make CallRules your Caller ID &amp; spam app.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Android Settings › Apps › Default apps › Caller ID &amp; spam app and choose CallRules.</li>
+        <li>Some phones call this “Call screening app” or keep it under Phone settings.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-protection">
+      <h3>Call protection</h3>
+      <p class="meta"><strong>Checks:</strong> Whether the shield switch is on.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Protection is enabled</li>
+        <li><span class="status error">Problem</span>Protection is disabled — no calls are being blocked<span class="fix">Fix: Turns Call protection on.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Tap the shield on Home, or turn on Settings › Call protection.</li>
+      </ul>
+    </article>
+    <article class="card check" id="carrier-verification">
+      <h3>Carrier verification</h3>
+      <p class="meta"><strong>Checks:</strong> The Carrier verification setting, which uses the STIR/SHAKEN result your carrier attaches to each call.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status warning">Warning</span>Turned off — calls that fail carrier verification are not blocked<span class="fix">Fix: Sets Carrier verification to Standard.</span></li>
+        <li><span class="status ok">OK</span>Strict — unverified callers are blocked as well as failed ones</li>
+        <li><span class="status ok">OK</span>Standard — calls failing carrier verification are blocked</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Advanced › Carrier verification and choose Standard or Strict.</li>
+        <li>Strict also blocks calls with no verification, which can include real calls from small carriers, VoIP services, and some international numbers.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-rules">
+      <h3>Call Rules</h3>
+      <p class="meta"><strong>Checks:</strong> Whether Rules enabled is on. When it's off, no incoming block or allow rule applies.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Rules are active</li>
+        <li><span class="status warning">Warning</span>All rules are PAUSED — block, allow, and silence rules are not being applied<span class="fix">Fix: Turns Rules enabled back on.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Turn on Settings › Rules enabled.</li>
+      </ul>
+    </article>
+    <article class="card check" id="notifications">
+      <h3>Notifications</h3>
+      <p class="meta"><strong>Checks:</strong> Whether Android lets CallRules show notifications (Android 13 and later ask for this permission).</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Notification permission granted</li>
+        <li><span class="status warning">Warning</span>Notification permission not granted — you won't see blocked call alerts<span class="fix">Fix: Opens Android's notification settings for CallRules.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Android Settings › Apps › CallRules › Notifications and allow them.</li>
+        <li>Then check that Settings › Show blocked call alerts is on in CallRules.</li>
+      </ul>
+    </article>
+    <article class="card check" id="battery">
+      <h3>Battery usage</h3>
+      <p class="meta"><strong>Checks:</strong> Nothing to fix: this card explains how CallRules runs.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules uses Android's event-driven CallScreeningService — it runs only when a call arrives, not continuously. Battery impact is near zero.</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>No battery optimization changes are needed.</li>
+      </ul>
+    </article>
+    <article class="card check" id="redirection-role">
+      <h3>Outgoing Call Redirection role</h3>
+      <p class="meta"><strong>Checks:</strong> Whether CallRules holds Android's Call Redirection role, which lets it check calls you place.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing protection is set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules can evaluate outgoing calls</li>
+        <li><span class="status error">Problem</span>Role not granted — outgoing rules cannot run<span class="fix">Fix: Asks Android to give CallRules the Call Redirection role.</span></li>
+        <li><span class="status error">Problem</span>Call redirection is unavailable on this device</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Outgoing call protection and tap “Allow call redirection”.</li>
+        <li>If your phone doesn't offer call redirection, outgoing protection can't run on it.</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-rule-setting">
+      <h3>Outgoing-rule setting</h3>
+      <p class="meta"><strong>Checks:</strong> Whether “Enable outgoing rules” is on when you have enabled Outgoing or Both rules.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing protection is set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Outgoing and Both rules are enabled</li>
+        <li><span class="status ok">OK</span>No enabled Outgoing or Both rules; global confirmation can still apply</li>
+        <li><span class="status warning">Warning</span>Outgoing or Both rules exist, but outgoing rule evaluation is turned off<span class="fix">Fix: Opens Outgoing call protection.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Outgoing call protection and turn on “Enable outgoing rules”.</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-pin">
+      <h3>Outgoing PIN</h3>
+      <p class="meta"><strong>Checks:</strong> Whether the shared PIN is set when outgoing calls need one.</p>
+      <p class="meta"><strong>Shown:</strong> Only when “Require PIN for all outgoing calls” is on, or an enabled outgoing rule has “Require PIN”, and no PIN is set.</p>
+      <ul class="results">
+        <li><span class="status error">Problem</span>A PIN-required outgoing call will fail closed until a shared PIN is set<span class="fix">Fix: Opens Outgoing call protection.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Outgoing call protection and tap Set PIN (4 to 8 digits).</li>
+        <li>Rules imported with “Require PIN” need a PIN set on this phone.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmed-redial">
+      <h3>Confirmed-call redial</h3>
+      <p class="meta"><strong>Checks:</strong> Whether CallRules has the Phone permission it needs to place the approved call again.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing calls need a PIN or a long press.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Phone permission is ready for an approved replacement call</li>
+        <li><span class="status error">Problem</span>Phone permission is missing — approval cannot place the replacement call<span class="fix">Fix: Asks for the Phone permission.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Outgoing call protection and tap “Allow Phone permission”.</li>
+        <li>CallRules doesn't need Call Log or older outgoing-call permissions.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmation-timeout">
+      <h3>Confirmation timeout and cancellation</h3>
+      <p class="meta"><strong>Checks:</strong> Nothing to fix: this card explains what happens to a call waiting for approval.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing calls need a PIN or a long press.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>A cancelled or expired request places no call. If approved redial fails, verify the role and Phone permission, then dial again.</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>If you tap Cancel call or wait 60 seconds, no call is placed. Dial again.</li>
+        <li>Each approval places one call. If the redial fails, check the role and Phone permission, then dial again.</li>
+      </ul>
+    </article>
+    <article class="card check" id="location-rules">
+      <h3>Location rules</h3>
+      <p class="meta"><strong>Checks:</strong> Whether CallRules may use your location, including while it's closed or the phone is locked.</p>
+      <p class="meta"><strong>Shown:</strong> Only when an enabled incoming rule has a location.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Ready while CallRules is closed or the phone is locked</li>
+        <li><span class="status warning">Warning</span>Foreground access is allowed; background access is still needed for calls while the app is closed<span class="fix">Fix: Asks for location access, then explains how to allow it all the time.</span></li>
+        <li><span class="status warning">Warning</span>Location access is unavailable; location-constrained rules will be treated as unmet<span class="fix">Fix: Asks for location access, then explains how to allow it all the time.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Location rules and tap “Allow location for location rules”.</li>
+        <li>Then tap “Set up background location” and choose Android's “Allow all the time” option.</li>
+        <li>Without location access, rules with a location are skipped.</li>
+      </ul>
+    </article>
+    <article class="card check" id="billing">
+      <h3>Google Play Billing</h3>
+      <p class="meta"><strong>Checks:</strong> Whether CallRules can reach Google Play Billing and load Lifetime Pro.</p>
+      <p class="meta"><strong>Shown:</strong> Always</p>
+      <ul class="results">
+        <li><span class="status warning">Warning</span>Could not connect or load the lifetime product. Check Play Store connectivity, then retry.<span class="fix">Fix: Reconnects to Google Play Billing.</span></li>
+        <li><span class="status warning">Warning</span>Connected, but the lifetime product is not available for this account or build.<span class="fix">Fix: Reconnects to Google Play Billing.</span></li>
+        <li><span class="status ok">OK</span>Billing connection and purchase restoration are available from Upgrade.</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Check your connection and that the Google Play Store app is signed in and up to date.</li>
+        <li>Open Upgrade and tap “Retry Google Play” or “Restore purchase”.</li>
+        <li>See “Lifetime Pro is unavailable or won't restore” under Common problems.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+<section class="category" id="contact">
+  <h2>Contact support</h2>
+  <p>Use <strong>Settings › Report a problem</strong> in the app, or email <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>. Please don't send phone numbers you don't need to share.</p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Help</a>
+      <a href="callrules-troubleshooting.html">Troubleshooting</a>
+      <a href="callrules-privacy.html">Privacy Policy</a>
+      <a href="mailto:mjred.dev@gmail.com">Contact</a>
+    </nav>
+    <p>Plainform is a trading name of MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
