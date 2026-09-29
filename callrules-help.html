@@ -6,6 +6,9 @@
 <title>CallRules help — How to use CallRules</title>
 <meta name="description" content="The complete CallRules guide: rules, contacts, voice commands, places and schedules, settings, outgoing protection, and privacy.">
 <link rel="canonical" href="https://plainform.app/callrules-help.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-help.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-help.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-help.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Plainform">
 <meta property="og:title" content="CallRules help — How to use CallRules">
@@ -22,11 +25,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
-    <nav class="site-nav" aria-label="Site">
-      <a href="callrules.html">CallRules</a>
-      <a href="callrules-help.html" aria-current="page">Help</a>
-      <a href="callrules-troubleshooting.html">Troubleshooting</a>
-    </nav>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html" aria-current="page">Help</a>
+        <a href="callrules-troubleshooting.html">Troubleshooting</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Language"><a href="callrules-help.html" lang="en" hreflang="en" aria-current="true">EN</a> <span aria-hidden="true">|</span> <a href="fr/callrules-help.html" lang="fr-CA" hreflang="fr-CA">FR</a></nav>
+    </div>
   </div>
 </header>
 <div class="wrap docs">
@@ -136,7 +142,7 @@
     <p class="summary">The Blocked and Recent tabs</p>
     <p>The Blocked tab opens Call History, which has two tabs.</p>
     <ul>
-      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Verification failed, Unknown number, Private number, or Quiet hours. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
+      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
       <li>Recent lists incoming calls that CallRules let through. Tap Block to add the caller to Blocked numbers; UNDO appears briefly. Clear empties the Recent list. Allow contact access if you want calls from your contacts to appear here too.</li>
     </ul>
     <p class="in-app"><span>In the app:</span> Blocked tab</p>
@@ -202,13 +208,14 @@
     <p>For each incoming call, CallRules takes these steps in order and stops at the first one that decides the call:</p>
     <ol class="flow-steps">
       <li><span class="step-title">Protection is off or paused</span><span class="outcome rings">Rings</span><span class="detail">The call rings.</span></li>
-      <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block private numbers is on and rings otherwise.</span></li>
+      <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block carrier spam labels is on and the carrier labeled it as spam, or when Block private numbers is on, and rings otherwise.</span></li>
       <li><span class="step-title">Block rules with “Override allow rules” on</span><span class="outcome blocks">Blocks</span> <span class="tag">Override allow rules</span><span class="detail">Silence rules before Reject rules.</span></li>
       <li><span class="step-title">Your whitelist</span><span class="outcome rings">Rings</span><span class="detail">Lets the call ring.</span></li>
       <li><span class="step-title">Your contacts</span><span class="outcome rings">Rings</span><span class="detail">Ring, depending on the Contact whitelist setting.</span></li>
       <li><span class="step-title">Allow rules</span><span class="outcome rings">Rings</span><span class="detail">Let the call ring.</span></li>
       <li><span class="step-title">Other block rules</span><span class="outcome blocks">Blocks</span><span class="detail">Silence before Reject.</span></li>
       <li><span class="step-title">Blocked numbers</span><span class="outcome blocks">Blocks</span></li>
+      <li><span class="step-title">Carrier spam labels</span><span class="outcome blocks">Blocks</span><span class="detail">When Block carrier spam labels is on.</span></li>
       <li><span class="step-title">Carrier verification</span><span class="outcome blocks">Blocks</span></li>
       <li><span class="step-title">Block unknown numbers</span><span class="outcome blocks">Blocks</span><span class="detail">Callers not in your contacts.</span></li>
       <li><span class="step-title">The local spam list</span><span class="outcome blocks">Blocks</span><span class="detail">It's empty in this version, so this step blocks nothing.</span></li>
@@ -356,6 +363,7 @@
       <p class="voice-label">Try saying</p>
       <ul class="chips">
         <li>turn on private number blocking</li>
+        <li>block carrier spam labels</li>
         <li>turn on quiet hours</li>
         <li>set quiet hours from 10 pm to 7 am</li>
         <li>allow starred contacts during quiet hours</li>
@@ -451,6 +459,7 @@
       <li><strong>Calling country:</strong> how CallRules reads numbers you type without a + code, in rules, voice commands, and imports.</li>
       <li><strong>Block private numbers:</strong> rejects calls with hidden caller ID unless a Private rule decides the call first.</li>
       <li><strong>Block unknown numbers:</strong> blocks callers who aren't in your contacts, unless the whitelist or an allow rule lets them through. This needs contact access.</li>
+      <li><strong>Block carrier spam labels:</strong> rejects calls your carrier labels as spam in the caller-ID name, such as “Scam Likely”, “Spam Risk”, or “Potential Spam”. CallRules can't read your Phone app's spam verdict, but can use the label your carrier sends. Only the carrier's name is checked, so the whitelist, your contacts, and allow rules still ring even when the carrier labels them.</li>
       <li><strong>Contact whitelist:</strong> choose All contacts, Starred only, or None to set which contacts always ring.</li>
       <li><strong>Rules enabled:</strong> turning this off pauses all incoming block and allow rules.</li>
       <li>Advanced › Carrier verification uses the STIR/SHAKEN result your carrier attaches to each call. Off ignores it, Standard blocks calls that fail verification, and Strict also blocks calls with no verification. Strict may block real calls from small carriers, VoIP services, and some international numbers. The whitelist, your contacts, and allow rules still let calls through.</li>
@@ -527,7 +536,7 @@
   <article class="topic" id="free-vs-pro">
     <h3>Free vs Pro <a class="anchor" href="#free-vs-pro" aria-label="Link to Free vs Pro">#</a></h3>
     <p class="summary">What's included, and restoring a purchase</p>
-    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 whitelist entries; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; Contact whitelist; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
+    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 whitelist entries; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; carrier spam labels; Contact whitelist; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
     <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and whitelist entries; wildcard, regular-expression, contact group, and caller-name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; and outgoing protection (outgoing rules, PIN, and long press).</p>
     <p>Google Play shows the price in your currency. After reinstalling or switching phones with the same Play account, use Upgrade › Restore purchase. If Pro isn't active, any Pro schedules, locations, and patterns already saved on rules stay but can't be changed.</p>
     <p class="in-app"><span>In the app:</span> Settings › Upgrade to CallRules Pro</p>

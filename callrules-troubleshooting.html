@@ -6,6 +6,9 @@
 <title>CallRules troubleshooting</title>
 <meta name="description" content="Fix CallRules problems: calls not blocked, outgoing rules, location rules, notifications, voice commands, and Lifetime Pro.">
 <link rel="canonical" href="https://plainform.app/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-troubleshooting.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Plainform">
 <meta property="og:title" content="CallRules troubleshooting">
@@ -22,11 +25,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
-    <nav class="site-nav" aria-label="Site">
-      <a href="callrules.html">CallRules</a>
-      <a href="callrules-help.html">Help</a>
-      <a href="callrules-troubleshooting.html" aria-current="page">Troubleshooting</a>
-    </nav>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html">Help</a>
+        <a href="callrules-troubleshooting.html" aria-current="page">Troubleshooting</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Language"><a href="callrules-troubleshooting.html" lang="en" hreflang="en" aria-current="true">EN</a> <span aria-hidden="true">|</span> <a href="fr/callrules-troubleshooting.html" lang="fr-CA" hreflang="fr-CA">FR</a></nav>
+    </div>
   </div>
 </header>
 <main id="main" class="wrap narrow">
@@ -67,6 +73,7 @@
       <li>Check that Settings › Call protection and Rules enabled are on.</li>
       <li>Check that the rule is switched on, covers Incoming calls, hasn't expired, and is inside its schedule and at its location.</li>
       <li>Open Rules › Check rules. “Block rule is bypassed” means the whitelist, your contacts, or an allow rule lets the call through first.</li>
+      <li>For a call your Phone app marked as spam: CallRules can't read that verdict. Turn on Settings › Block carrier spam labels to block calls your carrier labels as spam, such as “Scam Likely”. Not every carrier sends a label.</li>
       <li>If CallRules can't decide within about 3.5 seconds, the call rings rather than risk blocking it wrongly.</li>
     </ul>
   </article>

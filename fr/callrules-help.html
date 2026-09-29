@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aide CallRules — Utiliser CallRules</title>
+<meta name="description" content="Le guide complet de CallRules : règles, contacts, commandes vocales, lieux et horaires, réglages, protection des appels sortants et confidentialité.">
+<link rel="canonical" href="https://plainform.app/fr/callrules-help.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-help.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-help.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-help.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:title" content="Aide CallRules — Utiliser CallRules">
+<meta property="og:description" content="Le guide complet de CallRules : règles, contacts, commandes vocales, lieux et horaires, réglages, protection des appels sortants et confidentialité.">
+<meta property="og:url" content="https://plainform.app/fr/callrules-help.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic-fr.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html" aria-current="page">Aide</a>
+        <a href="callrules-troubleshooting.html">Dépannage</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Langue"><a href="../callrules-help.html" lang="en" hreflang="en">EN</a> <span aria-hidden="true">|</span> <a href="../fr/callrules-help.html" lang="fr-CA" hreflang="fr-CA" aria-current="true">FR</a></nav>
+    </div>
+  </div>
+</header>
+<div class="wrap docs">
+<nav class="toc-side" aria-label="Contenu du guide">
+  <p><a href="#getting-started">Pour commencer</a></p>
+  <ul>
+    <li><a href="#first-run">Configuration initiale</a></li>
+    <li><a href="#home-dashboard">Tableau de bord d’accueil</a></li>
+    <li><a href="#call-history">Historique des appels</a></li>
+  </ul>
+  <p><a href="#rules">Règles</a></p>
+  <ul>
+    <li><a href="#rules-basics">Notions de base sur les règles</a></li>
+    <li><a href="#rule-types">Types de règles</a></li>
+    <li><a href="#rule-options">Options des règles</a></li>
+    <li><a href="#rule-order">Ordre d’application des règles</a></li>
+    <li><a href="#rule-check">Vérification des règles</a></li>
+    <li><a href="#whitelist-blocked">Liste d’autorisation et numéros bloqués</a></li>
+  </ul>
+  <p><a href="#contacts">Contacts et noms</a></p>
+  <ul>
+    <li><a href="#contact-rules">Règles de contact, de groupe et de nom de l’appelant</a></li>
+    <li><a href="#caller-names">Comment les appelants sont nommés</a></li>
+  </ul>
+  <p><a href="#voice">Commandes vocales</a></p>
+  <ul>
+    <li><a href="#voice-basics">Utiliser les commandes vocales</a></li>
+    <li><a href="#voice-add-rules">Ajouter des règles par la voix</a></li>
+    <li><a href="#voice-contacts">Contacts par la voix</a></li>
+    <li><a href="#voice-remove-rules">Retirer ou suspendre des règles</a></li>
+    <li><a href="#voice-lists">Liste d’autorisation et numéros bloqués par la voix</a></li>
+    <li><a href="#voice-settings">Réglages par la voix</a></li>
+    <li><a href="#voice-questions">Questions et annulation</a></li>
+  </ul>
+  <p><a href="#places">Lieux et horaires</a></p>
+  <ul>
+    <li><a href="#saved-places">Lieux enregistrés</a></li>
+    <li><a href="#voice-places">Lieux enregistrés par la voix</a></li>
+    <li><a href="#location-rules">Règles d’emplacement</a></li>
+    <li><a href="#schedules">Horaires</a></li>
+  </ul>
+  <p><a href="#settings">Réglages et notifications</a></p>
+  <ul>
+    <li><a href="#blocking-settings">Réglages de blocage</a></li>
+    <li><a href="#quiet-hours">Heures de silence</a></li>
+    <li><a href="#notifications">Notifications</a></li>
+    <li><a href="#outgoing">Protection des appels sortants</a></li>
+    <li><a href="#backups">Importation, exportation et sauvegardes</a></li>
+    <li><a href="#appearance">Apparence</a></li>
+  </ul>
+  <p><a href="#help">Aide, forfaits et confidentialité</a></p>
+  <ul>
+    <li><a href="#troubleshooting">Dépannage et soutien</a></li>
+    <li><a href="#free-vs-pro">Gratuit ou Pro</a></li>
+    <li><a href="#privacy">Confidentialité</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="doc-hero">
+  <p class="eyebrow">Aide CallRules</p>
+  <h1>Utiliser CallRules</h1>
+  <p class="lede">Le même guide que <strong>Réglages › Utiliser CallRules</strong> dans l’appli : 7 sections et 31 sujets. Les sujets marqués <span class="pro">PRO</span> exigent Pro à vie.</p>
+  <div class="search" id="search-box" hidden>
+    <label class="eyebrow" for="guide-search">Chercher dans le guide</label>
+    <input id="guide-search" type="search" placeholder="Essayez « heures de silence » ou « code régional »" autocomplete="off">
+    <p class="search-status" id="search-status" role="status" aria-live="polite"></p>
+  </div>
+  <nav class="toc-chips" aria-label="Sections du guide"><ul class="chips">
+    <li><a href="#getting-started">Pour commencer</a></li>
+    <li><a href="#rules">Règles</a></li>
+    <li><a href="#contacts">Contacts et noms</a></li>
+    <li><a href="#voice">Commandes vocales</a></li>
+    <li><a href="#places">Lieux et horaires</a></li>
+    <li><a href="#settings">Réglages et notifications</a></li>
+    <li><a href="#help">Aide, forfaits et confidentialité</a></li>
+  </ul></nav>
+  <p class="muted">Quelque chose ne fonctionne pas? Consultez le <a href="callrules-troubleshooting.html">dépannage de CallRules</a>.</p>
+</header>
+<section class="category" id="getting-started">
+  <h2>Pour commencer</h2>
+  <ul class="category-topics">
+    <li><a href="#first-run">Configuration initiale</a></li>
+    <li><a href="#home-dashboard">Tableau de bord d’accueil</a></li>
+    <li><a href="#call-history">Historique des appels</a></li>
+  </ul>
+  <article class="topic" id="first-run">
+    <h3>Configuration initiale <a class="anchor" href="#first-run" aria-label="Lien vers Configuration initiale">#</a></h3>
+    <p class="summary">Les étapes de configuration, les autorisations et les quatre onglets</p>
+    <p>La configuration initiale vous guide dans « Activer le filtrage des appels » (faire de CallRules votre appli d’identification et de filtrage des appels), « Inclure les contacts enregistrés », « Restez informé » (notifications) et un résumé de confidentialité. Vous pouvez passer n’importe quelle étape.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>CallRules ne peut pas filtrer les appels tant qu’il n’est pas votre appli d’identification et de filtrage des appels. Sinon, Accueil affiche « Configuration requise »; touchez Activer.</p></div>
+    <p>L’accès au téléphone, à la redirection d’appels et à la localisation est demandé plus tard, seulement quand vous activez une fonction qui en a besoin.</p>
+    <p>La barre du bas a quatre onglets : Accueil, Bloqués (historique des appels), Règles et Réglages.</p>
+  </article>
+  <article class="topic" id="home-dashboard">
+    <h3>Tableau de bord d’accueil <a class="anchor" href="#home-dashboard" aria-label="Lien vers Tableau de bord d’accueil">#</a></h3>
+    <p class="summary">Le bouclier, les compteurs et les bannières</p>
+    <ul>
+      <li>Touchez le bouclier pour activer ou désactiver la protection (« Protection active » / « Protection désactivée »). C’est le même interrupteur que Réglages › Protection des appels.</li>
+      <li>Aujourd’hui, Cette semaine et Depuis le début comptent les appels que CallRules a bloqués ou mis en sourdine. Temps gagné est une estimation de 2 minutes par appel bloqué.</li>
+      <li>Commande vocale ouvre les commandes vocales (Pro).</li>
+      <li>« Configuration requise » s’affiche quand CallRules n’est pas votre appli d’identification et de filtrage des appels.</li>
+      <li>Une carte de problèmes de règles s’affiche quand la vérification des règles a des avertissements non résolus. Touchez Examiner pour ouvrir la Vérification des règles.</li>
+    </ul>
+  </article>
+  <article class="topic" id="call-history">
+    <h3>Historique des appels <a class="anchor" href="#call-history" aria-label="Lien vers Historique des appels">#</a></h3>
+    <p class="summary">Les onglets Bloqués et Récents</p>
+    <p>L’onglet Bloqués ouvre l’Historique des appels, qui a deux onglets.</p>
+    <ul>
+      <li>Bloqués liste chaque appel que CallRules a rejeté ou mis en sourdine, avec la raison, comme Règle correspondante, Numéro bloqué, Étiquette de pourriel du fournisseur, Échec de la vérification, Numéro inconnu, Numéro confidentiel ou Heures de silence. Touchez le crochet (« Autoriser ce numéro ») pour ajouter le numéro à votre liste d’autorisation et le retirer des numéros bloqués. Touchez la corbeille pour supprimer l’entrée.</li>
+      <li>Récents liste les appels entrants que CallRules a laissés passer. Touchez Bloquer pour ajouter l’appelant aux numéros bloqués; ANNULER s’affiche brièvement. Effacer vide la liste Récents. Autorisez l’accès aux contacts si vous voulez que les appels de vos contacts s’affichent aussi ici.</li>
+    </ul>
+    <p class="in-app"><span>Dans l’appli :</span> Onglet Bloqués</p>
+  </article>
+</section>
+<section class="category" id="rules">
+  <h2>Règles</h2>
+  <ul class="category-topics">
+    <li><a href="#rules-basics">Notions de base sur les règles</a></li>
+    <li><a href="#rule-types">Types de règles</a></li>
+    <li><a href="#rule-options">Options des règles</a></li>
+    <li><a href="#rule-order">Ordre d’application des règles</a></li>
+    <li><a href="#rule-check">Vérification des règles</a></li>
+    <li><a href="#whitelist-blocked">Liste d’autorisation et numéros bloqués</a></li>
+  </ul>
+  <article class="topic" id="rules-basics">
+    <h3>Notions de base sur les règles <a class="anchor" href="#rules-basics" aria-label="Lien vers Notions de base sur les règles">#</a></h3>
+    <p class="summary">L’onglet Règles, ajouter et modifier des règles</p>
+    <p>L’onglet Règles (« Règles d’appel ») liste chaque règle avec son type, son motif, son sens, son horaire et son expiration. Chaque règle a Modifier, Supprimer et un interrupteur. La barre du haut a un microphone (commandes vocales, Pro), Liste d’autorisation, Numéros bloqués et Vérifier les règles.</p>
+    <ol>
+      <li>Touchez +.</li>
+      <li>Choisissez Bloquer ou Autoriser et un sens d’appel.</li>
+      <li>Entrez un nom de règle, choisissez un type de règle et un motif, et réglez les options voulues.</li>
+      <li>Touchez « Enregistrer la règle de blocage » ou « Enregistrer la règle d’autorisation ».</li>
+    </ol>
+    <p>CallRules n’enregistre pas une règle identique à une règle existante. La version gratuite permet 10 règles.</p>
+    <p>Quand vous modifiez une règle, vous pouvez changer son nom, son motif, son sens et ses options. Pour changer Bloquer/Autoriser, le type de règle ou Rejeter/Sourdine, supprimez la règle et créez-en une nouvelle.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Onglet Règles</p>
+  </article>
+  <article class="topic" id="rule-types">
+    <h3>Types de règles <a class="anchor" href="#rule-types" aria-label="Lien vers Types de règles">#</a></h3>
+    <p class="summary">Numéros, préfixes, codes régionaux, lieux, motifs et appelants masqués</p>
+    <ul>
+      <li><strong>Numéro exact :</strong> un seul numéro de téléphone. Réglez le pays d’appel pour les numéros entrés sans indicatif +.</li>
+      <li><strong>Commence par (préfixe) :</strong> chaque numéro qui commence par un préfixe international comme +1555. Incluez le +.</li>
+      <li><strong>Code régional :</strong> par exemple 555, avec son pays d’appel. Activez « Groupe de codes régionaux » pour couvrir tout un État américain, une province canadienne, le Canada, les États-Unis ou un autre pays du PNNA en une seule règle. Les codes inscrits dans « Sauf les codes régionaux » sont ignorés par cette règle. Ignorer un code n’autorise pas ses appels.</li>
+      <li><strong>Ville / zone téléphonique :</strong> choisissez un pays ou un plan de numérotation, cherchez un lieu et sélectionnez un résultat. La règle correspond aux préfixes téléphoniques de ce lieu.</li>
+      <li><strong>Indicatif de pays :</strong> par exemple +44.</li>
+      <li><strong>Motif générique (Pro) :</strong> * correspond à n’importe quels chiffres, ? à un chiffre facultatif, et X ou # à exactement un chiffre. Exemple : +1555*.</li>
+      <li><strong>Expression régulière (Pro) :</strong> comparée au numéro international complet, par exemple \+1555\d{7}.</li>
+      <li><strong>Appelants confidentiels / masqués :</strong> correspond aux appels entrants qui masquent leur identité. Utilisez-la pour bloquer, mettre en sourdine ou autoriser les appelants masqués, par exemple seulement selon un horaire ou à un lieu. Les règles confidentielles s’appliquent seulement aux appels entrants.</li>
+      <li>Numéros inconnus (créés par commande vocale ou CSV des règles) : correspond à chaque appelant que la liste d’autorisation, vos contacts et les règles d’autorisation n’ont pas déjà laissé passer.</li>
+      <li>Règles Contact, Groupe de contacts et Nom de l’appelant : voir Contacts et noms.</li>
+    </ul>
+    <p>Les règles de code régional, de pays et de ville correspondent à des préfixes de numéros. Elles ne peuvent pas savoir où se trouve physiquement l’appelant.</p>
+  </article>
+  <article class="topic" id="rule-options">
+    <h3>Options des règles <a class="anchor" href="#rule-options" aria-label="Lien vers Options des règles">#</a></h3>
+    <p class="summary">Rejet ou sourdine, sens, Temporaire, NIP et priorité</p>
+    <ul>
+      <li><strong>Rejeter l’appel ou Mettre en sourdine :</strong> le rejet refuse l’appel, et l’appelant entend la ligne se couper. La sourdine laisse sonner l’appel du côté de l’appelant pendant que votre téléphone reste silencieux. Les deux sont consignés. La sourdine fonctionne seulement pour les appels entrants.</li>
+      <li><strong>Sens de l’appel :</strong> Entrant, Sortant ou Les deux. Les règles sortantes fonctionnent seulement quand la protection des appels sortants est activée. Elles prennent en charge la correspondance de numéros, les horaires et Temporaire, mais pas la sourdine, l’emplacement ni les appelants inconnus ou confidentiels.</li>
+      <li><strong>Temporaire :</strong> la règle expire après un nombre de minutes, d’heures ou de jours. Règles affiche « Expire dans… », puis « Expirée », et supprime les règles expirées environ un jour plus tard.</li>
+      <li><strong>Horaire et Emplacement (Pro) :</strong> voir Lieux et horaires.</li>
+      <li>Exiger le NIP (règles d’autorisation sortantes) : les appels sortants correspondants demandent le NIP partagé. Définissez d’abord le NIP dans Protection des appels sortants.</li>
+      <li>Priorité sur les autorisations (règles de blocage) : bloque les appels correspondants même quand la liste d’autorisation, vos contacts ou une règle d’autorisation les laisseraient passer. Si vous enregistrez une règle de blocage sans cette option et que des numéros autorisés contourneraient la règle, CallRules demande « Des numéros autorisés correspondent à cette règle ». Choisissez « Donner la priorité » ou « Garder les autorisations »; fermer la fenêtre annule l’enregistrement.</li>
+      <li><strong>Chevauchement de règles :</strong> pendant que vous ajoutez ou modifiez une règle, une note « Chevauchement de règles » liste les règles existantes qui la chevauchent. C’est seulement informatif; vous pouvez quand même enregistrer.</li>
+    </ul>
+  </article>
+  <article class="topic" id="rule-order">
+    <h3>Ordre d’application des règles <a class="anchor" href="#rule-order" aria-label="Lien vers Ordre d’application des règles">#</a></h3>
+    <p class="summary">L’ordre dans lequel CallRules vérifie chaque appel</p>
+    <p>Pour chaque appel entrant, CallRules suit ces étapes dans l’ordre et s’arrête à la première qui décide de l’appel :</p>
+    <ol class="flow-steps">
+      <li><span class="step-title">La protection est désactivée ou suspendue</span><span class="outcome rings">Sonne</span><span class="detail">L’appel sonne.</span></li>
+      <li><span class="step-title">L’identité de l’appelant est masquée</span><span class="outcome depends">Selon le cas</span><span class="detail">Seules les règles confidentielles et Bloquer les numéros confidentiels s’appliquent : une règle de blocage confidentielle avec « Priorité sur les autorisations » activée, puis les règles d’autorisation confidentielles, puis les règles de blocage confidentielles (la sourdine avant le rejet). Si aucune ne correspond, l’appel est rejeté quand Bloquer les étiquettes de pourriel du fournisseur est activé et que le fournisseur l’a étiqueté comme pourriel, ou quand Bloquer les numéros confidentiels est activé; sinon, il sonne.</span></li>
+      <li><span class="step-title">Règles de blocage avec « Priorité sur les autorisations » activée</span><span class="outcome blocks">Bloque</span> <span class="tag">Priorité sur les autorisations</span><span class="detail">Les règles de sourdine avant les règles de rejet.</span></li>
+      <li><span class="step-title">Votre liste d’autorisation</span><span class="outcome rings">Sonne</span><span class="detail">Laisse sonner l’appel.</span></li>
+      <li><span class="step-title">Vos contacts</span><span class="outcome rings">Sonne</span><span class="detail">Sonnent, selon le réglage Contacts autorisés.</span></li>
+      <li><span class="step-title">Règles d’autorisation</span><span class="outcome rings">Sonne</span><span class="detail">Laissent sonner l’appel.</span></li>
+      <li><span class="step-title">Autres règles de blocage</span><span class="outcome blocks">Bloque</span><span class="detail">La sourdine avant le rejet.</span></li>
+      <li><span class="step-title">Numéros bloqués</span><span class="outcome blocks">Bloque</span></li>
+      <li><span class="step-title">Étiquettes de pourriel du fournisseur</span><span class="outcome blocks">Bloque</span><span class="detail">Quand Bloquer les étiquettes de pourriel du fournisseur est activé.</span></li>
+      <li><span class="step-title">Vérification par le fournisseur</span><span class="outcome blocks">Bloque</span></li>
+      <li><span class="step-title">Bloquer les numéros inconnus</span><span class="outcome blocks">Bloque</span><span class="detail">Les appelants qui ne sont pas dans vos contacts.</span></li>
+      <li><span class="step-title">La liste locale de pourriels</span><span class="outcome blocks">Bloque</span><span class="detail">Elle est vide dans cette version, donc cette étape ne bloque rien.</span></li>
+      <li><span class="step-title">Heures de silence</span><span class="outcome blocks">Bloque</span></li>
+    </ol>
+    <p>Si aucune étape ne décide de l’appel, il sonne.</p>
+    <p>Les étapes 3, 6 et 7 sont sautées quand Règles activées est désactivé. Les règles de contact, de groupe et de nom de l’appelant participent aux étapes 3, 6 et 7 comme toute autre règle; une règle de blocage de contact ne bloque donc pas un appelant que l’étape 5 laisse passer, sauf si « Priorité sur les autorisations » est activée.</p>
+    <p>Une règle est aussi sautée quand elle est désactivée, expirée, hors de son horaire ou loin de son emplacement. Si CallRules ne peut pas décider en environ 3,5 secondes, l’appel sonne.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Pour les appels sortants, une règle de blocage correspondante avec « Priorité sur les autorisations » activée annule l’appel. Sinon, une règle d’autorisation correspondante laisse passer l’appel (en demandant le NIP si la règle l’exige), et une règle de blocage correspondante l’annule.</p></div>
+  </article>
+  <article class="topic" id="rule-check">
+    <h3>Vérification des règles <a class="anchor" href="#rule-check" aria-label="Lien vers Vérification des règles">#</a></h3>
+    <p class="summary">Trouver les règles qui se chevauchent ou se contredisent</p>
+    <p>La Vérification des règles trouve les règles qui se chevauchent ou se contredisent. Ouvrez-la avec Vérifier les règles dans Règles, depuis la carte d’Accueil ou depuis sa notification. Elle s’exécute à l’ouverture; touchez Lancer la vérification pour la relancer.</p>
+    <ul>
+      <li><strong>Avertissements :</strong> « Règle de blocage contournée » signifie que des règles d’autorisation, des numéros de la liste d’autorisation ou des contacts passent outre à une règle de blocage. « La règle d’autorisation ne s’applique jamais » signifie qu’une règle de blocage avec « Priorité sur les autorisations » activée la couvre.</li>
+      <li>« Contact introuvable » et « Groupe de contacts introuvable » signalent une règle de contact ou de groupe dont le contact ou le groupe a été supprimé; elle ne correspond donc à personne. Modifiez-la ou supprimez-la.</li>
+      <li><strong>Info :</strong> « Règles en double », « Des règles de sourdine et de rejet se chevauchent » et « Des règles pourraient entrer en conflit » (chevauchements possibles avec des motifs génériques, des expressions régulières, des noms d’appelant, des horaires ou des emplacements).</li>
+    </ul>
+    <p>Chaque problème propose des corrections, comme activer ou désactiver « Priorité sur les autorisations », désactiver ou supprimer une règle, retirer une entrée de la liste d’autorisation, ou Modifier. Ignorer masque un avertissement; activez « Afficher les éléments ignorés » et touchez Rétablir pour le faire revenir.</p>
+    <p>Après les appels, CallRules vérifie de nouveau automatiquement, mais seulement si vos règles, votre liste d’autorisation, vos réglages de contacts ou vos contacts ont changé. Quand Alertes de vérification des règles est activé, une notification discrète signale les nouveaux avertissements. Le badge et la bannière de l’onglet Règles indiquent combien d’avertissements ne sont pas résolus.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Règles › Vérifier les règles</p>
+  </article>
+  <article class="topic" id="whitelist-blocked">
+    <h3>Liste d’autorisation et numéros bloqués <a class="anchor" href="#whitelist-blocked" aria-label="Lien vers Liste d’autorisation et numéros bloqués">#</a></h3>
+    <p class="summary">Les numéros qui sonnent toujours ou sont toujours bloqués</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Ouvrez-les avec les icônes en haut de Règles. Touchez l’icône de retrait d’une entrée pour la supprimer.</p></div>
+    <ul>
+      <li><strong>Liste d’autorisation :</strong> ces numéros sonnent toujours, sauf si une règle de blocage a « Priorité sur les autorisations » activée. Pour ajouter un numéro, touchez « Autoriser ce numéro » dans l’historique des appels, dites « autorise toujours le 555 123 4567 » ou importez une sauvegarde JSON. La version gratuite permet 20 entrées.</li>
+      <li><strong>Numéros bloqués :</strong> ces numéros sont toujours bloqués, sauf si une étape précédente les laisse passer. Pour ajouter un numéro, touchez Bloquer sur un appel récent, dites « bloque le dernier appel » ou « ajoute le 555 123 4567 à mes numéros bloqués », ou importez une sauvegarde JSON. La version gratuite permet 50 entrées.</li>
+    </ul>
+    <p>Une règle Numéro exact fait le même travail, mais elle compte plutôt dans votre limite de règles.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Règles › Liste d’autorisation</p>
+    <p class="in-app"><span>Dans l’appli :</span> Règles › Numéros bloqués</p>
+  </article>
+</section>
+<section class="category" id="contacts">
+  <h2>Contacts et noms</h2>
+  <ul class="category-topics">
+    <li><a href="#contact-rules">Règles de contact, de groupe et de nom de l’appelant</a></li>
+    <li><a href="#caller-names">Comment les appelants sont nommés</a></li>
+  </ul>
+  <article class="topic" id="contact-rules">
+    <h3>Règles de contact, de groupe et de nom de l’appelant <a class="anchor" href="#contact-rules" aria-label="Lien vers Règles de contact, de groupe et de nom de l’appelant">#</a></h3>
+    <p class="summary">Des règles qui suivent une personne, un groupe ou le nom d’un appelant</p>
+    <ul>
+      <li><strong>Contact :</strong> touchez Choisir un contact et choisissez une personne. La règle correspond à tous les numéros de cette personne, y compris ceux que vous ajoutez ou changez plus tard. Le nom de la règle est d’abord celui du contact. Si le contact est supprimé, Modifier affiche « Contact introuvable » et la Vérification des règles vous avertit.</li>
+      <li><strong>Groupe de contacts (Pro) :</strong> choisissez un groupe ou une étiquette de contacts, comme Famille ou Travail, dans la liste avec son nombre de membres. L’appartenance est lue au moment de l’appel, donc les personnes que vous ajoutez au groupe plus tard sont incluses.</li>
+      <li><strong>Nom de l’appelant (Pro) :</strong> choisissez Contient, Commence par ou Est exactement, et tapez le texte. Il correspond au nom enregistré de votre contact ou, pour les appelants qui ne sont pas des contacts, au nom d’affichage que le fournisseur envoie (comme « POSSIBLE FRAUDE »). La casse et les accents sont ignorés.</li>
+    </ul>
+    <p>Les règles de contact ont besoin de l’accès aux contacts; CallRules le demande quand vous choisissez un contact ou un groupe.</p>
+  </article>
+  <article class="topic" id="caller-names">
+    <h3>Comment les appelants sont nommés <a class="anchor" href="#caller-names" aria-label="Lien vers Comment les appelants sont nommés">#</a></h3>
+    <p class="summary">Noms des contacts et identité de l’appelant dans les listes et les alertes</p>
+    <p>Les deux onglets de l’historique des appels affichent d’abord le nom de l’appelant quand il y en a un : le nom de votre contact, sinon le nom que votre fournisseur a envoyé avec l’appel (l’identité de l’appelant, comme « POSSIBLE FRAUDE »). Le numéro suit, formaté pour votre pays d’appel. Les notifications d’appels bloqués nomment l’appelant de la même façon.</p>
+    <p>Les entrées de la liste d’autorisation et des numéros bloqués qui appartiennent à un contact affichent d’abord le nom du contact, puis le numéro. Les règles de numéro dans Règles font de même.</p>
+  </article>
+</section>
+<section class="category" id="voice">
+  <h2>Commandes vocales</h2>
+  <ul class="category-topics">
+    <li><a href="#voice-basics">Utiliser les commandes vocales</a></li>
+    <li><a href="#voice-add-rules">Ajouter des règles par la voix</a></li>
+    <li><a href="#voice-contacts">Contacts par la voix</a></li>
+    <li><a href="#voice-remove-rules">Retirer ou suspendre des règles</a></li>
+    <li><a href="#voice-lists">Liste d’autorisation et numéros bloqués par la voix</a></li>
+    <li><a href="#voice-settings">Réglages par la voix</a></li>
+    <li><a href="#voice-questions">Questions et annulation</a></li>
+  </ul>
+  <article class="topic" id="voice-basics">
+    <h3>Utiliser les commandes vocales <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Lien vers Utiliser les commandes vocales">#</a></h3>
+    <p class="summary">Parlez ou tapez, puis confirmez</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Touchez le microphone dans Accueil ou Règles et parlez, ou tapez dans « Tapez une commande ». CallRules affiche ce qu’il a compris; touchez Confirmer pour l’appliquer.</p></div>
+    <p>Les questions et « annule » s’exécutent tout de suite. Les commandes sont comprises en anglais, en espagnol, en français, en allemand et en italien. En anglais, les mots de remplissage comme « um », « uh » ou « please » sont acceptés. Si CallRules a dû corriger un mot ou en laisser tomber un qu’il n’attendait pas, la carte demande « Vouliez-vous dire…? » et montre ce qu’il a retiré ou corrigé; touchez Confirmer seulement si c’est bien ce que vous vouliez dire.</p>
+    <p>La parole est reconnue seulement par la reconnaissance vocale sur l’appareil d’Android; si elle n’est pas disponible, tapez plutôt la commande.</p>
+    <p>Si des numéros autorisés contourneraient une nouvelle règle de blocage, on vous demande s’il faut leur passer outre.</p>
+  </article>
+  <article class="topic" id="voice-add-rules">
+    <h3>Ajouter des règles par la voix <span class="pro">PRO</span> <a class="anchor" href="#voice-add-rules" aria-label="Lien vers Ajouter des règles par la voix">#</a></h3>
+    <p class="summary">Codes régionaux, préfixes, pays, villes et plus</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>bloque le code régional 307</li>
+        <li>mets en sourdine les numéros qui commencent par 1800</li>
+        <li>bloque les appels de l’Inde</li>
+        <li>bloque les appels internationaux</li>
+        <li>bloque les numéros de Chicago</li>
+        <li>bloque les codes régionaux du Kansas sauf le 316</li>
+        <li>bloque le code régional 307 pendant 2 heures</li>
+        <li>bloque les appels sortants vers les numéros avec l’indicatif de pays 44</li>
+        <li>autorise les appels entrants et sortants du 202 555 0114 avec un NIP</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-contacts">
+    <h3>Contacts par la voix <span class="pro">PRO</span> <a class="anchor" href="#voice-contacts" aria-label="Lien vers Contacts par la voix">#</a></h3>
+    <p class="summary">Bloquer ou autoriser des personnes, des groupes et des noms d’appelant</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>bloque les appels d’oncle Bob</li>
+        <li>laisse passer maman</li>
+        <li>mets en sourdine mon groupe Travail</li>
+        <li>bloque les appelants nommés arnaque</li>
+        <li>bloque les noms qui contiennent pourriel</li>
+        <li>bloque les noms qui commencent par gagne</li>
+      </ul>
+    </div>
+    <p>Les commandes de groupe et de nom d’appelant (« mets en sourdine mon groupe Travail », « bloque les noms qui contiennent pourriel ») demandent Pro. CallRules trouve le contact ou le groupe avant d’afficher la carte, qui le montre, par exemple « Contact : oncle Bob (2 numéros) ». Si plusieurs contacts correspondent, il les liste pour que vous puissiez dire le nom complet.</p>
+    <p>Les numéros, les pays et les villes passent en premier : « bloque les appels de l’Inde » bloque le pays, pas un contact nommé Inde.</p>
+  </article>
+  <article class="topic" id="voice-remove-rules">
+    <h3>Retirer ou suspendre des règles <span class="pro">PRO</span> <a class="anchor" href="#voice-remove-rules" aria-label="Lien vers Retirer ou suspendre des règles">#</a></h3>
+    <p class="summary">Débloquer, désactiver ou suspendre par la voix</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>enlève la règle du code régional 307</li>
+        <li>débloque les codes régionaux du Texas</li>
+        <li>désactive la règle du code régional 307</li>
+        <li>suspends toutes les règles</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-lists">
+    <h3>Liste d’autorisation et numéros bloqués par la voix <span class="pro">PRO</span> <a class="anchor" href="#voice-lists" aria-label="Lien vers Liste d’autorisation et numéros bloqués par la voix">#</a></h3>
+    <p class="summary">Ajouter et retirer des numéros de vos listes</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>autorise toujours le 555 123 4567</li>
+        <li>enlève le 555 123 4567 de la liste d’autorisation</li>
+        <li>bloque le dernier appel</li>
+        <li>ajoute le 555 123 4567 à mes numéros bloqués</li>
+        <li>débloque le numéro 555 123 4567</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-settings">
+    <h3>Réglages par la voix <span class="pro">PRO</span> <a class="anchor" href="#voice-settings" aria-label="Lien vers Réglages par la voix">#</a></h3>
+    <p class="summary">Numéros confidentiels, heures de silence, vérification et pause</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>active le blocage des numéros confidentiels</li>
+        <li>bloque les étiquettes de pourriel du fournisseur</li>
+        <li>active les heures de silence</li>
+        <li>mets les heures de silence de 22 h à 7 h</li>
+        <li>laisse passer les contacts favoris pendant les heures de silence</li>
+        <li>autorise les contacts favoris</li>
+        <li>passe la vérification par le fournisseur en mode strict</li>
+        <li>désactive les notifications</li>
+        <li>suspends le blocage pendant 1 heure</li>
+        <li>reprends la protection</li>
+        <li>mets la sensibilité au niveau élevé</li>
+      </ul>
+    </div>
+    <p>« Mets la sensibilité à élevée » change le seuil de la liste locale de pourriels; « agressive » bloque aussi les numéros inconnus.</p>
+  </article>
+  <article class="topic" id="voice-questions">
+    <h3>Questions et annulation <span class="pro">PRO</span> <a class="anchor" href="#voice-questions" aria-label="Lien vers Questions et annulation">#</a></h3>
+    <p class="summary">Posez des questions sur vos appels et vos règles, ou annulez un changement</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>combien d’appels ont été bloqués aujourd’hui</li>
+        <li>c’est quoi mes règles</li>
+        <li>est-ce que le 555 123 4567 est bloqué</li>
+        <li>c’est quoi les lieux que j’ai enregistrés</li>
+        <li>annule</li>
+      </ul>
+    </div>
+    <p>Annuler : dites « annule », ou touchez Annuler après une commande, pour défaire le dernier changement.</p>
+  </article>
+</section>
+<section class="category" id="places">
+  <h2>Lieux et horaires</h2>
+  <ul class="category-topics">
+    <li><a href="#saved-places">Lieux enregistrés</a></li>
+    <li><a href="#voice-places">Lieux enregistrés par la voix</a></li>
+    <li><a href="#location-rules">Règles d’emplacement</a></li>
+    <li><a href="#schedules">Horaires</a></li>
+  </ul>
+  <article class="topic" id="saved-places">
+    <h3>Lieux enregistrés <span class="pro">PRO</span> <a class="anchor" href="#saved-places" aria-label="Lien vers Lieux enregistrés">#</a></h3>
+    <p class="summary">Nommez des lieux comme Maison ou Travail pour les règles et la voix</p>
+    <p>Nommez des lieux comme Maison ou Travail, avec un rayon, à l’aide de la même recherche d’adresse ou de la position actuelle qu’une règle. Les ajouter et les renommer demande Pro. Choisissez-les quand vous ajoutez une règle d’emplacement; les commandes vocales les utilisent par leur nom et peuvent les ajouter, les renommer, les déplacer, les supprimer ou les lister (« enregistre cet endroit comme Maison »).</p>
+    <p>Les règles créées à partir d’un lieu y restent liées : déplacer, redimensionner ou renommer le lieu les met à jour; supprimer un lieu détache ses règles, qui gardent son dernier emplacement.</p>
+    <p>Des phrases comme « quand je suis à la maison » ont besoin d’un lieu enregistré portant ce nom. Ajoutez des lieux par la voix ou dans Réglages › Règles › Lieux enregistrés.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Réglages › Règles › Lieux enregistrés</p>
+  </article>
+  <article class="topic" id="voice-places">
+    <h3>Lieux enregistrés par la voix <span class="pro">PRO</span> <a class="anchor" href="#voice-places" aria-label="Lien vers Lieux enregistrés par la voix">#</a></h3>
+    <p class="summary">Enregistrer, renommer, déplacer, supprimer et lister des lieux</p>
+    <div class="voice">
+      <p class="voice-label">Essayez de dire</p>
+      <ul class="chips">
+        <li>enregistre cet endroit comme Maison</li>
+        <li>enregistre ma position comme Chez maman avec un rayon de 300 mètres</li>
+        <li>ajoute un lieu appelé Église au 1000, rue Sainte-Catherine Ouest, Montréal</li>
+        <li>enregistre le 1200, boulevard René-Lévesque Est, Québec comme Bureau</li>
+        <li>renomme le lieu Maison en Chez nous</li>
+        <li>déplace le lieu Bureau ici</li>
+        <li>supprime le lieu Gym</li>
+        <li>c’est quoi les lieux que j’ai enregistrés</li>
+      </ul>
+    </div>
+    <p>CallRules trouve d’abord votre position actuelle ou cherche l’adresse, puis affiche le nom, l’adresse ou les coordonnées, le rayon (200 m si vous n’en dites pas; de 30 m à 5 km) et la précision de la localisation. Rien n’est enregistré avant que vous touchiez Confirmer.</p>
+    <p>Utiliser l’endroit où vous êtes demande l’accès à la localisation; la carte propose Autoriser la localisation. Ajouter, renommer et déplacer des lieux demande Pro; pas les supprimer, et les règles qui utilisaient un lieu supprimé gardent son emplacement.</p>
+  </article>
+  <article class="topic" id="location-rules">
+    <h3>Règles d’emplacement <span class="pro">PRO</span> <a class="anchor" href="#location-rules" aria-label="Lien vers Règles d’emplacement">#</a></h3>
+    <p class="summary">Des règles qui s’appliquent seulement à un lieu</p>
+    <p>Emplacement (Pro, entrants seulement) : touchez Choisir l’emplacement, puis cherchez une adresse ou collez des coordonnées, touchez Utiliser la position actuelle, ou choisissez un de vos lieux enregistrés. Réglez ensuite le rayon (de 30 m à 5 km).</p>
+    <p>La règle s’applique seulement quand votre dernière position connue est nettement à l’intérieur de cette zone. Si votre position manque ou est trop imprécise, cette règle est sautée. Autorisez la localisation en arrière-plan si la règle doit fonctionner quand CallRules est fermé ou que le téléphone est verrouillé.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Réglages › Règles d’emplacement indique si l’accès à la localisation est prêt. Utilisez « Autoriser la localisation pour les règles d’emplacement » ou « Configurer la localisation en arrière-plan » pour l’accorder.</p></div>
+  </article>
+  <article class="topic" id="schedules">
+    <h3>Horaires <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Lien vers Horaires">#</a></h3>
+    <p class="summary">Des règles qui s’appliquent seulement à certaines heures</p>
+    <p>Horaire (Pro) : la règle s’applique seulement entre Début et Fin, les jours actifs que vous choisissez (aucun jour choisi veut dire tous les jours), dans le fuseau horaire choisi. Vous pouvez utiliser l’heure sur 12 h ou 24 h. Un horaire peut passer minuit, par exemple de 22 h à 7 h.</p>
+  </article>
+</section>
+<section class="category" id="settings">
+  <h2>Réglages et notifications</h2>
+  <ul class="category-topics">
+    <li><a href="#blocking-settings">Réglages de blocage</a></li>
+    <li><a href="#quiet-hours">Heures de silence</a></li>
+    <li><a href="#notifications">Notifications</a></li>
+    <li><a href="#outgoing">Protection des appels sortants</a></li>
+    <li><a href="#backups">Importation, exportation et sauvegardes</a></li>
+    <li><a href="#appearance">Apparence</a></li>
+  </ul>
+  <article class="topic" id="blocking-settings">
+    <h3>Réglages de blocage <a class="anchor" href="#blocking-settings" aria-label="Lien vers Réglages de blocage">#</a></h3>
+    <p class="summary">Protection, pays d’appel, appelants confidentiels et inconnus</p>
+    <ul>
+      <li><strong>Protection des appels :</strong> active ou désactive le filtrage des appels entrants.</li>
+      <li><strong>Pays d’appel :</strong> comment CallRules lit les numéros entrés sans indicatif +, dans les règles, les commandes vocales et les importations.</li>
+      <li><strong>Bloquer les numéros confidentiels :</strong> rejette les appels dont l’identité est masquée, sauf si une règle confidentielle décide de l’appel avant.</li>
+      <li><strong>Bloquer les numéros inconnus :</strong> bloque les appelants qui ne sont pas dans vos contacts, sauf si la liste d’autorisation ou une règle d’autorisation les laisse passer. Il faut l’accès aux contacts.</li>
+      <li>Bloquer les étiquettes de pourriel du fournisseur : rejette les appels que votre fournisseur étiquette comme pourriel dans le nom d’affichage, comme « Possible fraude », « Spam probable » ou « Scam Likely ». CallRules ne peut pas lire le verdict de pourriel de votre application Téléphone, mais il peut utiliser l’étiquette que votre fournisseur envoie. Seul le nom envoyé par le fournisseur est vérifié; la liste d’autorisation, vos contacts et les règles d’autorisation sonnent donc même quand le fournisseur les étiquette.</li>
+      <li><strong>Contacts autorisés :</strong> choisissez Tous les contacts, Favoris seulement ou Aucun pour indiquer quels contacts sonnent toujours.</li>
+      <li><strong>Règles activées :</strong> le désactiver suspend toutes les règles de blocage et d’autorisation pour les appels entrants.</li>
+      <li>Avancé › Vérification par le fournisseur utilise le résultat STIR/SHAKEN que votre fournisseur joint à chaque appel. Désactivée l’ignore, Standard bloque les appels qui échouent à la vérification, et Stricte bloque aussi les appels sans vérification. Stricte peut bloquer de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux. La liste d’autorisation, vos contacts et les règles d’autorisation laissent quand même passer les appels.</li>
+    </ul>
+    <p class="in-app"><span>Dans l’appli :</span> Onglet Réglages</p>
+  </article>
+  <article class="topic" id="quiet-hours">
+    <h3>Heures de silence <span class="pro">PRO</span> <a class="anchor" href="#quiet-hours" aria-label="Lien vers Heures de silence">#</a></h3>
+    <p class="summary">Bloquer les appels pendant des heures choisies</p>
+    <p>« Activer les heures de silence » bloque tout appel entre Début et Fin que rien n’a autorisé avant. La liste d’autorisation, les contacts selon Contacts autorisés et les règles d’autorisation sonnent quand même. Touchez Début ou Fin pour choisir une heure; la période peut passer minuit, par exemple de 22 h à 7 h.</p>
+    <p>« Autoriser les contacts favoris » laisse sonner les contacts favoris pendant les heures de silence, même quand Contacts autorisés est réglé à Aucun. Les appels bloqués de cette façon s’affichent dans l’historique des appels avec « Heures de silence ».</p>
+  </article>
+  <article class="topic" id="notifications">
+    <h3>Notifications <a class="anchor" href="#notifications" aria-label="Lien vers Notifications">#</a></h3>
+    <p class="summary">Alertes d’appels bloqués et alertes de vérification des règles</p>
+    <ul>
+      <li><strong>Afficher les alertes d’appels bloqués :</strong> affiche une notification « Appel bloqué » de faible priorité avec le numéro et la raison. Touchez-la pour ouvrir l’historique des appels. Son bouton Débloquer retire seulement le numéro des numéros bloqués. Il ne change pas les règles ni les autres réglages; une règle peut donc encore bloquer le prochain appel. Il peut demander votre NIP.</li>
+      <li><strong>Alertes de vérification des règles :</strong> affiche une notification discrète quand des règles commencent à se chevaucher ou à être contournées.</li>
+      <li>Un appel sortant qui demande votre approbation affiche « Appel en attente de votre confirmation ».</li>
+    </ul>
+    <p>Accordez l’autorisation de notifications d’Android pendant la configuration, ou utilisez Dépannage pour la corriger plus tard.</p>
+  </article>
+  <article class="topic" id="outgoing">
+    <h3>Protection des appels sortants <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Lien vers Protection des appels sortants">#</a></h3>
+    <p class="summary">Règles sortantes, NIP et appui long</p>
+    <p>Ouvrez Réglages › Protection des appels sortants.</p>
+    <ul>
+      <li><strong>Activer les règles sortantes :</strong> vérifie vos règles Sortant et Les deux avant qu’un appel soit passé. Un appel bloqué est annulé.</li>
+      <li>Exiger le NIP pour tous les appels sortants, ou Exiger un appui long (maintenir 1,5 seconde). Un NIP, global ou exigé par une règle, a priorité sur l’appui long.</li>
+      <li><strong>Protéger les règles et réglages par NIP :</strong> chaque changement enregistré aux règles, aux listes, aux réglages ou aux importations demande le NIP. Cela ne demande pas Pro.</li>
+      <li><strong>NIP partagé :</strong> Définir le NIP, Changer le NIP ou Supprimer le NIP (4 à 8 chiffres). Après 5 essais erronés, la saisie du NIP est bloquée pendant 30 secondes. Vous ne pouvez pas supprimer le NIP tant qu’un réglage ou une règle en a besoin.</li>
+      <li><strong>Configuration Android :</strong> touchez « Autoriser la redirection d’appels » et « Accorder l’autorisation Téléphone » (nécessaire pour recomposer les appels approuvés).</li>
+    </ul>
+    <p>Quand un appel demande une approbation, CallRules l’annule et ouvre « Confirmer l’appel sortant ». Après le bon NIP ou un appui maintenu jusqu’au bout, il passe un seul appel de remplacement. Si vous touchez Annuler l’appel ou attendez 60 secondes, aucun appel n’est passé. Android exclut les appels d’urgence et certains appels de passerelle.</p>
+    <p>Ce n’est pas infaillible : désinstaller CallRules, effacer ses données ou révoquer le rôle Android désactive cette protection.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Réglages › Protection des appels sortants</p>
+  </article>
+  <article class="topic" id="backups">
+    <h3>Importation, exportation et sauvegardes <a class="anchor" href="#backups" aria-label="Lien vers Importation, exportation et sauvegardes">#</a></h3>
+    <p class="summary">CSV des règles, sauvegardes JSON et Google Sheets</p>
+    <ul>
+      <li>« Importer un CSV des règles ou un JSON » : choisissez un CSV des règles ou une sauvegarde JSON de CallRules (jusqu’à 2 Mo). « Vérifier l’importation » montre ce qui sera ajouté et ce qui sera ignoré; touchez Appliquer l’importation. Les doublons et les éléments non valides sont ignorés, et les limites gratuites s’appliquent. Sans Pro, les règles à motif générique et à expression régulière, les horaires et les emplacements sont ignorés. Une sauvegarde JSON restaure aussi ses réglages.</li>
+      <li><strong>Importer depuis Google Sheets (Pro) :</strong> collez le lien d’une feuille publique ou partagée par lien qui utilise les colonnes du CSV des règles.</li>
+      <li>Exporter (Pro) propose trois formats. CSV des règles inclut chaque règle, activée ou non. CSV des numéros bloqués sert aux tableurs et ne peut pas être réimporté. JSON (sauvegarde complète) inclut les règles, les numéros bloqués, la liste d’autorisation, les lieux enregistrés et les réglages.</li>
+    </ul>
+    <p>Les sauvegardes peuvent contenir des numéros de téléphone et des lieux; conservez-les et partagez-les avec soin. Elles n’incluent jamais les données du NIP, les achats, les autorisations, l’historique des appels ni les diagnostics.</p>
+  </article>
+  <article class="topic" id="appearance">
+    <h3>Apparence <a class="anchor" href="#appearance" aria-label="Lien vers Apparence">#</a></h3>
+    <p class="summary">Couleurs, couleurs du fond d’écran et mode sombre</p>
+    <p>Réglages › Apparence : activez « Utiliser les couleurs du fond d’écran » (Android 12 et plus) pour suivre la palette de votre appareil. Quand c’est désactivé, choisissez une Couleur : Bleu, Rouge, Vert, Jaune, Rose, Violet ou Sarcelle. Le Mode peut être Selon le système, Clair ou Sombre. L’aperçu de la palette montre le résultat.</p>
+  </article>
+</section>
+<section class="category" id="help">
+  <h2>Aide, forfaits et confidentialité</h2>
+  <ul class="category-topics">
+    <li><a href="#troubleshooting">Dépannage et soutien</a></li>
+    <li><a href="#free-vs-pro">Gratuit ou Pro</a></li>
+    <li><a href="#privacy">Confidentialité</a></li>
+  </ul>
+  <article class="topic" id="troubleshooting">
+    <h3>Dépannage et soutien <a class="anchor" href="#troubleshooting" aria-label="Lien vers Dépannage et soutien">#</a></h3>
+    <p class="summary">Régler des problèmes, envoyer des commentaires et exporter les diagnostics</p>
+    <ul>
+      <li>L’écran Dépannage vérifie le rôle de filtrage des appels, la protection des appels, la vérification par le fournisseur, les règles suspendues, l’autorisation de notifications, l’accès à la localisation, la configuration des appels sortants et la facturation Google Play. Touchez Corriger là où c’est offert. L’icône d’actualisation relance les vérifications, et « Exporter ou effacer les diagnostics » ouvre les outils de diagnostic.</li>
+      <li>Si un appel n’est pas bloqué, vérifiez que CallRules est votre appli d’identification et de filtrage des appels, que Protection des appels et Règles activées sont activés, et que la règle est activée, pas expirée et dans son horaire. Lancez ensuite Vérifier les règles pour voir si la liste d’autorisation, vos contacts ou une règle d’autorisation laissent passer l’appel.</li>
+      <li>Aide en ligne et Dépannage en ligne ouvrent les pages Web de CallRules.</li>
+      <li>Envoyer des commentaires et Signaler un problème : tapez, ou touchez le microphone pour dicter sur l’appareil. Vous pouvez joindre les diagnostics. Touchez Aperçu, puis envoyez avec une application de courriel ou de partage, ou utilisez Copier ou Enregistrer.</li>
+      <li>Exporter les diagnostics vous permet de prévisualiser, partager, enregistrer, copier ou effacer le journal local. Le journal exclut les numéros de téléphone, les contacts, les règles, les coordonnées, la parole et les jetons d’achat, et garde environ sept jours d’enregistrements.</li>
+      <li>Évaluer CallRules ouvre Google Play. Partager avec des amis envoie un lien.</li>
+    </ul>
+    <p class="in-app"><span>Dans l’appli :</span> Réglages › Dépannage</p>
+  </article>
+  <article class="topic" id="free-vs-pro">
+    <h3>Gratuit ou Pro <a class="anchor" href="#free-vs-pro" aria-label="Lien vers Gratuit ou Pro">#</a></h3>
+    <p class="summary">Ce qui est inclus, et restaurer un achat</p>
+    <p>Gratuit : filtrage des appels entrants; jusqu’à 10 règles, 50 numéros bloqués et 20 entrées dans la liste d’autorisation; règles de numéro exact, de préfixe, de code régional, de groupe de codes régionaux, de ville, de pays et de contact; règles d’autorisation; Rejeter ou Mettre en sourdine; règles temporaires; « Priorité sur les autorisations »; historique des appels; blocage des numéros confidentiels et inconnus; étiquettes de pourriel du fournisseur; Contacts autorisés; vérification par le fournisseur; Vérification des règles; notifications; importation de fichiers CSV des règles et de sauvegardes JSON; apparence; et le NIP partagé avec Protéger les règles et les réglages par NIP.</p>
+    <p>Pro à vie est un achat unique qui ajoute un nombre illimité de règles, de numéros bloqués et d’entrées dans la liste d’autorisation; les règles à motif générique, à expression régulière, de groupe de contacts et de nom de l’appelant; les horaires; les règles d’emplacement; les heures de silence; les commandes vocales; l’importation depuis Google Sheets; l’exportation; et la protection des appels sortants (règles sortantes, NIP et appui long).</p>
+    <p>Google Play affiche le prix dans votre devise. Après une réinstallation ou un changement de téléphone avec le même compte Play, utilisez Passer à Pro › Restaurer l’achat. Si Pro n’est pas actif, les horaires, emplacements et motifs Pro déjà enregistrés sur des règles restent, mais ne peuvent pas être modifiés.</p>
+    <p class="in-app"><span>Dans l’appli :</span> Réglages › Passer à CallRules Pro</p>
+  </article>
+  <article class="topic" id="privacy">
+    <h3>Confidentialité <a class="anchor" href="#privacy" aria-label="Lien vers Confidentialité">#</a></h3>
+    <p class="summary">Ce qui reste sur votre téléphone, et quand le réseau est utilisé</p>
+    <p>CallRules vérifie les appels sur votre téléphone, et vos règles, vos listes et votre historique des appels y restent. Il n’y a ni compte ni publicité, et aucune recherche de pourriels dans le nuage.</p>
+    <p>CallRules utilise le réseau seulement pour la facturation Google Play, les recherches d’adresses que vous faites dans le sélecteur d’emplacement, l’importation depuis Google Sheets, les liens que vous ouvrez (aide en ligne, Google Maps, Google Play) et les applications avec lesquelles vous choisissez de partager.</p>
+    <p>Les commandes vocales et la dictée utilisent la reconnaissance vocale sur l’appareil d’Android. Réglages › Politique de confidentialité donne les détails.</p>
+  </article>
+</section>
+<p class="muted" id="no-results" hidden>Aucun sujet ne correspond. Essayez un autre mot ou consultez le <a href="callrules-troubleshooting.html">dépannage</a>.</p>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pied de page">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Aide</a>
+      <a href="callrules-troubleshooting.html">Dépannage</a>
+      <a href="callrules-privacy.html">Politique de confidentialité</a>
+      <a href="mailto:mjred.dev@gmail.com">Nous joindre</a>
+    </nav>
+    <p>Plainform est une dénomination commerciale de MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. Tous droits réservés.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var box = document.getElementById('search-box');
+  var input = document.getElementById('guide-search');
+  var status = document.getElementById('search-status');
+  var none = document.getElementById('no-results');
+  if (!box || !input || !''.normalize) return;
+  box.hidden = false;
+  function fold(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      .replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
+  }
+  var topics = Array.prototype.slice.call(document.querySelectorAll('article.topic'));
+  var texts = topics.map(function (t) { return fold(t.textContent); });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.category'));
+  function run() {
+    var q = fold(input.value.trim());
+    var count = 0;
+    topics.forEach(function (t, i) {
+      var hit = !q || texts[i].indexOf(q) >= 0;
+      t.hidden = !hit;
+      if (hit) count++;
+    });
+    sections.forEach(function (s) {
+      s.hidden = !s.querySelector('article.topic:not([hidden])');
+    });
+    none.hidden = !q || count > 0;
+    status.textContent = !q ? '' : count === 1 ? '1 sujet correspond' : count + ' sujets correspondent';
+  }
+  input.addEventListener('input', run);
+  var params = new URLSearchParams(location.search);
+  if (params.get('q')) { input.value = params.get('q'); run(); }
+})();
+</script>
+</body>
+</html>

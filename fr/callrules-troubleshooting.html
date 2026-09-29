@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dépannage de CallRules</title>
+<meta name="description" content="Réglez les problèmes de CallRules : appels non bloqués, règles sortantes, règles d’emplacement, notifications, commandes vocales et Pro à vie.">
+<link rel="canonical" href="https://plainform.app/fr/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-troubleshooting.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:title" content="Dépannage de CallRules">
+<meta property="og:description" content="Réglez les problèmes de CallRules : appels non bloqués, règles sortantes, règles d’emplacement, notifications, commandes vocales et Pro à vie.">
+<meta property="og:url" content="https://plainform.app/fr/callrules-troubleshooting.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic-fr.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html">Aide</a>
+        <a href="callrules-troubleshooting.html" aria-current="page">Dépannage</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Langue"><a href="../callrules-troubleshooting.html" lang="en" hreflang="en">EN</a> <span aria-hidden="true">|</span> <a href="../fr/callrules-troubleshooting.html" lang="fr-CA" hreflang="fr-CA" aria-current="true">FR</a></nav>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap narrow">
+<header class="doc-hero">
+  <p class="eyebrow">Aide CallRules</p>
+  <h1>Dépannage de CallRules</h1>
+  <p class="lede">Solutions aux problèmes courants, et ce que signifie chaque carte de l’écran Dépannage de l’appli.</p>
+  <div class="card start-card">
+    <p class="in-app"><span>Commencez dans l’appli :</span> Réglages › Dépannage</p>
+    <p>CallRules vérifie votre configuration et repère les problèmes qui pourraient empêcher le blocage de bien fonctionner. Si une carte propose <strong>Corriger</strong>, touchez ce bouton. L’icône d’actualisation relance les vérifications.</p>
+  </div>
+  <nav class="toc-chips" aria-label="Sur cette page"><ul class="chips">
+    <li><a href="#common-problems">Problèmes courants</a></li>
+    <li><a href="#checks">Ce que vérifie le Dépannage</a></li>
+    <li><a href="callrules-help.html">Guide complet</a></li>
+  </ul></nav>
+</header>
+<section class="category" id="common-problems">
+  <h2>Problèmes courants</h2>
+  <ul class="category-topics">
+    <li><a href="#not-blocked">Un appel n’a pas été bloqué</a></li>
+    <li><a href="#allowed-caller-rings">Un contact ou un numéro autorisé sonne encore</a></li>
+    <li><a href="#rule-ignored">Une règle semble ignorée</a></li>
+    <li><a href="#contact-rule">Une règle de contact ou de groupe ne correspond à personne</a></li>
+    <li><a href="#outgoing">Les règles sortantes ne s’exécutent pas</a></li>
+    <li><a href="#confirmation">Une confirmation d’appel sortant a été annulée ou a expiré, ou l’appel n’a pas été recomposé</a></li>
+    <li><a href="#location">Une règle d’emplacement ne correspond pas</a></li>
+    <li><a href="#no-alerts">Aucune notification d’appel bloqué</a></li>
+    <li><a href="#voice">Les commandes vocales ne fonctionnent pas</a></li>
+    <li><a href="#pro">Pro à vie n’est pas disponible ou ne se restaure pas</a></li>
+    <li><a href="#more-help">Encore besoin d’aide?</a></li>
+  </ul>
+  <div class="problem-list">
+  <article class="card problem" id="not-blocked">
+    <h3>Un appel n’a pas été bloqué</h3>
+    <ul>
+      <li>Vérifiez que CallRules est votre appli d’identification et de filtrage des appels et qu’Accueil affiche « Protection active ».</li>
+      <li>Vérifiez que Réglages › Protection des appels et Règles activées sont activés.</li>
+      <li>Vérifiez que la règle est activée, couvre les appels entrants, n’a pas expiré, et est dans son horaire et à son emplacement.</li>
+      <li>Ouvrez Règles › Vérifier les règles. « Règle de blocage contournée » signifie que la liste d’autorisation, vos contacts ou une règle d’autorisation laissent passer l’appel avant.</li>
+      <li>Pour un appel que votre application Téléphone a marqué comme pourriel : CallRules ne peut pas lire ce verdict. Activez Réglages › Bloquer les étiquettes de pourriel du fournisseur pour bloquer les appels que votre fournisseur étiquette comme pourriel, comme « Possible fraude ». Ce ne sont pas tous les fournisseurs qui envoient une étiquette.</li>
+      <li>Si CallRules ne peut pas décider en environ 3,5 secondes, l’appel sonne plutôt que de risquer un mauvais blocage.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="allowed-caller-rings">
+    <h3>Un contact ou un numéro autorisé sonne encore</h3>
+    <ul>
+      <li>La liste d’autorisation, vos contacts (selon Réglages › Contacts autorisés) et les règles d’autorisation sont vérifiés avant les règles de blocage ordinaires et les numéros bloqués.</li>
+      <li>Pour bloquer quand même un tel appelant, modifiez la règle de blocage et activez « Priorité sur les autorisations », ou retirez le numéro de la liste d’autorisation.</li>
+      <li>Une règle de blocage de contact, de groupe ou de nom de l’appelant suit le même ordre; elle a donc besoin de « Priorité sur les autorisations » pour bloquer un contact que Contacts autorisés laisse passer.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="rule-ignored">
+    <h3>Une règle semble ignorée</h3>
+    <ul>
+      <li>Les règles temporaires affichent « Expirée » dans Règles quand leur temps est écoulé; les règles expirées sont supprimées environ un jour plus tard.</li>
+      <li>Les règles avec un horaire s’appliquent seulement entre Début et Fin, les jours actifs, dans le fuseau horaire de la règle.</li>
+      <li>Les règles avec un emplacement s’appliquent seulement quand votre dernière position connue est nettement à l’intérieur de la zone. Voir « Une règle d’emplacement ne correspond pas » plus bas.</li>
+      <li>Les règles sortantes ont besoin de la protection des appels sortants. La sourdine, l’emplacement et les appelants confidentiels ou inconnus s’appliquent seulement aux appels entrants.</li>
+      <li>Si Pro à vie n’est pas actif, les horaires, emplacements et motifs déjà enregistrés sur des règles restent, mais ne peuvent pas être modifiés.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="contact-rule">
+    <h3>Une règle de contact ou de groupe ne correspond à personne</h3>
+    <ul>
+      <li>Les règles de contact ont besoin de l’accès aux contacts. CallRules le demande quand vous choisissez un contact ou un groupe.</li>
+      <li>Si le contact ou le groupe a été supprimé, l’écran Modifier de la règle affiche « Contact introuvable » et la Vérification des règles avertit « Contact introuvable » ou « Groupe de contacts introuvable ». Modifiez la règle ou supprimez-la.</li>
+      <li>Les règles de nom de l’appelant correspondent au nom enregistré de votre contact, ou au nom d’affichage que votre fournisseur envoie. Ce ne sont pas tous les fournisseurs qui envoient des noms.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="outgoing">
+    <h3>Les règles sortantes ne s’exécutent pas</h3>
+    <ul>
+      <li>La protection des appels sortants demande Pro à vie.</li>
+      <li>Ouvrez Réglages › Protection des appels sortants, touchez « Autoriser la redirection d’appels » et activez « Activer les règles sortantes ».</li>
+      <li>Vérifiez que le sens d’appel de la règle est Sortant ou Les deux.</li>
+      <li>Si une règle ou un réglage exige un NIP, définissez d’abord le NIP partagé.</li>
+      <li>Pour les appels approuvés, touchez « Accorder l’autorisation Téléphone ». CallRules n’a pas besoin du journal d’appels ni des anciennes autorisations d’appels sortants.</li>
+      <li>Autorisez les notifications, pour qu’une confirmation en attente s’affiche quand même si Android ne peut pas ouvrir CallRules directement.</li>
+      <li>Android n’envoie jamais les appels d’urgence, ni certains appels de passerelle, à CallRules.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="confirmation">
+    <h3>Une confirmation d’appel sortant a été annulée ou a expiré, ou l’appel n’a pas été recomposé</h3>
+    <ul>
+      <li>CallRules annule l’appel d’origine avant de demander. Toucher Annuler l’appel ou attendre 60 secondes ne passe aucun appel.</li>
+      <li>Après le bon NIP ou un appui maintenu jusqu’au bout, CallRules vérifie de nouveau vos règles, le rôle et l’autorisation Téléphone, puis passe un seul appel de remplacement.</li>
+      <li>Chaque approbation fonctionne une seule fois. Si quelque chose a changé ou qu’Android n’a pas pu passer l’appel, corrigez le problème signalé et composez de nouveau.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="location">
+    <h3>Une règle d’emplacement ne correspond pas</h3>
+    <ul>
+      <li>L’accès à la localisation est nécessaire seulement pour les règles entrantes activées qui ont un emplacement.</li>
+      <li>Autorisez d’abord la localisation, puis choisissez l’option « Toujours autoriser » d’Android si la règle doit fonctionner quand CallRules est fermé ou que le téléphone est verrouillé.</li>
+      <li>Si l’accès est refusé, ou si votre position manque ou est trop imprécise, la règle est sautée.</li>
+      <li>Les règles d’emplacement correspondent à l’endroit où est votre téléphone, pas à celui de l’appelant. Les règles de code régional, de pays et de ville correspondent à des préfixes de numéros.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="no-alerts">
+    <h3>Aucune notification d’appel bloqué</h3>
+    <ul>
+      <li>Activez Réglages › Afficher les alertes d’appels bloqués.</li>
+      <li>Accordez à CallRules l’autorisation de notifications d’Android. La vérification Notifications propose Corriger.</li>
+      <li>Les alertes d’appels bloqués ont une faible priorité; certains téléphones les regroupent ou les masquent. Chaque appel bloqué reste listé dans l’historique des appels.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="voice">
+    <h3>Les commandes vocales ne fonctionnent pas</h3>
+    <ul>
+      <li>Les commandes vocales demandent Pro à vie.</li>
+      <li>La parole utilise seulement la reconnaissance vocale sur l’appareil d’Android. Si votre téléphone n’en a pas, tapez plutôt dans « Tapez une commande ».</li>
+      <li>Si la carte demande « Vouliez-vous dire…? », CallRules a changé ou laissé tomber un mot. Touchez Confirmer seulement si la carte montre ce que vous vouliez dire.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="pro">
+    <h3>Pro à vie n’est pas disponible ou ne se restaure pas</h3>
+    <ul>
+      <li>Utilisez CallRules installé depuis Google Play et le même compte Google qui a acheté Pro.</li>
+      <li>Vérifiez votre connexion, puis ouvrez Passer à Pro et touchez « Réessayer Google Play » ou « Restaurer l’achat ».</li>
+      <li>Pro à vie peut ne pas être offert pour certains comptes ou certaines régions, ni dans les versions de test non publiées.</li>
+      <li>Un achat en attente débloque Pro seulement quand Google Play le termine.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="more-help">
+    <h3>Encore besoin d’aide?</h3>
+    <ul>
+      <li>Ouvrez Réglages › Signaler un problème. Tapez ou dictez ce qui s’est passé, puis touchez Aperçu et envoyez-le avec une application de courriel ou de partage.</li>
+      <li>Vous pouvez joindre les diagnostics. Le journal exclut les numéros de téléphone, les contacts, les règles, les coordonnées, la parole et les jetons d’achat.</li>
+    </ul>
+  </article>
+  </div>
+</section>
+<section class="category" id="checks">
+  <h2>Ce que vérifie l’écran Dépannage</h2>
+  <p class="muted">L’écran affiche seulement les cartes qui s’appliquent à votre configuration. Chaque résultat ci-dessous est le texte exact de la carte.</p>
+  <div class="check-list">
+    <article class="card check" id="screening-role">
+      <h3>Rôle de filtrage des appels</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si CallRules est votre appli d’identification et de filtrage des appels. Android envoie les appels à filtrer seulement à cette application.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules est votre appli d’identification et de filtrage des appels</li>
+        <li><span class="status error">Problème</span>CallRules n’est PAS votre appli d’identification et de filtrage des appels — les appels ne seront pas bloqués<span class="fix">Corriger : Demande à Android de faire de CallRules votre appli d’identification et de filtrage des appels.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Paramètres Android › Applis › Applis par défaut › Appli identif. et filtr. appels, et choisissez CallRules.</li>
+        <li>Certains téléphones appellent ce réglage « Application de filtrage des appels » ou le placent dans les réglages de l’application Téléphone.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-protection">
+      <h3>Protection des appels</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si le bouclier est activé.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>La protection est activée</li>
+        <li><span class="status error">Problème</span>La protection est désactivée — aucun appel n’est bloqué<span class="fix">Corriger : Active la protection des appels.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Touchez le bouclier dans Accueil, ou activez Réglages › Protection des appels.</li>
+      </ul>
+    </article>
+    <article class="card check" id="carrier-verification">
+      <h3>Vérification par le fournisseur</h3>
+      <p class="meta"><strong>Vérifie :</strong> Le réglage Vérification par le fournisseur, qui utilise le résultat STIR/SHAKEN que votre fournisseur joint à chaque appel.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status warning">Avertissement</span>Désactivée — les appels qui échouent à la vérification par le fournisseur ne sont pas bloqués<span class="fix">Corriger : Règle la vérification par le fournisseur à Standard.</span></li>
+        <li><span class="status ok">OK</span>Stricte — les appelants non vérifiés sont bloqués en plus des échecs</li>
+        <li><span class="status ok">OK</span>Standard — les appels qui échouent à la vérification par le fournisseur sont bloqués</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Avancé › Vérification par le fournisseur et choisissez Standard ou Stricte.</li>
+        <li>Stricte bloque aussi les appels sans vérification, ce qui peut inclure de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-rules">
+      <h3>Règles d’appel</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si Règles activées est activé. Sinon, aucune règle de blocage ou d’autorisation ne s’applique aux appels entrants.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Les règles sont actives</li>
+        <li><span class="status warning">Avertissement</span>Toutes les règles sont SUSPENDUES — les règles de blocage, d’autorisation et de sourdine ne sont pas appliquées<span class="fix">Corriger : Réactive Règles activées.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Activez Réglages › Règles activées.</li>
+      </ul>
+    </article>
+    <article class="card check" id="notifications">
+      <h3>Notifications</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si Android permet à CallRules d’afficher des notifications (Android 13 et plus demandent cette autorisation).</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Autorisation de notifications accordée</li>
+        <li><span class="status warning">Avertissement</span>Autorisation de notifications non accordée — vous ne verrez pas les alertes d’appels bloqués<span class="fix">Corriger : Ouvre les réglages de notifications d’Android pour CallRules.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Paramètres Android › Applis › CallRules › Notifications et autorisez-les.</li>
+        <li>Vérifiez ensuite que Réglages › Afficher les alertes d’appels bloqués est activé dans CallRules.</li>
+      </ul>
+    </article>
+    <article class="card check" id="battery">
+      <h3>Utilisation de la pile</h3>
+      <p class="meta"><strong>Vérifie :</strong> Rien à corriger : cette carte explique comment CallRules fonctionne.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules utilise le service CallScreeningService d’Android, déclenché par les événements — il s’exécute seulement à l’arrivée d’un appel, pas en continu. L’effet sur la pile est presque nul.</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Aucun changement à l’optimisation de la pile n’est nécessaire.</li>
+      </ul>
+    </article>
+    <article class="card check" id="redirection-role">
+      <h3>Rôle de redirection des appels sortants</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si CallRules a le rôle de redirection d’appels d’Android, qui lui permet de vérifier les appels que vous passez.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand la protection des appels sortants est configurée : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules peut évaluer les appels sortants</li>
+        <li><span class="status error">Problème</span>Rôle non accordé — les règles sortantes ne peuvent pas s’exécuter<span class="fix">Corriger : Demande à Android de donner à CallRules le rôle de redirection d’appels.</span></li>
+        <li><span class="status error">Problème</span>La redirection d’appels n’est pas offerte sur cet appareil</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Protection des appels sortants et touchez « Autoriser la redirection d’appels ».</li>
+        <li>Si votre téléphone n’offre pas la redirection d’appels, la protection des appels sortants ne peut pas y fonctionner.</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-rule-setting">
+      <h3>Réglage des règles sortantes</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si « Activer les règles sortantes » est activé quand vous avez des règles Sortant ou Les deux activées.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand la protection des appels sortants est configurée : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Les règles Sortant et Les deux sont activées</li>
+        <li><span class="status ok">OK</span>Aucune règle Sortant ou Les deux activée; la confirmation globale peut quand même s’appliquer</li>
+        <li><span class="status warning">Avertissement</span>Des règles Sortant ou Les deux existent, mais l’évaluation des règles sortantes est désactivée<span class="fix">Corriger : Ouvre Protection des appels sortants.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Protection des appels sortants et activez « Activer les règles sortantes ».</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-pin">
+      <h3>NIP des appels sortants</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si le NIP partagé est défini quand les appels sortants en demandent un.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand « Exiger le NIP pour tous les appels sortants » est activé, ou une règle sortante activée a « Exiger le NIP », et aucun NIP n’est défini.</p>
+      <ul class="results">
+        <li><span class="status error">Problème</span>Un appel sortant qui exige un NIP sera refusé tant qu’un NIP partagé n’est pas défini<span class="fix">Corriger : Ouvre Protection des appels sortants.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Protection des appels sortants et touchez Définir le NIP (4 à 8 chiffres).</li>
+        <li>Les règles importées avec « Exiger le NIP » demandent un NIP défini sur ce téléphone.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmed-redial">
+      <h3>Recomposition des appels confirmés</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si CallRules a l’autorisation Téléphone nécessaire pour repasser l’appel approuvé.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand les appels sortants demandent un NIP ou un appui long.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>L’autorisation Téléphone est prête pour un appel de remplacement approuvé</li>
+        <li><span class="status error">Problème</span>L’autorisation Téléphone manque — l’approbation ne peut pas passer l’appel de remplacement<span class="fix">Corriger : Demande l’autorisation Téléphone.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Protection des appels sortants et touchez « Accorder l’autorisation Téléphone ».</li>
+        <li>CallRules n’a pas besoin du journal d’appels ni des anciennes autorisations d’appels sortants.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmation-timeout">
+      <h3>Délai de confirmation et annulation</h3>
+      <p class="meta"><strong>Vérifie :</strong> Rien à corriger : cette carte explique ce qui arrive à un appel en attente d’approbation.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand les appels sortants demandent un NIP ou un appui long.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Une demande annulée ou expirée ne passe aucun appel. Si la recomposition approuvée échoue, vérifiez le rôle et l’autorisation Téléphone, puis composez de nouveau.</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Si vous touchez Annuler l’appel ou attendez 60 secondes, aucun appel n’est passé. Composez de nouveau.</li>
+        <li>Chaque approbation passe un seul appel. Si la recomposition échoue, vérifiez le rôle et l’autorisation Téléphone, puis composez de nouveau.</li>
+      </ul>
+    </article>
+    <article class="card check" id="location-rules">
+      <h3>Règles d’emplacement</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si CallRules peut utiliser votre position, y compris quand il est fermé ou que le téléphone est verrouillé.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand une règle entrante activée a un emplacement.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Prêt quand CallRules est fermé ou que le téléphone est verrouillé</li>
+        <li><span class="status warning">Avertissement</span>L’accès au premier plan est autorisé; l’accès en arrière-plan est encore nécessaire pour les appels quand l’application est fermée<span class="fix">Corriger : Demande l’accès à la localisation, puis explique comment l’autoriser en tout temps.</span></li>
+        <li><span class="status warning">Avertissement</span>L’accès à la localisation n’est pas disponible; les règles limitées à un emplacement seront considérées comme non remplies<span class="fix">Corriger : Demande l’accès à la localisation, puis explique comment l’autoriser en tout temps.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Règles d’emplacement et touchez « Autoriser la localisation pour les règles d’emplacement ».</li>
+        <li>Touchez ensuite « Configurer la localisation en arrière-plan » et choisissez l’option « Toujours autoriser » d’Android.</li>
+        <li>Sans accès à la localisation, les règles avec un emplacement sont sautées.</li>
+      </ul>
+    </article>
+    <article class="card check" id="billing">
+      <h3>Facturation Google Play</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si CallRules peut joindre la facturation Google Play et charger Pro à vie.</p>
+      <p class="meta"><strong>Affichée :</strong> Toujours</p>
+      <ul class="results">
+        <li><span class="status warning">Avertissement</span>Impossible de se connecter ou de charger le produit Pro à vie. Vérifiez la connexion au Play Store, puis réessayez.<span class="fix">Corriger : Se reconnecte à la facturation Google Play.</span></li>
+        <li><span class="status warning">Avertissement</span>Connecté, mais le produit Pro à vie n’est pas offert pour ce compte ou cette version.<span class="fix">Corriger : Se reconnecte à la facturation Google Play.</span></li>
+        <li><span class="status ok">OK</span>La connexion à la facturation et la restauration des achats sont offertes dans Passer à Pro.</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Vérifiez votre connexion et que l’application Google Play Store est connectée à un compte et à jour.</li>
+        <li>Ouvrez Passer à Pro et touchez « Réessayer Google Play » ou « Restaurer l’achat ».</li>
+        <li>Voir « Pro à vie n’est pas disponible ou ne se restaure pas » sous Problèmes courants.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+<section class="category" id="contact">
+  <h2>Nous joindre</h2>
+  <p>Utilisez <strong>Réglages › Signaler un problème</strong> dans l’appli, ou écrivez à <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>. Évitez d’envoyer des numéros de téléphone que vous n’avez pas besoin de partager.</p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pied de page">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Aide</a>
+      <a href="callrules-troubleshooting.html">Dépannage</a>
+      <a href="callrules-privacy.html">Politique de confidentialité</a>
+      <a href="mailto:mjred.dev@gmail.com">Nous joindre</a>
+    </nav>
+    <p>Plainform est une dénomination commerciale de MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. Tous droits réservés.</p>
+  </div>
+</footer>
+</body>
+</html>
