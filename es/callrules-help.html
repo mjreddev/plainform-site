@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayuda de CallRules — Cómo usar CallRules</title>
+<meta name="description" content="La guía completa de CallRules: reglas, contactos, comandos de voz, lugares y horarios, ajustes, protección de llamadas salientes y privacidad.">
+<link rel="canonical" href="https://plainform.app/es/callrules-help.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-help.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-help.html">
+<link rel="alternate" hreflang="es-US" href="https://plainform.app/es/callrules-help.html">
+<link rel="alternate" hreflang="es-419" href="https://plainform.app/es/callrules-help.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-help.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:locale" content="es_US">
+<meta property="og:title" content="Ayuda de CallRules — Cómo usar CallRules">
+<meta property="og:description" content="La guía completa de CallRules: reglas, contactos, comandos de voz, lugares y horarios, ajustes, protección de llamadas salientes y privacidad.">
+<meta property="og:url" content="https://plainform.app/es/callrules-help.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic-es.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html" aria-current="page">Ayuda</a>
+        <a href="callrules-troubleshooting.html">Solución de problemas</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Idioma"><a href="../callrules-help.html" lang="en" hreflang="en">EN</a> <span aria-hidden="true">|</span> <a href="../fr/callrules-help.html" lang="fr-CA" hreflang="fr-CA">FR</a> <span aria-hidden="true">|</span> <a href="../es/callrules-help.html" lang="es-US" hreflang="es-US" aria-current="true">ES</a></nav>
+    </div>
+  </div>
+</header>
+<div class="wrap docs">
+<nav class="toc-side" aria-label="Contenido de la guía">
+  <p><a href="#getting-started">Primeros pasos</a></p>
+  <ul>
+    <li><a href="#first-run">Configuración inicial</a></li>
+    <li><a href="#home-dashboard">Panel de inicio</a></li>
+    <li><a href="#call-history">Historial de llamadas</a></li>
+  </ul>
+  <p><a href="#rules">Reglas</a></p>
+  <ul>
+    <li><a href="#rules-basics">Conceptos básicos de las reglas</a></li>
+    <li><a href="#rule-types">Tipos de reglas</a></li>
+    <li><a href="#rule-options">Opciones de las reglas</a></li>
+    <li><a href="#rule-order">Cómo se deciden las reglas</a></li>
+    <li><a href="#rule-check">Revisión de reglas</a></li>
+    <li><a href="#whitelist-blocked">Lista de permitidos y números bloqueados</a></li>
+  </ul>
+  <p><a href="#contacts">Contactos y nombres</a></p>
+  <ul>
+    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre de quien llama</a></li>
+    <li><a href="#caller-names">Cómo se nombra a quien llama</a></li>
+  </ul>
+  <p><a href="#voice">Comandos de voz</a></p>
+  <ul>
+    <li><a href="#voice-basics">Usar comandos de voz</a></li>
+    <li><a href="#voice-add-rules">Agregar reglas por voz</a></li>
+    <li><a href="#voice-contacts">Contactos por voz</a></li>
+    <li><a href="#voice-remove-rules">Quitar o pausar reglas</a></li>
+    <li><a href="#voice-lists">Lista de permitidos y números bloqueados por voz</a></li>
+    <li><a href="#voice-settings">Ajustes por voz</a></li>
+    <li><a href="#voice-questions">Preguntas y deshacer</a></li>
+  </ul>
+  <p><a href="#places">Lugares y horarios</a></p>
+  <ul>
+    <li><a href="#saved-places">Lugares guardados</a></li>
+    <li><a href="#voice-places">Lugares guardados por voz</a></li>
+    <li><a href="#location-rules">Reglas de ubicación</a></li>
+    <li><a href="#schedules">Horarios</a></li>
+  </ul>
+  <p><a href="#settings">Ajustes y notificaciones</a></p>
+  <ul>
+    <li><a href="#blocking-settings">Ajustes de bloqueo</a></li>
+    <li><a href="#quiet-hours">Horas de silencio</a></li>
+    <li><a href="#notifications">Notificaciones</a></li>
+    <li><a href="#outgoing">Protección de llamadas salientes</a></li>
+    <li><a href="#backups">Importar, exportar y copias de seguridad</a></li>
+    <li><a href="#appearance">Apariencia</a></li>
+  </ul>
+  <p><a href="#help">Ayuda, planes y privacidad</a></p>
+  <ul>
+    <li><a href="#troubleshooting">Solución de problemas y asistencia</a></li>
+    <li><a href="#free-vs-pro">Gratis o Pro</a></li>
+    <li><a href="#privacy">Privacidad</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="doc-hero">
+  <p class="eyebrow">Ayuda de CallRules</p>
+  <h1>Cómo usar CallRules</h1>
+  <p class="lede">La misma guía que <strong>Ajustes › Cómo usar CallRules</strong> en la app: 7 secciones y 31 temas. Los temas marcados con <span class="pro">PRO</span> requieren Pro de por vida.</p>
+  <div class="search" id="search-box" hidden>
+    <label class="eyebrow" for="guide-search">Buscar en la guía</label>
+    <input id="guide-search" type="search" placeholder="Prueba “horas de silencio” o “código de área”" autocomplete="off">
+    <p class="search-status" id="search-status" role="status" aria-live="polite"></p>
+  </div>
+  <nav class="toc-chips" aria-label="Secciones de la guía"><ul class="chips">
+    <li><a href="#getting-started">Primeros pasos</a></li>
+    <li><a href="#rules">Reglas</a></li>
+    <li><a href="#contacts">Contactos y nombres</a></li>
+    <li><a href="#voice">Comandos de voz</a></li>
+    <li><a href="#places">Lugares y horarios</a></li>
+    <li><a href="#settings">Ajustes y notificaciones</a></li>
+    <li><a href="#help">Ayuda, planes y privacidad</a></li>
+  </ul></nav>
+  <p class="muted">¿Algo no funciona? Consulta la <a href="callrules-troubleshooting.html">solución de problemas de CallRules</a>.</p>
+</header>
+<section class="category" id="getting-started">
+  <h2>Primeros pasos</h2>
+  <ul class="category-topics">
+    <li><a href="#first-run">Configuración inicial</a></li>
+    <li><a href="#home-dashboard">Panel de inicio</a></li>
+    <li><a href="#call-history">Historial de llamadas</a></li>
+  </ul>
+  <article class="topic" id="first-run">
+    <h3>Configuración inicial <a class="anchor" href="#first-run" aria-label="Enlace a Configuración inicial">#</a></h3>
+    <p class="summary">Los pasos de configuración, los permisos y las cuatro pestañas</p>
+    <p>La configuración inicial te guía por “Activa el filtrado de llamadas” (hacer de CallRules tu app de identificación de llamadas y filtro de spam), “Incluye tus contactos”, “Mantente al tanto” (notificaciones) y un resumen de privacidad. Puedes omitir cualquier paso.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>CallRules no puede filtrar llamadas hasta que sea tu app de identificación de llamadas y filtro de spam. Si no lo es, Inicio muestra “Falta configurar”; toca Activar.</p></div>
+    <p>El acceso al teléfono, al desvío de llamadas y a la ubicación se pide después, solo cuando activas una función que lo necesita.</p>
+    <p>La barra inferior tiene cuatro pestañas: Inicio, Bloqueadas (historial de llamadas), Reglas y Ajustes.</p>
+  </article>
+  <article class="topic" id="home-dashboard">
+    <h3>Panel de inicio <a class="anchor" href="#home-dashboard" aria-label="Enlace a Panel de inicio">#</a></h3>
+    <p class="summary">El escudo, los contadores y los avisos</p>
+    <ul>
+      <li>Toca el escudo para activar o desactivar la protección (“Protección activa” / “Protección desactivada”). Es el mismo interruptor que Ajustes › Protección de llamadas.</li>
+      <li>Hoy, Esta semana y En total cuentan las llamadas que CallRules bloqueó o silenció. Tiempo ahorrado es un cálculo de 2 minutos por llamada bloqueada.</li>
+      <li>Comando de voz abre los comandos de voz (Pro).</li>
+      <li>“Falta configurar” aparece cuando CallRules no es tu app de identificación de llamadas y filtro de spam.</li>
+      <li>Aparece una tarjeta de problemas de reglas cuando la revisión de reglas tiene advertencias sin resolver. Toca Revisar para abrir Revisión de reglas.</li>
+    </ul>
+  </article>
+  <article class="topic" id="call-history">
+    <h3>Historial de llamadas <a class="anchor" href="#call-history" aria-label="Enlace a Historial de llamadas">#</a></h3>
+    <p class="summary">Las pestañas Bloqueadas y Recientes</p>
+    <p>La pestaña Bloqueadas abre el Historial de llamadas, que tiene dos pestañas.</p>
+    <ul>
+      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Coincidió con una regla, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Toca la marca de verificación (“Permitir este número”) para agregar el número a tu lista de permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
+      <li>Recientes muestra las llamadas entrantes que CallRules dejó pasar. Toca Bloquear para agregar a quien llamó a Números bloqueados; DESHACER aparece por un momento. Borrar vacía la lista Recientes. Permite el acceso a los contactos si quieres que las llamadas de tus contactos también aparezcan aquí.</li>
+    </ul>
+    <p class="in-app"><span>En la app:</span> Pestaña Bloqueadas</p>
+  </article>
+</section>
+<section class="category" id="rules">
+  <h2>Reglas</h2>
+  <ul class="category-topics">
+    <li><a href="#rules-basics">Conceptos básicos de las reglas</a></li>
+    <li><a href="#rule-types">Tipos de reglas</a></li>
+    <li><a href="#rule-options">Opciones de las reglas</a></li>
+    <li><a href="#rule-order">Cómo se deciden las reglas</a></li>
+    <li><a href="#rule-check">Revisión de reglas</a></li>
+    <li><a href="#whitelist-blocked">Lista de permitidos y números bloqueados</a></li>
+  </ul>
+  <article class="topic" id="rules-basics">
+    <h3>Conceptos básicos de las reglas <a class="anchor" href="#rules-basics" aria-label="Enlace a Conceptos básicos de las reglas">#</a></h3>
+    <p class="summary">La pestaña Reglas, agregar y editar reglas</p>
+    <p>La pestaña Reglas (“Reglas de llamadas”) muestra cada regla con su tipo, patrón, dirección, horario y vencimiento. Cada regla tiene Editar, Borrar y un interruptor. La barra superior tiene un micrófono (comandos de voz, Pro), Lista de permitidos, Números bloqueados y Revisar reglas.</p>
+    <ol>
+      <li>Toca +.</li>
+      <li>Elige Bloquear o Permitir y una dirección de llamada.</li>
+      <li>Escribe un nombre para la regla, elige un tipo de regla y un patrón, y configura las opciones que quieras.</li>
+      <li>Toca “Guardar la regla de bloqueo” o “Guardar la regla de permiso”.</li>
+    </ol>
+    <p>CallRules no guarda una regla idéntica a una que ya existe. La versión gratuita permite 10 reglas.</p>
+    <p>Al editar una regla puedes cambiar su nombre, patrón, dirección y opciones. Para cambiar Bloquear/Permitir, el tipo de regla o Rechazar/Silenciar, borra la regla y crea una nueva.</p>
+    <p class="in-app"><span>En la app:</span> Pestaña Reglas</p>
+  </article>
+  <article class="topic" id="rule-types">
+    <h3>Tipos de reglas <a class="anchor" href="#rule-types" aria-label="Enlace a Tipos de reglas">#</a></h3>
+    <p class="summary">Números, prefijos, códigos de área, lugares, patrones y llamadas ocultas</p>
+    <ul>
+      <li><strong>Número exacto:</strong> un solo número de teléfono. Configura el país de llamada para los números escritos sin código +.</li>
+      <li><strong>Empieza con (prefijo):</strong> todos los números que empiezan con un prefijo internacional como +1555. Incluye el +.</li>
+      <li><strong>Código de área:</strong> por ejemplo 555, con su país de llamada. Activa “Grupo de códigos de área” para cubrir todo un estado de EE. UU., una provincia canadiense, Canadá, Estados Unidos u otro país del Plan de Numeración de Norteamérica en una sola regla. Los códigos que escribas en “Excepto los códigos de área” se omiten en esa regla. Omitir un código no permite sus llamadas.</li>
+      <li><strong>Ciudad / zona telefónica:</strong> elige un país o plan de numeración, busca un lugar y selecciona un resultado. La regla coincide con los prefijos telefónicos de ese lugar.</li>
+      <li><strong>Código de país:</strong> por ejemplo +44.</li>
+      <li><strong>Patrón comodín (Pro):</strong> * coincide con cualquier cantidad de dígitos, ? con un dígito opcional, y X o # con exactamente un dígito. Ejemplo: +1555*.</li>
+      <li><strong>Expresión regular (Pro):</strong> se compara con el número internacional completo, por ejemplo \+1555\d{7}.</li>
+      <li><strong>Llamadas privadas / ocultas:</strong> coincide con las llamadas entrantes que ocultan su identificador de llamadas. Úsala para bloquear, silenciar o permitir llamadas ocultas, por ejemplo solo en un horario o en un lugar. Las reglas de llamadas privadas se aplican solo a llamadas entrantes.</li>
+      <li>Números desconocidos (se crean por voz o con el CSV de reglas): coincide con cada llamada que la lista de permitidos, tus contactos y las reglas de permiso no dejaron pasar antes.</li>
+      <li>Reglas de contacto, grupo de contactos y nombre de quien llama: consulta Contactos y nombres.</li>
+    </ul>
+    <p>Las reglas de código de área, país y ciudad coinciden con prefijos de números. No pueden saber dónde está físicamente la persona que llama.</p>
+  </article>
+  <article class="topic" id="rule-options">
+    <h3>Opciones de las reglas <a class="anchor" href="#rule-options" aria-label="Enlace a Opciones de las reglas">#</a></h3>
+    <p class="summary">Rechazar o silenciar, dirección, Temporal, PIN y prioridad</p>
+    <ul>
+      <li>Rechazar la llamada o Silenciar la llamada: Rechazar corta la llamada, así que quien llama escucha que se termina. Silenciar deja sonar la llamada del lado de quien llama mientras tu teléfono se queda en silencio. Ambas se registran. Silenciar solo funciona con llamadas entrantes.</li>
+      <li><strong>Dirección de la llamada:</strong> Entrante, Saliente o Ambas. Las reglas salientes solo funcionan cuando la Protección de llamadas salientes está activada. Admiten coincidencia de números, horarios y Temporal, pero no Silenciar, ubicación ni llamadas desconocidas o privadas.</li>
+      <li><strong>Temporal:</strong> la regla vence después de una cantidad de minutos, horas o días. Reglas muestra “Vence en” y luego “Vencida”, y borra las reglas vencidas aproximadamente un día después.</li>
+      <li><strong>Horario y Ubicación (Pro):</strong> consulta Lugares y horarios.</li>
+      <li><strong>Pedir PIN (reglas de permiso salientes):</strong> las llamadas salientes que coinciden piden el PIN compartido. Configura primero el PIN en Protección de llamadas salientes.</li>
+      <li>Prioridad sobre los permisos (reglas de bloqueo): bloquea las llamadas que coinciden aunque la lista de permitidos, tus contactos o una regla de permiso las dejarían pasar. Si guardas una regla de bloqueo sin esta opción y hay números permitidos que se saltarían la regla, CallRules pregunta “Hay números permitidos que coinciden con esta regla”. Elige “Dar prioridad” o “Mantener los permisos”; cerrar el aviso cancela el guardado.</li>
+      <li><strong>Superposición de reglas:</strong> mientras agregas o editas una regla, una nota de “Superposición de reglas” muestra las reglas existentes que se superponen con ella. Es solo informativa; puedes guardar de todos modos.</li>
+    </ul>
+  </article>
+  <article class="topic" id="rule-order">
+    <h3>Cómo se deciden las reglas <a class="anchor" href="#rule-order" aria-label="Enlace a Cómo se deciden las reglas">#</a></h3>
+    <p class="summary">El orden en que CallRules revisa cada llamada</p>
+    <p>Para cada llamada entrante, CallRules sigue estos pasos en orden y se detiene en el primero que decide la llamada:</p>
+    <ol class="flow-steps">
+      <li><span class="step-title">La protección está desactivada o en pausa</span><span class="outcome rings">Suena</span><span class="detail">La llamada suena.</span></li>
+      <li><span class="step-title">El identificador de llamadas está oculto</span><span class="outcome depends">Depende</span><span class="detail">Solo se aplican las reglas de llamadas privadas y Bloquear números privados: una regla de bloqueo de llamadas privadas con “Prioridad sobre los permisos” activada, luego las reglas de permiso de llamadas privadas y después las reglas de bloqueo de llamadas privadas (Silenciar antes que Rechazar). Si ninguna coincide, la llamada se rechaza cuando Bloquear las etiquetas de spam del operador está activado y el operador la marcó como spam, o cuando Bloquear números privados está activado; si no, suena.</span></li>
+      <li><span class="step-title">Reglas de bloqueo con “Prioridad sobre los permisos” activada</span><span class="outcome blocks">Se bloquea</span> <span class="tag">Prioridad sobre los permisos</span><span class="detail">Las reglas de Silenciar antes que las de Rechazar.</span></li>
+      <li><span class="step-title">Tu lista de permitidos</span><span class="outcome rings">Suena</span><span class="detail">Deja sonar la llamada.</span></li>
+      <li><span class="step-title">Tus contactos</span><span class="outcome rings">Suena</span><span class="detail">Suenan, según el ajuste Contactos permitidos.</span></li>
+      <li><span class="step-title">Reglas de permiso</span><span class="outcome rings">Suena</span><span class="detail">Dejan sonar la llamada.</span></li>
+      <li><span class="step-title">Otras reglas de bloqueo</span><span class="outcome blocks">Se bloquea</span><span class="detail">Silenciar antes que Rechazar.</span></li>
+      <li><span class="step-title">Números bloqueados</span><span class="outcome blocks">Se bloquea</span></li>
+      <li><span class="step-title">Etiquetas de spam del operador</span><span class="outcome blocks">Se bloquea</span><span class="detail">Cuando Bloquear las etiquetas de spam del operador está activado.</span></li>
+      <li><span class="step-title">Verificación del operador</span><span class="outcome blocks">Se bloquea</span></li>
+      <li><span class="step-title">Bloquear números desconocidos</span><span class="outcome blocks">Se bloquea</span><span class="detail">Llamadas de personas que no están en tus contactos.</span></li>
+      <li><span class="step-title">La lista local de spam</span><span class="outcome blocks">Se bloquea</span><span class="detail">Está vacía en esta versión, así que este paso no bloquea nada.</span></li>
+      <li><span class="step-title">Horas de silencio</span><span class="outcome blocks">Se bloquea</span></li>
+    </ol>
+    <p>Si ningún paso decide la llamada, suena.</p>
+    <p>Los pasos 3, 6 y 7 se omiten mientras Reglas activadas está desactivado. Las reglas de contacto, de grupo y de nombre de quien llama participan en los pasos 3, 6 y 7 como cualquier otra regla, así que una regla de bloqueo de contacto no bloquea una llamada que el paso 5 deja pasar, a menos que tenga “Prioridad sobre los permisos” activada.</p>
+    <p>Una regla también se omite cuando está desactivada, vencida, fuera de su horario o lejos de su ubicación. Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>En las llamadas salientes, una regla de bloqueo que coincide con “Prioridad sobre los permisos” activada cancela la llamada. Si no, una regla de permiso que coincide deja pasar la llamada (y pide el PIN si la regla lo exige), y una regla de bloqueo que coincide la cancela.</p></div>
+  </article>
+  <article class="topic" id="rule-check">
+    <h3>Revisión de reglas <a class="anchor" href="#rule-check" aria-label="Enlace a Revisión de reglas">#</a></h3>
+    <p class="summary">Encuentra reglas que se superponen o se contradicen</p>
+    <p>Revisión de reglas encuentra reglas que se superponen o se contradicen. Ábrela con Revisar reglas en Reglas, desde la tarjeta de Inicio o desde su notificación. Se ejecuta al abrirla; toca Ejecutar revisión para volver a ejecutarla.</p>
+    <ul>
+      <li><strong>Advertencias:</strong> “Se omite la regla de bloqueo” significa que reglas de permiso, números de la lista de permitidos o contactos se saltan una regla de bloqueo. “La regla de permiso nunca se aplica” significa que la cubre una regla de bloqueo con “Prioridad sobre los permisos” activada.</li>
+      <li>“No se encontró el contacto” y “No se encontró el grupo de contactos” avisan de una regla de contacto o de grupo cuyo contacto o grupo se borró, así que no coincide con nadie. Edítala o bórrala.</li>
+      <li><strong>Información:</strong> “Reglas duplicadas”, “Se superponen reglas de silenciar y rechazar” y “Las reglas podrían entrar en conflicto” (posibles superposiciones con comodines, expresiones regulares, nombres de quien llama, horarios o ubicaciones).</li>
+    </ul>
+    <p>Cada problema ofrece correcciones, como activar o desactivar “Prioridad sobre los permisos”, desactivar o borrar una regla, quitar una entrada de la lista de permitidos, o Editar. Ignorar oculta una advertencia; activa “Mostrar ignorados” y toca Restaurar para que vuelva.</p>
+    <p>Después de las llamadas, CallRules vuelve a revisar automáticamente, pero solo si cambiaron tus reglas, tu lista de permitidos, tus ajustes de contactos o tus contactos. Cuando Alertas de revisión de reglas está activado, envía una notificación silenciosa por las advertencias nuevas. La insignia y el aviso de la pestaña Reglas muestran cuántas advertencias no están resueltas.</p>
+    <p class="in-app"><span>En la app:</span> Reglas › Revisar reglas</p>
+  </article>
+  <article class="topic" id="whitelist-blocked">
+    <h3>Lista de permitidos y números bloqueados <a class="anchor" href="#whitelist-blocked" aria-label="Enlace a Lista de permitidos y números bloqueados">#</a></h3>
+    <p class="summary">Números que siempre suenan o siempre se bloquean</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Abre ambas desde los íconos de la parte superior de Reglas. Toca el ícono de quitar de una entrada para borrarla.</p></div>
+    <ul>
+      <li><strong>Lista de permitidos:</strong> estos números siempre suenan, a menos que una regla de bloqueo tenga “Prioridad sobre los permisos” activada. Para agregar un número, toca “Permitir este número” en el historial de llamadas, di “permite siempre el 555 123 4567” o importa una copia de seguridad JSON. La versión gratuita permite 20 entradas.</li>
+      <li><strong>Números bloqueados:</strong> estos números siempre se bloquean, a menos que algo anterior los deje pasar. Para agregar un número, toca Bloquear en una llamada reciente, di “bloquea la última llamada” o “agrega el 555 123 4567 a mis números bloqueados”, o importa una copia de seguridad JSON. La versión gratuita permite 50 entradas.</li>
+    </ul>
+    <p>Una regla de Número exacto hace lo mismo, pero cuenta para tu límite de reglas.</p>
+    <p class="in-app"><span>En la app:</span> Reglas › Lista de permitidos</p>
+    <p class="in-app"><span>En la app:</span> Reglas › Números bloqueados</p>
+  </article>
+</section>
+<section class="category" id="contacts">
+  <h2>Contactos y nombres</h2>
+  <ul class="category-topics">
+    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre de quien llama</a></li>
+    <li><a href="#caller-names">Cómo se nombra a quien llama</a></li>
+  </ul>
+  <article class="topic" id="contact-rules">
+    <h3>Reglas de contacto, de grupo y de nombre de quien llama <a class="anchor" href="#contact-rules" aria-label="Enlace a Reglas de contacto, de grupo y de nombre de quien llama">#</a></h3>
+    <p class="summary">Reglas que siguen a una persona, un grupo o el nombre de quien llama</p>
+    <ul>
+      <li><strong>Contacto:</strong> toca Elegir contacto y elige a una persona. La regla coincide con todos los números de esa persona, incluidos los que agregues o cambies después. El nombre de la regla empieza siendo el del contacto. Si se borra el contacto, Editar muestra “No se encontró el contacto” y Revisión de reglas te avisa.</li>
+      <li><strong>Grupo de contactos (Pro):</strong> elige un grupo o etiqueta de contactos, como Familia o Trabajo, de la lista con su cantidad de miembros. La pertenencia se lee al momento de la llamada, así que se incluyen las personas que agregues al grupo después.</li>
+      <li><strong>Nombre de quien llama (Pro):</strong> elige Contiene, Empieza con o Es exactamente, y escribe el texto. Coincide con el nombre guardado de tu contacto o, para las llamadas que no son de contactos, con el nombre del identificador de llamadas que envía el operador (como “SCAM LIKELY”). Se ignoran las mayúsculas y los acentos.</li>
+    </ul>
+    <p>Las reglas de contacto necesitan acceso a los contactos; CallRules lo pide cuando eliges un contacto o un grupo.</p>
+  </article>
+  <article class="topic" id="caller-names">
+    <h3>Cómo se nombra a quien llama <a class="anchor" href="#caller-names" aria-label="Enlace a Cómo se nombra a quien llama">#</a></h3>
+    <p class="summary">Nombres de contactos e identificador de llamadas en listas y alertas</p>
+    <p>Las dos pestañas del historial de llamadas muestran primero el nombre de quien llama cuando lo hay: el nombre de tu contacto o, si no, el nombre que tu operador envió con la llamada (el identificador de llamadas, como “SCAM LIKELY”). Después aparece el número, con el formato de tu país de llamada. Las notificaciones de llamadas bloqueadas nombran a quien llama de la misma forma.</p>
+    <p>Las entradas de la lista de permitidos y de números bloqueados que pertenecen a un contacto muestran primero el nombre del contacto y luego el número. Las reglas de número en Reglas hacen lo mismo.</p>
+  </article>
+</section>
+<section class="category" id="voice">
+  <h2>Comandos de voz</h2>
+  <ul class="category-topics">
+    <li><a href="#voice-basics">Usar comandos de voz</a></li>
+    <li><a href="#voice-add-rules">Agregar reglas por voz</a></li>
+    <li><a href="#voice-contacts">Contactos por voz</a></li>
+    <li><a href="#voice-remove-rules">Quitar o pausar reglas</a></li>
+    <li><a href="#voice-lists">Lista de permitidos y números bloqueados por voz</a></li>
+    <li><a href="#voice-settings">Ajustes por voz</a></li>
+    <li><a href="#voice-questions">Preguntas y deshacer</a></li>
+  </ul>
+  <article class="topic" id="voice-basics">
+    <h3>Usar comandos de voz <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Enlace a Usar comandos de voz">#</a></h3>
+    <p class="summary">Habla o escribe, y luego confirma</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Toca el micrófono en Inicio o en Reglas y habla, o escribe en “Escribe un comando”. CallRules muestra lo que entendió; toca Confirmar para aplicarlo.</p></div>
+    <p>Las preguntas y “deshacer” se ejecutan de inmediato. Los comandos se entienden en inglés, español, francés, alemán e italiano. En inglés se aceptan muletillas como “um”, “uh” o “please”. Si CallRules tuvo que corregir una palabra o quitar una que no esperaba, la tarjeta pregunta “¿Quisiste decir…?” y muestra lo que quitó o corrigió; toca Confirmar solo si eso es lo que quisiste decir.</p>
+    <p>La voz solo la reconoce el reconocedor de voz en el dispositivo de Android; si no está disponible, escribe el comando.</p>
+    <p>Si hay números permitidos que se saltarían una nueva regla de bloqueo, se te pregunta si quieres darle prioridad a la regla.</p>
+  </article>
+  <article class="topic" id="voice-add-rules">
+    <h3>Agregar reglas por voz <span class="pro">PRO</span> <a class="anchor" href="#voice-add-rules" aria-label="Enlace a Agregar reglas por voz">#</a></h3>
+    <p class="summary">Códigos de área, prefijos, países, ciudades y más</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>bloquea el código de área 307</li>
+        <li>silencia los números que empiezan con 1800</li>
+        <li>bloquea las llamadas de la India</li>
+        <li>bloquea las llamadas internacionales</li>
+        <li>bloquea los números de Chicago</li>
+        <li>bloquea los códigos de área de Kansas excepto el 316</li>
+        <li>bloquea el código de área 307 por 2 horas</li>
+        <li>bloquea las llamadas salientes al código de país 44</li>
+        <li>permite las llamadas entrantes y salientes del 202 555 0114 con PIN</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-contacts">
+    <h3>Contactos por voz <span class="pro">PRO</span> <a class="anchor" href="#voice-contacts" aria-label="Enlace a Contactos por voz">#</a></h3>
+    <p class="summary">Bloquea o permite personas, grupos y nombres de quien llama</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>bloquea las llamadas del tío Bob</li>
+        <li>permite a mamá</li>
+        <li>bloquea las llamadas de mi papá</li>
+        <li>silencia mi grupo Trabajo</li>
+        <li>bloquea las llamadas con el nombre scam</li>
+        <li>bloquea las llamadas con nombres que contienen spam</li>
+        <li>bloquea las llamadas con nombres que empiezan con win</li>
+      </ul>
+    </div>
+    <p>Los comandos de grupo y de nombre de quien llama (“silencia mi grupo Trabajo”, “bloquea las llamadas con nombres que contienen spam”) necesitan Pro. CallRules encuentra el contacto o el grupo antes de mostrar la tarjeta, que lo indica, por ejemplo “Contacto: tío Bob (2 números)”. Si coinciden varios contactos, los muestra para que digas el nombre completo. Las palabras de familia también funcionan: “bloquea las llamadas de mi papá” encuentra un contacto guardado como Papá, Dad o “Papá Juan” si ninguno se llama “mi papá”.</p>
+    <p>Los números, los países y las ciudades van primero: “bloquea las llamadas de la India” bloquea el país, no un contacto llamado India.</p>
+  </article>
+  <article class="topic" id="voice-remove-rules">
+    <h3>Quitar o pausar reglas <span class="pro">PRO</span> <a class="anchor" href="#voice-remove-rules" aria-label="Enlace a Quitar o pausar reglas">#</a></h3>
+    <p class="summary">Desbloquea, desactiva o pausa por voz</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>quita la regla del código de área 307</li>
+        <li>desbloquea los códigos de área de Texas</li>
+        <li>desactiva la regla del código de área 307</li>
+        <li>pausa todas las reglas</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-lists">
+    <h3>Lista de permitidos y números bloqueados por voz <span class="pro">PRO</span> <a class="anchor" href="#voice-lists" aria-label="Enlace a Lista de permitidos y números bloqueados por voz">#</a></h3>
+    <p class="summary">Agrega y quita números de tus listas</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>permite siempre el 555 123 4567</li>
+        <li>quita el 555 123 4567 de la lista de permitidos</li>
+        <li>bloquea la última llamada</li>
+        <li>agrega el 555 123 4567 a mis números bloqueados</li>
+        <li>desbloquea el número 555 123 4567</li>
+      </ul>
+    </div>
+  </article>
+  <article class="topic" id="voice-settings">
+    <h3>Ajustes por voz <span class="pro">PRO</span> <a class="anchor" href="#voice-settings" aria-label="Enlace a Ajustes por voz">#</a></h3>
+    <p class="summary">Números privados, horas de silencio, verificación y pausa</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>activa el bloqueo de números privados</li>
+        <li>bloquea las etiquetas de spam del operador</li>
+        <li>activa las horas de silencio</li>
+        <li>pon las horas de silencio de 10 de la noche a 7 de la mañana</li>
+        <li>permite los contactos favoritos durante las horas de silencio</li>
+        <li>permite los contactos favoritos</li>
+        <li>pon la verificación del operador en estricta</li>
+        <li>desactiva las notificaciones</li>
+        <li>pausa el bloqueo por 1 hora</li>
+        <li>reanuda la protección</li>
+        <li>pon la sensibilidad en alta</li>
+      </ul>
+    </div>
+    <p>“Pon la sensibilidad en alta” cambia el umbral de la lista local de spam; “agresiva” también bloquea los números desconocidos.</p>
+  </article>
+  <article class="topic" id="voice-questions">
+    <h3>Preguntas y deshacer <span class="pro">PRO</span> <a class="anchor" href="#voice-questions" aria-label="Enlace a Preguntas y deshacer">#</a></h3>
+    <p class="summary">Pregunta por tus llamadas y reglas, o deshaz un cambio</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>¿Cuántas llamadas se bloquearon hoy?</li>
+        <li>¿Qué reglas tengo?</li>
+        <li>¿Está bloqueado el 555 123 4567?</li>
+        <li>¿Qué lugares tengo?</li>
+        <li>deshacer</li>
+      </ul>
+    </div>
+    <p>Deshacer: di “deshacer”, o toca Deshacer después de un comando, para revertir el último cambio.</p>
+  </article>
+</section>
+<section class="category" id="places">
+  <h2>Lugares y horarios</h2>
+  <ul class="category-topics">
+    <li><a href="#saved-places">Lugares guardados</a></li>
+    <li><a href="#voice-places">Lugares guardados por voz</a></li>
+    <li><a href="#location-rules">Reglas de ubicación</a></li>
+    <li><a href="#schedules">Horarios</a></li>
+  </ul>
+  <article class="topic" id="saved-places">
+    <h3>Lugares guardados <span class="pro">PRO</span> <a class="anchor" href="#saved-places" aria-label="Enlace a Lugares guardados">#</a></h3>
+    <p class="summary">Nombra lugares como Casa o Trabajo para las reglas y la voz</p>
+    <p>Nombra lugares como Casa o Trabajo, con un radio, usando la misma búsqueda de dirección o la ubicación actual que en una regla. Agregarlos y cambiarles el nombre requiere Pro. Elígelos cuando agregues una regla de ubicación; los comandos de voz los usan por su nombre y pueden agregarlos, cambiarles el nombre, moverlos, borrarlos o mostrarlos (“guarda este lugar como Casa”).</p>
+    <p>Las reglas creadas a partir de un lugar siguen vinculadas a él, así que mover el lugar, cambiar su tamaño o su nombre las actualiza; borrar un lugar desvincula sus reglas, que conservan su última ubicación.</p>
+    <p>Frases como “cuando esté en casa” necesitan un lugar guardado con ese nombre. Agrega lugares por voz o en Ajustes › Reglas › Lugares guardados.</p>
+    <p class="in-app"><span>En la app:</span> Ajustes › Reglas › Lugares guardados</p>
+  </article>
+  <article class="topic" id="voice-places">
+    <h3>Lugares guardados por voz <span class="pro">PRO</span> <a class="anchor" href="#voice-places" aria-label="Enlace a Lugares guardados por voz">#</a></h3>
+    <p class="summary">Guarda, cambia de nombre, mueve, borra y muestra lugares</p>
+    <div class="voice">
+      <p class="voice-label">Intenta decir</p>
+      <ul class="chips">
+        <li>guarda este lugar como Casa</li>
+        <li>guarda mi ubicación como Casa de mamá con un radio de 300 metros</li>
+        <li>agrega un lugar llamado Iglesia en 500 Oak Ave</li>
+        <li>guarda 123 Main Street Springfield como Oficina</li>
+        <li>cambia el nombre del lugar Casa a Hogar</li>
+        <li>mueve el lugar Oficina aquí</li>
+        <li>borra el lugar Gimnasio</li>
+        <li>¿Qué lugares tengo?</li>
+      </ul>
+    </div>
+    <p>CallRules primero busca tu ubicación actual o la dirección, y luego muestra el nombre, la dirección o las coordenadas, el radio (200 m si no dices uno; de 30 m a 5 km) y la precisión de la ubicación. No se guarda nada hasta que tocas Confirmar.</p>
+    <p>Usar el lugar donde estás necesita acceso a la ubicación; la tarjeta ofrece Permitir ubicación. Agregar, cambiar de nombre y mover lugares requiere Pro; borrarlos no, y las reglas que usaban un lugar borrado conservan su ubicación.</p>
+  </article>
+  <article class="topic" id="location-rules">
+    <h3>Reglas de ubicación <span class="pro">PRO</span> <a class="anchor" href="#location-rules" aria-label="Enlace a Reglas de ubicación">#</a></h3>
+    <p class="summary">Reglas que se aplican solo en un lugar</p>
+    <p>Ubicación (Pro, solo entrantes): toca Elegir ubicación y luego busca una dirección o pega coordenadas, toca Usar ubicación actual o elige uno de tus lugares guardados. Después configura el radio (de 30 m a 5 km).</p>
+    <p>La regla se aplica solo cuando tu última ubicación conocida está claramente dentro de esa zona. Si falta tu ubicación o es demasiado imprecisa, esa regla se omite. Permite la ubicación en segundo plano si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</p>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Ajustes › Reglas de ubicación indica si el acceso a la ubicación está listo. Usa “Permitir la ubicación para las reglas de ubicación” o “Configurar la ubicación en segundo plano” para darlo.</p></div>
+  </article>
+  <article class="topic" id="schedules">
+    <h3>Horarios <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Enlace a Horarios">#</a></h3>
+    <p class="summary">Reglas que se aplican solo a ciertas horas</p>
+    <p>Horario (Pro): la regla se aplica solo entre Inicio y Fin, en los días activos que elijas (si no eliges ninguno, se aplica todos los días), en la zona horaria que elijas. Puedes usar el formato de 12 o de 24 horas. Un horario puede pasar la medianoche, por ejemplo de 10:00 p. m. a 7:00 a. m.</p>
+  </article>
+</section>
+<section class="category" id="settings">
+  <h2>Ajustes y notificaciones</h2>
+  <ul class="category-topics">
+    <li><a href="#blocking-settings">Ajustes de bloqueo</a></li>
+    <li><a href="#quiet-hours">Horas de silencio</a></li>
+    <li><a href="#notifications">Notificaciones</a></li>
+    <li><a href="#outgoing">Protección de llamadas salientes</a></li>
+    <li><a href="#backups">Importar, exportar y copias de seguridad</a></li>
+    <li><a href="#appearance">Apariencia</a></li>
+  </ul>
+  <article class="topic" id="blocking-settings">
+    <h3>Ajustes de bloqueo <a class="anchor" href="#blocking-settings" aria-label="Enlace a Ajustes de bloqueo">#</a></h3>
+    <p class="summary">Protección, país de llamada, llamadas privadas y desconocidas</p>
+    <ul>
+      <li><strong>Protección de llamadas:</strong> activa o desactiva el filtrado de llamadas entrantes.</li>
+      <li><strong>País de llamada:</strong> cómo CallRules lee los números que escribes sin código +, en las reglas, los comandos de voz y las importaciones.</li>
+      <li><strong>Bloquear números privados:</strong> rechaza las llamadas con identificador de llamadas oculto, a menos que una regla de llamadas privadas decida la llamada antes.</li>
+      <li><strong>Bloquear números desconocidos:</strong> bloquea las llamadas de personas que no están en tus contactos, a menos que la lista de permitidos o una regla de permiso las deje pasar. Necesita acceso a los contactos.</li>
+      <li>Bloquear las etiquetas de spam del operador: rechaza las llamadas que tu operador marca como spam en el nombre del identificador de llamadas, como “Scam Likely”, “Spam Risk” o “Potential Spam”. CallRules no puede leer la evaluación de spam de tu app de Teléfono, pero sí puede usar la etiqueta que envía tu operador. Solo se revisa el nombre que envía el operador, así que las llamadas de la lista de permitidos, de tus contactos y de las reglas de permiso siguen sonando aunque el operador las marque.</li>
+      <li><strong>Contactos permitidos:</strong> elige Todos los contactos, Solo favoritos o Ninguno para indicar qué contactos siempre suenan.</li>
+      <li><strong>Reglas activadas:</strong> desactivarlo pausa todas las reglas de bloqueo y de permiso de las llamadas entrantes.</li>
+      <li>Avanzado › Verificación del operador usa el resultado STIR/SHAKEN que tu operador agrega a cada llamada. Desactivada lo ignora, Estándar bloquea las llamadas que no pasan la verificación y Estricta también bloquea las llamadas sin verificación. Estricta puede bloquear llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales. La lista de permitidos, tus contactos y las reglas de permiso siguen dejando pasar las llamadas.</li>
+    </ul>
+    <p class="in-app"><span>En la app:</span> Pestaña Ajustes</p>
+  </article>
+  <article class="topic" id="quiet-hours">
+    <h3>Horas de silencio <span class="pro">PRO</span> <a class="anchor" href="#quiet-hours" aria-label="Enlace a Horas de silencio">#</a></h3>
+    <p class="summary">Bloquea llamadas durante las horas que elijas</p>
+    <p>“Activar las horas de silencio” bloquea toda llamada entre Inicio y Fin que nada anterior haya permitido. La lista de permitidos, los contactos según Contactos permitidos y las reglas de permiso suenan de todos modos. Toca Inicio o Fin para elegir una hora; el período puede pasar la medianoche, por ejemplo de 10:00 p. m. a 7:00 a. m.</p>
+    <p>“Permitir los contactos favoritos” deja sonar a los contactos favoritos durante las horas de silencio aunque Contactos permitidos esté en Ninguno. Las llamadas bloqueadas así aparecen en el historial de llamadas como “Horas de silencio”.</p>
+  </article>
+  <article class="topic" id="notifications">
+    <h3>Notificaciones <a class="anchor" href="#notifications" aria-label="Enlace a Notificaciones">#</a></h3>
+    <p class="summary">Alertas de llamadas bloqueadas y alertas de revisión de reglas</p>
+    <ul>
+      <li><strong>Mostrar alertas de llamadas bloqueadas:</strong> muestra una notificación “Llamada bloqueada” de baja prioridad con el número y el motivo. Tócala para abrir el historial de llamadas. Su botón Desbloquear solo quita el número de Números bloqueados. No cambia las reglas ni otros ajustes, así que una regla puede seguir bloqueando la próxima llamada. Puede pedir tu PIN.</li>
+      <li><strong>Alertas de revisión de reglas:</strong> muestra una notificación silenciosa cuando las reglas empiezan a superponerse o a omitirse.</li>
+      <li>Una llamada saliente que necesita tu aprobación muestra “Llamada en espera de tu confirmación”.</li>
+    </ul>
+    <p>Otorga el permiso de notificaciones de Android durante la configuración, o usa Solucionar problemas para corregirlo después.</p>
+  </article>
+  <article class="topic" id="outgoing">
+    <h3>Protección de llamadas salientes <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Enlace a Protección de llamadas salientes">#</a></h3>
+    <p class="summary">Reglas salientes, PIN y mantener presionado</p>
+    <p>Abre Ajustes › Protección de llamadas salientes.</p>
+    <ul>
+      <li><strong>Activar las reglas salientes:</strong> revisa tus reglas Saliente y Ambas antes de hacer una llamada. Una llamada bloqueada se cancela.</li>
+      <li>Pedir PIN en todas las llamadas salientes, o Pedir mantener presionado (1.5 segundos). Un PIN, ya sea global o de una regla, tiene prioridad sobre mantener presionado.</li>
+      <li><strong>Proteger reglas y ajustes con PIN:</strong> cada cambio guardado en las reglas, las listas, los ajustes o las importaciones pide el PIN. No requiere Pro.</li>
+      <li><strong>PIN compartido:</strong> Configurar PIN, Cambiar PIN o Quitar PIN (de 4 a 8 dígitos). Después de 5 intentos incorrectos, el ingreso del PIN se bloquea por 30 segundos. No puedes quitar el PIN mientras un ajuste o una regla lo necesite.</li>
+      <li><strong>Configuración de Android:</strong> toca “Permitir el desvío de llamadas” y “Permitir el acceso a Teléfono” (necesario para volver a marcar las llamadas aprobadas).</li>
+    </ul>
+    <p>Cuando una llamada necesita aprobación, CallRules la cancela y abre “Confirmar la llamada saliente”. Después del PIN correcto o de mantener presionado hasta el final, hace una sola llamada de reemplazo. Si tocas Cancelar llamada o esperas 60 segundos, no se hace ninguna llamada. Android excluye las llamadas de emergencia y algunas llamadas de puerta de enlace.</p>
+    <p>No es infalible: desinstalar CallRules, borrar sus datos o quitarle el rol de Android la desactiva.</p>
+    <p class="in-app"><span>En la app:</span> Ajustes › Protección de llamadas salientes</p>
+  </article>
+  <article class="topic" id="backups">
+    <h3>Importar, exportar y copias de seguridad <a class="anchor" href="#backups" aria-label="Enlace a Importar, exportar y copias de seguridad">#</a></h3>
+    <p class="summary">CSV de reglas, copias de seguridad JSON y Google Sheets</p>
+    <ul>
+      <li><strong>“Importar un CSV de reglas o un JSON”:</strong> elige un CSV de reglas o una copia de seguridad JSON de CallRules (hasta 2 MB). “Revisar la importación” muestra qué se agregará y qué se omitirá; toca Aplicar la importación. Los duplicados y los elementos no válidos se omiten, y se aplican los límites gratuitos. Sin Pro, se omiten las reglas de comodín y de expresión regular, los horarios y las ubicaciones. Una copia de seguridad JSON también restaura sus ajustes.</li>
+      <li><strong>Importar desde Google Sheets (Pro):</strong> pega el enlace de una hoja pública o compartida por enlace que use las columnas del CSV de reglas.</li>
+      <li>Exportar (Pro) ofrece tres formatos. CSV de reglas incluye todas las reglas, activadas o no. CSV de números bloqueados es para hojas de cálculo y no se puede volver a importar. JSON (copia de seguridad completa) incluye las reglas, los números bloqueados, la lista de permitidos, los lugares guardados y los ajustes.</li>
+    </ul>
+    <p>Las copias de seguridad pueden contener números de teléfono y lugares, así que guárdalas y compártelas con cuidado. Nunca incluyen datos del PIN, compras, permisos, historial de llamadas ni diagnóstico.</p>
+  </article>
+  <article class="topic" id="appearance">
+    <h3>Apariencia <a class="anchor" href="#appearance" aria-label="Enlace a Apariencia">#</a></h3>
+    <p class="summary">Colores, colores del fondo de pantalla y modo oscuro</p>
+    <p>Ajustes › Apariencia: activa “Usar los colores del fondo de pantalla” (Android 12 y posteriores) para seguir la paleta de tu dispositivo. Cuando está desactivado, elige un Color: Azul, Rojo, Verde, Amarillo, Rosa, Morado o Verde azulado. El Modo puede ser Según el sistema, Claro u Oscuro. La vista previa de la paleta muestra el resultado.</p>
+  </article>
+</section>
+<section class="category" id="help">
+  <h2>Ayuda, planes y privacidad</h2>
+  <ul class="category-topics">
+    <li><a href="#troubleshooting">Solución de problemas y asistencia</a></li>
+    <li><a href="#free-vs-pro">Gratis o Pro</a></li>
+    <li><a href="#privacy">Privacidad</a></li>
+  </ul>
+  <article class="topic" id="troubleshooting">
+    <h3>Solución de problemas y asistencia <a class="anchor" href="#troubleshooting" aria-label="Enlace a Solución de problemas y asistencia">#</a></h3>
+    <p class="summary">Soluciona problemas, envía comentarios y exporta el diagnóstico</p>
+    <ul>
+      <li>Solucionar problemas revisa el rol de filtrado de llamadas, la protección de llamadas, la verificación del operador, las reglas en pausa, el permiso de notificaciones, el acceso a la ubicación, la configuración de llamadas salientes y la facturación de Google Play. Toca Corregir donde aparezca. El ícono de actualizar vuelve a ejecutar las revisiones, y “Exportar o borrar el diagnóstico” abre las herramientas de diagnóstico.</li>
+      <li>Si una llamada no se bloquea, revisa que CallRules sea tu app de identificación de llamadas y filtro de spam, que Protección de llamadas y Reglas activadas estén activados, y que la regla esté activada, no esté vencida y esté dentro de su horario. Luego ejecuta Revisar reglas para ver si la lista de permitidos, tus contactos o una regla de permiso dejan pasar la llamada.</li>
+      <li>Ayuda en línea y Solución de problemas en línea abren las páginas web de CallRules.</li>
+      <li>Enviar comentarios e Informar un problema: escribe, o toca el micrófono para dictar en el dispositivo. Puedes adjuntar el diagnóstico. Toca Vista previa y luego envía con una app de correo o para compartir, o usa Copiar o Guardar.</li>
+      <li>Exportar el diagnóstico te permite ver, compartir, guardar, copiar o borrar el registro local. El registro no incluye números de teléfono, contactos, reglas, coordenadas, voz ni tokens de compra, y conserva unos siete días de registros.</li>
+      <li>Calificar CallRules abre Google Play. Compartir con amigos envía un enlace.</li>
+    </ul>
+    <p class="in-app"><span>En la app:</span> Ajustes › Solucionar problemas</p>
+  </article>
+  <article class="topic" id="free-vs-pro">
+    <h3>Gratis o Pro <a class="anchor" href="#free-vs-pro" aria-label="Enlace a Gratis o Pro">#</a></h3>
+    <p class="summary">Qué incluye y cómo restaurar una compra</p>
+    <p>Gratis: filtrado de llamadas entrantes; hasta 10 reglas, 50 números bloqueados y 20 entradas en la lista de permitidos; reglas de número exacto, prefijo, código de área, grupo de códigos de área, ciudad, país y contacto; reglas de permiso; Rechazar o Silenciar; reglas temporales; “Prioridad sobre los permisos”; historial de llamadas; bloqueo de números privados y desconocidos; etiquetas de spam del operador; Contactos permitidos; verificación del operador; Revisión de reglas; notificaciones; importación de CSV de reglas y JSON; apariencia; y el PIN compartido con Proteger reglas y ajustes con PIN.</p>
+    <p>Pro de por vida es una compra única que agrega reglas, números bloqueados y entradas en la lista de permitidos ilimitados; reglas de comodín, expresión regular, grupo de contactos y nombre de quien llama; horarios; reglas de ubicación; horas de silencio; comandos de voz; importación desde Google Sheets; exportación; y la protección de llamadas salientes (reglas salientes, PIN y mantener presionado).</p>
+    <p>Google Play muestra el precio en tu moneda. Después de reinstalar o cambiar de teléfono con la misma cuenta de Play, usa Obtener Pro › Restaurar compra. Si Pro no está activo, los horarios, ubicaciones y patrones de Pro que ya estén guardados en las reglas se mantienen, pero no se pueden cambiar.</p>
+    <p class="in-app"><span>En la app:</span> Ajustes › Obtener CallRules Pro</p>
+  </article>
+  <article class="topic" id="privacy">
+    <h3>Privacidad <a class="anchor" href="#privacy" aria-label="Enlace a Privacidad">#</a></h3>
+    <p class="summary">Qué se queda en tu teléfono y cuándo se usa la red</p>
+    <p>CallRules revisa las llamadas en tu teléfono, y tus reglas, listas e historial de llamadas se quedan ahí. No hay cuentas ni anuncios, ni búsqueda de spam en la nube.</p>
+    <p>CallRules usa la red solo para la facturación de Google Play, las búsquedas de direcciones que haces en el selector de ubicación, la importación desde Google Sheets, los enlaces que abres (ayuda en línea, Google Maps, Google Play) y las apps con las que eliges compartir.</p>
+    <p>Los comandos de voz y el dictado usan el reconocedor de voz en el dispositivo de Android. Ajustes › Política de privacidad tiene los detalles.</p>
+  </article>
+</section>
+<p class="muted" id="no-results" hidden>Ningún tema coincide. Prueba otra palabra o consulta la <a href="callrules-troubleshooting.html">solución de problemas</a>.</p>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pie de página">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Ayuda</a>
+      <a href="callrules-troubleshooting.html">Solución de problemas</a>
+      <a href="callrules-privacy.html">Política de privacidad</a>
+      <a href="mailto:mjred.dev@gmail.com">Contacto</a>
+    </nav>
+    <p>Plainform es un nombre comercial de MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var box = document.getElementById('search-box');
+  var input = document.getElementById('guide-search');
+  var status = document.getElementById('search-status');
+  var none = document.getElementById('no-results');
+  if (!box || !input || !''.normalize) return;
+  box.hidden = false;
+  function fold(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      .replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
+  }
+  var topics = Array.prototype.slice.call(document.querySelectorAll('article.topic'));
+  var texts = topics.map(function (t) { return fold(t.textContent); });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.category'));
+  function run() {
+    var q = fold(input.value.trim());
+    var count = 0;
+    topics.forEach(function (t, i) {
+      var hit = !q || texts[i].indexOf(q) >= 0;
+      t.hidden = !hit;
+      if (hit) count++;
+    });
+    sections.forEach(function (s) {
+      s.hidden = !s.querySelector('article.topic:not([hidden])');
+    });
+    none.hidden = !q || count > 0;
+    status.textContent = !q ? '' : count === 1 ? '1 tema coincide' : count + ' temas coinciden';
+  }
+  input.addEventListener('input', run);
+  var params = new URLSearchParams(location.search);
+  if (params.get('q')) { input.value = params.get('q'); run(); }
+})();
+</script>
+</body>
+</html>

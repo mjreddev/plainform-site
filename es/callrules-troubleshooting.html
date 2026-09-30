@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solución de problemas de CallRules</title>
+<meta name="description" content="Soluciona problemas de CallRules: llamadas que no se bloquean, reglas salientes, reglas de ubicación, notificaciones, comandos de voz y Pro de por vida.">
+<link rel="canonical" href="https://plainform.app/es/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="fr-CA" href="https://plainform.app/fr/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="es-US" href="https://plainform.app/es/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="es-419" href="https://plainform.app/es/callrules-troubleshooting.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/callrules-troubleshooting.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:locale" content="es_US">
+<meta property="og:title" content="Solución de problemas de CallRules">
+<meta property="og:description" content="Soluciona problemas de CallRules: llamadas que no se bloquean, reglas salientes, reglas de ubicación, notificaciones, comandos de voz y Pro de por vida.">
+<meta property="og:url" content="https://plainform.app/es/callrules-troubleshooting.html">
+<meta property="og:image" content="https://plainform.app/assets/callrules/feature-graphic-es.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="callrules.html">CallRules</a>
+        <a href="callrules-help.html">Ayuda</a>
+        <a href="callrules-troubleshooting.html" aria-current="page">Solución de problemas</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Idioma"><a href="../callrules-troubleshooting.html" lang="en" hreflang="en">EN</a> <span aria-hidden="true">|</span> <a href="../fr/callrules-troubleshooting.html" lang="fr-CA" hreflang="fr-CA">FR</a> <span aria-hidden="true">|</span> <a href="../es/callrules-troubleshooting.html" lang="es-US" hreflang="es-US" aria-current="true">ES</a></nav>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap narrow">
+<header class="doc-hero">
+  <p class="eyebrow">Ayuda de CallRules</p>
+  <h1>Solución de problemas de CallRules</h1>
+  <p class="lede">Soluciones a problemas comunes, y lo que significa cada tarjeta de la pantalla Solucionar problemas de la app.</p>
+  <div class="card start-card">
+    <p class="in-app"><span>Empieza en la app:</span> Ajustes › Solucionar problemas</p>
+    <p>CallRules revisa tu configuración e identifica problemas que podrían impedir que el bloqueo funcione bien. Si una tarjeta ofrece <strong>Corregir</strong>, tócalo. El ícono de actualizar vuelve a hacer las revisiones.</p>
+  </div>
+  <nav class="toc-chips" aria-label="En esta página"><ul class="chips">
+    <li><a href="#common-problems">Problemas comunes</a></li>
+    <li><a href="#checks">Qué revisa Solucionar problemas</a></li>
+    <li><a href="callrules-help.html">Guía completa</a></li>
+  </ul></nav>
+</header>
+<section class="category" id="common-problems">
+  <h2>Problemas comunes</h2>
+  <ul class="category-topics">
+    <li><a href="#not-blocked">No se bloqueó una llamada</a></li>
+    <li><a href="#allowed-caller-rings">Un contacto o un número permitido sigue sonando</a></li>
+    <li><a href="#rule-ignored">Parece que se ignora una regla</a></li>
+    <li><a href="#contact-rule">Una regla de contacto o de grupo no coincide con nadie</a></li>
+    <li><a href="#outgoing">Las reglas salientes no se ejecutan</a></li>
+    <li><a href="#confirmation">Una confirmación de llamada saliente se canceló, venció o no se volvió a marcar</a></li>
+    <li><a href="#location">Una regla de ubicación no coincide</a></li>
+    <li><a href="#no-alerts">No hay notificaciones de llamadas bloqueadas</a></li>
+    <li><a href="#voice">Los comandos de voz no funcionan</a></li>
+    <li><a href="#pro">Pro de por vida no está disponible o no se restaura</a></li>
+    <li><a href="#more-help">¿Todavía necesitas ayuda?</a></li>
+  </ul>
+  <div class="problem-list">
+  <article class="card problem" id="not-blocked">
+    <h3>No se bloqueó una llamada</h3>
+    <ul>
+      <li>Revisa que CallRules sea tu app de identificación de llamadas y filtro de spam y que Inicio muestre “Protección activa”.</li>
+      <li>Revisa que Ajustes › Protección de llamadas y Reglas activadas estén activados.</li>
+      <li>Revisa que la regla esté activada, cubra las llamadas entrantes, no esté vencida y esté dentro de su horario y en su ubicación.</li>
+      <li>Abre Reglas › Revisar reglas. “Se omite la regla de bloqueo” significa que la lista de permitidos, tus contactos o una regla de permiso dejan pasar la llamada antes.</li>
+      <li>Para una llamada que tu app de Teléfono marcó como spam: CallRules no puede leer esa evaluación. Activa Ajustes › Bloquear las etiquetas de spam del operador para bloquear las llamadas que tu operador marca como spam, como “Scam Likely”. No todos los operadores envían una etiqueta.</li>
+      <li>Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena en lugar de arriesgarse a bloquearla por error.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="allowed-caller-rings">
+    <h3>Un contacto o un número permitido sigue sonando</h3>
+    <ul>
+      <li>La lista de permitidos, tus contactos (según Ajustes › Contactos permitidos) y las reglas de permiso se revisan antes que las reglas de bloqueo comunes y los números bloqueados.</li>
+      <li>Para bloquear esa llamada de todos modos, edita la regla de bloqueo y activa “Prioridad sobre los permisos”, o quita el número de la lista de permitidos.</li>
+      <li>Una regla de bloqueo de contacto, de grupo o de nombre de quien llama sigue el mismo orden, así que necesita “Prioridad sobre los permisos” para bloquear un contacto que Contactos permitidos deja pasar.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="rule-ignored">
+    <h3>Parece que se ignora una regla</h3>
+    <ul>
+      <li>Las reglas temporales muestran “Vencida” en Reglas cuando se acaba su tiempo; las reglas vencidas se borran aproximadamente un día después.</li>
+      <li>Las reglas con horario se aplican solo entre Inicio y Fin en sus días activos, en la zona horaria de la regla.</li>
+      <li>Las reglas con ubicación se aplican solo cuando tu última ubicación conocida está claramente dentro de la zona. Consulta “Una regla de ubicación no coincide” más abajo.</li>
+      <li>Las reglas salientes necesitan la Protección de llamadas salientes. Silenciar, la ubicación y las llamadas privadas o desconocidas se aplican solo a las llamadas entrantes.</li>
+      <li>Si Pro de por vida no está activo, los horarios, ubicaciones y patrones que ya estén guardados en las reglas se mantienen, pero no se pueden cambiar.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="contact-rule">
+    <h3>Una regla de contacto o de grupo no coincide con nadie</h3>
+    <ul>
+      <li>Las reglas de contacto necesitan acceso a los contactos. CallRules lo pide cuando eliges un contacto o un grupo.</li>
+      <li>Si se borró el contacto o el grupo, la pantalla Editar de la regla muestra “No se encontró el contacto” y Revisión de reglas avisa “No se encontró el contacto” o “No se encontró el grupo de contactos”. Edita la regla o bórrala.</li>
+      <li>Las reglas de nombre de quien llama coinciden con el nombre guardado de tu contacto o con el nombre del identificador de llamadas que envía tu operador. No todos los operadores envían nombres.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="outgoing">
+    <h3>Las reglas salientes no se ejecutan</h3>
+    <ul>
+      <li>La protección de llamadas salientes necesita Pro de por vida.</li>
+      <li>Abre Ajustes › Protección de llamadas salientes, toca “Permitir el desvío de llamadas” y activa “Activar las reglas salientes”.</li>
+      <li>Revisa que la dirección de la llamada de la regla sea Saliente o Ambas.</li>
+      <li>Si una regla o un ajuste pide un PIN, configura primero el PIN compartido.</li>
+      <li>Para las llamadas aprobadas, toca “Permitir el acceso a Teléfono”. CallRules no necesita el registro de llamadas ni los permisos antiguos de llamadas salientes.</li>
+      <li>Permite las notificaciones, para que una confirmación pendiente se muestre aunque Android no pueda abrir CallRules directamente.</li>
+      <li>Android nunca envía a CallRules las llamadas de emergencia ni algunas llamadas de puerta de enlace.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="confirmation">
+    <h3>Una confirmación de llamada saliente se canceló, venció o no se volvió a marcar</h3>
+    <ul>
+      <li>CallRules cancela la llamada original antes de preguntar. Tocar Cancelar llamada o esperar 60 segundos no hace ninguna llamada.</li>
+      <li>Después del PIN correcto o de mantener presionado hasta el final, CallRules vuelve a revisar tus reglas, el rol y el permiso de Teléfono, y luego hace una sola llamada de reemplazo.</li>
+      <li>Cada aprobación funciona una sola vez. Si algo cambió o Android no pudo hacer la llamada, corrige el problema indicado y vuelve a marcar.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="location">
+    <h3>Una regla de ubicación no coincide</h3>
+    <ul>
+      <li>El acceso a la ubicación solo se necesita para las reglas entrantes activadas que tienen una ubicación.</li>
+      <li>Permite primero la ubicación y luego elige la opción “Permitir todo el tiempo” de Android si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</li>
+      <li>Si se niega el acceso, o si falta tu ubicación o es demasiado imprecisa, la regla se omite.</li>
+      <li>Las reglas de ubicación coinciden con el lugar donde está tu teléfono, no con el lugar donde está quien llama. Las reglas de código de área, país y ciudad coinciden con prefijos de números.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="no-alerts">
+    <h3>No hay notificaciones de llamadas bloqueadas</h3>
+    <ul>
+      <li>Activa Ajustes › Mostrar alertas de llamadas bloqueadas.</li>
+      <li>Otorga a CallRules el permiso de notificaciones de Android. La revisión Notificaciones ofrece Corregir.</li>
+      <li>Las alertas de llamadas bloqueadas tienen baja prioridad, así que algunos teléfonos las agrupan u ocultan. Cada llamada bloqueada sigue apareciendo en el historial de llamadas.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="voice">
+    <h3>Los comandos de voz no funcionan</h3>
+    <ul>
+      <li>Los comandos de voz necesitan Pro de por vida.</li>
+      <li>La voz usa solo el reconocedor de voz en el dispositivo de Android. Si tu teléfono no tiene uno, escribe en “Escribe un comando”.</li>
+      <li>Si la tarjeta pregunta “¿Quisiste decir…?”, CallRules cambió o quitó una palabra. Toca Confirmar solo si la tarjeta muestra lo que quisiste decir.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="pro">
+    <h3>Pro de por vida no está disponible o no se restaura</h3>
+    <ul>
+      <li>Usa CallRules instalado desde Google Play y la misma cuenta de Google con la que compraste Pro.</li>
+      <li>Revisa tu conexión y luego abre Obtener Pro y toca “Reintentar con Google Play” o “Restaurar compra”.</li>
+      <li>Pro de por vida puede no estar disponible para algunas cuentas o regiones, ni en versiones de prueba que no están publicadas.</li>
+      <li>Una compra pendiente desbloquea Pro solo cuando Google Play la completa.</li>
+    </ul>
+  </article>
+  <article class="card problem" id="more-help">
+    <h3>¿Todavía necesitas ayuda?</h3>
+    <ul>
+      <li>Abre Ajustes › Informar un problema. Escribe o dicta lo que pasó, y luego toca Vista previa y envíalo con una app de correo o para compartir.</li>
+      <li>Puedes adjuntar el diagnóstico. El registro no incluye números de teléfono, contactos, reglas, coordenadas, voz ni tokens de compra.</li>
+    </ul>
+  </article>
+  </div>
+</section>
+<section class="category" id="checks">
+  <h2>Qué revisa la pantalla Solucionar problemas</h2>
+  <p class="muted">La pantalla solo muestra las tarjetas que se aplican a tu configuración. Cada resultado de abajo es el texto exacto que muestra la tarjeta.</p>
+  <div class="check-list">
+    <article class="card check" id="screening-role">
+      <h3>Rol de filtrado de llamadas</h3>
+      <p class="meta"><strong>Revisa:</strong> Si CallRules es tu app de identificación de llamadas y filtro de spam. Android envía las llamadas para filtrar solo a esa app.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules es tu app de identificación de llamadas y filtro de spam</li>
+        <li><span class="status error">Problema</span>CallRules NO es tu app de identificación de llamadas y filtro de spam — no se bloquearán llamadas<span class="fix">Corregir: Le pide a Android que haga de CallRules tu app de identificación de llamadas y filtro de spam.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Configuración de Android › Apps › Apps predeterminadas › App de ID de llamada y spam, y elige CallRules.</li>
+        <li>Algunos teléfonos llaman a este ajuste “App de filtrado de llamadas” o lo ponen en los ajustes de la app de Teléfono.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-protection">
+      <h3>Protección de llamadas</h3>
+      <p class="meta"><strong>Revisa:</strong> Si el escudo está activado.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>La protección está activada</li>
+        <li><span class="status error">Problema</span>La protección está desactivada — no se está bloqueando ninguna llamada<span class="fix">Corregir: Activa la protección de llamadas.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Toca el escudo en Inicio, o activa Ajustes › Protección de llamadas.</li>
+      </ul>
+    </article>
+    <article class="card check" id="carrier-verification">
+      <h3>Verificación del operador</h3>
+      <p class="meta"><strong>Revisa:</strong> El ajuste Verificación del operador, que usa el resultado STIR/SHAKEN que tu operador agrega a cada llamada.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status warning">Advertencia</span>Desactivada — no se bloquean las llamadas que no pasan la verificación del operador<span class="fix">Corregir: Pone la verificación del operador en Estándar.</span></li>
+        <li><span class="status ok">OK</span>Estricta — se bloquean las llamadas sin verificar además de las que no pasan la verificación</li>
+        <li><span class="status ok">OK</span>Estándar — se bloquean las llamadas que no pasan la verificación del operador</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Avanzado › Verificación del operador y elige Estándar o Estricta.</li>
+        <li>Estricta también bloquea las llamadas sin verificación, lo que puede incluir llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-rules">
+      <h3>Reglas de llamadas</h3>
+      <p class="meta"><strong>Revisa:</strong> Si Reglas activadas está activado. Cuando está desactivado, no se aplica ninguna regla de bloqueo ni de permiso a las llamadas entrantes.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Las reglas están activas</li>
+        <li><span class="status warning">Advertencia</span>Todas las reglas están EN PAUSA — no se aplican las reglas de bloqueo, de permiso ni de silenciar<span class="fix">Corregir: Vuelve a activar Reglas activadas.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Activa Ajustes › Reglas activadas.</li>
+      </ul>
+    </article>
+    <article class="card check" id="notifications">
+      <h3>Notificaciones</h3>
+      <p class="meta"><strong>Revisa:</strong> Si Android permite que CallRules muestre notificaciones (Android 13 y posteriores piden este permiso).</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Permiso de notificaciones otorgado</li>
+        <li><span class="status warning">Advertencia</span>Permiso de notificaciones no otorgado — no verás las alertas de llamadas bloqueadas<span class="fix">Corregir: Abre los ajustes de notificaciones de Android para CallRules.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Configuración de Android › Apps › CallRules › Notificaciones y permítelas.</li>
+        <li>Luego revisa que Ajustes › Mostrar alertas de llamadas bloqueadas esté activado en CallRules.</li>
+      </ul>
+    </article>
+    <article class="card check" id="battery">
+      <h3>Uso de batería</h3>
+      <p class="meta"><strong>Revisa:</strong> No hay nada que corregir: esta tarjeta explica cómo funciona CallRules.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules usa el servicio CallScreeningService de Android, que funciona por eventos — solo se ejecuta cuando llega una llamada, no de forma continua. El impacto en la batería es casi nulo.</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>No hace falta cambiar la optimización de batería.</li>
+      </ul>
+    </article>
+    <article class="card check" id="redirection-role">
+      <h3>Rol de desvío de llamadas salientes</h3>
+      <p class="meta"><strong>Revisa:</strong> Si CallRules tiene el rol de desvío de llamadas de Android, que le permite revisar las llamadas que haces.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si la protección de llamadas salientes está configurada: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>CallRules puede evaluar las llamadas salientes</li>
+        <li><span class="status error">Problema</span>Rol no otorgado — las reglas salientes no pueden ejecutarse<span class="fix">Corregir: Le pide a Android que le dé a CallRules el rol de desvío de llamadas.</span></li>
+        <li><span class="status error">Problema</span>El desvío de llamadas no está disponible en este dispositivo</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Protección de llamadas salientes y toca “Permitir el desvío de llamadas”.</li>
+        <li>Si tu teléfono no ofrece el desvío de llamadas, la protección de llamadas salientes no puede funcionar en él.</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-rule-setting">
+      <h3>Ajuste de reglas salientes</h3>
+      <p class="meta"><strong>Revisa:</strong> Si “Activar las reglas salientes” está activado cuando tienes reglas Saliente o Ambas activadas.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si la protección de llamadas salientes está configurada: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Las reglas Saliente y Ambas están activadas</li>
+        <li><span class="status ok">OK</span>No hay reglas Saliente ni Ambas activadas; la confirmación global puede aplicarse de todos modos</li>
+        <li><span class="status warning">Advertencia</span>Hay reglas Saliente o Ambas, pero la evaluación de reglas salientes está desactivada<span class="fix">Corregir: Abre Protección de llamadas salientes.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Protección de llamadas salientes y activa “Activar las reglas salientes”.</li>
+      </ul>
+    </article>
+    <article class="card check" id="outgoing-pin">
+      <h3>PIN de llamadas salientes</h3>
+      <p class="meta"><strong>Revisa:</strong> Si el PIN compartido está configurado cuando las llamadas salientes necesitan uno.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si “Pedir el PIN para todas las llamadas salientes” está activado, o una regla saliente activada tiene “Pedir PIN”, y no hay un PIN configurado.</p>
+      <ul class="results">
+        <li><span class="status error">Problema</span>Una llamada saliente que pide PIN se rechazará hasta que se configure un PIN compartido<span class="fix">Corregir: Abre Protección de llamadas salientes.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Protección de llamadas salientes y toca Configurar PIN (de 4 a 8 dígitos).</li>
+        <li>Las reglas importadas con “Pedir PIN” necesitan un PIN configurado en este teléfono.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmed-redial">
+      <h3>Volver a marcar llamadas confirmadas</h3>
+      <p class="meta"><strong>Revisa:</strong> Si CallRules tiene el permiso de Teléfono que necesita para volver a hacer la llamada aprobada.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si las llamadas salientes piden un PIN o mantener presionado.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>El permiso de Teléfono está listo para una llamada de reemplazo aprobada</li>
+        <li><span class="status error">Problema</span>Falta el permiso de Teléfono — la aprobación no puede hacer la llamada de reemplazo<span class="fix">Corregir: Pide el permiso de Teléfono.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Protección de llamadas salientes y toca “Permitir el acceso a Teléfono”.</li>
+        <li>CallRules no necesita el registro de llamadas ni los permisos antiguos de llamadas salientes.</li>
+      </ul>
+    </article>
+    <article class="card check" id="confirmation-timeout">
+      <h3>Tiempo de confirmación y cancelación</h3>
+      <p class="meta"><strong>Revisa:</strong> No hay nada que corregir: esta tarjeta explica qué pasa con una llamada que espera aprobación.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si las llamadas salientes piden un PIN o mantener presionado.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Una solicitud cancelada o vencida no hace ninguna llamada. Si no se puede volver a marcar una llamada aprobada, revisa el rol y el permiso de Teléfono, y vuelve a marcar.</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Si tocas Cancelar llamada o esperas 60 segundos, no se hace ninguna llamada. Vuelve a marcar.</li>
+        <li>Cada aprobación hace una sola llamada. Si no se puede volver a marcar, revisa el rol y el permiso de Teléfono, y vuelve a marcar.</li>
+      </ul>
+    </article>
+    <article class="card check" id="location-rules">
+      <h3>Reglas de ubicación</h3>
+      <p class="meta"><strong>Revisa:</strong> Si CallRules puede usar tu ubicación, incluso cuando está cerrado o el teléfono está bloqueado.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si una regla entrante activada tiene una ubicación.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Lista cuando CallRules está cerrada o el teléfono está bloqueado</li>
+        <li><span class="status warning">Advertencia</span>El acceso en primer plano está permitido; todavía se necesita el acceso en segundo plano para las llamadas cuando la app está cerrada<span class="fix">Corregir: Pide acceso a la ubicación y luego explica cómo permitirlo todo el tiempo.</span></li>
+        <li><span class="status warning">Advertencia</span>El acceso a la ubicación no está disponible; las reglas limitadas a una ubicación se tratarán como no cumplidas<span class="fix">Corregir: Pide acceso a la ubicación y luego explica cómo permitirlo todo el tiempo.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Reglas de ubicación y toca “Permitir la ubicación para las reglas de ubicación”.</li>
+        <li>Luego toca “Configurar la ubicación en segundo plano” y elige la opción “Permitir todo el tiempo” de Android.</li>
+        <li>Sin acceso a la ubicación, las reglas con una ubicación se omiten.</li>
+      </ul>
+    </article>
+    <article class="card check" id="billing">
+      <h3>Facturación de Google Play</h3>
+      <p class="meta"><strong>Revisa:</strong> Si CallRules puede conectarse con la facturación de Google Play y cargar Pro de por vida.</p>
+      <p class="meta"><strong>Se muestra:</strong> Siempre</p>
+      <ul class="results">
+        <li><span class="status warning">Advertencia</span>No se pudo conectar ni cargar el producto Pro de por vida. Revisa la conexión con Play Store y vuelve a intentarlo.<span class="fix">Corregir: Vuelve a conectarse con la facturación de Google Play.</span></li>
+        <li><span class="status warning">Advertencia</span>Conectado, pero el producto Pro de por vida no está disponible para esta cuenta o esta versión.<span class="fix">Corregir: Vuelve a conectarse con la facturación de Google Play.</span></li>
+        <li><span class="status ok">OK</span>La conexión con la facturación y la restauración de compras están disponibles en Obtener Pro.</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Revisa tu conexión y que la app de Google Play Store tenga una sesión iniciada y esté actualizada.</li>
+        <li>Abre Obtener Pro y toca “Reintentar con Google Play” o “Restaurar compra”.</li>
+        <li>Consulta “Pro de por vida no está disponible o no se restaura” en Problemas comunes.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+<section class="category" id="contact">
+  <h2>Contacto</h2>
+  <p>Usa <strong>Ajustes › Informar un problema</strong> en la app o escribe a <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>. Por favor, no envíes números de teléfono que no necesites compartir.</p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pie de página">
+      <a href="/">Plainform</a>
+      <a href="callrules.html">CallRules</a>
+      <a href="callrules-help.html">Ayuda</a>
+      <a href="callrules-troubleshooting.html">Solución de problemas</a>
+      <a href="callrules-privacy.html">Política de privacidad</a>
+      <a href="mailto:mjred.dev@gmail.com">Contacto</a>
+    </nav>
+    <p>Plainform es un nombre comercial de MJRed Dev LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
