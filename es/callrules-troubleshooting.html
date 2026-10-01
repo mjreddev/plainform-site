@@ -93,7 +93,7 @@
     <ul>
       <li>Las reglas temporales muestran “Vencida” en Reglas cuando se acaba su tiempo; las reglas vencidas se borran aproximadamente un día después.</li>
       <li>Las reglas con horario se aplican solo entre Inicio y Fin en sus días activos, en la zona horaria de la regla.</li>
-      <li>Las reglas con ubicación se aplican solo cuando tu última ubicación conocida está claramente dentro de la zona. Consulta “Una regla de ubicación no coincide” más abajo.</li>
+      <li>Las reglas con ubicación se aplican solo cuando CallRules puede saber que estás dentro de la zona, por una ubicación reciente o por la geovalla de Android para ese lugar. Consulta “Una regla de ubicación no coincide” más abajo.</li>
       <li>Las reglas salientes necesitan la Protección de llamadas salientes. Silenciar, la ubicación y las llamadas privadas o desconocidas se aplican solo a las llamadas entrantes.</li>
       <li>Si Pro de por vida no está activo, los horarios, ubicaciones y patrones que ya estén guardados en las reglas se mantienen, pero no se pueden cambiar.</li>
     </ul>
@@ -131,7 +131,8 @@
     <ul>
       <li>El acceso a la ubicación solo se necesita para las reglas entrantes activadas que tienen una ubicación.</li>
       <li>Permite primero la ubicación y luego elige la opción “Permitir todo el tiempo” de Android si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</li>
-      <li>Si se niega el acceso, o si falta tu ubicación o es demasiado imprecisa, la regla se omite.</li>
+      <li>Si CallRules no puede saber dónde estás (sin acceso, sin una ubicación reciente y sin resultado de geovalla), decide Ajustes › Reglas y lugares › “Cuando no se puede comprobar la ubicación”. De forma predeterminada, una regla de permiso deja sonar la llamada y una regla de bloqueo se omite. El historial de llamadas lo indica cuando pasa.</li>
+      <li>Las geovallas necesitan la ubicación precisa y funcionan mejor cuando Android no restringe el uso de batería de CallRules. La revisión Señal de ubicación muestra las dos cosas.</li>
       <li>Las reglas de ubicación coinciden con el lugar donde está tu teléfono, no con el lugar donde está quien llama. Las reglas de código de área, país y ciudad coinciden con prefijos de números.</li>
     </ul>
   </article>
@@ -247,7 +248,7 @@
       <p class="meta"><strong>Revisa:</strong> No hay nada que corregir: esta tarjeta explica cómo funciona CallRules.</p>
       <p class="meta"><strong>Se muestra:</strong> Siempre</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>CallRules usa el servicio CallScreeningService de Android, que funciona por eventos — solo se ejecuta cuando llega una llamada, no de forma continua. El impacto en la batería es casi nulo.</li>
+        <li><span class="status ok">OK</span>CallRules usa el servicio CallScreeningService de Android, que funciona por eventos — se ejecuta cuando llega una llamada, no de forma continua. Solo mientras tengas reglas de ubicación, también usa las geovallas de bajo consumo de Android alrededor de sus lugares. El impacto en la batería sigue siendo muy bajo.</li>
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
@@ -330,13 +331,31 @@
       <ul class="results">
         <li><span class="status ok">OK</span>Lista cuando CallRules está cerrada o el teléfono está bloqueado</li>
         <li><span class="status warning">Advertencia</span>El acceso en primer plano está permitido; todavía se necesita el acceso en segundo plano para las llamadas cuando la app está cerrada<span class="fix">Corregir: Pide acceso a la ubicación y luego explica cómo permitirlo todo el tiempo.</span></li>
-        <li><span class="status warning">Advertencia</span>El acceso a la ubicación no está disponible; las reglas limitadas a una ubicación se tratarán como no cumplidas<span class="fix">Corregir: Pide acceso a la ubicación y luego explica cómo permitirlo todo el tiempo.</span></li>
+        <li><span class="status warning">Advertencia</span>El acceso a la ubicación no está disponible; las reglas de ubicación siguen tu ajuste “Cuando no se puede comprobar la ubicación”<span class="fix">Corregir: Pide acceso a la ubicación y luego explica cómo permitirlo todo el tiempo.</span></li>
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
         <li>Abre Ajustes › Reglas de ubicación y toca “Permitir la ubicación para las reglas de ubicación”.</li>
         <li>Luego toca “Configurar la ubicación en segundo plano” y elige la opción “Permitir todo el tiempo” de Android.</li>
-        <li>Sin acceso a la ubicación, las reglas con una ubicación se omiten.</li>
+        <li>Sin acceso a la ubicación, las reglas de ubicación no se pueden comprobar, y Ajustes › Reglas y lugares › “Cuando no se puede comprobar la ubicación” decide qué hacen.</li>
+      </ul>
+    </article>
+    <article class="card check" id="location-signal">
+      <h3>Señal de ubicación</h3>
+      <p class="meta"><strong>Revisa:</strong> Si las reglas de ubicación se pueden comprobar cuando llega una llamada: ubicación precisa, uso de batería en segundo plano y antigüedad de tu última ubicación conocida.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si una regla entrante activada tiene una ubicación y el acceso a la ubicación está permitido.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>La ubicación precisa está permitida, el uso de batería no está restringido y hay una ubicación reciente</li>
+        <li><span class="status warning">Advertencia</span>Solo se permite la ubicación aproximada — las geovallas no pueden funcionar, así que la ubicación de las reglas suele ser desconocida<span class="fix">Corregir: Abre la configuración de Android para CallRules, donde puedes permitir la ubicación precisa y cambiar el uso de batería.</span></li>
+        <li><span class="status warning">Advertencia</span>Android restringe el uso de batería en segundo plano de CallRules — las actualizaciones de las geovallas pueden retrasarse o perderse<span class="fix">Corregir: Abre la configuración de Android para CallRules, donde puedes permitir la ubicación precisa y cambiar el uso de batería.</span></li>
+        <li><span class="status warning">Advertencia</span>Tu última ubicación conocida tiene más de 10 minutos — las reglas de ubicación dependen de las geovallas hasta que llegue una nueva. Es normal si ninguna app usó la ubicación hace poco.</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Las reglas de ubicación usan una ubicación de los últimos 10 minutos o, si no la hay, las geovallas de Android alrededor de sus lugares. Las geovallas necesitan la ubicación precisa.</li>
+        <li>Para permitir la ubicación precisa, abre Configuración de Android › Apps › CallRules › Permisos › Ubicación y activa “Usar ubicación precisa”.</li>
+        <li>Si Android restringe el uso de batería de CallRules, abre Configuración de Android › Apps › CallRules › Batería y elige Sin restricciones.</li>
+        <li>Cuando ninguna de las dos puede decidir, Ajustes › Reglas y lugares › “Cuando no se puede comprobar la ubicación” decide qué hace la regla.</li>
       </ul>
     </article>
     <article class="card check" id="billing">

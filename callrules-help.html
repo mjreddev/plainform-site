@@ -225,7 +225,7 @@
     </ol>
     <p>If no step decides the call, it rings.</p>
     <p>Steps 3, 6, and 7 are skipped while Rules enabled is off. Contact, group, and caller-name rules take part in steps 3, 6, and 7 like any other rule, so a contact block rule doesn't block a caller that step 5 lets through unless it has “Override allow rules” on.</p>
-    <p>A rule is also skipped when it's switched off, expired, outside its schedule, or away from its location. If CallRules can't decide within about 3.5 seconds, the call rings.</p>
+    <p>A rule is also skipped when it's switched off, expired, outside its schedule, or away from its location (Location rules explains what happens when the location is unknown). If CallRules can't decide within about 3.5 seconds, the call rings.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>For outgoing calls, a matching block rule with “Override allow rules” on cancels the call. Otherwise, a matching allow rule lets the call through (asking for the PIN if the rule requires it), and a matching block rule cancels it.</p></div>
   </article>
   <article class="topic" id="rule-check">
@@ -435,7 +435,8 @@
     <h3>Location rules <span class="pro">PRO</span> <a class="anchor" href="#location-rules" aria-label="Link to Location rules">#</a></h3>
     <p class="summary">Rules that apply only at a place</p>
     <p>Location (Pro, incoming only): tap Pick Location, then search for an address or paste coordinates, tap Use Current Location, or choose one of your Saved places. Then set the radius (30 m to 5 km).</p>
-    <p>The rule applies only when your last known location is clearly inside that area. If your location is missing or too imprecise, that rule is skipped. Allow background location if the rule must work while CallRules is closed or the phone is locked.</p>
+    <p>When a call arrives, CallRules checks where you are in this order: a location less than a minute old; otherwise one up to 10 minutes old that's clearly inside or outside the area; otherwise Android's low-power geofence around the place (never smaller than 100 m). Geofences run only while you have location rules, and they need precise location. Allow background location if the rule must work while CallRules is closed or the phone is locked.</p>
+    <p>If none of these can tell, Settings › Rules &amp; places › “When location can't be checked” decides. By default an allow rule lets the call ring, and no other block rule applies; a block rule is ignored, and the call goes on to the next checks. Call history notes when a location rule was skipped or decided this way.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Settings › Rules &amp; places › Location rules shows whether location access is ready. Use “Allow location for location rules” or “Set up background location” to grant it.</p></div>
   </article>
   <article class="topic" id="schedules">
@@ -527,7 +528,7 @@
     <h3>Troubleshooting and support <a class="anchor" href="#troubleshooting" aria-label="Link to Troubleshooting and support">#</a></h3>
     <p class="summary">Fix problems, send feedback, and export diagnostics</p>
     <ul>
-      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, location access, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
+      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, location access and signal, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
       <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether the whitelist, your contacts, or an allow rule is letting the call through.</li>
       <li>Online help and Online troubleshooting open the CallRules web pages.</li>
       <li><strong>Send feedback and Report a problem:</strong> type, or tap the microphone to dictate on the device. You can attach diagnostics. Tap Preview, then send with an email or sharing app, or use Copy or Save.</li>

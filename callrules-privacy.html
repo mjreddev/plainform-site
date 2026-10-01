@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>CallRules Privacy Policy</h1>
-  <p class="updated">CallRules: Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 28 September 2026</p>
+  <p class="updated">CallRules: Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 1 October 2026</p>
   <nav class="policy-nav" aria-label="Plainform apps policies"><span>Plainform apps policies:</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="filezone-privacy.html">File Zone</a> <a href="siteproof-privacy.html">SiteProof</a></nav>
 
   <div class="summary">
@@ -78,7 +78,10 @@
     <li><strong>Location</strong> — optional approximate or precise location is
         used to evaluate location-constrained rules. If you enable those
         rules, background location may be needed so they can work when the app
-        is not open. CallRules also reads your current location once, on request,
+        is not open. While you have location rules, CallRules registers low-power
+        Android geofences around those places so a rule can apply to a call that
+        arrives while the app is closed; they are removed when you delete the
+        rules. CallRules also reads your current location once, on request,
         when you tap Use Current Location in the location picker (for a rule or a
         saved place) or give a voice place command such as “save this place as
         Home” or “move place Office to here”. CallRules processes that location

@@ -226,7 +226,7 @@
     </ol>
     <p>Si ningún paso decide la llamada, suena.</p>
     <p>Los pasos 3, 6 y 7 se omiten mientras Reglas activadas está desactivado. Las reglas de contacto, de grupo y de nombre de quien llama participan en los pasos 3, 6 y 7 como cualquier otra regla, así que una regla de bloqueo de contacto no bloquea una llamada que el paso 5 deja pasar, a menos que tenga “Prioridad sobre los permisos” activada.</p>
-    <p>Una regla también se omite cuando está desactivada, vencida, fuera de su horario o lejos de su ubicación. Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena.</p>
+    <p>Una regla también se omite cuando está desactivada, vencida, fuera de su horario o lejos de su ubicación (Reglas de ubicación explica qué pasa cuando la ubicación es desconocida). Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>En las llamadas salientes, una regla de bloqueo que coincide con “Prioridad sobre los permisos” activada cancela la llamada. Si no, una regla de permiso que coincide deja pasar la llamada (y pide el PIN si la regla lo exige), y una regla de bloqueo que coincide la cancela.</p></div>
   </article>
   <article class="topic" id="rule-check">
@@ -436,7 +436,8 @@
     <h3>Reglas de ubicación <span class="pro">PRO</span> <a class="anchor" href="#location-rules" aria-label="Enlace a Reglas de ubicación">#</a></h3>
     <p class="summary">Reglas que se aplican solo en un lugar</p>
     <p>Ubicación (Pro, solo entrantes): toca Elegir ubicación y luego busca una dirección o pega coordenadas, toca Usar ubicación actual o elige uno de tus lugares guardados. Después configura el radio (de 30 m a 5 km).</p>
-    <p>La regla se aplica solo cuando tu última ubicación conocida está claramente dentro de esa zona. Si falta tu ubicación o es demasiado imprecisa, esa regla se omite. Permite la ubicación en segundo plano si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</p>
+    <p>Cuando llega una llamada, CallRules determina dónde estás en este orden: una ubicación de menos de un minuto; si no, una de hasta 10 minutos que esté claramente dentro o fuera de la zona; si no, la geovalla de bajo consumo de Android alrededor del lugar (nunca menor de 100 m). Las geovallas funcionan solo mientras tengas reglas de ubicación y necesitan la ubicación precisa. Permite la ubicación en segundo plano si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</p>
+    <p>Si nada de esto permite saberlo, decide Ajustes › Reglas y lugares › “Cuando no se puede comprobar la ubicación”. De forma predeterminada, una regla de permiso deja sonar la llamada y ninguna otra regla de bloqueo se aplica; una regla de bloqueo se ignora y la llamada pasa a las siguientes comprobaciones. El historial de llamadas indica cuando una regla de ubicación se omitió o se decidió así.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Ajustes › Reglas y lugares › Reglas de ubicación indica si el acceso a la ubicación está listo. Usa “Permitir la ubicación para las reglas de ubicación” o “Configurar la ubicación en segundo plano” para darlo.</p></div>
   </article>
   <article class="topic" id="schedules">
@@ -528,7 +529,7 @@
     <h3>Solución de problemas y asistencia <a class="anchor" href="#troubleshooting" aria-label="Enlace a Solución de problemas y asistencia">#</a></h3>
     <p class="summary">Soluciona problemas, envía comentarios y exporta el diagnóstico</p>
     <ul>
-      <li>Solucionar problemas revisa el rol de filtrado de llamadas, la protección de llamadas, la verificación del operador, las reglas en pausa, el permiso de notificaciones, el acceso a la ubicación, la configuración de llamadas salientes y la facturación de Google Play. Toca Corregir donde aparezca. El ícono de actualizar vuelve a ejecutar las revisiones, y “Exportar o borrar el diagnóstico” abre las herramientas de diagnóstico.</li>
+      <li>Solucionar problemas revisa el rol de filtrado de llamadas, la protección de llamadas, la verificación del operador, las reglas en pausa, el permiso de notificaciones, el acceso y la señal de ubicación, la configuración de llamadas salientes y la facturación de Google Play. Toca Corregir donde aparezca. El ícono de actualizar vuelve a ejecutar las revisiones, y “Exportar o borrar el diagnóstico” abre las herramientas de diagnóstico.</li>
       <li>Si una llamada no se bloquea, revisa que CallRules sea tu app de identificación de llamadas y filtro de spam, que Protección de llamadas y Reglas activadas estén activados, y que la regla esté activada, no esté vencida y esté dentro de su horario. Luego ejecuta Revisar reglas para ver si la lista de permitidos, tus contactos o una regla de permiso dejan pasar la llamada.</li>
       <li>Ayuda en línea y Solución de problemas en línea abren las páginas web de CallRules.</li>
       <li>Enviar comentarios e Informar un problema: escribe, o toca el micrófono para dictar en el dispositivo. Puedes adjuntar el diagnóstico. Toca Vista previa y luego envía con una app de correo o para compartir, o usa Copiar o Guardar.</li>
