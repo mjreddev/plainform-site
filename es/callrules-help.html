@@ -133,7 +133,7 @@
     <h3>Panel de inicio <a class="anchor" href="#home-dashboard" aria-label="Enlace a Panel de inicio">#</a></h3>
     <p class="summary">El escudo, los contadores y los avisos</p>
     <ul>
-      <li>Toca el escudo para activar o desactivar la protección (“Protección activa” / “Protección desactivada”). Es el mismo interruptor que Ajustes › Protección de llamadas.</li>
+      <li>Toca el escudo para activar o desactivar la protección (“Protección activa” / “Protección desactivada”). Es el mismo interruptor que Ajustes › Protección › Protección de llamadas.</li>
       <li>Hoy, Esta semana y En total cuentan las llamadas que CallRules bloqueó o silenció. Tiempo ahorrado es un cálculo de 2 minutos por llamada bloqueada.</li>
       <li>Comando de voz abre los comandos de voz (Pro).</li>
       <li>“Falta configurar” aparece cuando CallRules no es tu app de identificación de llamadas y filtro de spam.</li>
@@ -410,7 +410,7 @@
     <p class="summary">Nombra lugares como Casa o Trabajo para las reglas y la voz</p>
     <p>Nombra lugares como Casa o Trabajo, con un radio, usando la misma búsqueda de dirección o la ubicación actual que en una regla. Agregarlos y cambiarles el nombre requiere Pro. Elígelos cuando agregues una regla de ubicación; los comandos de voz los usan por su nombre y pueden agregarlos, cambiarles el nombre, moverlos, borrarlos o mostrarlos (“guarda este lugar como Casa”).</p>
     <p>Las reglas creadas a partir de un lugar siguen vinculadas a él, así que mover el lugar, cambiar su tamaño o su nombre las actualiza; borrar un lugar desvincula sus reglas, que conservan su última ubicación.</p>
-    <p>Frases como “cuando esté en casa” necesitan un lugar guardado con ese nombre. Agrega lugares por voz o en Ajustes › Reglas › Lugares guardados.</p>
+    <p>Frases como “cuando esté en casa” necesitan un lugar guardado con ese nombre. Agrega lugares por voz o en Ajustes › Reglas y lugares › Lugares guardados.</p>
     <p class="in-app"><span>En la app:</span> Ajustes › Reglas › Lugares guardados</p>
   </article>
   <article class="topic" id="voice-places">
@@ -437,7 +437,7 @@
     <p class="summary">Reglas que se aplican solo en un lugar</p>
     <p>Ubicación (Pro, solo entrantes): toca Elegir ubicación y luego busca una dirección o pega coordenadas, toca Usar ubicación actual o elige uno de tus lugares guardados. Después configura el radio (de 30 m a 5 km).</p>
     <p>La regla se aplica solo cuando tu última ubicación conocida está claramente dentro de esa zona. Si falta tu ubicación o es demasiado imprecisa, esa regla se omite. Permite la ubicación en segundo plano si la regla debe funcionar cuando CallRules está cerrada o el teléfono está bloqueado.</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Ajustes › Reglas de ubicación indica si el acceso a la ubicación está listo. Usa “Permitir la ubicación para las reglas de ubicación” o “Configurar la ubicación en segundo plano” para darlo.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Ajustes › Reglas y lugares › Reglas de ubicación indica si el acceso a la ubicación está listo. Usa “Permitir la ubicación para las reglas de ubicación” o “Configurar la ubicación en segundo plano” para darlo.</p></div>
   </article>
   <article class="topic" id="schedules">
     <h3>Horarios <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Enlace a Horarios">#</a></h3>
@@ -466,7 +466,7 @@
       <li>Bloquear las etiquetas de spam del operador: rechaza las llamadas que tu operador marca como spam en el nombre del identificador de llamadas, como “Scam Likely”, “Spam Risk” o “Potential Spam”. CallRules no puede leer la evaluación de spam de tu app de Teléfono, pero sí puede usar la etiqueta que envía tu operador. Solo se revisa el nombre que envía el operador, así que las llamadas de la lista de permitidos, de tus contactos y de las reglas de permiso siguen sonando aunque el operador las marque.</li>
       <li><strong>Contactos permitidos:</strong> elige Todos los contactos, Solo favoritos o Ninguno para indicar qué contactos siempre suenan.</li>
       <li><strong>Reglas activadas:</strong> desactivarlo pausa todas las reglas de bloqueo y de permiso de las llamadas entrantes.</li>
-      <li>Avanzado › Verificación del operador usa el resultado STIR/SHAKEN que tu operador agrega a cada llamada. Desactivada lo ignora, Estándar bloquea las llamadas que no pasan la verificación y Estricta también bloquea las llamadas sin verificación. Estricta puede bloquear llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales. La lista de permitidos, tus contactos y las reglas de permiso siguen dejando pasar las llamadas.</li>
+      <li>Protección › Verificación del operador usa el resultado STIR/SHAKEN que tu operador agrega a cada llamada. Desactivada lo ignora, Estándar bloquea las llamadas que no pasan la verificación y Estricta también bloquea las llamadas sin verificación. Estricta puede bloquear llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales. La lista de permitidos, tus contactos y las reglas de permiso siguen dejando pasar las llamadas.</li>
     </ul>
     <p class="in-app"><span>En la app:</span> Pestaña Ajustes</p>
   </article>
@@ -489,7 +489,7 @@
   <article class="topic" id="outgoing">
     <h3>Protección de llamadas salientes <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Enlace a Protección de llamadas salientes">#</a></h3>
     <p class="summary">Reglas salientes, PIN y mantener presionado</p>
-    <p>Abre Ajustes › Protección de llamadas salientes.</p>
+    <p>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes.</p>
     <ul>
       <li><strong>Activar las reglas salientes:</strong> revisa tus reglas Saliente y Ambas antes de hacer una llamada. Una llamada bloqueada se cancela.</li>
       <li>Pedir PIN en todas las llamadas salientes, o Pedir mantener presionado (1.5 segundos). Un PIN, ya sea global o de una regla, tiene prioridad sobre mantener presionado.</li>
@@ -514,7 +514,7 @@
   <article class="topic" id="appearance">
     <h3>Apariencia <a class="anchor" href="#appearance" aria-label="Enlace a Apariencia">#</a></h3>
     <p class="summary">Colores, colores del fondo de pantalla y modo oscuro</p>
-    <p>Ajustes › Apariencia: activa “Usar los colores del fondo de pantalla” (Android 12 y posteriores) para seguir la paleta de tu dispositivo. Cuando está desactivado, elige un Color: Azul, Rojo, Verde, Amarillo, Rosa, Morado o Verde azulado. El Modo puede ser Según el sistema, Claro u Oscuro. La vista previa de la paleta muestra el resultado.</p>
+    <p>Ajustes › Apariencia e idioma: activa “Usar los colores del fondo de pantalla” (Android 12 y posteriores) para seguir la paleta de tu dispositivo. Cuando está desactivado, elige un Color: Azul, Rojo, Verde, Amarillo, Rosa, Morado o Verde azulado. El Modo puede ser Según el sistema, Claro u Oscuro. La vista previa de la paleta muestra el resultado.</p>
   </article>
 </section>
 <section class="category" id="help">

@@ -133,7 +133,7 @@
     <h3>Tableau de bord d’accueil <a class="anchor" href="#home-dashboard" aria-label="Lien vers Tableau de bord d’accueil">#</a></h3>
     <p class="summary">Le bouclier, les compteurs et les bannières</p>
     <ul>
-      <li>Touchez le bouclier pour activer ou désactiver la protection (« Protection active » / « Protection désactivée »). C’est le même interrupteur que Réglages › Protection des appels.</li>
+      <li>Touchez le bouclier pour activer ou désactiver la protection (« Protection active » / « Protection désactivée »). C’est le même interrupteur que Réglages › Protection › Protection des appels.</li>
       <li>Aujourd’hui, Cette semaine et Depuis le début comptent les appels que CallRules a bloqués ou mis en sourdine. Temps gagné est une estimation de 2 minutes par appel bloqué.</li>
       <li>Commande vocale ouvre les commandes vocales (Pro).</li>
       <li>« Configuration requise » s’affiche quand CallRules n’est pas votre appli d’identification et de filtrage des appels.</li>
@@ -410,7 +410,7 @@
     <p class="summary">Nommez des lieux comme Maison ou Travail pour les règles et la voix</p>
     <p>Nommez des lieux comme Maison ou Travail, avec un rayon, à l’aide de la même recherche d’adresse ou de la position actuelle qu’une règle. Les ajouter et les renommer demande Pro. Choisissez-les quand vous ajoutez une règle d’emplacement; les commandes vocales les utilisent par leur nom et peuvent les ajouter, les renommer, les déplacer, les supprimer ou les lister (« enregistre cet endroit comme Maison »).</p>
     <p>Les règles créées à partir d’un lieu y restent liées : déplacer, redimensionner ou renommer le lieu les met à jour; supprimer un lieu détache ses règles, qui gardent son dernier emplacement.</p>
-    <p>Des phrases comme « quand je suis à la maison » ont besoin d’un lieu enregistré portant ce nom. Ajoutez des lieux par la voix ou dans Réglages › Règles › Lieux enregistrés.</p>
+    <p>Des phrases comme « quand je suis à la maison » ont besoin d’un lieu enregistré portant ce nom. Ajoutez des lieux par la voix ou dans Réglages › Règles et lieux › Lieux enregistrés.</p>
     <p class="in-app"><span>Dans l’appli :</span> Réglages › Règles › Lieux enregistrés</p>
   </article>
   <article class="topic" id="voice-places">
@@ -437,7 +437,7 @@
     <p class="summary">Des règles qui s’appliquent seulement à un lieu</p>
     <p>Emplacement (Pro, entrants seulement) : touchez Choisir l’emplacement, puis cherchez une adresse ou collez des coordonnées, touchez Utiliser la position actuelle, ou choisissez un de vos lieux enregistrés. Réglez ensuite le rayon (de 30 m à 5 km).</p>
     <p>La règle s’applique seulement quand votre dernière position connue est nettement à l’intérieur de cette zone. Si votre position manque ou est trop imprécise, cette règle est sautée. Autorisez la localisation en arrière-plan si la règle doit fonctionner quand CallRules est fermé ou que le téléphone est verrouillé.</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Réglages › Règles d’emplacement indique si l’accès à la localisation est prêt. Utilisez « Autoriser la localisation pour les règles d’emplacement » ou « Configurer la localisation en arrière-plan » pour l’accorder.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Réglages › Règles et lieux › Règles d’emplacement indique si l’accès à la localisation est prêt. Utilisez « Autoriser la localisation pour les règles d’emplacement » ou « Configurer la localisation en arrière-plan » pour l’accorder.</p></div>
   </article>
   <article class="topic" id="schedules">
     <h3>Horaires <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Lien vers Horaires">#</a></h3>
@@ -466,7 +466,7 @@
       <li>Bloquer les étiquettes de pourriel du fournisseur : rejette les appels que votre fournisseur étiquette comme pourriel dans le nom d’affichage, comme « Possible fraude », « Spam probable » ou « Scam Likely ». CallRules ne peut pas lire le verdict de pourriel de votre application Téléphone, mais il peut utiliser l’étiquette que votre fournisseur envoie. Seul le nom envoyé par le fournisseur est vérifié; la liste d’autorisation, vos contacts et les règles d’autorisation sonnent donc même quand le fournisseur les étiquette.</li>
       <li><strong>Contacts autorisés :</strong> choisissez Tous les contacts, Favoris seulement ou Aucun pour indiquer quels contacts sonnent toujours.</li>
       <li><strong>Règles activées :</strong> le désactiver suspend toutes les règles de blocage et d’autorisation pour les appels entrants.</li>
-      <li>Avancé › Vérification par le fournisseur utilise le résultat STIR/SHAKEN que votre fournisseur joint à chaque appel. Désactivée l’ignore, Standard bloque les appels qui échouent à la vérification, et Stricte bloque aussi les appels sans vérification. Stricte peut bloquer de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux. La liste d’autorisation, vos contacts et les règles d’autorisation laissent quand même passer les appels.</li>
+      <li>Protection › Vérification par le fournisseur utilise le résultat STIR/SHAKEN que votre fournisseur joint à chaque appel. Désactivée l’ignore, Standard bloque les appels qui échouent à la vérification, et Stricte bloque aussi les appels sans vérification. Stricte peut bloquer de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux. La liste d’autorisation, vos contacts et les règles d’autorisation laissent quand même passer les appels.</li>
     </ul>
     <p class="in-app"><span>Dans l’appli :</span> Onglet Réglages</p>
   </article>
@@ -489,7 +489,7 @@
   <article class="topic" id="outgoing">
     <h3>Protection des appels sortants <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Lien vers Protection des appels sortants">#</a></h3>
     <p class="summary">Règles sortantes, NIP et appui long</p>
-    <p>Ouvrez Réglages › Protection des appels sortants.</p>
+    <p>Ouvrez Réglages › Appels sortants › Configuration des appels sortants.</p>
     <ul>
       <li><strong>Activer les règles sortantes :</strong> vérifie vos règles Sortant et Les deux avant qu’un appel soit passé. Un appel bloqué est annulé.</li>
       <li>Exiger le NIP pour tous les appels sortants, ou Exiger un appui long (maintenir 1,5 seconde). Un NIP, global ou exigé par une règle, a priorité sur l’appui long.</li>
@@ -514,7 +514,7 @@
   <article class="topic" id="appearance">
     <h3>Apparence <a class="anchor" href="#appearance" aria-label="Lien vers Apparence">#</a></h3>
     <p class="summary">Couleurs, couleurs du fond d’écran et mode sombre</p>
-    <p>Réglages › Apparence : activez « Utiliser les couleurs du fond d’écran » (Android 12 et plus) pour suivre la palette de votre appareil. Quand c’est désactivé, choisissez une Couleur : Bleu, Rouge, Vert, Jaune, Rose, Violet ou Sarcelle. Le Mode peut être Selon le système, Clair ou Sombre. L’aperçu de la palette montre le résultat.</p>
+    <p>Réglages › Apparence et langue : activez « Utiliser les couleurs du fond d’écran » (Android 12 et plus) pour suivre la palette de votre appareil. Quand c’est désactivé, choisissez une Couleur : Bleu, Rouge, Vert, Jaune, Rose, Violet ou Sarcelle. Le Mode peut être Selon le système, Clair ou Sombre. L’aperçu de la palette montre le résultat.</p>
   </article>
 </section>
 <section class="category" id="help">
