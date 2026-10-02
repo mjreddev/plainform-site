@@ -134,7 +134,7 @@
     <p class="summary">El escudo, los contadores y los avisos</p>
     <ul>
       <li>Toca el escudo para activar o desactivar la protección (“Protección activa” / “Protección desactivada”). Es el mismo interruptor que Ajustes › Protección › Protección de llamadas.</li>
-      <li>Hoy, Esta semana y En total cuentan las llamadas que CallRules bloqueó o silenció. Tiempo ahorrado es un cálculo de 2 minutos por llamada bloqueada.</li>
+      <li>Hoy, Últimos 7 días y En total cuentan las llamadas que CallRules bloqueó o silenció; toca uno para ver esas llamadas en el historial de llamadas. Tiempo ahorrado calcula unos 30 segundos por llamada bloqueada; tócalo para ver cómo.</li>
       <li>Comando de voz abre los comandos de voz (Pro).</li>
       <li>“Falta configurar” aparece cuando CallRules no es tu app de identificación de llamadas y filtro de spam.</li>
       <li>Aparece una tarjeta de problemas de reglas cuando la revisión de reglas tiene advertencias sin resolver. Toca Revisar para abrir Revisión de reglas.</li>
@@ -145,7 +145,7 @@
     <p class="summary">Las pestañas Bloqueadas y Recientes</p>
     <p>La pestaña Bloqueadas abre el Historial de llamadas, que tiene dos pestañas.</p>
     <ul>
-      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Coincidió con una regla, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Toca la marca de verificación (“Permitir este número”) para agregar el número a tu lista de permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
+      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Coincidió con una regla, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Hoy, 7 días y Todo, arriba de la lista, muestran esos períodos. Toca la marca de verificación (“Permitir este número”) para agregar el número a tu lista de permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
       <li>Recientes muestra las llamadas entrantes que CallRules dejó pasar. Toca Bloquear para bloquear este número, su código de área o su código de país; DESHACER aparece por un momento. Borrar vacía la lista Recientes. Permite el acceso a los contactos si quieres que las llamadas de tus contactos también aparezcan aquí.</li>
       <li>Toca una llamada para ver por qué se bloqueó o se permitió: la regla que coincidió (con Abrir la regla), el ajuste que decidió y el resultado de la verificación de quien llama. Las llamadas anteriores a esta versión muestran “No se guardó el motivo”. Mantén presionada una llamada para copiar su número. Bloquear un código de área o de país agrega una regla de bloqueo, que cuenta entre tus reglas y pide confirmación primero.</li>
     </ul>
@@ -165,7 +165,7 @@
   <article class="topic" id="rules-basics">
     <h3>Conceptos básicos de las reglas <a class="anchor" href="#rules-basics" aria-label="Enlace a Conceptos básicos de las reglas">#</a></h3>
     <p class="summary">La pestaña Reglas, agregar y editar reglas</p>
-    <p>La pestaña Reglas (“Reglas de llamadas”) muestra cada regla con su tipo, patrón, dirección, horario y vencimiento. Cada regla tiene Editar, Borrar y un interruptor. La barra superior tiene un micrófono (comandos de voz, Pro), Lista de permitidos, Números bloqueados y Revisar reglas.</p>
+    <p>La pestaña Reglas (“Reglas de llamadas”) muestra cada regla con su tipo, patrón, dirección, horario y vencimiento. Cada regla tiene Editar, Borrar y un interruptor. La barra superior tiene un micrófono (comandos de voz, Pro), Lista de permitidos y Números bloqueados. Su menú ⋮ (Más opciones) tiene Revisar reglas.</p>
     <ol>
       <li>Toca +.</li>
       <li>Elige Bloquear o Permitir y una dirección de llamada.</li>
@@ -233,7 +233,7 @@
   <article class="topic" id="rule-check">
     <h3>Revisión de reglas <a class="anchor" href="#rule-check" aria-label="Enlace a Revisión de reglas">#</a></h3>
     <p class="summary">Encuentra reglas que se superponen o se contradicen</p>
-    <p>Revisión de reglas encuentra reglas que se superponen o se contradicen. Ábrela con Revisar reglas en Reglas, desde la tarjeta de Inicio o desde su notificación. Se ejecuta al abrirla; toca Ejecutar revisión para volver a ejecutarla.</p>
+    <p>Revisión de reglas encuentra reglas que se superponen o se contradicen. Ábrela con Revisar reglas en el menú ⋮ de Reglas, desde la tarjeta de Inicio o desde su notificación. Se ejecuta al abrirla; toca Ejecutar revisión para volver a ejecutarla.</p>
     <ul>
       <li><strong>Advertencias:</strong> “Se omite la regla de bloqueo” significa que reglas de permiso, números de la lista de permitidos o contactos se saltan una regla de bloqueo. “La regla de permiso nunca se aplica” significa que la cubre una regla de bloqueo con “Prioridad sobre los permisos” activada.</li>
       <li>“No se encontró el contacto” y “No se encontró el grupo de contactos” avisan de una regla de contacto o de grupo cuyo contacto o grupo se borró, así que no coincide con nadie. Edítala o bórrala.</li>
@@ -293,7 +293,7 @@
   <article class="topic" id="voice-basics">
     <h3>Usar comandos de voz <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Enlace a Usar comandos de voz">#</a></h3>
     <p class="summary">Habla o escribe, y luego confirma</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Toca el micrófono en Inicio o en Reglas y habla, o escribe en “Escribe un comando”. CallRules muestra lo que entendió; toca Confirmar para aplicarlo.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Toca Comando de voz en Inicio o el micrófono en Reglas y habla, o escribe en “Escribe un comando”. CallRules muestra lo que entendió; toca Confirmar para aplicarlo.</p></div>
     <p>Las preguntas y “deshacer” se ejecutan de inmediato. Los comandos se entienden en inglés, español, francés, alemán e italiano. En inglés se aceptan muletillas como “um”, “uh” o “please”. Si CallRules tuvo que corregir una palabra o quitar una que no esperaba, la tarjeta pregunta “¿Quisiste decir…?” y muestra lo que quitó o corrigió; toca Confirmar solo si eso es lo que quisiste decir.</p>
     <p>La voz solo la reconoce el reconocedor de voz en el dispositivo de Android; si no está disponible, escribe el comando.</p>
     <p>Si hay números permitidos que se saltarían una nueva regla de bloqueo, se te pregunta si quieres darle prioridad a la regla.</p>
@@ -502,7 +502,7 @@
     </ul>
     <p>Cuando una llamada necesita aprobación, CallRules la cancela y abre “Confirmar la llamada saliente”. Después del PIN correcto o de mantener presionado hasta el final, hace una sola llamada de reemplazo. Si tocas Cancelar llamada o esperas 60 segundos, no se hace ninguna llamada. Android excluye las llamadas de emergencia y algunas llamadas de puerta de enlace.</p>
     <p>No es infalible: desinstalar CallRules, borrar sus datos o quitarle el rol de Android la desactiva.</p>
-    <p class="in-app"><span>En la app:</span> Ajustes › Protección de llamadas salientes</p>
+    <p class="in-app"><span>En la app:</span> Ajustes › Llamadas salientes</p>
   </article>
   <article class="topic" id="backups">
     <h3>Importar, exportar y copias de seguridad <a class="anchor" href="#backups" aria-label="Enlace a Importar, exportar y copias de seguridad">#</a></h3>

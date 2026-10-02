@@ -134,7 +134,7 @@
     <p class="summary">Le bouclier, les compteurs et les bannières</p>
     <ul>
       <li>Touchez le bouclier pour activer ou désactiver la protection (« Protection active » / « Protection désactivée »). C’est le même interrupteur que Réglages › Protection › Protection des appels.</li>
-      <li>Aujourd’hui, Cette semaine et Depuis le début comptent les appels que CallRules a bloqués ou mis en sourdine. Temps gagné est une estimation de 2 minutes par appel bloqué.</li>
+      <li>Aujourd’hui, 7 derniers jours et Depuis le début comptent les appels que CallRules a bloqués ou mis en sourdine; touchez-en un pour voir ces appels dans l’historique des appels. Temps gagné estime environ 30 secondes par appel bloqué; touchez-le pour voir le calcul.</li>
       <li>Commande vocale ouvre les commandes vocales (Pro).</li>
       <li>« Configuration requise » s’affiche quand CallRules n’est pas votre appli d’identification et de filtrage des appels.</li>
       <li>Une carte de problèmes de règles s’affiche quand la vérification des règles a des avertissements non résolus. Touchez Examiner pour ouvrir la Vérification des règles.</li>
@@ -145,7 +145,7 @@
     <p class="summary">Les onglets Bloqués et Récents</p>
     <p>L’onglet Bloqués ouvre l’Historique des appels, qui a deux onglets.</p>
     <ul>
-      <li>Bloqués liste chaque appel que CallRules a rejeté ou mis en sourdine, avec la raison, comme Règle correspondante, Numéro bloqué, Étiquette de pourriel du fournisseur, Échec de la vérification, Numéro inconnu, Numéro confidentiel ou Heures de silence. Touchez le crochet (« Autoriser ce numéro ») pour ajouter le numéro à votre liste d’autorisation et le retirer des numéros bloqués. Touchez la corbeille pour supprimer l’entrée.</li>
+      <li>Bloqués liste chaque appel que CallRules a rejeté ou mis en sourdine, avec la raison, comme Règle correspondante, Numéro bloqué, Étiquette de pourriel du fournisseur, Échec de la vérification, Numéro inconnu, Numéro confidentiel ou Heures de silence. Aujourd’hui, 7 jours et Tout, au-dessus de la liste, affichent ces périodes. Touchez le crochet (« Autoriser ce numéro ») pour ajouter le numéro à votre liste d’autorisation et le retirer des numéros bloqués. Touchez la corbeille pour supprimer l’entrée.</li>
       <li>Récents liste les appels entrants que CallRules a laissés passer. Touchez Bloquer pour bloquer ce numéro, son code régional ou son indicatif de pays; ANNULER s’affiche brièvement. Effacer vide la liste Récents. Autorisez l’accès aux contacts si vous voulez que les appels de vos contacts s’affichent aussi ici.</li>
       <li>Touchez un appel pour voir pourquoi il a été bloqué ou autorisé : la règle correspondante (avec Ouvrir la règle), le réglage qui a décidé et le résultat de la vérification de l’appelant. Les appels antérieurs à cette version affichent « Raison non enregistrée ». Touchez longuement un appel pour copier son numéro. Bloquer un code régional ou un indicatif de pays ajoute une règle de blocage, qui compte dans vos règles et demande d’abord une confirmation.</li>
     </ul>
@@ -165,7 +165,7 @@
   <article class="topic" id="rules-basics">
     <h3>Notions de base sur les règles <a class="anchor" href="#rules-basics" aria-label="Lien vers Notions de base sur les règles">#</a></h3>
     <p class="summary">L’onglet Règles, ajouter et modifier des règles</p>
-    <p>L’onglet Règles (« Règles d’appel ») liste chaque règle avec son type, son motif, son sens, son horaire et son expiration. Chaque règle a Modifier, Supprimer et un interrupteur. La barre du haut a un microphone (commandes vocales, Pro), Liste d’autorisation, Numéros bloqués et Vérifier les règles.</p>
+    <p>L’onglet Règles (« Règles d’appel ») liste chaque règle avec son type, son motif, son sens, son horaire et son expiration. Chaque règle a Modifier, Supprimer et un interrupteur. La barre du haut a un microphone (commandes vocales, Pro), Liste d’autorisation et Numéros bloqués. Son menu ⋮ (Plus d’options) contient Vérifier les règles.</p>
     <ol>
       <li>Touchez +.</li>
       <li>Choisissez Bloquer ou Autoriser et un sens d’appel.</li>
@@ -233,7 +233,7 @@
   <article class="topic" id="rule-check">
     <h3>Vérification des règles <a class="anchor" href="#rule-check" aria-label="Lien vers Vérification des règles">#</a></h3>
     <p class="summary">Trouver les règles qui se chevauchent ou se contredisent</p>
-    <p>La Vérification des règles trouve les règles qui se chevauchent ou se contredisent. Ouvrez-la avec Vérifier les règles dans Règles, depuis la carte d’Accueil ou depuis sa notification. Elle s’exécute à l’ouverture; touchez Lancer la vérification pour la relancer.</p>
+    <p>La Vérification des règles trouve les règles qui se chevauchent ou se contredisent. Ouvrez-la avec Vérifier les règles dans le menu ⋮ de Règles, depuis la carte d’Accueil ou depuis sa notification. Elle s’exécute à l’ouverture; touchez Lancer la vérification pour la relancer.</p>
     <ul>
       <li><strong>Avertissements :</strong> « Règle de blocage contournée » signifie que des règles d’autorisation, des numéros de la liste d’autorisation ou des contacts passent outre à une règle de blocage. « La règle d’autorisation ne s’applique jamais » signifie qu’une règle de blocage avec « Priorité sur les autorisations » activée la couvre.</li>
       <li>« Contact introuvable » et « Groupe de contacts introuvable » signalent une règle de contact ou de groupe dont le contact ou le groupe a été supprimé; elle ne correspond donc à personne. Modifiez-la ou supprimez-la.</li>
@@ -293,7 +293,7 @@
   <article class="topic" id="voice-basics">
     <h3>Utiliser les commandes vocales <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Lien vers Utiliser les commandes vocales">#</a></h3>
     <p class="summary">Parlez ou tapez, puis confirmez</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Touchez le microphone dans Accueil ou Règles et parlez, ou tapez dans « Tapez une commande ». CallRules affiche ce qu’il a compris; touchez Confirmer pour l’appliquer.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Touchez Commande vocale dans Accueil ou le microphone dans Règles et parlez, ou tapez dans « Tapez une commande ». CallRules affiche ce qu’il a compris; touchez Confirmer pour l’appliquer.</p></div>
     <p>Les questions et « annule » s’exécutent tout de suite. Les commandes sont comprises en anglais, en espagnol, en français, en allemand et en italien. En anglais, les mots de remplissage comme « um », « uh » ou « please » sont acceptés. Si CallRules a dû corriger un mot ou en laisser tomber un qu’il n’attendait pas, la carte demande « Vouliez-vous dire…? » et montre ce qu’il a retiré ou corrigé; touchez Confirmer seulement si c’est bien ce que vous vouliez dire.</p>
     <p>La parole est reconnue seulement par la reconnaissance vocale sur l’appareil d’Android; si elle n’est pas disponible, tapez plutôt la commande.</p>
     <p>Si des numéros autorisés contourneraient une nouvelle règle de blocage, on vous demande s’il faut leur passer outre.</p>
@@ -502,7 +502,7 @@
     </ul>
     <p>Quand un appel demande une approbation, CallRules l’annule et ouvre « Confirmer l’appel sortant ». Après le bon NIP ou un appui maintenu jusqu’au bout, il passe un seul appel de remplacement. Si vous touchez Annuler l’appel ou attendez 60 secondes, aucun appel n’est passé. Android exclut les appels d’urgence et certains appels de passerelle.</p>
     <p>Ce n’est pas infaillible : désinstaller CallRules, effacer ses données ou révoquer le rôle Android désactive cette protection.</p>
-    <p class="in-app"><span>Dans l’appli :</span> Réglages › Protection des appels sortants</p>
+    <p class="in-app"><span>Dans l’appli :</span> Réglages › Appels sortants</p>
   </article>
   <article class="topic" id="backups">
     <h3>Importation, exportation et sauvegardes <a class="anchor" href="#backups" aria-label="Lien vers Importation, exportation et sauvegardes">#</a></h3>

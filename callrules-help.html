@@ -133,7 +133,7 @@
     <p class="summary">The shield switch, counts, and banners</p>
     <ul>
       <li>Tap the shield to turn protection on or off (“Protection Active” / “Protection Off”). This is the same switch as Settings › Protection › Call protection.</li>
-      <li>Today, This week, and All time count the calls CallRules blocked or silenced. Time saved is an estimate of 2 minutes per blocked call.</li>
+      <li>Today, Last 7 days, and All time count the calls CallRules blocked or silenced; tap one to see those calls in Call history. Time saved estimates about 30 seconds per blocked call; tap it to see how.</li>
       <li>Voice command opens voice commands (Pro).</li>
       <li>“Setup required” appears when CallRules isn't your Caller ID &amp; spam app.</li>
       <li>A rule-issue card appears when the rule check has unresolved warnings. Tap Review to open Rule check.</li>
@@ -144,7 +144,7 @@
     <p class="summary">The Blocked and Recent tabs</p>
     <p>The Blocked tab opens Call History, which has two tabs.</p>
     <ul>
-      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
+      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Today, 7 days, and All above the list show those periods. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
       <li>Recent lists incoming calls that CallRules let through. Tap Block to block this number, its area code, or its country code; UNDO appears briefly. Clear empties the Recent list. Allow contact access if you want calls from your contacts to appear here too.</li>
       <li>Tap any call to see why it was blocked or allowed: the rule that matched (with Open rule), the setting that decided, and the caller verification result. Calls from before this version show “Reason not recorded”. Long-press a call to copy its number. Blocking an area code or country code adds a block rule, which counts toward your rules and asks first.</li>
     </ul>
@@ -164,7 +164,7 @@
   <article class="topic" id="rules-basics">
     <h3>Rules basics <a class="anchor" href="#rules-basics" aria-label="Link to Rules basics">#</a></h3>
     <p class="summary">The Rules tab, adding and editing rules</p>
-    <p>The Rules tab (“Call Rules”) lists each rule with its type, pattern, direction, schedule, and expiry. Each rule has Edit, Delete, and an on/off switch. The top bar has a microphone (voice commands, Pro), Whitelist, Blocked numbers, and Check rules.</p>
+    <p>The Rules tab (“Call Rules”) lists each rule with its type, pattern, direction, schedule, and expiry. Each rule has Edit, Delete, and an on/off switch. The top bar has a microphone (voice commands, Pro), Whitelist and Blocked numbers. Its ⋮ menu (More options) has Check rules.</p>
     <ol>
       <li>Tap +.</li>
       <li>Choose Block or Allow and pick a Call direction.</li>
@@ -232,7 +232,7 @@
   <article class="topic" id="rule-check">
     <h3>Rule check <a class="anchor" href="#rule-check" aria-label="Link to Rule check">#</a></h3>
     <p class="summary">Find rules that overlap or contradict each other</p>
-    <p>Rule check finds rules that overlap or contradict each other. Open it with Check rules on Rules, from the card on Home, or from its notification. It runs when you open it; tap Run check to run it again.</p>
+    <p>Rule check finds rules that overlap or contradict each other. Open it with Check rules in the ⋮ menu on Rules, from the card on Home, or from its notification. It runs when you open it; tap Run check to run it again.</p>
     <ul>
       <li><strong>Warnings:</strong> “Block rule is bypassed” means allow rules, whitelisted numbers, or contacts get past a block rule. “Allow rule never applies” means a block rule with “Override allow rules” on covers it.</li>
       <li>“Contact not found” and “Contact group not found” warn about a contact or group rule whose contact or group was deleted, so it matches nobody. Edit it or delete it.</li>
@@ -292,7 +292,7 @@
   <article class="topic" id="voice-basics">
     <h3>Using voice commands <span class="pro">PRO</span> <a class="anchor" href="#voice-basics" aria-label="Link to Using voice commands">#</a></h3>
     <p class="summary">Speak or type, then confirm</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Tap the microphone on Home or Rules and speak, or type in “Type a command”. CallRules shows what it understood; tap Confirm to apply it.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Tap Voice command on Home or the microphone on Rules and speak, or type in “Type a command”. CallRules shows what it understood; tap Confirm to apply it.</p></div>
     <p>Questions and “undo” run right away. Commands are understood in English, Spanish, French, German, and Italian. In English, filler words such as “um”, “uh” or “please” are fine. If CallRules had to correct a word or leave out one it didn't expect, the card asks “Did you mean …?” and shows what it removed or fixed; tap Confirm only if that is what you meant.</p>
     <p>Speech is recognized only by Android's on-device recognizer; if that isn't available, type the command instead.</p>
     <p>If a new block rule would be bypassed by allowed numbers, you're asked whether to override them.</p>
@@ -501,7 +501,7 @@
     </ul>
     <p>When a call needs approval, CallRules cancels it and opens “Confirm outgoing call”. After the correct PIN or a completed hold, it places one replacement call. If you tap Cancel call or wait 60 seconds, no call is placed. Android excludes emergency calls and some gateway calls.</p>
     <p>This isn't tamper-proof: uninstalling CallRules, clearing its data, or revoking the Android role turns it off.</p>
-    <p class="in-app"><span>In the app:</span> Settings › Outgoing call protection</p>
+    <p class="in-app"><span>In the app:</span> Settings › Outgoing calls</p>
   </article>
   <article class="topic" id="backups">
     <h3>Import, export, and backups <a class="anchor" href="#backups" aria-label="Link to Import, export, and backups">#</a></h3>
