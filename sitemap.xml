@@ -53,9 +53,21 @@
   </url>
   <url>
     <loc>https://plainform.app/siteproof-privacy.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/siteproof-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://plainform.app/siteproof-privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://plainform.app/siteproof-privacy.html"/>
+  </url>
+  <url>
+    <loc>https://plainform.app/siteproof-privacy-es.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/siteproof-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://plainform.app/siteproof-privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://plainform.app/siteproof-privacy.html"/>
   </url>
   <url>
     <loc>https://plainform.app/callrules-privacy.html</loc>
