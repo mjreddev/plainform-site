@@ -330,6 +330,7 @@
       <p class="meta"><strong>Affichée :</strong> Seulement quand une règle entrante activée a un emplacement.</p>
       <ul class="results">
         <li><span class="status ok">OK</span>Prêt quand CallRules est fermé ou que le téléphone est verrouillé</li>
+        <li><span class="status warning">Avertissement</span>La position est réglée à « Approximative ». Les règles d’emplacement ont besoin de la position « Exacte » pour savoir quand vous êtes à un lieu.<span class="fix">Corriger : Ouvre les paramètres Android de CallRules, où vous pouvez autoriser la position exacte et modifier l’utilisation de la pile.</span></li>
         <li><span class="status warning">Avertissement</span>L’accès au premier plan est autorisé; l’accès en arrière-plan est encore nécessaire pour les appels quand l’application est fermée<span class="fix">Corriger : Demande l’accès à la localisation, puis explique comment l’autoriser en tout temps.</span></li>
         <li><span class="status warning">Avertissement</span>L’accès à la localisation n’est pas disponible; les règles d’emplacement suivent votre réglage « Lorsque la position ne peut pas être vérifiée »<span class="fix">Corriger : Demande l’accès à la localisation, puis explique comment l’autoriser en tout temps.</span></li>
       </ul>
@@ -337,23 +338,22 @@
       <ul>
         <li>Ouvrez Réglages › Règles d’emplacement et touchez « Autoriser la localisation pour les règles d’emplacement ».</li>
         <li>Touchez ensuite « Configurer la localisation en arrière-plan » et choisissez l’option « Toujours autoriser » d’Android.</li>
+        <li>Pour autoriser la position exacte, ouvrez Paramètres Android › Applis › CallRules › Autorisations › Localisation et activez « Utiliser la position exacte ».</li>
         <li>Sans accès à la localisation, les règles d’emplacement ne peuvent pas être vérifiées, et Réglages › Règles et lieux › « Lorsque la position ne peut pas être vérifiée » décide de ce qu’elles font.</li>
       </ul>
     </article>
     <article class="card check" id="location-signal">
       <h3>Signal de position</h3>
-      <p class="meta"><strong>Vérifie :</strong> Si les règles d’emplacement peuvent être vérifiées à l’arrivée d’un appel : position exacte, utilisation de la pile en arrière-plan et âge de votre dernière position connue.</p>
-      <p class="meta"><strong>Affichée :</strong> Seulement quand une règle entrante activée a un emplacement et l’accès à la localisation est autorisé.</p>
+      <p class="meta"><strong>Vérifie :</strong> Si les règles d’emplacement peuvent être vérifiées à l’arrivée d’un appel : utilisation de la pile en arrière-plan et âge de votre dernière position connue.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand une règle entrante activée a un emplacement et la position exacte est autorisée.</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>La position exacte est autorisée, l’utilisation de la pile n’est pas restreinte et une position récente est disponible</li>
-        <li><span class="status warning">Avertissement</span>Seule la position approximative est autorisée — le géorepérage ne peut pas fonctionner, donc la position est souvent inconnue pour les règles d’emplacement<span class="fix">Corriger : Ouvre les paramètres Android de CallRules, où vous pouvez autoriser la position exacte et modifier l’utilisation de la pile.</span></li>
+        <li><span class="status ok">OK</span>L’utilisation de la pile n’est pas restreinte et une position récente est disponible</li>
         <li><span class="status warning">Avertissement</span>Android restreint l’utilisation de la pile en arrière-plan par CallRules — les mises à jour du géorepérage peuvent être retardées ou manquées<span class="fix">Corriger : Ouvre les paramètres Android de CallRules, où vous pouvez autoriser la position exacte et modifier l’utilisation de la pile.</span></li>
         <li><span class="status warning">Avertissement</span>Votre dernière position connue date de plus de 10 minutes — les règles d’emplacement se fient au géorepérage jusqu’à la prochaine position. C’est normal si aucune appli n’a utilisé la localisation récemment.</li>
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
         <li>Les règles d’emplacement utilisent une position des 10 dernières minutes ou, sinon, le géorepérage d’Android autour de leurs lieux. Le géorepérage a besoin de la position exacte.</li>
-        <li>Pour autoriser la position exacte, ouvrez Paramètres Android › Applis › CallRules › Autorisations › Localisation et activez « Utiliser la position exacte ».</li>
         <li>Si Android restreint l’utilisation de la pile par CallRules, ouvrez Paramètres Android › Applis › CallRules › Pile et choisissez Aucune restriction.</li>
         <li>Quand ni l’une ni l’autre ne permet de trancher, Réglages › Règles et lieux › « Lorsque la position ne peut pas être vérifiée » décide de ce que fait la règle.</li>
       </ul>

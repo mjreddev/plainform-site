@@ -329,6 +329,7 @@
       <p class="meta"><strong>Shown:</strong> Only when an enabled incoming rule has a location.</p>
       <ul class="results">
         <li><span class="status ok">OK</span>Ready while CallRules is closed or the phone is locked</li>
+        <li><span class="status warning">Warning</span>Location is set to Approximate. Location rules need Precise location to tell when you're at a place.<span class="fix">Fix: Opens Android's settings for CallRules, where you can allow precise location and change battery use.</span></li>
         <li><span class="status warning">Warning</span>Foreground access is allowed; background access is still needed for calls while the app is closed<span class="fix">Fix: Asks for location access, then explains how to allow it all the time.</span></li>
         <li><span class="status warning">Warning</span>Location access is unavailable; location rules follow your “When location can't be checked” setting<span class="fix">Fix: Asks for location access, then explains how to allow it all the time.</span></li>
       </ul>
@@ -336,23 +337,22 @@
       <ul>
         <li>Open Settings › Location rules and tap “Allow location for location rules”.</li>
         <li>Then tap “Set up background location” and choose Android's “Allow all the time” option.</li>
+        <li>To allow precise location, open Android Settings › Apps › CallRules › Permissions › Location and turn on “Use precise location”.</li>
         <li>Without location access, location rules can't be checked, and Settings › Rules &amp; places › “When location can't be checked” decides what they do.</li>
       </ul>
     </article>
     <article class="card check" id="location-signal">
       <h3>Location signal</h3>
-      <p class="meta"><strong>Checks:</strong> Whether location rules can be checked when a call arrives: precise location, background battery use, and the age of your last known location.</p>
-      <p class="meta"><strong>Shown:</strong> Only when an enabled incoming rule has a location and location access is allowed.</p>
+      <p class="meta"><strong>Checks:</strong> Whether location rules can be checked when a call arrives: background battery use and the age of your last known location.</p>
+      <p class="meta"><strong>Shown:</strong> Only when an enabled incoming rule has a location and precise location is allowed.</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>Precise location is allowed, battery use isn't restricted, and a recent location is available</li>
-        <li><span class="status warning">Warning</span>Only approximate location is allowed — geofences can't run, so location rules are often unknown<span class="fix">Fix: Opens Android's settings for CallRules, where you can allow precise location and change battery use.</span></li>
+        <li><span class="status ok">OK</span>Battery use isn't restricted, and a recent location is available</li>
         <li><span class="status warning">Warning</span>Android restricts CallRules' background battery use — geofence updates can be late or missed<span class="fix">Fix: Opens Android's settings for CallRules, where you can allow precise location and change battery use.</span></li>
         <li><span class="status warning">Warning</span>Your last known location is more than 10 minutes old — location rules rely on geofences until a new one arrives. That's normal when no app has used location lately.</li>
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
         <li>Location rules use a location from the last 10 minutes, or else Android's geofences around their places. Geofences need precise location.</li>
-        <li>To allow precise location, open Android Settings › Apps › CallRules › Permissions › Location and turn on “Use precise location”.</li>
         <li>If Android restricts CallRules' battery use, open Android Settings › Apps › CallRules › Battery and choose Unrestricted.</li>
         <li>When neither can tell, Settings › Rules &amp; places › “When location can't be checked” decides what the rule does.</li>
       </ul>
