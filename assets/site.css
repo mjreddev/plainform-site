@@ -255,6 +255,7 @@ code { font-size: .92em; background: var(--card); border: 1px solid var(--line);
 .feature .phone { max-width: 240px; justify-self: center; }
 .feature-grid { display: grid; gap: 16px; margin-top: 20px; }
 .feature-grid .card h3 { margin-top: 0; }
+.feature-grid .card.wide { grid-column: 1 / -1; }
 
 .decide { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; counter-reset: d; }
 .decide li { counter-increment: d; margin: 0; display: flex; gap: 12px; align-items: baseline; }

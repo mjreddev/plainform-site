@@ -75,16 +75,16 @@
       <li>Revisa que CallRules sea tu app de identificación de llamadas y filtro de spam y que Inicio muestre “Protección activa”.</li>
       <li>Revisa que Ajustes › Protección de llamadas y Reglas activadas estén activados.</li>
       <li>Revisa que la regla esté activada, cubra las llamadas entrantes, no esté vencida y esté dentro de su horario y en su ubicación.</li>
-      <li>Abre Reglas › Revisar reglas. “Se omite la regla de bloqueo” significa que la lista de permitidos, tus contactos o una regla de permiso dejan pasar la llamada antes.</li>
-      <li>Para una llamada que tu app de Teléfono marcó como spam: CallRules no puede leer esa evaluación. Activa Ajustes › Bloquear las etiquetas de spam del operador para bloquear las llamadas que tu operador marca como spam, como “Scam Likely”. No todos los operadores envían una etiqueta.</li>
+      <li>Abre Reglas › Revisar reglas. “Se omite la regla de bloqueo” significa que los Números permitidos, tus contactos o una regla de permiso dejan pasar la llamada antes.</li>
+      <li>Para una llamada que tu app de Teléfono marcó como spam: CallRules no puede leer esa evaluación. Activa Ajustes › Bloquear automáticamente › Bloquear las etiquetas de spam del operador para bloquear las llamadas que tu operador marca como spam, como “Scam Likely”. No todos los operadores envían una etiqueta.</li>
       <li>Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena en lugar de arriesgarse a bloquearla por error.</li>
     </ul>
   </article>
   <article class="card problem" id="allowed-caller-rings">
     <h3>Un contacto o un número permitido sigue sonando</h3>
     <ul>
-      <li>La lista de permitidos, tus contactos (según Ajustes › Contactos permitidos) y las reglas de permiso se revisan antes que las reglas de bloqueo comunes y los números bloqueados.</li>
-      <li>Para bloquear esa llamada de todos modos, edita la regla de bloqueo y activa “Prioridad sobre los permisos”, o quita el número de la lista de permitidos.</li>
+      <li>Los Números permitidos, tus contactos (según Ajustes › Permitir siempre › Contactos permitidos) y las reglas de permiso se revisan antes que las reglas de bloqueo comunes y los números bloqueados.</li>
+      <li>Para bloquear esa llamada de todos modos, edita la regla de bloqueo y activa “Prioridad sobre los permisos”, o quita el número de Números permitidos.</li>
       <li>Una regla de bloqueo de contacto, de grupo o de nombre de quien llama sigue el mismo orden, así que necesita “Prioridad sobre los permisos” para bloquear un contacto que Contactos permitidos deja pasar.</li>
     </ul>
   </article>
@@ -94,7 +94,7 @@
       <li>Las reglas temporales muestran “Vencida” en Reglas cuando se acaba su tiempo; las reglas vencidas se borran aproximadamente un día después.</li>
       <li>Las reglas con horario se aplican solo entre Inicio y Fin en sus días activos, en la zona horaria de la regla.</li>
       <li>Las reglas con ubicación se aplican solo cuando CallRules puede saber que estás dentro de la zona, por una ubicación reciente o por la geovalla de Android para ese lugar. Consulta “Una regla de ubicación no coincide” más abajo.</li>
-      <li>Las reglas salientes necesitan la Protección de llamadas salientes. Silenciar, la ubicación y las llamadas privadas o desconocidas se aplican solo a las llamadas entrantes.</li>
+      <li>Las reglas salientes necesitan “Activar las reglas salientes” en Ajustes › Llamadas salientes. Silenciar, la ubicación y las llamadas privadas o desconocidas se aplican solo a las llamadas entrantes.</li>
       <li>Si Pro de por vida no está activo, los horarios, ubicaciones y patrones que ya estén guardados en las reglas se mantienen, pero no se pueden cambiar.</li>
     </ul>
   </article>
@@ -109,10 +109,10 @@
   <article class="card problem" id="outgoing">
     <h3>Las reglas salientes no se ejecutan</h3>
     <ul>
-      <li>La protección de llamadas salientes necesita Pro de por vida.</li>
-      <li>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes, toca “Permitir el desvío de llamadas” y activa “Activar las reglas salientes”.</li>
-      <li>Revisa que la dirección de la llamada de la regla sea Saliente o Ambas.</li>
-      <li>Si una regla o un ajuste pide un PIN, configura primero el PIN compartido.</li>
+      <li>Las reglas salientes, el PIN de llamadas salientes y mantener presionado necesitan Pro de por vida.</li>
+      <li>Abre Ajustes › Llamadas salientes › Ajustes de llamadas salientes, toca “Permitir el desvío de llamadas” y activa “Activar las reglas salientes”.</li>
+      <li>Revisa que la dirección de la llamada de la regla sea Salientes o Entrantes y salientes.</li>
+      <li>Si una regla o un ajuste pide un PIN, configura primero el PIN compartido en Ajustes › Seguridad.</li>
       <li>Para las llamadas aprobadas, toca “Permitir el acceso a Teléfono”. CallRules no necesita el registro de llamadas ni los permisos antiguos de llamadas salientes.</li>
       <li>Permite las notificaciones, para que una confirmación pendiente se muestre aunque Android no pueda abrir CallRules directamente.</li>
       <li>Android nunca envía a CallRules las llamadas de emergencia ni algunas llamadas de puerta de enlace.</li>
@@ -212,12 +212,12 @@
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Protección › Verificación del operador y elige Estándar o Estricta.</li>
+        <li>Abre Ajustes › Bloquear automáticamente › Verificación del operador y elige Estándar o Estricta.</li>
         <li>Estricta también bloquea las llamadas sin verificación, lo que puede incluir llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales.</li>
       </ul>
     </article>
     <article class="card check" id="call-rules">
-      <h3>Reglas de llamadas</h3>
+      <h3>Reglas</h3>
       <p class="meta"><strong>Revisa:</strong> Si Reglas activadas está activado. Cuando está desactivado, no se aplica ninguna regla de bloqueo ni de permiso a las llamadas entrantes.</p>
       <p class="meta"><strong>Se muestra:</strong> Siempre</p>
       <ul class="results">
@@ -243,6 +243,23 @@
         <li>Luego revisa que Ajustes › Mostrar alertas de llamadas bloqueadas esté activado en CallRules.</li>
       </ul>
     </article>
+    <article class="card check" id="silence-texts">
+      <h3>Silenciar mensajes</h3>
+      <p class="meta"><strong>Revisa:</strong> Si Android permite que CallRules vea las notificaciones de las apps de mensajes, si hay una app de mensajes revisada instalada y si Android le ocultó mensajes a CallRules hace poco.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si silenciar mensajes está activado.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>El acceso a notificaciones está permitido y hay una app de mensajes revisada instalada</li>
+        <li><span class="status error">Problema</span>El acceso a notificaciones está desactivado — CallRules no ve los mensajes, así que no silencia ninguno<span class="fix">Corregir: Explica lo que CallRules lee y luego abre el ajuste de acceso a notificaciones de Android para CallRules.</span></li>
+        <li><span class="status warning">Advertencia</span>No hay ninguna app de mensajes revisada instalada o activada — abre Ajustes › Mensajes de texto › Apps de mensajes que se revisan</li>
+        <li><span class="status warning">Advertencia</span>Hace poco Android le ocultó a CallRules varios mensajes porque podrían contener un código, sin decir quién los envió, así que no se pudieron revisar. Sus notificaciones se mostraron como siempre.</li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Mensajes de texto y toca “Permitir el acceso a notificaciones”, luego permite CallRules en la pantalla de Android.</li>
+        <li>En “Apps de mensajes que se revisan”, activa la app que usas para los mensajes. CallRules funciona con Google Messages, Samsung Messages, Messaging, Textra y Verizon Messages.</li>
+        <li>Android 15 y versiones posteriores ocultan los mensajes que podrían contener un código. CallRules igual silencia los de remitentes bloqueados cuando Android indica con quién es la conversación; en los teléfonos con las “Notificaciones mejoradas” de Google, si las desactivas en Configuración de Android › Notificaciones, CallRules puede revisar todos los mensajes.</li>
+      </ul>
+    </article>
     <article class="card check" id="battery">
       <h3>Uso de batería</h3>
       <p class="meta"><strong>Revisa:</strong> No hay nada que corregir: esta tarjeta explica cómo funciona CallRules.</p>
@@ -258,7 +275,7 @@
     <article class="card check" id="redirection-role">
       <h3>Rol de desvío de llamadas salientes</h3>
       <p class="meta"><strong>Revisa:</strong> Si CallRules tiene el rol de desvío de llamadas de Android, que le permite revisar las llamadas que haces.</p>
-      <p class="meta"><strong>Se muestra:</strong> Solo si la protección de llamadas salientes está configurada: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si las llamadas salientes están configuradas: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
       <ul class="results">
         <li><span class="status ok">OK</span>CallRules puede evaluar las llamadas salientes</li>
         <li><span class="status error">Problema</span>Rol no otorgado — las reglas salientes no pueden ejecutarse<span class="fix">Corregir: Le pide a Android que le dé a CallRules el rol de desvío de llamadas.</span></li>
@@ -266,22 +283,22 @@
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes y toca “Permitir el desvío de llamadas”.</li>
-        <li>Si tu teléfono no ofrece el desvío de llamadas, la protección de llamadas salientes no puede funcionar en él.</li>
+        <li>Abre Ajustes › Llamadas salientes › Ajustes de llamadas salientes y toca “Permitir el desvío de llamadas”.</li>
+        <li>Si tu teléfono no ofrece el desvío de llamadas, las reglas y confirmaciones de llamadas salientes no pueden funcionar en él.</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-rule-setting">
       <h3>Ajuste de reglas salientes</h3>
-      <p class="meta"><strong>Revisa:</strong> Si “Activar las reglas salientes” está activado cuando tienes reglas Saliente o Ambas activadas.</p>
-      <p class="meta"><strong>Se muestra:</strong> Solo si la protección de llamadas salientes está configurada: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
+      <p class="meta"><strong>Revisa:</strong> Si “Activar las reglas salientes” está activado cuando tienes reglas Salientes o Entrantes y salientes activadas.</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si las llamadas salientes están configuradas: las reglas salientes están activadas, se pide un PIN o mantener presionado en las llamadas salientes, o una regla activada cubre las llamadas salientes.</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>Las reglas Saliente y Ambas están activadas</li>
-        <li><span class="status ok">OK</span>No hay reglas Saliente ni Ambas activadas; la confirmación global puede aplicarse de todos modos</li>
-        <li><span class="status warning">Advertencia</span>Hay reglas Saliente o Ambas, pero la evaluación de reglas salientes está desactivada<span class="fix">Corregir: Abre Protección de llamadas salientes.</span></li>
+        <li><span class="status ok">OK</span>Las reglas Salientes y Entrantes y salientes están activadas</li>
+        <li><span class="status ok">OK</span>No hay reglas Salientes ni Entrantes y salientes activadas; la confirmación global puede aplicarse de todos modos</li>
+        <li><span class="status warning">Advertencia</span>Hay reglas Salientes o Entrantes y salientes, pero la evaluación de reglas salientes está desactivada<span class="fix">Corregir: Abre Llamadas salientes.</span></li>
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes y activa “Activar las reglas salientes”.</li>
+        <li>Abre Ajustes › Llamadas salientes › Ajustes de llamadas salientes y activa “Activar las reglas salientes”.</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-pin">
@@ -289,11 +306,11 @@
       <p class="meta"><strong>Revisa:</strong> Si el PIN compartido está configurado cuando las llamadas salientes necesitan uno.</p>
       <p class="meta"><strong>Se muestra:</strong> Solo si “Pedir el PIN para todas las llamadas salientes” está activado, o una regla saliente activada tiene “Pedir PIN”, y no hay un PIN configurado.</p>
       <ul class="results">
-        <li><span class="status error">Problema</span>Una llamada saliente que pide PIN se rechazará hasta que se configure un PIN compartido<span class="fix">Corregir: Abre Protección de llamadas salientes.</span></li>
+        <li><span class="status error">Problema</span>Una llamada saliente que pide PIN se rechazará hasta que se configure un PIN compartido<span class="fix">Corregir: Abre Ajustes › Seguridad.</span></li>
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes y toca Configurar PIN (de 4 a 8 dígitos).</li>
+        <li>Abre Ajustes › Seguridad y toca Establecer PIN (de 4 a 8 dígitos).</li>
         <li>Las reglas importadas con “Pedir PIN” necesitan un PIN configurado en este teléfono.</li>
       </ul>
     </article>
@@ -307,7 +324,7 @@
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Llamadas salientes › Configuración de llamadas salientes y toca “Permitir el acceso a Teléfono”.</li>
+        <li>Abre Ajustes › Llamadas salientes › Ajustes de llamadas salientes y toca “Permitir el acceso a Teléfono”.</li>
         <li>CallRules no necesita el registro de llamadas ni los permisos antiguos de llamadas salientes.</li>
       </ul>
     </article>
@@ -336,7 +353,7 @@
       </ul>
       <h4>Cómo solucionarlo por tu cuenta</h4>
       <ul>
-        <li>Abre Ajustes › Reglas de ubicación y toca “Permitir la ubicación para las reglas de ubicación”.</li>
+        <li>Abre Ajustes › Reglas y lugares y toca “Permitir la ubicación para las reglas de ubicación”.</li>
         <li>Luego toca “Configurar la ubicación en segundo plano” y elige la opción “Permitir todo el tiempo” de Android.</li>
         <li>Para permitir la ubicación precisa, abre Configuración de Android › Apps › CallRules › Permisos › Ubicación y activa “Usar ubicación precisa”.</li>
         <li>Sin acceso a la ubicación, las reglas de ubicación no se pueden comprobar, y Ajustes › Reglas y lugares › “Cuando no se puede comprobar la ubicación” decide qué hacen.</li>

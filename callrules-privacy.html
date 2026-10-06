@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>CallRules Privacy Policy</h1>
-  <p class="updated">CallRules: Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 1 October 2026</p>
+  <p class="updated">CallRules: Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 4 October 2026</p>
   <nav class="policy-nav" aria-label="Plainform apps policies"><span>Plainform apps policies:</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="filezone-privacy.html">File Zone</a> <a href="siteproof-privacy.html">SiteProof</a></nav>
 
   <div class="summary">
@@ -64,12 +64,12 @@
     <li><strong>Incoming and outgoing call information and contacts</strong> —
         to evaluate the directional blocking, Allow, Silence, and confirmation
         rules you create. This processing happens on the device. CallRules does
-        not handle SMS or MMS, provide a cloud spam lookup, or automatically
+        not request SMS or MMS permissions, provide a cloud spam lookup, or automatically
         send phone numbers to the developer.</li>
     <li><strong>Contacts</strong> — optional. With contacts access, CallRules reads
         your contacts on the device: when a call arrives, it looks up the
         caller's contact name, starred status, and contact groups to apply the
-        contact whitelist and contact, contact group, and caller-name rules; when
+        Allowed contacts setting and contact, contact group, and caller-name rules; when
         you choose a contact or group for a rule, run Rule check, or give a voice
         contact command such as “block calls from Uncle Bob”, it reads contact
         names, phone numbers, and group membership. Blocked-call notifications
@@ -89,14 +89,15 @@
         or saved place you confirm. Saved locations remain on the device unless
         you include them in a configuration export. Location is never used to infer
         or look up where a caller is.</li>
+    <li><strong>Message notifications (Silence texts)</strong> — optional, off by default, and part of Pro. If you turn on “Silence texts from blocked senders” and allow Android's notification access, CallRules reads the notifications posted by the messaging apps you choose: the sender's number or name and the part of the message the notification shows. When Android hides a text's content, CallRules uses the conversation name Android still provides (the sender's number or contact name) to check the sender. Android's notification access covers every notification; CallRules ignores those from other apps and doesn't keep them. It checks the messaging notifications on the device against your blocked numbers, rules, message filters, and built-in scam patterns. For a match, it hides the notification and marks the text read using the messaging app's own action. Texts stay in your messaging app; CallRules never sends, deletes, or uploads them. The list of silenced texts (sender, app, time, reason, and, if “Keep message previews” is on, up to 200 characters of the message) stays on the device, and each entry is deleted after 30 days. You can turn the feature off, clear the list, or remove notification access at any time.</li>
     <li><strong>Microphone</strong> — optional, used only when you start a voice
         rule or problem-report dictation. On supported devices CallRules uses
         Android's on-device speech recognizer and does not silently substitute
         online recognition. Speech transcripts are not stored in diagnostics.
         Voice is optional: every voice action can also be done by typing a
         command or using the app's screens.</li>
-    <li>Blocked numbers, whitelist entries, directional Call Rules, saved
-        locations, settings, limited call history (including the caller's
+    <li>Blocked numbers, allowed numbers, directional Call Rules, saved
+        locations, settings, message filters, the silenced-texts list, limited call history (including the caller's
         contact name or the caller-ID name your carrier provides), and an optional salted PIN
         hash may be stored in app-private storage. The PIN itself is not stored.
         Pending outgoing approvals and one-use redial authorizations remain in
@@ -106,19 +107,19 @@
         screening outcomes and duration,
         permission or role status, location availability, purchase error codes,
         import failure codes, and sanitized crash stack frames. They exclude
-        phone numbers, contact names, rule names and patterns, coordinates,
+        phone numbers, contact names, message text, rule names and patterns, coordinates,
         speech transcripts, PIN data, purchase tokens, and raw exception messages.
         Reports describe CallRules's decisions; they cannot establish what a
         carrier or another phone component subsequently did.</li>
     <li><strong>Exports and imports</strong> — configuration exports are created
         only when you request them and may include enabled and disabled rules,
-        rule direction and per-rule PIN requirement, blocked numbers, whitelist
-        entries, saved locations, and selected settings. Rules that target a
+        rule direction and per-rule PIN requirement, blocked numbers, allowed
+        numbers, saved locations, message filters, and selected settings. Rules that target a
         contact, contact group, or caller name include the contact's name and
         Android contact lookup key, the group's name and account, or the name
         text, so they can be matched again after import. They exclude the PIN
         hash and attempt state, outgoing authorizations, purchase entitlements,
-        Android permission grants, call history, and diagnostic history. Google
+        Android permission grants, call history, silenced texts, and diagnostic history. Google
         Sheets imports occur only when you supply a published sheet URL.</li>
   </ul>
 
@@ -154,6 +155,7 @@
         place's label, or at maps.google.com in your browser).
         Visiting plainform.app is an ordinary web request to the site's host,
         GitHub Pages. CallRules adds no identifiers to these links.</li>
+    <li><strong>Your messaging app</strong> (when you choose Open or Clean up for a silenced text) — CallRules passes it the sender's number so it opens that conversation.</li>
   </ul>
 
   <h2>6. Data sharing and sale</h2>
@@ -167,6 +169,7 @@
      CallRules according to Android behavior. Where CallRules offers an export or
      backup feature, copies you create are under your control and must be
      deleted through the app or location where you saved them.</p>
+  <p>Entries in the silenced-texts list, with their message previews, are deleted after 30 days, or sooner when you delete them or clear the list.</p>
   <p>While CallRules is running, it opportunistically removes diagnostic records
      older than seven days and generated sharing files older than 24 hours, and
      enforces a 1 MiB diagnostic-log limit when recording. Files may remain

@@ -52,7 +52,7 @@
     <li><a href="#rule-options">Rule options</a></li>
     <li><a href="#rule-order">How rules are decided</a></li>
     <li><a href="#rule-check">Rule check</a></li>
-    <li><a href="#whitelist-blocked">Whitelist and blocked numbers</a></li>
+    <li><a href="#whitelist-blocked">Allowed and blocked numbers</a></li>
   </ul>
   <p><a href="#contacts">Contacts &amp; names</a></p>
   <ul>
@@ -65,7 +65,7 @@
     <li><a href="#voice-add-rules">Add rules by voice</a></li>
     <li><a href="#voice-contacts">Contacts by voice</a></li>
     <li><a href="#voice-remove-rules">Remove or pause rules</a></li>
-    <li><a href="#voice-lists">Whitelist and blocked numbers by voice</a></li>
+    <li><a href="#voice-lists">Allowed and blocked numbers by voice</a></li>
     <li><a href="#voice-settings">Settings by voice</a></li>
     <li><a href="#voice-questions">Questions and undo</a></li>
   </ul>
@@ -78,10 +78,12 @@
   </ul>
   <p><a href="#settings">Settings &amp; notifications</a></p>
   <ul>
-    <li><a href="#blocking-settings">Blocking settings</a></li>
+    <li><a href="#blocking-settings">Protection and blocking settings</a></li>
     <li><a href="#quiet-hours">Quiet hours</a></li>
     <li><a href="#notifications">Notifications</a></li>
-    <li><a href="#outgoing">Outgoing protection</a></li>
+    <li><a href="#outgoing">Outgoing calls</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#silence-texts">Silence texts</a></li>
     <li><a href="#backups">Import, export, and backups</a></li>
     <li><a href="#appearance">Appearance</a></li>
   </ul>
@@ -96,7 +98,7 @@
 <header class="doc-hero">
   <p class="eyebrow">CallRules help</p>
   <h1>How to use CallRules</h1>
-  <p class="lede">The same guide as <strong>Settings › How to use CallRules</strong> in the app: 7 sections and 31 topics. Topics marked <span class="pro">PRO</span> need Lifetime Pro.</p>
+  <p class="lede">The same guide as <strong>Settings › How to use CallRules</strong> in the app: 7 sections and 33 topics. Topics marked <span class="pro">PRO</span> need Lifetime Pro.</p>
   <div class="search" id="search-box" hidden>
     <label class="eyebrow" for="guide-search">Search the guide</label>
     <input id="guide-search" type="search" placeholder="Try “quiet hours” or “area code”" autocomplete="off">
@@ -126,13 +128,13 @@
     <p>First-run setup walks you through “Enable Call Screening” (set CallRules as your Caller ID &amp; spam app), “Include Saved Contacts”, “Stay Informed” (notifications), and a privacy summary. You can skip any step.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>CallRules can't screen calls until it is your Caller ID &amp; spam app. If it isn't, Home shows “Setup required”; tap Enable.</p></div>
     <p>Phone, call-redirection, and location access are asked for later, only when you turn on a feature that needs them.</p>
-    <p>The bottom bar has four tabs: Home, Blocked (call history), Rules, and Settings.</p>
+    <p>The bottom bar has four tabs: Home, History (call history), Rules, and Settings.</p>
   </article>
   <article class="topic" id="home-dashboard">
     <h3>Home dashboard <a class="anchor" href="#home-dashboard" aria-label="Link to Home dashboard">#</a></h3>
     <p class="summary">The shield switch, counts, and banners</p>
     <ul>
-      <li>Tap the shield to turn protection on or off (“Protection Active” / “Protection Off”). This is the same switch as Settings › Protection › Call protection.</li>
+      <li>Tap the shield to turn protection on or off (“Protection Active” / “Protection Off”). This is the same switch as Call protection at the top of Settings.</li>
       <li>Today, Last 7 days, and All time count the calls CallRules blocked or silenced; tap one to see those calls in Call history. Time saved estimates about 30 seconds per blocked call; tap it to see how.</li>
       <li>Voice command opens voice commands (Pro).</li>
       <li>“Setup required” appears when CallRules isn't your Caller ID &amp; spam app.</li>
@@ -142,9 +144,9 @@
   <article class="topic" id="call-history">
     <h3>Call history <a class="anchor" href="#call-history" aria-label="Link to Call history">#</a></h3>
     <p class="summary">The Blocked and Recent tabs</p>
-    <p>The Blocked tab opens Call History, which has two tabs.</p>
+    <p>The History tab opens Call history, which has two tabs, and a Texts tab when Silence texts is on.</p>
     <ul>
-      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Today, 7 days, and All above the list show those periods. Tap the check mark (“Allow this number”) to add the number to your whitelist and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
+      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Today, 7 days, and All above the list show those periods. Tap the check mark (“Allow this number”) to add the number to Allowed numbers and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
       <li>Recent lists incoming calls that CallRules let through. Tap Block to block this number, its area code, or its country code; UNDO appears briefly. Clear empties the Recent list. Allow contact access if you want calls from your contacts to appear here too.</li>
       <li>Tap any call to see why it was blocked or allowed: the rule that matched (with Open rule), the setting that decided, and the caller verification result. Calls from before this version show “Reason not recorded”. Long-press a call to copy its number. Blocking an area code or country code adds a block rule, which counts toward your rules and asks first.</li>
     </ul>
@@ -159,12 +161,12 @@
     <li><a href="#rule-options">Rule options</a></li>
     <li><a href="#rule-order">How rules are decided</a></li>
     <li><a href="#rule-check">Rule check</a></li>
-    <li><a href="#whitelist-blocked">Whitelist and blocked numbers</a></li>
+    <li><a href="#whitelist-blocked">Allowed and blocked numbers</a></li>
   </ul>
   <article class="topic" id="rules-basics">
     <h3>Rules basics <a class="anchor" href="#rules-basics" aria-label="Link to Rules basics">#</a></h3>
     <p class="summary">The Rules tab, adding and editing rules</p>
-    <p>The Rules tab (“Call Rules”) lists each rule with its type, pattern, direction, schedule, and expiry. Each rule has Edit, Delete, and an on/off switch. The top bar has a microphone (voice commands, Pro), Whitelist and Blocked numbers. Its ⋮ menu (More options) has Check rules.</p>
+    <p>The Rules tab lists each rule with its type, pattern, direction, schedule, and expiry. Each rule has Edit, Delete, and an on/off switch. The top bar has a microphone (voice commands, Pro), Allowed numbers and Blocked numbers. Its ⋮ menu (More options) has Check rules.</p>
     <ol>
       <li>Tap +.</li>
       <li>Choose Block or Allow and pick a Call direction.</li>
@@ -187,7 +189,7 @@
       <li><strong>Wildcard pattern (Pro):</strong> * matches any digits, ? matches one optional digit, and X or # matches exactly one digit. Example: +1555*.</li>
       <li><strong>Regular expression (Pro):</strong> matched against the full international number, for example \+1555\d{7}.</li>
       <li><strong>Private / hidden callers:</strong> matches incoming calls that hide their caller ID. Use it to block, silence, or allow hidden callers, for example only on a schedule or at a place. Private rules apply to incoming calls only.</li>
-      <li>Unknown numbers (created by voice or Rules CSV): matches every caller that the whitelist, your contacts, and allow rules haven't already let through.</li>
+      <li>Unknown numbers (created by voice or Rules CSV): matches every caller that Allowed numbers, your contacts, and allow rules haven't already let through.</li>
       <li>Contact, Contact group, and Caller name rules: see Contacts &amp; names.</li>
     </ul>
     <p>Area-code, country, and city rules match number prefixes. They can't tell where a caller physically is.</p>
@@ -197,11 +199,11 @@
     <p class="summary">Reject or Silence, direction, Temporary, PIN, and overrides</p>
     <ul>
       <li><strong>Reject call vs Silence call:</strong> Reject declines the call, so the caller hears the line end. Silence lets the call ring on the caller's end while your phone stays quiet. Both are logged. Silence works only for incoming calls.</li>
-      <li><strong>Call direction:</strong> Incoming, Outgoing, or Both. Outgoing rules work only when Outgoing call protection is on. They support number matching, schedules, and Temporary, but not Silence, location, or unknown/private callers.</li>
+      <li><strong>Call direction:</strong> Incoming, Outgoing, or Incoming &amp; outgoing (Outgoing and Incoming &amp; outgoing are Pro). Outgoing rules work only when “Enable outgoing rules” is on in Settings › Outgoing calls. They support number matching, schedules, and Temporary, but not Silence, location, or unknown/private callers.</li>
       <li><strong>Temporary:</strong> the rule expires after a number of minutes, hours, or days. Rules shows “Expires in…” and then “Expired”, and deletes expired rules about a day later.</li>
       <li><strong>Schedule and Location (Pro):</strong> see Places &amp; schedules.</li>
-      <li><strong>Require PIN (outgoing allow rules):</strong> matching outgoing calls need the shared PIN. Set the PIN first in Outgoing call protection.</li>
-      <li><strong>Override allow rules (block rules):</strong> blocks matching calls even when the whitelist, your contacts, or an allow rule would let them through. If you save a block rule without it and allowed numbers would get past the rule, CallRules asks “Allowed numbers match this rule”. Choose Override or Keep allow rules; dismissing the prompt cancels the save.</li>
+      <li><strong>Require PIN (outgoing allow rules):</strong> matching outgoing calls need the shared PIN. Set the PIN first in Settings › Security.</li>
+      <li><strong>Override allow rules (block rules):</strong> blocks matching calls even when Allowed numbers, your contacts, or an allow rule would let them through. If you save a block rule without it and allowed numbers would get past the rule, CallRules asks “Allowed numbers match this rule”. Choose Override or Keep allow rules; dismissing the prompt cancels the save.</li>
       <li><strong>Rule overlap:</strong> while you add or edit a rule, a “Rule overlap” note lists existing rules that overlap it. It's for information only; you can still save.</li>
     </ul>
   </article>
@@ -213,8 +215,8 @@
       <li><span class="step-title">Protection is off or paused</span><span class="outcome rings">Rings</span><span class="detail">The call rings.</span></li>
       <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block carrier spam labels is on and the carrier labeled it as spam, or when Block private numbers is on, and rings otherwise.</span></li>
       <li><span class="step-title">Block rules with “Override allow rules” on</span><span class="outcome blocks">Blocks</span> <span class="tag">Override allow rules</span><span class="detail">Silence rules before Reject rules.</span></li>
-      <li><span class="step-title">Your whitelist</span><span class="outcome rings">Rings</span><span class="detail">Lets the call ring.</span></li>
-      <li><span class="step-title">Your contacts</span><span class="outcome rings">Rings</span><span class="detail">Ring, depending on the Contact whitelist setting.</span></li>
+      <li><span class="step-title">Allowed numbers</span><span class="outcome rings">Rings</span><span class="detail">Lets the call ring.</span></li>
+      <li><span class="step-title">Your contacts</span><span class="outcome rings">Rings</span><span class="detail">Ring, depending on the Allowed contacts setting.</span></li>
       <li><span class="step-title">Allow rules</span><span class="outcome rings">Rings</span><span class="detail">Let the call ring.</span></li>
       <li><span class="step-title">Other block rules</span><span class="outcome blocks">Blocks</span><span class="detail">Silence before Reject.</span></li>
       <li><span class="step-title">Blocked numbers</span><span class="outcome blocks">Blocks</span></li>
@@ -234,24 +236,24 @@
     <p class="summary">Find rules that overlap or contradict each other</p>
     <p>Rule check finds rules that overlap or contradict each other. Open it with Check rules in the ⋮ menu on Rules, from the card on Home, or from its notification. It runs when you open it; tap Run check to run it again.</p>
     <ul>
-      <li><strong>Warnings:</strong> “Block rule is bypassed” means allow rules, whitelisted numbers, or contacts get past a block rule. “Allow rule never applies” means a block rule with “Override allow rules” on covers it.</li>
+      <li><strong>Warnings:</strong> “Block rule is bypassed” means allow rules, allowed numbers, or contacts get past a block rule. “Allow rule never applies” means a block rule with “Override allow rules” on covers it.</li>
       <li>“Contact not found” and “Contact group not found” warn about a contact or group rule whose contact or group was deleted, so it matches nobody. Edit it or delete it.</li>
       <li><strong>Info:</strong> “Duplicate rules”, “Silence and reject rules overlap”, and “Rules may conflict” (possible overlaps involving wildcards, regular expressions, caller names, schedules, or locations).</li>
     </ul>
-    <p>Each issue offers fixes, such as turning “Override allow rules” on or off, disabling or deleting a rule, removing a whitelist entry, or Edit. Ignore hides a warning; turn on “Show ignored” and tap Restore to bring it back.</p>
-    <p>After calls, CallRules checks again automatically, but only if your rules, whitelist, contact settings, or contacts have changed. When Rule check alerts is on, it sends a quiet notification for new warnings. The Rules tab badge and banner show how many warnings are unresolved.</p>
+    <p>Each issue offers fixes, such as turning “Override allow rules” on or off, disabling or deleting a rule, removing an allowed number, or Edit. Ignore hides a warning; turn on “Show ignored” and tap Restore to bring it back.</p>
+    <p>After calls, CallRules checks again automatically, but only if your rules, Allowed numbers, contact settings, or contacts have changed. When Rule check alerts is on, it sends a quiet notification for new warnings. The Rules tab badge and banner show how many warnings are unresolved.</p>
     <p class="in-app"><span>In the app:</span> Rules › Check rules</p>
   </article>
   <article class="topic" id="whitelist-blocked">
-    <h3>Whitelist and blocked numbers <a class="anchor" href="#whitelist-blocked" aria-label="Link to Whitelist and blocked numbers">#</a></h3>
+    <h3>Allowed and blocked numbers <a class="anchor" href="#whitelist-blocked" aria-label="Link to Allowed and blocked numbers">#</a></h3>
     <p class="summary">Numbers that always ring or are always blocked</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Open both from the icons at the top of Rules. Tap an entry's remove icon to delete it.</p></div>
     <ul>
-      <li><strong>Whitelist:</strong> these numbers always ring unless a block rule has “Override allow rules” on. To add a number, tap “Allow this number” in Call history, say “always allow 555 123 4567”, or import a JSON backup. The free version allows 20 entries.</li>
+      <li><strong>Allowed numbers:</strong> these numbers always ring unless a block rule has “Override allow rules” on. To add a number, tap “Allow this number” in Call history, say “always allow 555 123 4567”, or import a JSON backup. The free version allows 20 entries.</li>
       <li><strong>Blocked numbers:</strong> these numbers are always blocked unless something earlier lets them through. To add a number, tap Block on a Recent call, say “block the last call” or “add 555 123 4567 to my blocked numbers”, or import a JSON backup. The free version allows 50 entries.</li>
     </ul>
     <p>An Exact number rule does the same job, but it counts toward your rule limit instead.</p>
-    <p class="in-app"><span>In the app:</span> Rules › Whitelist</p>
+    <p class="in-app"><span>In the app:</span> Rules › Allowed numbers</p>
     <p class="in-app"><span>In the app:</span> Rules › Blocked numbers</p>
   </article>
 </section>
@@ -275,7 +277,7 @@
     <h3>How callers are named <a class="anchor" href="#caller-names" aria-label="Link to How callers are named">#</a></h3>
     <p class="summary">Contact names and caller ID in lists and alerts</p>
     <p>Both Call history tabs show the caller's name first when there is one: your contact's name, or else the name your carrier sent with the call (caller ID, such as “SCAM LIKELY”). The number follows, formatted for your Calling country. Blocked-call notifications name the caller the same way.</p>
-    <p>Whitelist and Blocked numbers entries that belong to a contact show the contact's name first, then the number. Number rules on Rules do the same.</p>
+    <p>Allowed numbers and Blocked numbers entries that belong to a contact show the contact's name first, then the number. Number rules on Rules do the same.</p>
   </article>
 </section>
 <section class="category" id="voice">
@@ -285,7 +287,7 @@
     <li><a href="#voice-add-rules">Add rules by voice</a></li>
     <li><a href="#voice-contacts">Contacts by voice</a></li>
     <li><a href="#voice-remove-rules">Remove or pause rules</a></li>
-    <li><a href="#voice-lists">Whitelist and blocked numbers by voice</a></li>
+    <li><a href="#voice-lists">Allowed and blocked numbers by voice</a></li>
     <li><a href="#voice-settings">Settings by voice</a></li>
     <li><a href="#voice-questions">Questions and undo</a></li>
   </ul>
@@ -347,13 +349,13 @@
     </div>
   </article>
   <article class="topic" id="voice-lists">
-    <h3>Whitelist and blocked numbers by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-lists" aria-label="Link to Whitelist and blocked numbers by voice">#</a></h3>
+    <h3>Allowed and blocked numbers by voice <span class="pro">PRO</span> <a class="anchor" href="#voice-lists" aria-label="Link to Allowed and blocked numbers by voice">#</a></h3>
     <p class="summary">Add and remove numbers from your lists</p>
     <div class="voice">
       <p class="voice-label">Try saying</p>
       <ul class="chips">
         <li>always allow 555 123 4567</li>
-        <li>remove 555 123 4567 from whitelist</li>
+        <li>remove 555 123 4567 from allowed numbers</li>
         <li>block the last call</li>
         <li>add 555 123 4567 to my blocked numbers</li>
         <li>unblock the number 555 123 4567</li>
@@ -371,15 +373,13 @@
         <li>turn on quiet hours</li>
         <li>set quiet hours from 10 pm to 7 am</li>
         <li>allow starred contacts during quiet hours</li>
-        <li>whitelist starred contacts</li>
+        <li>set allowed contacts to starred contacts</li>
         <li>set carrier verification to strict</li>
         <li>turn off notifications</li>
         <li>pause blocking for 1 hour</li>
         <li>resume protection</li>
-        <li>set sensitivity to high</li>
       </ul>
     </div>
-    <p>“Set sensitivity to high” changes the local spam list threshold; “aggressive” also blocks unknown numbers.</p>
   </article>
   <article class="topic" id="voice-questions">
     <h3>Questions and undo <span class="pro">PRO</span> <a class="anchor" href="#voice-questions" aria-label="Link to Questions and undo">#</a></h3>
@@ -438,7 +438,7 @@
     <p>Location (Pro, incoming only): tap Pick Location, then search for an address or paste coordinates, tap Use Current Location, or choose one of your Saved places. Then set the radius (30 m to 5 km).</p>
     <p>When a call arrives, CallRules checks where you are in this order: a location less than a minute old; otherwise one up to 10 minutes old that's clearly inside or outside the area; otherwise Android's low-power geofence around the place (never smaller than 100 m). Geofences run only while you have location rules, and they need precise location. Allow background location if the rule must work while CallRules is closed or the phone is locked.</p>
     <p>If none of these can tell, Settings › Rules &amp; places › “When location can't be checked” decides. By default an allow rule lets the call ring, and no other block rule applies; a block rule is ignored, and the call goes on to the next checks. Call history notes when a location rule was skipped or decided this way.</p>
-    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Settings › Rules &amp; places › Location rules shows whether location access is ready. Use “Allow location for location rules” or “Set up background location” to grant it.</p></div>
+    <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Settings › Rules &amp; places shows whether location access is ready. Use “Allow location for location rules” or “Set up background location” to grant it.</p></div>
   </article>
   <article class="topic" id="schedules">
     <h3>Schedules <span class="pro">PRO</span> <a class="anchor" href="#schedules" aria-label="Link to Schedules">#</a></h3>
@@ -449,33 +449,35 @@
 <section class="category" id="settings">
   <h2>Settings &amp; notifications</h2>
   <ul class="category-topics">
-    <li><a href="#blocking-settings">Blocking settings</a></li>
+    <li><a href="#blocking-settings">Protection and blocking settings</a></li>
     <li><a href="#quiet-hours">Quiet hours</a></li>
     <li><a href="#notifications">Notifications</a></li>
-    <li><a href="#outgoing">Outgoing protection</a></li>
+    <li><a href="#outgoing">Outgoing calls</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#silence-texts">Silence texts</a></li>
     <li><a href="#backups">Import, export, and backups</a></li>
     <li><a href="#appearance">Appearance</a></li>
   </ul>
   <article class="topic" id="blocking-settings">
-    <h3>Blocking settings <a class="anchor" href="#blocking-settings" aria-label="Link to Blocking settings">#</a></h3>
-    <p class="summary">Protection, calling country, private and unknown callers</p>
+    <h3>Protection and blocking settings <a class="anchor" href="#blocking-settings" aria-label="Link to Protection and blocking settings">#</a></h3>
+    <p class="summary">Call protection, Always allow, Block automatically, calling country</p>
     <ul>
-      <li><strong>Call protection:</strong> turns incoming screening on or off.</li>
-      <li><strong>Calling country:</strong> how CallRules reads numbers you type without a + code, in rules, voice commands, and imports.</li>
-      <li><strong>Block private numbers:</strong> rejects calls with hidden caller ID unless a Private rule decides the call first.</li>
-      <li><strong>Block unknown numbers:</strong> blocks callers who aren't in your contacts, unless the whitelist or an allow rule lets them through. This needs contact access.</li>
-      <li><strong>Block carrier spam labels:</strong> rejects calls your carrier labels as spam in the caller-ID name, such as “Scam Likely”, “Spam Risk”, or “Potential Spam”. CallRules can't read your Phone app's spam verdict, but can use the label your carrier sends. Only the carrier's name is checked, so the whitelist, your contacts, and allow rules still ring even when the carrier labels them.</li>
-      <li><strong>Contact whitelist:</strong> choose All contacts, Starred only, or None to set which contacts always ring.</li>
-      <li><strong>Rules enabled:</strong> turning this off pauses all incoming block and allow rules.</li>
-      <li>Protection › Carrier verification uses the STIR/SHAKEN result your carrier attaches to each call. Off ignores it, Standard blocks calls that fail verification, and Strict also blocks calls with no verification. Strict may block real calls from small carriers, VoIP services, and some international numbers. The whitelist, your contacts, and allow rules still let calls through.</li>
+      <li><strong>Call protection (top of Settings):</strong> turns incoming screening on or off. After a voice command like “pause blocking for 1 hour”, it shows “Paused until …” with Resume, as Home does.</li>
+      <li><strong>Rules &amp; places › Calling country:</strong> how CallRules reads numbers you type without a + code, in rules, voice commands, and imports.</li>
+      <li>Block automatically › Block private numbers: rejects calls with hidden caller ID unless a Private rule decides the call first.</li>
+      <li>Block automatically › Block unknown numbers: blocks callers who aren't in your contacts, unless Allowed numbers or an allow rule lets them through. This needs contact access.</li>
+      <li>Block automatically › Block carrier spam labels: rejects calls your carrier labels as spam in the caller-ID name, such as “Scam Likely”, “Spam Risk”, or “Potential Spam”. CallRules can't read your Phone app's spam verdict, but can use the label your carrier sends. Only the carrier's name is checked, so Allowed numbers, your contacts, and allow rules still ring even when the carrier labels them.</li>
+      <li><strong>Always allow › Allowed contacts:</strong> choose All contacts, Starred only, or None to set which contacts always ring.</li>
+      <li><strong>Rules &amp; places › Rules enabled:</strong> turning this off pauses all incoming block and allow rules.</li>
+      <li>Block automatically › Carrier verification uses the STIR/SHAKEN result your carrier attaches to each call. Off ignores it, Standard blocks calls that fail verification, and Strict also blocks calls with no verification. Strict may block real calls from small carriers, VoIP services, and some international numbers. Allowed numbers, your contacts, and allow rules still let calls through.</li>
     </ul>
     <p class="in-app"><span>In the app:</span> Settings tab</p>
   </article>
   <article class="topic" id="quiet-hours">
     <h3>Quiet hours <span class="pro">PRO</span> <a class="anchor" href="#quiet-hours" aria-label="Link to Quiet hours">#</a></h3>
     <p class="summary">Block calls during set hours</p>
-    <p>“Enable quiet hours” blocks every call between Start and End that nothing earlier has already allowed. The whitelist, contacts under Contact whitelist, and allow rules still ring. Tap Start or End to pick a time; the period can cross midnight, such as 22:00 to 07:00.</p>
-    <p>“Allow starred contacts” lets starred contacts ring during quiet hours even when Contact whitelist is set to None. Calls blocked this way appear in Call history as “Quiet hours”.</p>
+    <p>“Enable quiet hours” blocks every call between Start and End that nothing earlier has already allowed. Allowed numbers, contacts under Allowed contacts, and allow rules still ring. Tap Start or End to pick a time; the period can cross midnight, such as 22:00 to 07:00.</p>
+    <p>“Allow starred contacts” lets starred contacts ring during quiet hours even when Allowed contacts is set to None. Calls blocked this way appear in Call history as “Quiet hours”.</p>
     <p>“Use these times” turns the Start and End times on or off. “When Do Not Disturb is on” also runs quiet hours whenever your phone's Do Not Disturb is on, and Call history notes those calls. CallRules can't make a call ring through Do Not Disturb: only the callers your Do Not Disturb settings allow will ring.</p>
   </article>
   <article class="topic" id="notifications">
@@ -485,23 +487,58 @@
       <li><strong>Show blocked call alerts:</strong> shows a low-priority “Call blocked” notification with the number and reason. Tap it to open Call history. Its Unblock button only removes the number from Blocked numbers. It doesn't change rules or other settings, so a rule may still block the next call. It may ask for your PIN.</li>
       <li><strong>Rule check alerts:</strong> shows a quiet notification when rules start to overlap or get bypassed.</li>
       <li>An outgoing call that needs your approval shows “Call waiting for your confirmation”.</li>
+      <li><strong>Notification settings:</strong> opens Android's settings for CallRules notifications, such as sound, vibration, and how alerts show.</li>
     </ul>
     <p>Allow Android's notification permission during setup, or use Troubleshoot to fix it later.</p>
   </article>
   <article class="topic" id="outgoing">
-    <h3>Outgoing protection <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Link to Outgoing protection">#</a></h3>
+    <h3>Outgoing calls <span class="pro">PRO</span> <a class="anchor" href="#outgoing" aria-label="Link to Outgoing calls">#</a></h3>
     <p class="summary">Outgoing rules, PIN, and long press</p>
-    <p>Open Settings › Outgoing calls › Outgoing call setup.</p>
+    <p>Open Settings › Outgoing calls › Outgoing call settings.</p>
     <ul>
-      <li><strong>Enable outgoing rules:</strong> checks your Outgoing and Both rules before a call is placed. A blocked call is cancelled.</li>
-      <li>Require PIN for all outgoing calls, or Require long press (hold for 1.5 seconds). A PIN, whether global or from a rule, takes priority over long press.</li>
-      <li><strong>PIN-protect rules and settings:</strong> every saved change to rules, lists, settings, or imports asks for the PIN. This doesn't require Pro.</li>
-      <li><strong>Shared PIN:</strong> Set PIN, Change PIN, or Remove PIN (4 to 8 digits). After 5 wrong attempts, PIN entry locks for 30 seconds. You can't remove the PIN while a setting or rule still needs it.</li>
+      <li><strong>Enable outgoing rules:</strong> checks your Outgoing and Incoming &amp; outgoing rules before a call is placed. A blocked call is cancelled.</li>
+      <li>Require PIN for all outgoing calls, or Require long press (hold for 1.5 seconds). A PIN, whether global or from a rule, takes priority over long press. The PIN is set in Settings › Security; until then, “Open Security” shows under the switch.</li>
+      <li>Free users see a PRO badge on these switches; tapping one opens Upgrade.</li>
       <li><strong>Android setup:</strong> tap “Allow call redirection” and “Allow Phone permission” (needed to redial approved calls).</li>
     </ul>
     <p>When a call needs approval, CallRules cancels it and opens “Confirm outgoing call”. After the correct PIN or a completed hold, it places one replacement call. If you tap Cancel call or wait 60 seconds, no call is placed. Android excludes emergency calls and some gateway calls.</p>
     <p>This isn't tamper-proof: uninstalling CallRules, clearing its data, or revoking the Android role turns it off.</p>
     <p class="in-app"><span>In the app:</span> Settings › Outgoing calls</p>
+  </article>
+  <article class="topic" id="security">
+    <h3>Security <a class="anchor" href="#security" aria-label="Link to Security">#</a></h3>
+    <p class="summary">The shared PIN and locked changes</p>
+    <p>Open Settings › Security.</p>
+    <ul>
+      <li><strong>Shared PIN:</strong> Set PIN, Change PIN, or Remove PIN (4 to 8 digits). The same PIN confirms outgoing calls and rules that ask for a PIN. After 5 wrong attempts, PIN entry locks for 30 seconds. You can't remove the PIN while a setting or rule still needs it.</li>
+      <li><strong>PIN-protect rules and settings:</strong> every saved change to rules, lists, settings, or imports asks for the PIN. This doesn't require Pro.</li>
+      <li>Backups keep these switches but never the PIN. After restoring on a new phone, set a PIN here before turning them back on.</li>
+    </ul>
+    <p class="in-app"><span>In the app:</span> Settings tab</p>
+  </article>
+  <article class="topic" id="silence-texts">
+    <h3>Silence texts <span class="pro">PRO</span> <a class="anchor" href="#silence-texts" aria-label="Link to Silence texts">#</a></h3>
+    <p class="summary">Hide texts from blocked senders, then review them</p>
+    <p>Settings › Texts › “Silence texts from blocked senders” (Pro) hides the notification of a text from a sender you block and marks that text read. The text still arrives in your messaging app: CallRules never deletes, sends, or blocks texts, and it doesn't ask for SMS permissions.</p>
+    <ol>
+      <li>Turn on “Silence texts from blocked senders”. CallRules first explains what it reads; tap Continue.</li>
+      <li>Android's notification access screen opens: allow it for CallRules. Settings › Texts shows On when it's ready.</li>
+      <li>Under “Messaging apps to watch”, keep on the apps CallRules checks. It ignores notifications from every other app.</li>
+    </ol>
+    <ul>
+      <li>Blocked numbers and Block unknown numbers always apply. With “Apply my call block rules to texts” on, your block rules apply too. Allowed numbers, contacts, and allow rules still win, and group chats are never silenced.</li>
+      <li>A sender shown by name, such as a store or a bank, only matches caller-name rules.</li>
+      <li>Scam patterns are built into CallRules and checked on the phone: signs such as a parcel, toll, prize, or bank notice with a short or odd link. Conservative (the default) silences only obvious scams. Standard also silences likely scams and may sometimes silence a real text. Off leaves only your blocks and filters. They're never used for contacts, allowed numbers, allow rules, group chats, or one-time codes.</li>
+      <li>Message filters silence texts by their words: Contains words, Exact phrase, Starts with, or Regular expression. Capitals and accents don't matter. Each filter applies to Unknown senders only (the default) or to Everyone.</li>
+    </ul>
+    <ul>
+      <li>Call history › Texts lists each silenced text with its sender, app, and reason, such as Blocked number, a rule, “Your message filter”, or “Suspected spam” with the signs it found.</li>
+      <li>Tap a text to open it in your messaging app, allow the sender, mark it Not spam, or delete it from the list. Not spam allows the sender, and scam patterns and filters stop checking their texts. Clear all empties the list; the texts stay in your messaging app.</li>
+      <li>Clean up in your messaging app opens each conversation in turn so you can delete it there. “Block in … too” shows where that app's block option is.</li>
+      <li>Keep message previews saves up to 200 characters of each text, on this phone only. Entries are deleted after 30 days. Daily summary notification shows how many texts were silenced today.</li>
+    </ul>
+    <p>Limits: CallRules sees only what the notification shows, so it judges a long text by its first lines. Scam patterns can miss a scam, and Standard can silence a real text, so check Call history › Texts now and then. Android 15 and later hide the text of messages that may contain a code (and, with Google's “Enhanced notifications”, many more). CallRules still sees who the conversation is with, so it silences those texts from blocked senders, but message filters and scam patterns can't check them. If Android hides the sender too, the text isn't silenced; Settings › Texts shows how many.</p>
+    <p class="in-app"><span>In the app:</span> Settings tab</p>
   </article>
   <article class="topic" id="backups">
     <h3>Import, export, and backups <a class="anchor" href="#backups" aria-label="Link to Import, export, and backups">#</a></h3>
@@ -509,9 +546,9 @@
     <ul>
       <li><strong>“Import Rules CSV or JSON”:</strong> pick a Rules CSV or a CallRules JSON backup (up to 2 MB). “Review import” shows what will be added and what will be skipped; tap Apply import. Duplicates and invalid items are skipped, and free limits apply. Without Pro, wildcard and regular-expression rules, schedules, and locations are skipped. A JSON backup also restores its settings.</li>
       <li><strong>Import from Google Sheets (Pro):</strong> paste the link to a sheet that's public or shared by link and uses the Rules CSV columns.</li>
-      <li>Export (Pro) offers three formats. Rules CSV includes every rule, enabled or disabled. Blocked numbers CSV is for spreadsheets and can't be imported back. JSON (full backup) includes rules, blocked numbers, whitelist, saved places, and settings.</li>
+      <li>Export (Pro) offers three formats. Rules CSV includes every rule, enabled or disabled. Blocked numbers CSV is for spreadsheets and can't be imported back. JSON (full backup) includes rules, blocked numbers, allowed numbers, saved places, message filters, and settings.</li>
     </ul>
-    <p>Backups can contain phone numbers and places, so store and share them carefully. They never include PIN data, purchases, permissions, call history, or diagnostics.</p>
+    <p>Backups can contain phone numbers and places, so store and share them carefully. They never include PIN data, purchases, permissions, call history, silenced texts, or diagnostics.</p>
   </article>
   <article class="topic" id="appearance">
     <h3>Appearance <a class="anchor" href="#appearance" aria-label="Link to Appearance">#</a></h3>
@@ -530,27 +567,27 @@
     <h3>Troubleshooting and support <a class="anchor" href="#troubleshooting" aria-label="Link to Troubleshooting and support">#</a></h3>
     <p class="summary">Fix problems, send feedback, and export diagnostics</p>
     <ul>
-      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, location access and signal, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
-      <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether the whitelist, your contacts, or an allow rule is letting the call through.</li>
+      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, Silence texts (notification access and messaging apps), location access and signal, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
+      <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether Allowed numbers, your contacts, or an allow rule is letting the call through.</li>
       <li>Online help and Online troubleshooting open the CallRules web pages.</li>
       <li><strong>Send feedback and Report a problem:</strong> type, or tap the microphone to dictate on the device. You can attach diagnostics. Tap Preview, then send with an email or sharing app, or use Copy or Save.</li>
       <li>Export diagnostics lets you preview, share, save, copy, or clear the local log. The log leaves out phone numbers, contacts, rules, coordinates, speech, and purchase tokens, and it keeps about seven days of records.</li>
-      <li>Rate CallRules opens Google Play. Share with friends sends a link.</li>
+      <li>Rate CallRules shows the Google Play rating sheet, or opens the Play Store page. After some blocked calls, Home offers the same with Rate and Not now. Share with friends sends a link.</li>
     </ul>
     <p class="in-app"><span>In the app:</span> Settings › Troubleshoot issues</p>
   </article>
   <article class="topic" id="free-vs-pro">
     <h3>Free vs Pro <a class="anchor" href="#free-vs-pro" aria-label="Link to Free vs Pro">#</a></h3>
     <p class="summary">What's included, and restoring a purchase</p>
-    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 whitelist entries; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; carrier spam labels; Contact whitelist; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
-    <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and whitelist entries; wildcard, regular-expression, contact group, and caller-name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; and outgoing protection (outgoing rules, PIN, and long press).</p>
+    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 allowed numbers; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; carrier spam labels; Allowed contacts; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
+    <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and allowed numbers; wildcard, regular-expression, contact group, and caller-name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; outgoing calls (outgoing rules, PIN, and long press); and silencing texts from blocked senders, with scam patterns and message filters.</p>
     <p>Google Play shows the price in your currency. After reinstalling or switching phones with the same Play account, use Upgrade › Restore purchase. If Pro isn't active, any Pro schedules, locations, and patterns already saved on rules stay but can't be changed.</p>
     <p class="in-app"><span>In the app:</span> Settings › Upgrade to CallRules Pro</p>
   </article>
   <article class="topic" id="privacy">
     <h3>Privacy <a class="anchor" href="#privacy" aria-label="Link to Privacy">#</a></h3>
     <p class="summary">What stays on your phone, and when the network is used</p>
-    <p>CallRules checks calls on your phone, and your rules, lists, and call history stay there. There are no accounts or ads, and no cloud spam lookup.</p>
+    <p>CallRules checks calls on your phone, and your rules, lists, and call history stay there. There are no accounts or ads, and no cloud spam lookup. If you silence texts, CallRules reads the notifications of the messaging apps you choose on the phone, and keeps short previews there only if you let it.</p>
     <p>CallRules uses the network only for Google Play Billing, address searches you run in the location picker, Google Sheets import, links you open (online help, Google Maps, Google Play), and apps you choose to share with.</p>
     <p>Voice commands and dictation use Android's on-device recognizer. Settings › Privacy policy has the details.</p>
   </article>

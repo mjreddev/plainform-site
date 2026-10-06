@@ -75,16 +75,16 @@
       <li>Vérifiez que CallRules est votre appli d’identification et de filtrage des appels et qu’Accueil affiche « Protection active ».</li>
       <li>Vérifiez que Réglages › Protection des appels et Règles activées sont activés.</li>
       <li>Vérifiez que la règle est activée, couvre les appels entrants, n’a pas expiré, et est dans son horaire et à son emplacement.</li>
-      <li>Ouvrez Règles › Vérifier les règles. « Règle de blocage contournée » signifie que la liste d’autorisation, vos contacts ou une règle d’autorisation laissent passer l’appel avant.</li>
-      <li>Pour un appel que votre application Téléphone a marqué comme pourriel : CallRules ne peut pas lire ce verdict. Activez Réglages › Bloquer les étiquettes de pourriel du fournisseur pour bloquer les appels que votre fournisseur étiquette comme pourriel, comme « Possible fraude ». Ce ne sont pas tous les fournisseurs qui envoient une étiquette.</li>
+      <li>Ouvrez Règles › Vérifier les règles. « Règle de blocage contournée » signifie que les Numéros autorisés, vos contacts ou une règle d’autorisation laissent passer l’appel avant.</li>
+      <li>Pour un appel que votre application Téléphone a marqué comme pourriel : CallRules ne peut pas lire ce verdict. Activez Réglages › Bloquer automatiquement › Bloquer les étiquettes de pourriel du fournisseur pour bloquer les appels que votre fournisseur étiquette comme pourriel, comme « Possible fraude ». Ce ne sont pas tous les fournisseurs qui envoient une étiquette.</li>
       <li>Si CallRules ne peut pas décider en environ 3,5 secondes, l’appel sonne plutôt que de risquer un mauvais blocage.</li>
     </ul>
   </article>
   <article class="card problem" id="allowed-caller-rings">
     <h3>Un contact ou un numéro autorisé sonne encore</h3>
     <ul>
-      <li>La liste d’autorisation, vos contacts (selon Réglages › Contacts autorisés) et les règles d’autorisation sont vérifiés avant les règles de blocage ordinaires et les numéros bloqués.</li>
-      <li>Pour bloquer quand même un tel appelant, modifiez la règle de blocage et activez « Priorité sur les autorisations », ou retirez le numéro de la liste d’autorisation.</li>
+      <li>Les Numéros autorisés, vos contacts (selon Réglages › Toujours autoriser › Contacts autorisés) et les règles d’autorisation sont vérifiés avant les règles de blocage ordinaires et les numéros bloqués.</li>
+      <li>Pour bloquer quand même un tel appelant, modifiez la règle de blocage et activez « Priorité sur les autorisations », ou retirez le numéro des Numéros autorisés.</li>
       <li>Une règle de blocage de contact, de groupe ou de nom de l’appelant suit le même ordre; elle a donc besoin de « Priorité sur les autorisations » pour bloquer un contact que Contacts autorisés laisse passer.</li>
     </ul>
   </article>
@@ -94,7 +94,7 @@
       <li>Les règles temporaires affichent « Expirée » dans Règles quand leur temps est écoulé; les règles expirées sont supprimées environ un jour plus tard.</li>
       <li>Les règles avec un horaire s’appliquent seulement entre Début et Fin, les jours actifs, dans le fuseau horaire de la règle.</li>
       <li>Les règles avec un emplacement s’appliquent seulement quand CallRules peut savoir que vous êtes dans la zone, grâce à une position récente ou au géorepérage d’Android pour ce lieu. Voir « Une règle d’emplacement ne correspond pas » plus bas.</li>
-      <li>Les règles sortantes ont besoin de la protection des appels sortants. La sourdine, l’emplacement et les appelants confidentiels ou inconnus s’appliquent seulement aux appels entrants.</li>
+      <li>Les règles sortantes ont besoin de « Activer les règles sortantes » dans Réglages › Appels sortants. La sourdine, l’emplacement et les appelants confidentiels ou inconnus s’appliquent seulement aux appels entrants.</li>
       <li>Si Pro à vie n’est pas actif, les horaires, emplacements et motifs déjà enregistrés sur des règles restent, mais ne peuvent pas être modifiés.</li>
     </ul>
   </article>
@@ -109,10 +109,10 @@
   <article class="card problem" id="outgoing">
     <h3>Les règles sortantes ne s’exécutent pas</h3>
     <ul>
-      <li>La protection des appels sortants demande Pro à vie.</li>
-      <li>Ouvrez Réglages › Appels sortants › Configuration des appels sortants, touchez « Autoriser la redirection d’appels » et activez « Activer les règles sortantes ».</li>
-      <li>Vérifiez que le sens d’appel de la règle est Sortant ou Les deux.</li>
-      <li>Si une règle ou un réglage exige un NIP, définissez d’abord le NIP partagé.</li>
+      <li>Les règles sortantes, le NIP des appels sortants et l’appui long demandent Pro à vie.</li>
+      <li>Ouvrez Réglages › Appels sortants › Réglages des appels sortants, touchez « Autoriser la redirection d’appels » et activez « Activer les règles sortantes ».</li>
+      <li>Vérifiez que le sens d’appel de la règle est Sortants ou Entrants et sortants.</li>
+      <li>Si une règle ou un réglage exige un NIP, définissez d’abord le NIP partagé dans Réglages › Sécurité.</li>
       <li>Pour les appels approuvés, touchez « Accorder l’autorisation Téléphone ». CallRules n’a pas besoin du journal d’appels ni des anciennes autorisations d’appels sortants.</li>
       <li>Autorisez les notifications, pour qu’une confirmation en attente s’affiche quand même si Android ne peut pas ouvrir CallRules directement.</li>
       <li>Android n’envoie jamais les appels d’urgence, ni certains appels de passerelle, à CallRules.</li>
@@ -212,12 +212,12 @@
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Protection › Vérification par le fournisseur et choisissez Standard ou Stricte.</li>
+        <li>Ouvrez Réglages › Bloquer automatiquement › Vérification par le fournisseur et choisissez Standard ou Stricte.</li>
         <li>Stricte bloque aussi les appels sans vérification, ce qui peut inclure de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux.</li>
       </ul>
     </article>
     <article class="card check" id="call-rules">
-      <h3>Règles d’appel</h3>
+      <h3>Règles</h3>
       <p class="meta"><strong>Vérifie :</strong> Si Règles activées est activé. Sinon, aucune règle de blocage ou d’autorisation ne s’applique aux appels entrants.</p>
       <p class="meta"><strong>Affichée :</strong> Toujours</p>
       <ul class="results">
@@ -243,6 +243,23 @@
         <li>Vérifiez ensuite que Réglages › Afficher les alertes d’appels bloqués est activé dans CallRules.</li>
       </ul>
     </article>
+    <article class="card check" id="silence-texts">
+      <h3>Textos en sourdine</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si Android permet à CallRules de voir les notifications des applis de messagerie, si une appli de messagerie surveillée est installée et si Android a récemment caché des textos à CallRules.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand la mise en sourdine des textos est activée.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>L’accès aux notifications est autorisé, et une appli de messagerie surveillée est installée</li>
+        <li><span class="status error">Problème</span>L’accès aux notifications est désactivé — CallRules ne voit pas les textos et n’en met donc aucun en sourdine<span class="fix">Corriger : Explique ce que CallRules lit, puis ouvre le réglage d’accès aux notifications d’Android pour CallRules.</span></li>
+        <li><span class="status warning">Avertissement</span>Aucune appli de messagerie surveillée n’est installée ou activée — ouvrez Réglages › Textos › Applis de messagerie à surveiller</li>
+        <li><span class="status warning">Avertissement</span>Android a récemment caché plusieurs textos à CallRules parce qu’ils pourraient contenir un code, sans indiquer qui les a envoyés; ils n’ont donc pas pu être vérifiés. Leurs notifications se sont affichées comme d’habitude.</li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Textos et touchez « Autoriser l’accès aux notifications », puis autorisez CallRules dans l’écran d’Android.</li>
+        <li>Sous « Applis de messagerie à surveiller », activez l’appli que vous utilisez pour les textos. CallRules fonctionne avec Google Messages, Samsung Messages, Messaging, Textra et Verizon Messages.</li>
+        <li>Android 15 et les versions suivantes cachent les textos qui pourraient contenir un code. CallRules met quand même en sourdine ceux des expéditeurs bloqués quand Android indique avec qui est la conversation; sur les téléphones qui ont les « Notifications améliorées » de Google, les désactiver dans Paramètres Android › Notifications permet à CallRules de vérifier chaque texto.</li>
+      </ul>
+    </article>
     <article class="card check" id="battery">
       <h3>Utilisation de la pile</h3>
       <p class="meta"><strong>Vérifie :</strong> Rien à corriger : cette carte explique comment CallRules fonctionne.</p>
@@ -258,7 +275,7 @@
     <article class="card check" id="redirection-role">
       <h3>Rôle de redirection des appels sortants</h3>
       <p class="meta"><strong>Vérifie :</strong> Si CallRules a le rôle de redirection d’appels d’Android, qui lui permet de vérifier les appels que vous passez.</p>
-      <p class="meta"><strong>Affichée :</strong> Seulement quand la protection des appels sortants est configurée : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand les appels sortants sont configurés : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
       <ul class="results">
         <li><span class="status ok">OK</span>CallRules peut évaluer les appels sortants</li>
         <li><span class="status error">Problème</span>Rôle non accordé — les règles sortantes ne peuvent pas s’exécuter<span class="fix">Corriger : Demande à Android de donner à CallRules le rôle de redirection d’appels.</span></li>
@@ -266,22 +283,22 @@
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Appels sortants › Configuration des appels sortants et touchez « Autoriser la redirection d’appels ».</li>
-        <li>Si votre téléphone n’offre pas la redirection d’appels, la protection des appels sortants ne peut pas y fonctionner.</li>
+        <li>Ouvrez Réglages › Appels sortants › Réglages des appels sortants et touchez « Autoriser la redirection d’appels ».</li>
+        <li>Si votre téléphone n’offre pas la redirection d’appels, les règles et les confirmations des appels sortants ne peuvent pas y fonctionner.</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-rule-setting">
       <h3>Réglage des règles sortantes</h3>
-      <p class="meta"><strong>Vérifie :</strong> Si « Activer les règles sortantes » est activé quand vous avez des règles Sortant ou Les deux activées.</p>
-      <p class="meta"><strong>Affichée :</strong> Seulement quand la protection des appels sortants est configurée : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
+      <p class="meta"><strong>Vérifie :</strong> Si « Activer les règles sortantes » est activé quand vous avez des règles Sortants ou Entrants et sortants activées.</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand les appels sortants sont configurés : les règles sortantes sont activées, un NIP ou un appui long est exigé pour les appels sortants, ou une règle activée couvre les appels sortants.</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>Les règles Sortant et Les deux sont activées</li>
-        <li><span class="status ok">OK</span>Aucune règle Sortant ou Les deux activée; la confirmation globale peut quand même s’appliquer</li>
-        <li><span class="status warning">Avertissement</span>Des règles Sortant ou Les deux existent, mais l’évaluation des règles sortantes est désactivée<span class="fix">Corriger : Ouvre Protection des appels sortants.</span></li>
+        <li><span class="status ok">OK</span>Les règles Sortants et Entrants et sortants sont activées</li>
+        <li><span class="status ok">OK</span>Aucune règle Sortants ou Entrants et sortants activée; la confirmation globale peut quand même s’appliquer</li>
+        <li><span class="status warning">Avertissement</span>Des règles Sortants ou Entrants et sortants existent, mais l’évaluation des règles sortantes est désactivée<span class="fix">Corriger : Ouvre Appels sortants.</span></li>
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Appels sortants › Configuration des appels sortants et activez « Activer les règles sortantes ».</li>
+        <li>Ouvrez Réglages › Appels sortants › Réglages des appels sortants et activez « Activer les règles sortantes ».</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-pin">
@@ -289,11 +306,11 @@
       <p class="meta"><strong>Vérifie :</strong> Si le NIP partagé est défini quand les appels sortants en demandent un.</p>
       <p class="meta"><strong>Affichée :</strong> Seulement quand « Exiger le NIP pour tous les appels sortants » est activé, ou une règle sortante activée a « Exiger le NIP », et aucun NIP n’est défini.</p>
       <ul class="results">
-        <li><span class="status error">Problème</span>Un appel sortant qui exige un NIP sera refusé tant qu’un NIP partagé n’est pas défini<span class="fix">Corriger : Ouvre Protection des appels sortants.</span></li>
+        <li><span class="status error">Problème</span>Un appel sortant qui exige un NIP sera refusé tant qu’un NIP partagé n’est pas défini<span class="fix">Corriger : Ouvre Réglages › Sécurité.</span></li>
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Appels sortants › Configuration des appels sortants et touchez Définir le NIP (4 à 8 chiffres).</li>
+        <li>Ouvrez Réglages › Sécurité et touchez Définir le NIP (4 à 8 chiffres).</li>
         <li>Les règles importées avec « Exiger le NIP » demandent un NIP défini sur ce téléphone.</li>
       </ul>
     </article>
@@ -307,7 +324,7 @@
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Appels sortants › Configuration des appels sortants et touchez « Accorder l’autorisation Téléphone ».</li>
+        <li>Ouvrez Réglages › Appels sortants › Réglages des appels sortants et touchez « Accorder l’autorisation Téléphone ».</li>
         <li>CallRules n’a pas besoin du journal d’appels ni des anciennes autorisations d’appels sortants.</li>
       </ul>
     </article>
@@ -336,7 +353,7 @@
       </ul>
       <h4>Régler le problème vous-même</h4>
       <ul>
-        <li>Ouvrez Réglages › Règles d’emplacement et touchez « Autoriser la localisation pour les règles d’emplacement ».</li>
+        <li>Ouvrez Réglages › Règles et lieux et touchez « Autoriser la localisation pour les règles d’emplacement ».</li>
         <li>Touchez ensuite « Configurer la localisation en arrière-plan » et choisissez l’option « Toujours autoriser » d’Android.</li>
         <li>Pour autoriser la position exacte, ouvrez Paramètres Android › Applis › CallRules › Autorisations › Localisation et activez « Utiliser la position exacte ».</li>
         <li>Sans accès à la localisation, les règles d’emplacement ne peuvent pas être vérifiées, et Réglages › Règles et lieux › « Lorsque la position ne peut pas être vérifiée » décide de ce qu’elles font.</li>

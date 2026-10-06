@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>Política de privacidad de CallRules</h1>
-  <p class="updated">CallRules: bloqueo de llamadas &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 1 de octubre de 2026</p>
+  <p class="updated">CallRules: bloqueo de llamadas &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 4 de octubre de 2026</p>
   <nav class="policy-nav" aria-label="Políticas de las apps de Plainform"><span>Políticas de las apps de Plainform:</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="../filezone-privacy.html" hreflang="en">File Zone</a> <a href="../siteproof-privacy.html" hreflang="en">SiteProof</a></nav>
 
   <p class="notice">Esta traducción se ofrece para tu comodidad. Si hay diferencias, prevalece la <a href="../callrules-privacy.html" hreflang="en">versión en inglés</a>.</p>
@@ -68,7 +68,7 @@
     <li><strong>Información de las llamadas entrantes y salientes, y contactos</strong> —
         para evaluar las reglas de bloqueo por dirección, de permiso, de silencio y
         de confirmación que creas. Este procesamiento ocurre en el dispositivo.
-        CallRules no gestiona SMS ni MMS, no ofrece búsquedas de spam en la nube y
+        CallRules no pide permisos de SMS ni MMS, no ofrece búsquedas de spam en la nube y
         no envía números de teléfono al desarrollador automáticamente.</li>
     <li><strong>Contactos</strong> — opcional. Con acceso a los contactos, CallRules lee
         tus contactos en el dispositivo: cuando entra una llamada, busca el nombre
@@ -95,14 +95,15 @@
         quedan en el dispositivo, a menos que los incluyas en una exportación de la
         configuración. La ubicación nunca se usa para deducir ni buscar dónde está
         quien llama.</li>
+    <li><strong>Notificaciones de mensajes (Silenciar mensajes)</strong> — opcional, desactivado de forma predeterminada y parte de Pro. Si activas “Silenciar mensajes de remitentes bloqueados” y permites el acceso a notificaciones de Android, CallRules lee las notificaciones que publican las apps de mensajes que eliges: el número o el nombre del remitente y la parte del mensaje que muestra la notificación. Cuando Android oculta el contenido de un mensaje, CallRules usa el nombre de la conversación que Android aún proporciona (el número o el nombre del contacto del remitente) para revisar al remitente. El acceso a notificaciones de Android abarca todas las notificaciones; CallRules ignora las de otras apps y no las guarda. Revisa las notificaciones de mensajes en el dispositivo según tus números bloqueados, tus reglas, tus filtros de mensajes y sus patrones de estafa integrados. Si hay coincidencia, oculta la notificación y marca el mensaje como leído con la acción de la propia app de mensajes. Los mensajes se quedan en tu app de mensajes; CallRules nunca los envía, borra ni sube. La lista de mensajes silenciados (remitente, app, hora, motivo y, si “Guardar vistas previas de los mensajes” está activado, hasta 200 caracteres del mensaje) se queda en el dispositivo, y cada entrada se borra después de 30 días. Puedes desactivar la función, borrar la lista o quitar el acceso a notificaciones en cualquier momento.</li>
     <li><strong>Micrófono</strong> — opcional; se usa solo cuando inicias un comando de
         voz o el dictado de un informe de problema. En los dispositivos compatibles,
         CallRules usa el reconocimiento de voz de Android en el dispositivo y no lo
         cambia por reconocimiento en línea sin avisar. Las transcripciones de voz no
         se guardan en el diagnóstico. La voz es opcional: cada acción de voz también
         se puede hacer escribiendo un comando o con las pantallas de la app.</li>
-    <li>Los números bloqueados, las entradas de la lista de permitidos, las reglas de
-        llamadas por dirección, los lugares guardados, los ajustes, un historial de
+    <li>Los números bloqueados, los números permitidos, las reglas de
+        llamadas por dirección, los lugares guardados, los ajustes, los filtros de mensajes, la lista de mensajes silenciados, un historial de
         llamadas limitado (con el nombre del contacto o el nombre del identificador
         de llamadas que envía tu operador) y un hash opcional del PIN con sal pueden
         guardarse en el almacenamiento privado de la app. El PIN en sí no se guarda.
@@ -113,7 +114,7 @@
         marcas de tiempo, resultados y duración del filtrado, el estado de los
         permisos o funciones, la disponibilidad de la ubicación, códigos de error de
         compras, códigos de error de importación y fragmentos depurados de fallos.
-        Excluye números de teléfono, nombres de contactos, nombres y patrones de
+        Excluye números de teléfono, nombres de contactos, el texto de los mensajes, nombres y patrones de
         reglas, coordenadas, transcripciones de voz, datos del PIN, tokens de compra
         y mensajes de excepción sin procesar. Los informes describen las decisiones
         de CallRules; no pueden establecer lo que hizo después un operador u otro
@@ -121,13 +122,13 @@
     <li><strong>Exportaciones e importaciones</strong> — las exportaciones de la configuración
         se crean solo cuando las pides y pueden incluir reglas activadas y
         desactivadas, la dirección de cada regla y si pide PIN, números bloqueados,
-        entradas de la lista de permitidos, lugares guardados y algunos ajustes. Las
+        números permitidos, lugares guardados, filtros de mensajes y algunos ajustes. Las
         reglas de contacto, de grupo de contactos o de nombre de quien llama incluyen
         el nombre del contacto y su clave de búsqueda de contactos de Android, el
         nombre y la cuenta del grupo, o el texto del nombre, para poder volver a
         encontrarlos después de importarlas. Excluyen el hash del PIN y su estado de
         intentos, las autorizaciones de llamadas salientes, las compras, los permisos
-        de Android, el historial de llamadas y el historial de diagnóstico. Las
+        de Android, el historial de llamadas, los mensajes silenciados y el historial de diagnóstico. Las
         importaciones desde Google Sheets ocurren solo cuando das la URL de una hoja
         publicada.</li>
   </ul>
@@ -165,6 +166,7 @@
         de Maps con el nombre del lugar, o en maps.google.com en tu navegador).
         Visitar plainform.app es una solicitud web normal al servidor del sitio,
         GitHub Pages. CallRules no agrega identificadores a estos enlaces.</li>
+    <li><strong>Tu app de mensajes</strong> (cuando eliges Abrir o Limpiar para un mensaje silenciado) — CallRules le pasa el número del remitente para que abra esa conversación.</li>
   </ul>
 
   <h2>6. Uso compartido y venta de datos</h2>
@@ -179,6 +181,7 @@
      ofrece una función de exportación o copia de seguridad, las copias que creas
      quedan bajo tu control y debes borrarlas desde la app o el lugar donde las
      guardaste.</p>
+  <p>Las entradas de la lista de mensajes silenciados, con sus vistas previas, se borran después de 30 días, o antes si las borras o vacías la lista.</p>
   <p>Mientras CallRules está en uso, elimina cuando puede los registros de
      diagnóstico de más de siete días y los archivos para compartir generados hace
      más de 24 horas, y aplica un límite de 1 MiB al registro de diagnóstico al

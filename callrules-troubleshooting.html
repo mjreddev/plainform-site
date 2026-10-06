@@ -74,17 +74,17 @@
       <li>Check that CallRules is your Caller ID &amp; spam app and that Home shows “Protection Active”.</li>
       <li>Check that Settings › Call protection and Rules enabled are on.</li>
       <li>Check that the rule is switched on, covers Incoming calls, hasn't expired, and is inside its schedule and at its location.</li>
-      <li>Open Rules › Check rules. “Block rule is bypassed” means the whitelist, your contacts, or an allow rule lets the call through first.</li>
-      <li>For a call your Phone app marked as spam: CallRules can't read that verdict. Turn on Settings › Block carrier spam labels to block calls your carrier labels as spam, such as “Scam Likely”. Not every carrier sends a label.</li>
+      <li>Open Rules › Check rules. “Block rule is bypassed” means Allowed numbers, your contacts, or an allow rule lets the call through first.</li>
+      <li>For a call your Phone app marked as spam: CallRules can't read that verdict. Turn on Settings › Block automatically › Block carrier spam labels to block calls your carrier labels as spam, such as “Scam Likely”. Not every carrier sends a label.</li>
       <li>If CallRules can't decide within about 3.5 seconds, the call rings rather than risk blocking it wrongly.</li>
     </ul>
   </article>
   <article class="card problem" id="allowed-caller-rings">
     <h3>A contact or allowed number still rings</h3>
     <ul>
-      <li>The whitelist, your contacts (under Settings › Contact whitelist), and allow rules are checked before ordinary block rules and blocked numbers.</li>
-      <li>To block such a caller anyway, edit the block rule and turn on “Override allow rules”, or remove the number from the whitelist.</li>
-      <li>A contact, group, or caller-name block rule follows the same order, so it needs “Override allow rules” to block a contact the Contact whitelist lets through.</li>
+      <li>Allowed numbers, your contacts (under Settings › Always allow › Allowed contacts), and allow rules are checked before ordinary block rules and blocked numbers.</li>
+      <li>To block such a caller anyway, edit the block rule and turn on “Override allow rules”, or remove the number from Allowed numbers.</li>
+      <li>A contact, group, or caller-name block rule follows the same order, so it needs “Override allow rules” to block a contact Allowed contacts lets through.</li>
     </ul>
   </article>
   <article class="card problem" id="rule-ignored">
@@ -93,7 +93,7 @@
       <li>Temporary rules show “Expired” on Rules when their time runs out; expired rules are deleted about a day later.</li>
       <li>Rules with a schedule apply only between Start and End on their active days, in the rule's timezone.</li>
       <li>Rules with a location apply only when CallRules can tell you're inside the area, from a recent location or Android's geofence for that place. See “Location rules” below.</li>
-      <li>Outgoing rules need Outgoing call protection. Silence, location, and private or unknown callers apply to incoming calls only.</li>
+      <li>Outgoing rules need “Enable outgoing rules” in Settings › Outgoing calls. Silence, location, and private or unknown callers apply to incoming calls only.</li>
       <li>If Lifetime Pro isn't active, schedules, locations, and patterns already saved on rules stay but can't be changed.</li>
     </ul>
   </article>
@@ -108,10 +108,10 @@
   <article class="card problem" id="outgoing">
     <h3>Outgoing rules don't run</h3>
     <ul>
-      <li>Outgoing protection needs Lifetime Pro.</li>
-      <li>Open Settings › Outgoing calls › Outgoing call setup, tap “Allow call redirection”, and turn on “Enable outgoing rules”.</li>
-      <li>Check that the rule's Call direction is Outgoing or Both.</li>
-      <li>If a rule or setting requires a PIN, set the shared PIN first.</li>
+      <li>Outgoing rules, the outgoing PIN, and long press need Lifetime Pro.</li>
+      <li>Open Settings › Outgoing calls › Outgoing call settings, tap “Allow call redirection”, and turn on “Enable outgoing rules”.</li>
+      <li>Check that the rule's Call direction is Outgoing or Incoming &amp; outgoing.</li>
+      <li>If a rule or setting requires a PIN, set the shared PIN first in Settings › Security.</li>
       <li>For approved calls, tap “Allow Phone permission”. CallRules doesn't need Call Log or older outgoing-call permissions.</li>
       <li>Allow notifications, so a waiting confirmation still shows when Android can't open CallRules directly.</li>
       <li>Android never sends emergency calls, and some gateway calls, to CallRules.</li>
@@ -211,12 +211,12 @@
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Protection › Carrier verification and choose Standard or Strict.</li>
+        <li>Open Settings › Block automatically › Carrier verification and choose Standard or Strict.</li>
         <li>Strict also blocks calls with no verification, which can include real calls from small carriers, VoIP services, and some international numbers.</li>
       </ul>
     </article>
     <article class="card check" id="call-rules">
-      <h3>Call Rules</h3>
+      <h3>Rules</h3>
       <p class="meta"><strong>Checks:</strong> Whether Rules enabled is on. When it's off, no incoming block or allow rule applies.</p>
       <p class="meta"><strong>Shown:</strong> Always</p>
       <ul class="results">
@@ -242,6 +242,23 @@
         <li>Then check that Settings › Show blocked call alerts is on in CallRules.</li>
       </ul>
     </article>
+    <article class="card check" id="silence-texts">
+      <h3>Silence texts</h3>
+      <p class="meta"><strong>Checks:</strong> Whether Android lets CallRules see notifications from messaging apps, whether a watched messaging app is installed, and whether Android recently hid texts from CallRules.</p>
+      <p class="meta"><strong>Shown:</strong> Only when silence texts is on.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Notification access is allowed, and a watched messaging app is installed</li>
+        <li><span class="status error">Problem</span>Notification access is off — CallRules can't see texts, so none are silenced<span class="fix">Fix: Explains what CallRules reads, then opens Android's notification access setting for CallRules.</span></li>
+        <li><span class="status warning">Warning</span>No watched messaging app is installed or turned on — open Settings › Texts › Messaging apps to watch</li>
+        <li><span class="status warning">Warning</span>Android recently hid several texts from CallRules because they may contain a code, without saying who sent them, so they couldn't be checked. They still notified as usual.</li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Texts and tap “Allow notification access”, then allow CallRules on Android's screen.</li>
+        <li>Under “Messaging apps to watch”, turn on the app you use for texts. CallRules works with Google Messages, Samsung Messages, Messaging, Textra, and Verizon Messages.</li>
+        <li>Android 15 and later hide texts that may contain a code. CallRules still silences those from blocked senders when Android says who the conversation is with; on phones with Google's “Enhanced notifications”, turning it off in Android Settings › Notifications lets CallRules check every text.</li>
+      </ul>
+    </article>
     <article class="card check" id="battery">
       <h3>Battery usage</h3>
       <p class="meta"><strong>Checks:</strong> Nothing to fix: this card explains how CallRules runs.</p>
@@ -257,7 +274,7 @@
     <article class="card check" id="redirection-role">
       <h3>Outgoing Call Redirection role</h3>
       <p class="meta"><strong>Checks:</strong> Whether CallRules holds Android's Call Redirection role, which lets it check calls you place.</p>
-      <p class="meta"><strong>Shown:</strong> Only when outgoing protection is set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing calls are set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
       <ul class="results">
         <li><span class="status ok">OK</span>CallRules can evaluate outgoing calls</li>
         <li><span class="status error">Problem</span>Role not granted — outgoing rules cannot run<span class="fix">Fix: Asks Android to give CallRules the Call Redirection role.</span></li>
@@ -265,22 +282,22 @@
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Outgoing calls › Outgoing call setup and tap “Allow call redirection”.</li>
-        <li>If your phone doesn't offer call redirection, outgoing protection can't run on it.</li>
+        <li>Open Settings › Outgoing calls › Outgoing call settings and tap “Allow call redirection”.</li>
+        <li>If your phone doesn't offer call redirection, outgoing call rules and confirmations can't run on it.</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-rule-setting">
       <h3>Outgoing-rule setting</h3>
-      <p class="meta"><strong>Checks:</strong> Whether “Enable outgoing rules” is on when you have enabled Outgoing or Both rules.</p>
-      <p class="meta"><strong>Shown:</strong> Only when outgoing protection is set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
+      <p class="meta"><strong>Checks:</strong> Whether “Enable outgoing rules” is on when you have enabled Outgoing or Incoming &amp; outgoing rules.</p>
+      <p class="meta"><strong>Shown:</strong> Only when outgoing calls are set up: outgoing rules are on, a PIN or long press is required for outgoing calls, or an enabled rule covers outgoing calls.</p>
       <ul class="results">
-        <li><span class="status ok">OK</span>Outgoing and Both rules are enabled</li>
-        <li><span class="status ok">OK</span>No enabled Outgoing or Both rules; global confirmation can still apply</li>
-        <li><span class="status warning">Warning</span>Outgoing or Both rules exist, but outgoing rule evaluation is turned off<span class="fix">Fix: Opens Outgoing call protection.</span></li>
+        <li><span class="status ok">OK</span>Outgoing and Incoming &amp; outgoing rules are enabled</li>
+        <li><span class="status ok">OK</span>No enabled Outgoing or Incoming &amp; outgoing rules; global confirmation can still apply</li>
+        <li><span class="status warning">Warning</span>Outgoing or Incoming &amp; outgoing rules exist, but outgoing rule evaluation is turned off<span class="fix">Fix: Opens Outgoing calls.</span></li>
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Outgoing calls › Outgoing call setup and turn on “Enable outgoing rules”.</li>
+        <li>Open Settings › Outgoing calls › Outgoing call settings and turn on “Enable outgoing rules”.</li>
       </ul>
     </article>
     <article class="card check" id="outgoing-pin">
@@ -288,11 +305,11 @@
       <p class="meta"><strong>Checks:</strong> Whether the shared PIN is set when outgoing calls need one.</p>
       <p class="meta"><strong>Shown:</strong> Only when “Require PIN for all outgoing calls” is on, or an enabled outgoing rule has “Require PIN”, and no PIN is set.</p>
       <ul class="results">
-        <li><span class="status error">Problem</span>A PIN-required outgoing call will fail closed until a shared PIN is set<span class="fix">Fix: Opens Outgoing call protection.</span></li>
+        <li><span class="status error">Problem</span>A PIN-required outgoing call will fail closed until a shared PIN is set<span class="fix">Fix: Opens Settings › Security.</span></li>
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Outgoing calls › Outgoing call setup and tap Set PIN (4 to 8 digits).</li>
+        <li>Open Settings › Security and tap Set PIN (4 to 8 digits).</li>
         <li>Rules imported with “Require PIN” need a PIN set on this phone.</li>
       </ul>
     </article>
@@ -306,7 +323,7 @@
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Outgoing calls › Outgoing call setup and tap “Allow Phone permission”.</li>
+        <li>Open Settings › Outgoing calls › Outgoing call settings and tap “Allow Phone permission”.</li>
         <li>CallRules doesn't need Call Log or older outgoing-call permissions.</li>
       </ul>
     </article>
@@ -335,7 +352,7 @@
       </ul>
       <h4>How to fix it yourself</h4>
       <ul>
-        <li>Open Settings › Location rules and tap “Allow location for location rules”.</li>
+        <li>Open Settings › Rules &amp; places and tap “Allow location for location rules”.</li>
         <li>Then tap “Set up background location” and choose Android's “Allow all the time” option.</li>
         <li>To allow precise location, open Android Settings › Apps › CallRules › Permissions › Location and turn on “Use precise location”.</li>
         <li>Without location access, location rules can't be checked, and Settings › Rules &amp; places › “When location can't be checked” decides what they do.</li>

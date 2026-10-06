@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>Politique de confidentialité de CallRules</h1>
-  <p class="updated">CallRules : bloqueur d’appels &middot; MJRed Dev LLC (faisant affaire sous le nom Plainform) &middot; En vigueur le 1er octobre 2026</p>
+  <p class="updated">CallRules : bloqueur d’appels &middot; MJRed Dev LLC (faisant affaire sous le nom Plainform) &middot; En vigueur le 4 octobre 2026</p>
   <nav class="policy-nav" aria-label="Politiques des applis Plainform"><span>Politiques des applis Plainform :</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="../filezone-privacy.html" hreflang="en">File Zone</a> <a href="../siteproof-privacy.html" hreflang="en">SiteProof</a></nav>
 
   <p class="notice">Cette traduction est fournie pour votre commodité. En cas de différence, la <a href="../callrules-privacy.html" hreflang="en">version anglaise</a> fait foi.</p>
@@ -70,7 +70,7 @@
     <li><strong>Renseignements sur les appels entrants et sortants et contacts</strong> —
         pour appliquer les règles de blocage, d’autorisation, de sourdine et de
         confirmation que vous créez, selon le sens de l’appel. Ce traitement se
-        fait sur l’appareil. CallRules ne traite pas les textos (SMS ou MMS),
+        fait sur l’appareil. CallRules ne demande aucune autorisation SMS ou MMS,
         n’offre pas de recherche de pourriel dans le nuage et n’envoie pas
         automatiquement de numéros de téléphone au développeur.</li>
     <li><strong>Contacts</strong> — facultatif. Avec l’accès aux contacts, CallRules lit
@@ -102,6 +102,7 @@
         confirmez. Les lieux enregistrés restent sur l’appareil, sauf si vous
         les incluez dans une exportation de la configuration. La localisation
         ne sert jamais à déduire ou à chercher l’endroit où se trouve un appelant.</li>
+    <li><strong>Notifications de messagerie (textos en sourdine)</strong> — facultatif, désactivé par défaut et compris dans Pro. Si vous activez « Mettre en sourdine les textos des expéditeurs bloqués » et autorisez l’accès aux notifications d’Android, CallRules lit les notifications publiées par les applis de messagerie que vous choisissez : le numéro ou le nom de l’expéditeur et la partie du message que la notification affiche. Quand Android cache le contenu d’un texto, CallRules utilise le nom de la conversation qu’Android fournit encore (le numéro ou le nom du contact de l’expéditeur) pour vérifier l’expéditeur. L’accès aux notifications d’Android couvre toutes les notifications; CallRules ignore celles des autres applis et ne les conserve pas. Il vérifie les notifications de messagerie sur l’appareil selon vos numéros bloqués, vos règles, vos filtres de messages et ses motifs d’arnaque intégrés. S’il y a correspondance, il masque la notification et marque le texto comme lu au moyen de l’action de l’appli de messagerie elle-même. Les textos restent dans votre appli de messagerie; CallRules ne les envoie, ne les supprime ni ne les téléverse jamais. La liste des textos en sourdine (expéditeur, appli, heure, raison et, si « Conserver les aperçus des messages » est activé, jusqu’à 200 caractères du message) reste sur l’appareil, et chaque entrée est supprimée après 30 jours. Vous pouvez désactiver cette fonction, effacer la liste ou retirer l’accès aux notifications en tout temps.</li>
     <li><strong>Microphone</strong> — facultatif, utilisé seulement lorsque vous
         lancez une commande vocale ou la dictée d’un signalement de problème.
         Sur les appareils compatibles, CallRules utilise la reconnaissance
@@ -110,8 +111,8 @@
         conservées dans les diagnostics. La voix est facultative : chaque action
         vocale peut aussi se faire en tapant une commande ou avec les écrans de
         l’appli.</li>
-    <li>Les numéros bloqués, les entrées de la liste d’autorisation, les règles
-        d’appel selon le sens, les lieux enregistrés, les réglages, un
+    <li>Les numéros bloqués, les numéros autorisés, les règles
+        d’appel selon le sens, les lieux enregistrés, les réglages, les filtres de messages, la liste des textos en sourdine, un
         historique des appels limité (y compris le nom du contact ou le nom de
         l’appelant fourni par votre fournisseur) et, au besoin, une empreinte
         salée du NIP peuvent être conservés dans le stockage privé de l’appli.
@@ -124,7 +125,7 @@
         l’état des autorisations ou des rôles, la disponibilité de la
         localisation, les codes d’erreur d’achat, les codes d’échec
         d’importation et des traces de plantage nettoyées. Il exclut les
-        numéros de téléphone, les noms de contacts, les noms et motifs des
+        numéros de téléphone, les noms de contacts, le texte des messages, les noms et motifs des
         règles, les coordonnées, les transcriptions vocales, les données du NIP,
         les jetons d’achat et les messages d’exception bruts. Les rapports
         décrivent les décisions de CallRules; ils ne peuvent pas établir ce
@@ -132,15 +133,14 @@
     <li><strong>Exportations et importations</strong> — les exportations de la
         configuration sont créées seulement à votre demande et peuvent contenir
         les règles activées et désactivées, le sens de chaque règle et son
-        exigence de NIP, les numéros bloqués, les entrées de la liste
-        d’autorisation, les lieux enregistrés et certains réglages. Les règles
+        exigence de NIP, les numéros bloqués, les numéros autorisés, les lieux enregistrés, les filtres de messages et certains réglages. Les règles
         qui visent un contact, un groupe de contacts ou un nom d’appelant
         incluent le nom du contact et sa clé de recherche de contact Android,
         le nom et le compte du groupe, ou le texte du nom, pour pouvoir être
         associées de nouveau après l’importation. Elles excluent l’empreinte du
         NIP et l’état des tentatives, les autorisations d’appels sortants, les
         droits d’achat, les autorisations Android accordées, l’historique des
-        appels et l’historique des diagnostics. Les importations Google Sheets
+        appels, les textos en sourdine et l’historique des diagnostics. Les importations Google Sheets
         ont lieu seulement lorsque vous fournissez l’URL d’une feuille publiée.</li>
   </ul>
 
@@ -180,6 +180,7 @@
         à maps.google.com dans votre navigateur).
         La visite de plainform.app est une requête Web ordinaire à l’hébergeur
         du site, GitHub Pages. CallRules n’ajoute aucun identifiant à ces liens.</li>
+    <li><strong>Votre appli de messagerie</strong> (lorsque vous choisissez Ouvrir ou Nettoyer pour un texto en sourdine) — CallRules lui transmet le numéro de l’expéditeur pour qu’elle ouvre cette conversation.</li>
   </ul>
 
   <h2>6. Communication et vente des données</h2>
@@ -195,6 +196,7 @@
      d’Android. Lorsque CallRules offre une fonction d’exportation ou de
      sauvegarde, les copies que vous créez sont sous votre contrôle et doivent
      être supprimées dans l’appli ou à l’endroit où vous les avez enregistrées.</p>
+  <p>Les entrées de la liste des textos en sourdine, avec leurs aperçus, sont supprimées après 30 jours, ou plus tôt si vous les supprimez ou effacez la liste.</p>
   <p>Pendant qu’il fonctionne, CallRules supprime au passage les
      enregistrements de diagnostic de plus de sept jours et les fichiers de
      partage générés de plus de 24 heures, et applique une limite de 1 Mio au
