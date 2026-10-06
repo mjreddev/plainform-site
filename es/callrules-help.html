@@ -147,7 +147,7 @@
     <p class="summary">Las pestañas Bloqueadas y Recientes</p>
     <p>La pestaña Historial abre el historial de llamadas, que tiene dos pestañas, y una pestaña Mensajes cuando silencias mensajes.</p>
     <ul>
-      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Coincidió con una regla, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Hoy, 7 días y Todo, arriba de la lista, muestran esos períodos. Toca la marca de verificación (“Permitir este número”) para agregar el número a Números permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
+      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Regla coincidente, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Hoy, 7 días y Todo, arriba de la lista, muestran esos períodos. Toca la marca de verificación (“Permitir este número”) para agregar el número a Números permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
       <li>Recientes muestra las llamadas entrantes que CallRules dejó pasar. Toca Bloquear para bloquear este número, su código de área o su código de país; DESHACER aparece por un momento. Borrar vacía la lista Recientes. Permite el acceso a los contactos si quieres que las llamadas de tus contactos también aparezcan aquí.</li>
       <li>Toca una llamada para ver por qué se bloqueó o se permitió: la regla que coincidió (con Abrir la regla), el ajuste que decidió y el resultado de la verificación de quien llama. Las llamadas anteriores a esta versión muestran “No se guardó el motivo”. Mantén presionada una llamada para copiar su número. Bloquear un código de área o de país agrega una regla de bloqueo, que cuenta entre tus reglas y pide confirmación primero.</li>
     </ul>
@@ -215,17 +215,17 @@
     <ol class="flow-steps">
       <li><span class="step-title">La protección está desactivada o en pausa</span><span class="outcome rings">Suena</span><span class="detail">La llamada suena.</span></li>
       <li><span class="step-title">El identificador de llamadas está oculto</span><span class="outcome depends">Depende</span><span class="detail">Solo se aplican las reglas de llamadas privadas y Bloquear números privados: una regla de bloqueo de llamadas privadas con “Prioridad sobre los permisos” activada, luego las reglas de permiso de llamadas privadas y después las reglas de bloqueo de llamadas privadas (Silenciar antes que Rechazar). Si ninguna coincide, la llamada se rechaza cuando Bloquear las etiquetas de spam del operador está activado y el operador la marcó como spam, o cuando Bloquear números privados está activado; si no, suena.</span></li>
-      <li><span class="step-title">Reglas de bloqueo con “Prioridad sobre los permisos” activada</span><span class="outcome blocks">Se bloquea</span> <span class="tag">Prioridad sobre los permisos</span><span class="detail">Las reglas de Silenciar antes que las de Rechazar.</span></li>
+      <li><span class="step-title">Reglas de bloqueo con “Prioridad sobre los permisos” activada</span><span class="outcome blocks">Bloquea</span> <span class="tag">Prioridad sobre los permisos</span><span class="detail">Las reglas de Silenciar antes que las de Rechazar.</span></li>
       <li><span class="step-title">Números permitidos</span><span class="outcome rings">Suena</span><span class="detail">Deja sonar la llamada.</span></li>
       <li><span class="step-title">Tus contactos</span><span class="outcome rings">Suena</span><span class="detail">Suenan, según el ajuste Contactos permitidos.</span></li>
       <li><span class="step-title">Reglas de permiso</span><span class="outcome rings">Suena</span><span class="detail">Dejan sonar la llamada.</span></li>
-      <li><span class="step-title">Otras reglas de bloqueo</span><span class="outcome blocks">Se bloquea</span><span class="detail">Silenciar antes que Rechazar.</span></li>
-      <li><span class="step-title">Números bloqueados</span><span class="outcome blocks">Se bloquea</span></li>
-      <li><span class="step-title">Etiquetas de spam del operador</span><span class="outcome blocks">Se bloquea</span><span class="detail">Cuando Bloquear las etiquetas de spam del operador está activado.</span></li>
-      <li><span class="step-title">Verificación del operador</span><span class="outcome blocks">Se bloquea</span></li>
-      <li><span class="step-title">Bloquear números desconocidos</span><span class="outcome blocks">Se bloquea</span><span class="detail">Llamadas de personas que no están en tus contactos.</span></li>
-      <li><span class="step-title">La lista local de spam</span><span class="outcome blocks">Se bloquea</span><span class="detail">Está vacía en esta versión, así que este paso no bloquea nada.</span></li>
-      <li><span class="step-title">Horas de silencio</span><span class="outcome blocks">Se bloquea</span></li>
+      <li><span class="step-title">Otras reglas de bloqueo</span><span class="outcome blocks">Bloquea</span><span class="detail">Silenciar antes que Rechazar.</span></li>
+      <li><span class="step-title">Números bloqueados</span><span class="outcome blocks">Bloquea</span></li>
+      <li><span class="step-title">Etiquetas de spam del operador</span><span class="outcome blocks">Bloquea</span><span class="detail">Cuando Bloquear las etiquetas de spam del operador está activado.</span></li>
+      <li><span class="step-title">Verificación del operador</span><span class="outcome blocks">Bloquea</span></li>
+      <li><span class="step-title">Bloquear números desconocidos</span><span class="outcome blocks">Bloquea</span><span class="detail">Llamadas de personas que no están en tus contactos.</span></li>
+      <li><span class="step-title">La lista local de spam</span><span class="outcome blocks">Bloquea</span><span class="detail">Está vacía en esta versión, así que este paso no bloquea nada.</span></li>
+      <li><span class="step-title">Horas de silencio</span><span class="outcome blocks">Bloquea</span></li>
     </ol>
     <p>Si ningún paso decide la llamada, suena.</p>
     <p>Los pasos 3, 6 y 7 se omiten mientras Reglas activadas está desactivado. Las reglas de contacto, de grupo y de nombre de quien llama participan en los pasos 3, 6 y 7 como cualquier otra regla, así que una regla de bloqueo de contacto no bloquea una llamada que el paso 5 deja pasar, a menos que tenga “Prioridad sobre los permisos” activada.</p>

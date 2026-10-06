@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://plainform.app/callrules.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/callrules.html"/>
@@ -52,6 +52,24 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://plainform.app/siteproof.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/siteproof.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://plainform.app/siteproof-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://plainform.app/siteproof.html"/>
+  </url>
+  <url>
+    <loc>https://plainform.app/siteproof-es.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/siteproof.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://plainform.app/siteproof-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://plainform.app/siteproof.html"/>
+  </url>
+  <url>
     <loc>https://plainform.app/siteproof-privacy.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
@@ -82,7 +100,7 @@
   </url>
   <url>
     <loc>https://plainform.app/fr/callrules.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/callrules.html"/>
@@ -93,7 +111,7 @@
   </url>
   <url>
     <loc>https://plainform.app/fr/callrules-help.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/callrules-help.html"/>
@@ -126,7 +144,7 @@
   </url>
   <url>
     <loc>https://plainform.app/es/callrules.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/callrules.html"/>
@@ -137,7 +155,7 @@
   </url>
   <url>
     <loc>https://plainform.app/es/callrules-help.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://plainform.app/callrules-help.html"/>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteProof — jobsite photo documentation for contractors</title>
+<meta name="description" content="SiteProof is a jobsite camera for contractors: photos stamped with the right date, time and GPS, organized by project, job and album, with markup, notes, voice dictation and PDF photo reports. Works offline. SiteProof Team adds cloud sync and a client portal.">
+<link rel="canonical" href="https://plainform.app/siteproof.html">
+<link rel="alternate" hreflang="en" href="https://plainform.app/siteproof.html">
+<link rel="alternate" hreflang="es" href="https://plainform.app/siteproof-es.html">
+<link rel="alternate" hreflang="x-default" href="https://plainform.app/siteproof.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainform">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_LA">
+<meta property="og:title" content="SiteProof: jobsite photo proof">
+<meta property="og:description" content="Jobsite photos stamped with the right time and place, organized by job, and turned into a PDF report. Works offline. SiteProof Team adds cloud sync and a client portal.">
+<meta property="og:url" content="https://plainform.app/siteproof.html">
+<meta property="og:image" content="https://plainform.app/assets/siteproof/icon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="SiteProof app icon: a camera lens over a report page">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3A5F'/><rect x='26' y='30' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='46' width='48' height='8' rx='4' fill='%23fff'/><rect x='26' y='62' width='30' height='8' rx='4' fill='%23C77800'/></svg>">
+<link rel="apple-touch-icon" href="assets/siteproof/icon-192.png">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* SiteProof page only. Kept here because assets/site.css is generated from the CallRules repo. */
+.stamp-demo { width: 100%; max-width: 360px; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); background: #6f8fae; }
+.stamp-demo svg { display: block; width: 100%; height: auto; }
+.stamp-demo .plate {
+  background: rgba(10, 16, 22, .78); color: #fff; font: 600 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 10px 12px; letter-spacing: .01em;
+}
+.stamp-demo .plate span { display: block; overflow-wrap: anywhere; }
+.stamp-caption { font-size: 14px; color: var(--muted); margin: 10px 0 0; text-align: center; }
+.plans { display: grid; gap: 16px; margin-top: 20px; align-items: stretch; }
+.plan { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.plan.featured { border: 2px solid var(--accent); background: var(--bg); box-shadow: var(--shadow); }
+.plan h3 { font-size: 20px; margin: 0 0 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.plan .for { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+.plan .price { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 0; }
+.plan .price small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.plan .price-alt { font-size: 15px; color: var(--muted); margin: 4px 0 0; }
+.plan .price-note { font-size: 14px; margin: 10px 0 0; }
+.plan ul { list-style: none; padding: 0; margin: 16px 0 0; font-size: 15px; }
+.plan li { position: relative; padding-left: 24px; margin: 8px 0; }
+.plan li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 10px; height: 6px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+.plan .includes { font-weight: 600; font-size: 14px; margin: 16px 0 0; }
+.plan .includes + ul { margin-top: 4px; }
+.plan .plan-actions { margin-top: auto; padding-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.plan .plan-actions .btn { justify-content: center; }
+.plan .trial { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; border-radius: 999px; padding: 0 8px; line-height: 20px; background: var(--ok-soft); color: var(--ok); }
+.plan .signin { font-size: 14px; }
+@media (min-width: 860px) {
+  .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SiteProof",
+  "alternateName": "SiteProof: Offline Photo Proof",
+  "operatingSystem": "Android",
+  "applicationCategory": "BusinessApplication",
+  "description": "Jobsite photo documentation for contractors: date, time and GPS stamps, projects, jobs and albums, markup and redaction, notes and voice dictation, checklists and PDF photo reports. Works offline, in English and Spanish.",
+  "url": "https://plainform.app/siteproof.html",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.siteproof.app",
+  "image": "https://plainform.app/assets/siteproof/icon-512.png",
+  "inLanguage": ["en", "es"],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "SiteProof Free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "SiteProof Team (monthly)",
+      "url": "https://siteproof.plainform.app/team/start",
+      "price": "12.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "12.00",
+        "priceCurrency": "USD",
+        "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "user" },
+        "billingDuration": "P1M"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SiteProof Team (yearly)",
+      "url": "https://siteproof.plainform.app/team/start",
+      "price": "120.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "120.00",
+        "priceCurrency": "USD",
+        "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "user" },
+        "billingDuration": "P1Y"
+      }
+    }
+  ],
+  "publisher": { "@type": "Organization", "name": "MJRed Dev LLC", "alternateName": "Plainform", "url": "https://plainform.app/" }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#1F3A5F"/><rect x="26" y="30" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="46" width="48" height="8" rx="4" fill="#fff"/><rect x="26" y="62" width="30" height="8" rx="4" fill="#C77800"/></svg> Plainform</a>
+    <div class="site-tools">
+      <nav class="site-nav" aria-label="Site">
+        <a href="siteproof.html" aria-current="page">SiteProof</a>
+        <a href="#plans">Plans</a>
+        <a href="#faq">FAQ</a>
+        <a href="siteproof-privacy.html">Privacy</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Language"><a href="siteproof.html" lang="en" hreflang="en" aria-current="true">EN</a> <span aria-hidden="true">|</span> <a href="siteproof-es.html" lang="es" hreflang="es">ES</a></nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+  <section class="hero" aria-labelledby="app-name">
+    <div>
+      <div class="hero-app">
+        <img src="assets/siteproof/icon-192.png" width="72" height="72" alt="SiteProof app icon">
+        <div>
+          <div class="name" id="app-name">SiteProof</div>
+          <div class="by">Plainform · Android</div>
+        </div>
+      </div>
+      <p class="tagline">Photo proof for contractors.</p>
+      <h1>Jobsite photos stamped with the right time and place.</h1>
+      <p class="lede">A fast camera that stamps every photo with the date, time and GPS location, files it under the right project, job and album, and turns it into a PDF photo report your client or insurer can read. It works with no signal, in English and Spanish.</p>
+      <div class="actions" id="get">
+        <!-- TODO: the Play listing is not live yet. This link goes live with the listing; check it before launch. -->
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.siteproof.app">
+          <img src="assets/callrules/google-play-badge.png" width="646" height="250" alt="Get it on Google Play">
+        </a>
+        <a class="btn" href="#plans">See plans</a>
+      </div>
+      <ul class="chips" aria-label="Highlights">
+        <li>Works offline</li>
+        <li>No ads</li>
+        <li>No account needed</li>
+        <li>English and Spanish</li>
+      </ul>
+    </div>
+    <div class="hero-shot">
+      <figure style="margin:0">
+        <div class="stamp-demo" role="img" aria-label="A sample roof photo with a SiteProof stamp along the bottom showing the date, time and time zone, GPS coordinates and accuracy, a street address and the job name">
+          <svg viewBox="0 0 360 240" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb3d6"/><stop offset="1" stop-color="#d7e5f1"/></linearGradient>
+            </defs>
+            <rect width="360" height="240" fill="url(#sky)"/>
+            <polygon points="0,240 0,150 170,60 360,150 360,240" fill="#4a5560"/>
+            <polygon points="170,60 360,150 360,170 170,80 0,170 0,150" fill="#38424b"/>
+            <g stroke="#5d6973" stroke-width="2">
+              <line x1="20" y1="185" x2="340" y2="185"/>
+              <line x1="0" y1="205" x2="360" y2="205"/>
+              <line x1="0" y1="225" x2="360" y2="225"/>
+            </g>
+            <rect x="240" y="78" width="26" height="40" fill="#7a4b3a"/>
+          </svg>
+          <div class="plate">
+            <span>Oct 6, 2026 10:42 AM MDT (UTC−06:00)</span>
+            <span>39.7392° N, 104.9903° W ±4 m</span>
+            <span>123 Example St, Denver, CO</span>
+            <span>Job: Roof — North slope</span>
+          </div>
+        </div>
+        <figcaption class="stamp-caption">A sample stamp. The details are made up.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <p class="eyebrow">Features</p>
+    <h2 id="features-title">Everything a job needs on the phone</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zM9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg></div>
+        <h3>A fast camera</h3>
+        <p>Shoot, and the photo is filed. Sharp Mode fixes focus far away for roofs and exteriors, so the shutter fires the instant you tap.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <h3>Stamps you can trust</h3>
+        <p>Date, time with its own time zone, GPS and address on every photo. If the phone's clock looks wrong, the stamp says so. Imported photos are labelled as imported.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div>
+        <h3>Project, job, album</h3>
+        <p>Organize by project, job and album, with tags and before/after pairs. Search every photo by name, note, tag, job or address.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg></div>
+        <h3>Notes and voice dictation</h3>
+        <p>Add notes to any photo, or dictate them. Speech is recognized on the phone; the audio is never sent anywhere.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></div>
+        <h3>Markup and redaction</h3>
+        <p>Arrows, boxes, text and measurements. Blur or black out faces, plates and addresses before a photo goes in a report.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h3>Checklists <span class="pro">PRO</span></h3>
+        <p>Inspection checklists from your own templates, with photos for each item.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+        <h3>PDF photo reports</h3>
+        <p>Cover page, photo grid, the time and GPS for every photo, notes and checklists. Share by email or any app.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM10 17l-3.5-3.5 1.41-1.41L10 14.17l4.59-4.59L16 11l-6 6z"/></svg></div>
+        <h3>Works offline</h3>
+        <p>Basements, rural sites, new builds with no coverage: photos are stamped the moment you take them, and addresses fill in when the phone is back online.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg></div>
+        <h3>English and Spanish</h3>
+        <p>The whole app works in English and Spanish. With Pro, Translate with Google shows names, notes and checklists in the other language, on the phone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="plans" aria-labelledby="plans-title">
+    <p class="eyebrow">Plans</p>
+    <h2 id="plans-title">Free on your own. Pro once. Team for the company.</h2>
+    <p class="lede">The camera, the stamps and your photos never cost anything. Pay once for Pro tools, or add SiteProof Team when the crew and the office need the same projects.</p>
+    <div class="plans">
+
+      <article class="plan" aria-labelledby="plan-free">
+        <h3 id="plan-free">Free</h3>
+        <p class="for">For anyone with a phone and a job to document.</p>
+        <p class="price">$0</p>
+        <ul>
+          <li>Unlimited photos and stamps: date, time, GPS and address</li>
+          <li>Sharp Mode camera</li>
+          <li>Projects, jobs and albums, tags, before/after pairs, search</li>
+          <li>Notes and voice dictation</li>
+          <li>Markup and redaction</li>
+          <li>PDF photo reports in 1 and 4 per page layouts</li>
+          <li>Backup to a folder you pick, and a full library export</li>
+          <li>English and Spanish, no ads, no account</li>
+          <li>Up to 2 active jobs at a time</li>
+        </ul>
+        <div class="plan-actions">
+          <a class="btn" href="#get">Get the app</a>
+        </div>
+      </article>
+
+      <article class="plan" aria-labelledby="plan-pro">
+        <h3 id="plan-pro">Pro <span class="pro">PRO</span></h3>
+        <p class="for">For the owner-operator who sends reports.</p>
+        <p class="price">Pay once</p>
+        <p class="price-alt">One-time purchase in the app. No subscription.</p>
+        <p class="includes">Everything in Free, plus:</p>
+        <ul>
+          <li>Unlimited active jobs</li>
+          <li>Checklists with photos for each item</li>
+          <li>Your company logo on reports</li>
+          <li>Every report layout: 2 and 6 per page, before/after, contact sheet</li>
+          <li>Remove the “Made with SiteProof” line</li>
+          <li>Report presets</li>
+          <li>ZIP + CSV export for insurers and legal files</li>
+          <li>Share to computer: your jobs in a browser on the same Wi-Fi</li>
+          <li>Translate with Google, English ↔ Spanish</li>
+        </ul>
+        <div class="plan-actions">
+          <a class="btn" href="#get">Get the app</a>
+        </div>
+      </article>
+
+      <article class="plan featured" aria-labelledby="plan-team">
+        <h3 id="plan-team">SiteProof Team <span class="trial">14-day free trial</span></h3>
+        <p class="for">For companies with crews in the field and an office.</p>
+        <p class="price">$12 <small>per user / month</small></p>
+        <p class="price-alt">or $120 per user / year (2 months free)</p>
+        <p class="price-note">Viewers are free. Paid seats are owners, admins and members.</p>
+        <ul>
+          <li>Cloud sync of company projects between phones and the office</li>
+          <li>Crews: share each project with the teams that work on it</li>
+          <li>Team website at siteproof.plainform.app, with markup editing and history and recovery</li>
+          <li>Client portal: share links, client comments, chat and approvals, and delivery of documents and invoices</li>
+          <li>Every Pro feature for your crew inside company projects</li>
+        </ul>
+        <div class="plan-actions">
+          <a class="btn primary" href="https://siteproof.plainform.app/team/start">Start 14-day free trial</a>
+          <a class="signin" href="https://siteproof.plainform.app/">Already have a company? Sign in</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="muted" style="margin-top:16px">Team prices are in US dollars. Taxes may apply.</p>
+  </section>
+
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <p class="eyebrow">FAQ</p>
+    <h2 id="faq-title">Questions</h2>
+    <details>
+      <summary>Is my data private?</summary>
+      <p>Without an account, SiteProof collects nothing: your photos stay on your phone and leave it only when you share them. With SiteProof Team, your company's projects are stored in the cloud so the crew and the office can work on them, and the company owns that data. We do not sell data or use it for advertising. The details are in the <a href="siteproof-privacy.html">SiteProof privacy policy</a>.</p>
+    </details>
+    <details>
+      <summary>Do my crew need to pay?</summary>
+      <p>Paid seats are owners, admins and members. Viewers are free, and so are clients who use the client portal.</p>
+    </details>
+    <details>
+      <summary>Can I cancel SiteProof Team?</summary>
+      <p>Yes, at any time from the billing page on the team website. Your company keeps working until the end of the period you have paid for.</p>
+    </details>
+    <details>
+      <summary>Does it work offline?</summary>
+      <p>Yes. Taking, stamping and organizing photos, markup and PDF reports all work with no signal. Addresses fill in, and Team projects sync, when the phone is back online.</p>
+    </details>
+    <details>
+      <summary>Do I need SiteProof Team to use the app?</summary>
+      <p>No. SiteProof works on its own with no account. SiteProof Team is optional, for companies that want to share projects between phones, the office and clients.</p>
+    </details>
+  </section>
+
+  <section class="section" id="support" aria-labelledby="support-title">
+    <p class="eyebrow">Support</p>
+    <h2 id="support-title">Talk to a person</h2>
+    <p>Questions, problems or ideas: <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a>.</p>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/">Plainform</a>
+      <a href="siteproof.html">SiteProof</a>
+      <a href="siteproof-privacy.html">Privacy Policy</a>
+      <a href="siteproof-privacy-es.html" lang="es" hreflang="es">Política de privacidad</a>
+      <a href="mailto:mjred.dev@gmail.com">Contact</a>
+    </nav>
+    <p>Plainform is a trading name of MJRed Dev LLC. Contact: <a href="mailto:mjred.dev@gmail.com">mjred.dev@gmail.com</a></p>
+    <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    <p>&copy; 2026 MJRed Dev LLC. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
