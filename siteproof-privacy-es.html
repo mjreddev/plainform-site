@@ -29,7 +29,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>Política de privacidad de SiteProof</h1>
-  <p class="updated">SiteProof &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 2 de octubre de 2026</p>
+  <p class="updated">SiteProof &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 7 de octubre de 2026</p>
   <nav class="policy-nav" aria-label="Políticas de las apps de Plainform"><span>Políticas de las apps de Plainform:</span> <a href="es/callrules-privacy.html">CallRules</a> <a href="filezone-privacy.html" hreflang="en">File Zone</a> <a href="siteproof-privacy-es.html" aria-current="page">SiteProof</a></nav>
   <nav class="policy-nav" aria-label="En esta página"><span>Contenido:</span> <a href="#parte-1-usar-siteproof-por-tu-cuenta">Parte 1. Usar SiteProof por tu cuenta (sin cuenta de usuario)</a> <a href="#parte-2-siteproof-team">Parte 2. SiteProof Team (cuenta de empresa opcional)</a> <a href="#delete-account">Eliminar tu cuenta y tus datos</a> <a href="#para-todos">Para todos</a></nav>
 
@@ -48,7 +48,7 @@
     <li><strong>SiteProof Team es opcional y solo para empresas.</strong> Si tu empresa lo usa, los proyectos, fotos y notas de la empresa se guardan en la nube para que el equipo y la oficina trabajen juntos en ellos. Esos datos son de la empresa, y su propietario los controla.</li>
     <li><strong>Los clientes solo ven lo que una empresa comparte con ellos</strong>, mediante un enlace privado o iniciando sesión con su correo electrónico.</li>
     <li><strong>Puedes eliminar tu cuenta de Team en cualquier momento</strong>, en la app o en el sitio web. Se elimina de inmediato. El propietario de una empresa puede eliminar toda la empresa; se desactiva de inmediato y se elimina definitivamente a los 30 días.</li>
-    <li><strong>No vendemos tus datos ni los usamos para publicidad.</strong> Usamos proveedores de servicios (Supabase, Cloudflare, Resend y Google, y Stripe para la facturación de Team cuando se lance) solo para hacer funcionar SiteProof.</li>
+    <li><strong>No vendemos tus datos ni los usamos para publicidad.</strong> Usamos proveedores de servicios (Supabase, Cloudflare, Resend y Google, incluido Firebase Cloud Messaging para las notificaciones de Team en el teléfono, y Stripe para la facturación de Team cuando se lance) solo para hacer funcionar SiteProof.</li>
     <li><strong>La traducción (Pro) es opcional.</strong> Si la usas, Google ML Kit envía a Google datos de diagnóstico y de uso. El texto que traduces se queda en tu teléfono.</li>
   </ul>
   </div>
@@ -114,7 +114,11 @@
   </ul></li>
     <li><strong>Listas de verificación</strong> usadas en un trabajo: elementos, estado, notas y las fotos adjuntas.</li>
     <li><strong>Documentos</strong> que la empresa sube para sus clientes (por ejemplo, facturas, presupuestos, permisos y contratos, en PDF, JPEG o PNG), con su título, monto, fecha de vencimiento, estado y el enlace de pago propio de la empresa. <strong>SiteProof nunca maneja los pagos entre una empresa y sus clientes</strong>; un enlace de pago abre la página de pago de la propia empresa.</li>
-    <li><strong>Mensajes:</strong> notas del equipo, mensajes con clientes, comentarios en fotos y sus versiones anteriores cuando se editan, aprobaciones de clientes, avisos de "Ya envié el pago" y qué mensajes ha leído cada persona.</li>
+    <li><strong>Mensajes:</strong> notas del equipo, el <strong>chat del equipo</strong> de cada proyecto, mensajes con clientes, comentarios en fotos y sus versiones anteriores cuando se editan, aprobaciones de clientes, avisos de "Ya envié el pago" y qué mensajes ha leído cada persona.<ul>
+    <li><strong>@menciones:</strong> cuando alguien menciona a un compañero en un mensaje del equipo, el mensaje guarda una referencia a la cuenta de esa persona, y guardamos un registro de la mención y de si ya se leyó.</li>
+  </ul></li>
+    <li><strong>La configuración de notificaciones</strong> de cada miembro, por empresa: qué correos y notificaciones en el teléfono quiere recibir (todos, solo menciones o ninguno), el sonido, el idioma de los correos y los proyectos silenciados.</li>
+    <li><strong>Los tokens de notificación de los teléfonos</strong> (ver <a href="#notificaciones-en-el-telefono">&ldquo;Notificaciones en el teléfono&rdquo;</a> más abajo).</li>
     <li><strong>La imagen de la empresa</strong> para la página de clientes: nombre de la empresa, logo, color de acento, teléfono, correo electrónico, sitio web, número de licencia y mensaje de bienvenida.</li>
     <li><strong>El historial de actividad</strong> (ver abajo).</li>
     <li>Quién creó y quién cambió por última vez cada elemento, y un identificador del teléfono (o "web") que hizo el cambio.</li>
@@ -131,7 +135,8 @@
     <li><strong>Propietarios y administradores</strong> ven todos los proyectos de la empresa, sus miembros y equipos, la Papelera, los enlaces de clientes con su registro de aperturas y el historial de actividad. Los administradores y propietarios pueden mover elementos a la Papelera; solo el propietario puede borrarlos definitivamente.</li>
     <li><strong>Miembros</strong> ven los proyectos compartidos con sus equipos y los proyectos que crean. Pueden agregar y editar, y archivan en lugar de borrar.</li>
     <li><strong>Observadores</strong> pueden ver los proyectos compartidos con sus equipos, pero no cambiarlos.</li>
-    <li><strong>Clientes</strong> ven solo lo que la empresa comparte con ellos (ver <a href="#la-pagina-de-clientes">&ldquo;La página de clientes&rdquo;</a> más abajo). Nunca ven las notas solo para el equipo, el historial de actividad, los elementos archivados o borrados, ni los mensajes de otros clientes.</li>
+    <li><strong>Chat del equipo:</strong> cada proyecto tiene un chat del equipo. Todos los miembros que pueden ver el proyecto pueden leerlo y, salvo los observadores, escribir en él; los propietarios y administradores ven el chat de todos los proyectos. Los comentarios en los trabajos y fotos del proyecto (notas del equipo y mensajes de las conversaciones con clientes) también aparecen en él como avisos breves para el equipo. Solo puedes @mencionar a personas que pueden ver el proyecto.</li>
+    <li><strong>Clientes</strong> ven solo lo que la empresa comparte con ellos (ver <a href="#la-pagina-de-clientes">&ldquo;La página de clientes&rdquo;</a> más abajo). Nunca ven el chat del equipo, las notas solo para el equipo, el historial de actividad, los elementos archivados o borrados, ni los mensajes de otros clientes.</li>
     <li><strong>Nosotros:</strong> nuestro personal accede a los datos de una empresa solo cuando hace falta para operar el servicio, resolver un problema, atender tu solicitud o cuando la ley lo exige.</li>
   </ul>
 
@@ -151,8 +156,19 @@
     <li><strong>A los clientes:</strong> un mensaje nuevo de la empresa en su conversación, y un documento o factura nuevo que se hizo visible para ellos, con un enlace a la página de clientes. El remitente es la empresa; las respuestas van a la empresa.</li>
     <li><strong>A la empresa</strong> (la dirección de respuesta o el correo de su imagen de empresa o, si no hay, sus propietarios): el mensaje, la aprobación o el aviso de "Ya envié el pago" de un cliente.</li>
     <li><strong>A los propietarios de una empresa:</strong> un aviso cuando se programa la eliminación de la empresa, y un recordatorio 3 días antes de que se elimine definitivamente.</li>
+    <li><strong>A los miembros del equipo, sobre el chat del equipo:</strong> un correo cuando alguien te @menciona (como máximo uno por conversación cada 5 minutos; las menciones posteriores se agrupan en el siguiente) y, solo si lo eliges, un resumen de los mensajes no leídos del chat del equipo de un proyecto (como máximo uno por proyecto cada 30 minutos). Los envía "SiteProof", no la empresa, e incluyen el nombre de quien escribe, el nombre del proyecto y el texto del mensaje, con un enlace al chat. No se envía nada por un mensaje que ya leíste. De forma predeterminada solo recibes los correos de menciones. Puedes cambiarlo (todos, solo menciones o ninguno), elegir el idioma de los correos o silenciar un proyecto (las menciones siguen llegando salvo que elijas ninguno) en la configuración de notificaciones: en la app, en <strong>Ajustes › Empresa › Notificaciones</strong>, o en el sitio web, en los ajustes de notificaciones del chat.</li>
   </ul>
-  <p>Cada persona recibe como máximo un correo por conversación cada 10 minutos. No enviamos correos de marketing. Se guarda una copia del contenido de cada correo de aviso con los datos de la empresa durante 30 días después de enviarlo (o de cancelarlo, o de abandonar el envío tras varios intentos fallidos), y luego se borra. Los códigos de invitación y los enlaces de clientes que envías tú (por ejemplo, por correo o mensaje de texto) pasan por tus propias apps.</p>
+  <p>Los correos de aviso a clientes y a la empresa se envían como máximo uno por conversación cada 10 minutos a cada persona. No enviamos correos de marketing. Se guarda una copia del contenido de cada correo de aviso con los datos de la empresa durante 30 días después de enviarlo (o de cancelarlo, o de abandonar el envío tras varios intentos fallidos), y luego se borra. Los códigos de invitación y los enlaces de clientes que envías tú (por ejemplo, por correo o mensaje de texto) pasan por tus propias apps.</p>
+
+  <h3 id="notificaciones-en-el-telefono">Notificaciones en el teléfono (chat del equipo)</h3>
+  <p>Si iniciaste sesión en SiteProof Team en un teléfono, la app puede avisarte de los mensajes nuevos del chat del equipo y de las @menciones. Para eso usa <strong>Google Firebase Cloud Messaging</strong> (FCM), el servicio estándar de Android para entregar notificaciones. Usamos Firebase solo para esto: ni Firebase Analytics, ni reportes de fallos, ni ningún otro producto de Firebase.</p>
+  <ul>
+    <li><strong>Qué se guarda:</strong> cuando inicias sesión, la app obtiene de Google un token de notificación para ese teléfono y lo envía a nuestro servidor, junto con la plataforma, el idioma de la app y la versión de la app. Para emitir el token, el componente de Firebase de Google en el teléfono envía a Google un identificador de instalación de Firebase (un identificador aleatorio de la instalación de la app).</li>
+    <li><strong>Qué recibe Google por cada notificación:</strong> el token y algunos identificadores internos (el tipo de notificación, la empresa, el proyecto, la conversación y el mensaje). <strong>Nada del texto de los mensajes, ni nombres, ni correos electrónicos.</strong> Después, la app obtiene el mensaje de nuestro servidor por HTTPS y muestra la notificación ella misma. Con el teléfono bloqueado solo muestra una línea genérica ("Mensaje nuevo del equipo"), salvo que permitas los detalles de las notificaciones en la pantalla de bloqueo en los ajustes de Android.</li>
+    <li><strong>Cuándo se usa FCM:</strong> solo mientras tienes la sesión iniciada en SiteProof Team. Sin cuenta, o con la sesión cerrada, la app no se comunica con Firebase.</li>
+    <li><strong>Tus opciones:</strong> todos los mensajes del chat del proyecto y las menciones (lo predeterminado), solo las menciones o ninguno, y los proyectos silenciados, en la configuración de notificaciones (app: <strong>Ajustes › Empresa › Notificaciones</strong>; sitio web: los ajustes de notificaciones del chat). También puedes desactivar las notificaciones de SiteProof en los ajustes de Android.</li>
+    <li><strong>Eliminación:</strong> al cerrar sesión, el token del teléfono se quita de nuestro servidor y se borra en Google; al eliminar tu cuenta se quitan todos tus tokens. También se borran los tokens que Google informa que ya no son válidos.</li>
+  </ul>
 
   <h3 id="proveedores-de-servicios-y-donde-se-guardan-los-datos">Proveedores de servicios y dónde se guardan los datos</h3>
   <p>Usamos estas empresas para hacer funcionar SiteProof Team. Tratan los datos por encargo nuestro, según sus propios términos y políticas de privacidad, y solo para prestar su servicio:</p>
@@ -160,6 +176,7 @@
     <li><strong>Supabase</strong> — Base de datos, inicio de sesión (cuentas y códigos) y almacenamiento de archivos de fotos, logos y documentos. <em>Dónde:</em> Estados Unidos (AWS US East, Virginia del Norte).</li>
     <li><strong>Cloudflare</strong> — Aloja el sitio web <code>siteproof.plainform.app</code> y su relé: las solicitudes del sitio web a nuestra base de datos pasan por Cloudflare, que reenvía la dirección IP del visitante a nuestro servidor para el registro de aperturas de enlaces y para limitar abusos. El relé no guarda lo que pasa por él. <em>Dónde:</em> La red global de Cloudflare.</li>
     <li><strong>Resend</strong> — Envía los correos de arriba. Resend guarda cada correo que envía, y su registro de entrega, durante 30 días. <em>Dónde:</em> Estados Unidos.</li>
+    <li><strong>Google Firebase Cloud Messaging</strong> — Entrega las notificaciones del chat del equipo en el teléfono (ver <a href="#notificaciones-en-el-telefono">&ldquo;Notificaciones en el teléfono&rdquo;</a> arriba). Recibe el token de notificación del teléfono e identificadores internos, nunca el contenido de los mensajes. <em>Dónde:</em> Google.</li>
     <li><strong>Google Play</strong> — Pagos de SiteProof Pro en la app. <em>Dónde:</em> Google.</li>
     <li><strong>Google ML Kit</strong> — Traducción opcional (ver su sección). <em>Dónde:</em> Google.</li>
     <li><strong>Stripe</strong> <em>(cuando se lance la facturación)</em> — Pagos de las suscripciones de SiteProof Team, que hacen los propietarios de empresas en el sitio web de SiteProof. Stripe manejará los datos de la tarjeta; nosotros recibiremos el estado de la suscripción, el número de puestos y el contacto de facturación, nunca los datos completos de la tarjeta. La app nunca cobra pagos de Team. <em>Dónde:</em> Stripe.</li>
@@ -179,6 +196,8 @@
     <li><strong>Elementos borrados:</strong> cuando un propietario o administrador borra algo, va a la <strong>Papelera</strong> de la empresa y se puede restaurar. Se queda ahí hasta que el propietario lo borra definitivamente, lo que es posible después de 30 días. Nada de la Papelera se borra automáticamente. El borrado definitivo elimina el elemento, todo lo que contiene y sus archivos de fotos o documentos.</li>
     <li><strong>El historial de actividad</strong> se guarda mientras se guarden los datos de la empresa. Cuando un elemento se borra definitivamente, sus entradas del historial conservan quién hizo cada cambio y cuándo, pero los valores anteriores (como un nombre o una nota antiguos) se reemplazan por una marca que indica que el elemento se borró; la entrada del borrado definitivo conserva un resumen breve, como el nombre o el título del elemento. Si necesitas que se elimine una entrada, escríbenos.</li>
     <li><strong>Correos de aviso:</strong> la copia que se guarda con los datos de la empresa se borra 30 días después de que el correo se envía, se cancela o se abandona su envío.</li>
+    <li><strong>Notificaciones en el teléfono:</strong> el token de notificación de un teléfono se guarda hasta que cierras sesión en ese teléfono, eliminas tu cuenta o Google informa que ya no es válido (guardamos como máximo tus 20 teléfonos más recientes). Nuestro registro de cada notificación (solo identificadores, sin texto) se borra 7 días después de enviarla o cancelarla.</li>
+    <li><strong>La configuración de notificaciones y las menciones</strong> se guardan mientras estés en la empresa; salir de la empresa o eliminar tu cuenta las borra.</li>
     <li><strong>Aperturas de enlaces de clientes</strong> (hora, hash de la dirección IP e identificador del navegador): se borran a los 12 meses.</li>
     <li><strong>Registros de eliminación:</strong> ver <a href="#delete-account">&ldquo;Eliminar tu cuenta y tus datos&rdquo;</a> más abajo.</li>
     <li><strong>Los registros del servidor</strong> de nuestros proveedores: un máximo de 7 días en Supabase, 30 días para los correos enviados en Resend y un tiempo limitado en Cloudflare (ver arriba).</li>
@@ -201,11 +220,12 @@
   <ul>
     <li>tu cuenta de inicio de sesión (tu correo electrónico), tus membresías, roles, equipos y nombre visible, y tus marcas de leído;</li>
     <li>tu permiso para crear una empresa, y todos los correos de aviso dirigidos a ti, enviados o pendientes;</li>
+    <li>tu configuración de notificaciones, los tokens de notificación de tus teléfonos y las notificaciones pendientes, y los registros de las menciones que te hicieron;</li>
     <li>tu inicio de sesión como cliente: los enlaces que una empresa compartió contigo siguen siendo registro de la empresa, pero ya no están vinculados a tu correo electrónico.</li>
   </ul>
   <p><strong>Qué se queda con la empresa y por qué:</strong> las fotos, notas, mensajes, aprobaciones, avisos de pago y demás trabajo que agregaste a los proyectos de una empresa son de esa empresa, así que se quedan con ella, pero ya no muestran quién eres:</p>
   <ul>
-    <li>en tus mensajes, aprobaciones y avisos de pago se quitan tu nombre y tu correo electrónico, y aparecen como de un "Antiguo miembro" (o "Antiguo cliente", si eras cliente);</li>
+    <li>en tus mensajes, aprobaciones y avisos de pago se quitan tu nombre y tu correo electrónico, y aparecen como de un "Antiguo miembro" (o "Antiguo cliente", si eras cliente); donde alguien te @mencionó en un mensaje, la mención muestra "Antiguo miembro";</li>
     <li>tu correo electrónico se quita de los correos de aviso pendientes de envío y del texto del historial de actividad;</li>
     <li>las entradas del historial de los cambios que hiciste conservan un identificador interno de cuenta, que ya no se vincula con ninguna persona una vez eliminada tu cuenta.</li>
   </ul>
@@ -234,8 +254,8 @@
     <li><strong>Cámara</strong> — Tomar fotos.</li>
     <li><strong>Ubicación, solo mientras usas la app</strong> — Sellar cada foto con el lugar donde se tomó y sugerirte el trabajo en el que estás. SiteProof nunca usa la ubicación en segundo plano. Con SiteProof Team, la ubicación de una foto de la empresa se sincroniza con la foto.</li>
     <li><strong>Micrófono (opcional)</strong> — Notas y comandos de voz. El habla se reconoce <strong>en el teléfono</strong> con el reconocedor integrado de Android. El audio nunca se graba en un archivo, no se guarda ni se envía a ningún lado.</li>
-    <li><strong>Notificaciones (opcional)</strong> — Mostrar el progreso mientras se genera un reporte, el estado de "Compartir con la computadora" y la sincronización.</li>
-    <li><strong>Red (internet, estado del Wi-Fi)</strong> — Buscar direcciones; compras en Google Play; "Compartir con la computadora" en tu Wi-Fi local; el inicio de sesión y la sincronización de SiteProof Team, si lo usas; descargar los paquetes de idioma para la traducción y los diagnósticos de ML Kit, si usas la traducción.</li>
+    <li><strong>Notificaciones (opcional)</strong> — Mostrar el progreso mientras se genera un reporte, el estado de "Compartir con la computadora" y la sincronización; con SiteProof Team, los mensajes del chat del equipo y las @menciones (ver <a href="#notificaciones-en-el-telefono">&ldquo;Notificaciones en el teléfono&rdquo;</a>).</li>
+    <li><strong>Red (internet, estado del Wi-Fi)</strong> — Buscar direcciones; compras en Google Play; "Compartir con la computadora" en tu Wi-Fi local; el inicio de sesión, la sincronización y las notificaciones del chat del equipo de SiteProof Team (mediante Firebase Cloud Messaging), si lo usas; descargar los paquetes de idioma para la traducción y los diagnósticos de ML Kit, si usas la traducción.</li>
   </ul>
 
   <h3 id="servicios-de-los-que-depende-siteproof">Servicios de los que depende SiteProof</h3>
@@ -245,7 +265,7 @@
   </ul>
 
   <h3 id="traduccion-opcional-google-ml-kit">Traducción opcional (Pro): Google ML Kit</h3>
-  <p>SiteProof Pro puede traducir nombres, notas y textos de listas de verificación entre inglés y español. Esta función está <strong>desactivada hasta que la usas</strong>. Aparte de SiteProof Team, que tú decides usar, es la única parte de SiteProof que envía algo fuera del teléfono por su cuenta.</p>
+  <p>SiteProof Pro puede traducir nombres, notas y textos de listas de verificación entre inglés y español. Esta función está <strong>desactivada hasta que la usas</strong>. Aparte de SiteProof Team (incluidas sus notificaciones en el teléfono mediante Firebase Cloud Messaging), que tú decides usar, es la única parte de SiteProof que envía algo fuera del teléfono por su cuenta.</p>
   <ul>
     <li><strong>Cómo funciona.</strong> La traducción usa la traducción en el dispositivo de Google ML Kit. Necesita un paquete para cada idioma (inglés y español, unos 30 MB cada uno), que la app descarga desde Google cuando lo pides (por defecto, solo por Wi-Fi). Después, la traducción se hace <strong>en tu teléfono</strong>. El texto que traduces no se envía a Google ni a nadie más. Google afirma que las traducciones de ML Kit "no requieren enviar el texto de los usuarios a un servidor remoto".</li>
     <li><strong>Nada se inicia hasta que la usas.</strong> SiteProof inicia ML Kit solo la primera vez que usas la traducción. Si nunca traduces nada, ML Kit no envía nada.</li>
@@ -257,7 +277,7 @@
     <li>la configuración de la API;</li>
     <li>datos de la función: tamaño de entrada y salida, versión de la función, tipo de evento y códigos de error;</li>
     <li>para la traducción, los idiomas de origen y destino configurados; para la identificación de idioma, los idiomas identificados.</li>
-    <li>Google también indica que la biblioteca de traducción usa Firebase Remote Config y Firebase Installations para la configuración remota y los diagnósticos.</li>
+    <li>Google también indica que la biblioteca de traducción usa Firebase Remote Config y Firebase Installations para la configuración remota y los diagnósticos. (Esto es independiente del Firebase Cloud Messaging que SiteProof Team usa para las notificaciones en el teléfono; SiteProof no usa ningún otro producto de Firebase).</li>
   </ul></li>
     <li><strong>Para qué.</strong> Google afirma que estos datos se "usan para diagnóstico y analítica de uso".</li>
     <li><strong>Protección y transferencia.</strong> Google afirma que ML Kit cifra estos datos en tránsito con HTTPS y que no los transfiere a terceros. Google los trata según la <a href="https://policies.google.com/privacy?hl=es-419">Política de Privacidad de Google</a>.</li>

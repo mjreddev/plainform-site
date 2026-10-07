@@ -29,7 +29,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>SiteProof Privacy Policy</h1>
-  <p class="updated">SiteProof &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective October 2, 2026</p>
+  <p class="updated">SiteProof &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective October 7, 2026</p>
   <nav class="policy-nav" aria-label="Plainform apps policies"><span>Plainform apps policies:</span> <a href="callrules-privacy.html">CallRules</a> <a href="filezone-privacy.html">File Zone</a> <a href="siteproof-privacy.html" aria-current="page">SiteProof</a></nav>
   <nav class="policy-nav" aria-label="On this page"><span>Contents:</span> <a href="#part-1-using-siteproof-on-your-own">Part 1. Using SiteProof on your own (no account)</a> <a href="#part-2-siteproof-team">Part 2. SiteProof Team (optional company account)</a> <a href="#delete-account">Deleting your account and your data</a> <a href="#for-everyone">For everyone</a></nav>
 
@@ -46,7 +46,7 @@
     <li><strong>SiteProof Team is optional and only for companies.</strong> If your company uses it, the company's projects, photos and notes are stored in the cloud so the crew and the office can work on them together. The company owns that data, and its owner controls it.</li>
     <li><strong>Clients see only what a company shares with them</strong>, through a private link or by signing in with their email address.</li>
     <li><strong>You can delete your Team account at any time</strong>, in the app or on the website. It is deleted at once. A company's owner can delete the whole company; it is switched off at once and deleted for good after 30 days.</li>
-    <li><strong>We do not sell your data, and we do not use it for advertising.</strong> We use service providers (Supabase, Cloudflare, Resend and Google, and Stripe for Team billing when it launches) only to run SiteProof.</li>
+    <li><strong>We do not sell your data, and we do not use it for advertising.</strong> We use service providers (Supabase, Cloudflare, Resend and Google, including Firebase Cloud Messaging for Team phone notifications, and Stripe for Team billing when it launches) only to run SiteProof.</li>
     <li><strong>Translation (Pro) is optional.</strong> If you use it, Google ML Kit sends Google diagnostic and usage data. The text you translate stays on your phone.</li>
   </ul>
   </div>
@@ -112,7 +112,11 @@
   </ul></li>
     <li><strong>Checklists</strong> run on a job: items, status, notes and the photos attached.</li>
     <li><strong>Documents</strong> the company uploads for its clients (for example invoices, estimates, permits and contracts, as PDF, JPEG or PNG), with their title, amount, due date, status and the company's own payment link. <strong>SiteProof never handles payments between a company and its clients</strong>; a payment link opens the company's own payment page.</li>
-    <li><strong>Messages:</strong> team notes, messages with clients, photo comments and their earlier versions when edited, client approvals, "I've sent payment" notices, and which messages each person has read.</li>
+    <li><strong>Messages:</strong> team notes, each project's <strong>team chat</strong>, messages with clients, photo comments and their earlier versions when edited, client approvals, "I've sent payment" notices, and which messages each person has read.<ul>
+    <li><strong>@mentions:</strong> when someone mentions a teammate in a team message, the message stores a reference to that person's account, and we keep a record of the mention and whether it has been read.</li>
+  </ul></li>
+    <li><strong>Notification settings</strong> of each member, per company: which emails and phone notifications they want (all, mentions only, or none), sound, email language and muted projects.</li>
+    <li><strong>Phone notification tokens</strong> (see <a href="#phone-notifications">&ldquo;Phone notifications&rdquo;</a> below).</li>
     <li><strong>Company branding</strong> for the client page: company name, logo, accent colour, phone, email, website, licence number and welcome message.</li>
     <li><strong>Activity history</strong> (see below).</li>
     <li>Who created and last changed each item, and an ID of the phone (or "web") that made the change.</li>
@@ -129,7 +133,8 @@
     <li><strong>Owners and admins</strong> see all of the company's projects, its members and crews, the Trash, client links with their open logs, and the activity history. Admins and owners can delete items into the Trash; only the owner can delete permanently.</li>
     <li><strong>Members</strong> see the projects shared with their crews, and the projects they create. They can add and edit, and archive instead of deleting.</li>
     <li><strong>Viewers</strong> can see the projects shared with their crews but not change them.</li>
-    <li><strong>Clients</strong> see only what the company shares with them (see <a href="#the-client-page">&ldquo;The client page&rdquo;</a> below). They never see team-only notes, the activity history, archived or deleted items, or other clients' messages.</li>
+    <li><strong>Team chat:</strong> each project has a team chat. Every member who can see the project can read it and, unless they are a viewer, write in it; owners and admins see every project's chat. Comments on the project's jobs and photos (team notes, and messages in client conversations) also appear in it as short notices for the team. You can only @mention people who can see the project.</li>
+    <li><strong>Clients</strong> see only what the company shares with them (see <a href="#the-client-page">&ldquo;The client page&rdquo;</a> below). They never see the team chat, team-only notes, the activity history, archived or deleted items, or other clients' messages.</li>
     <li><strong>Us:</strong> our staff access company data only when needed to run the service, to fix a problem, to answer your request, or when the law requires it.</li>
   </ul>
 
@@ -149,8 +154,19 @@
     <li><strong>To clients:</strong> a new message from the company in their conversation, and a new document or invoice made visible to them, with a link to the client page. The sender name is the company; replies go to the company.</li>
     <li><strong>To the company</strong> (the reply-to or email address in its branding, or else its owners): a client's message, approval or "I've sent payment" notice.</li>
     <li><strong>To a company's owners:</strong> a notice when the company's deletion is scheduled, and a reminder 3 days before it is permanently deleted.</li>
+    <li><strong>To team members, about team chat:</strong> an email when someone @mentions you (at most one per conversation every 5 minutes; later mentions are grouped into the next one), and, only if you choose it, a summary of unread messages in a project's team chat (at most one per project every 30 minutes). These come from "SiteProof", not from the company, and include the sender's name, the project name and the message text, with a link to the chat. Nothing is sent for a message you have already read. By default you get mention emails only. You can change this (all, mentions only, or none), choose the email language, or mute a project (mentions still arrive unless you choose none) in the notification settings: in the app under <strong>Settings › Company › Notifications</strong>, or on the website in the chat's notification settings.</li>
   </ul>
-  <p>At most one email per conversation every 10 minutes is sent to each person. We send no marketing email. A copy of each notification email's content is kept with the company's data for 30 days after it is sent (or cancelled, or given up after failed tries), then deleted. Invite codes and client links that you send yourself (for example by email or text message) go through your own apps.</p>
+  <p>Client and company notification emails are sent at most once per conversation every 10 minutes to each person. We send no marketing email. A copy of each notification email's content is kept with the company's data for 30 days after it is sent (or cancelled, or given up after failed tries), then deleted. Invite codes and client links that you send yourself (for example by email or text message) go through your own apps.</p>
+
+  <h3 id="phone-notifications">Phone notifications (team chat)</h3>
+  <p>If you are signed in to SiteProof Team on a phone, the app can notify you of new team chat messages and @mentions. It uses <strong>Google Firebase Cloud Messaging</strong> (FCM), the standard Android service for delivering notifications. We use Firebase only for this: no Firebase Analytics, crash reporting or any other Firebase product.</p>
+  <ul>
+    <li><strong>What is stored:</strong> when you sign in, the app gets a notification token from Google for that phone and sends it to our server, with the platform, the app's language and the app version. To issue the token, Google's Firebase component on the phone sends Google a Firebase installation ID (a random ID of the app's installation).</li>
+    <li><strong>What Google receives for each notification:</strong> the token and a few internal IDs (the kind of notification, the company, the project, the conversation and the message). <strong>No message text, names or email addresses.</strong> The app then fetches the message from our server over HTTPS and shows the notification itself. On a locked phone it shows only a generic line ("New team message"), unless you allow notification details on the lock screen in Android's settings.</li>
+    <li><strong>When FCM is used:</strong> only while you are signed in to SiteProof Team. Without an account, or signed out, the app does not contact Firebase.</li>
+    <li><strong>Your choices:</strong> all project-chat messages and mentions (the default), mentions only, or none, and muted projects, in the notification settings (app: <strong>Settings › Company › Notifications</strong>; website: the chat's notification settings). You can also turn off SiteProof's notifications in Android's settings.</li>
+    <li><strong>Removal:</strong> signing out removes the phone's token from our server and deletes it at Google; deleting your account removes all your tokens. Tokens that Google reports as no longer valid are deleted too.</li>
+  </ul>
 
   <h3 id="service-providers-and-where-data-is-stored">Service providers and where data is stored</h3>
   <p>We use these companies to run SiteProof Team. They process data for us under their own terms and privacy policies, and only to provide their service:</p>
@@ -158,6 +174,7 @@
     <li><strong>Supabase</strong> — Database, sign-in (accounts and codes) and file storage for photos, logos and documents. <em>Where:</em> United States (AWS US East, N. Virginia).</li>
     <li><strong>Cloudflare</strong> — Hosts the website <code>siteproof.plainform.app</code> and its relay: the website's requests to our database pass through Cloudflare, which forwards the visitor's IP address to our server for the link-open records and for rate limiting. The relay does not store what passes through it. <em>Where:</em> Cloudflare's global network.</li>
     <li><strong>Resend</strong> — Sends the emails above. Resend keeps each email it sends, and its delivery log, for 30 days. <em>Where:</em> United States.</li>
+    <li><strong>Google Firebase Cloud Messaging</strong> — Delivers phone notifications for team chat (see <a href="#phone-notifications">&ldquo;Phone notifications&rdquo;</a> above). Receives the phone's notification token and internal IDs, never message content. <em>Where:</em> Google.</li>
     <li><strong>Google Play</strong> — Payments for SiteProof Pro in the app. <em>Where:</em> Google.</li>
     <li><strong>Google ML Kit</strong> — Optional translation (see its section). <em>Where:</em> Google.</li>
     <li><strong>Stripe</strong> <em>(when billing launches)</em> — Payments for SiteProof Team subscriptions, made by company owners on the SiteProof website. Stripe will handle the card details; we will receive the subscription's status, number of seats and billing contact, never full card details. The app never takes Team payments. <em>Where:</em> Stripe.</li>
@@ -177,6 +194,8 @@
     <li><strong>Deleted items:</strong> when an owner or admin deletes something, it goes to the company's <strong>Trash</strong> and can be restored. It stays there until the owner deletes it permanently, which is possible after 30 days. Nothing in the Trash is deleted automatically. Permanent deletion removes the item, everything under it, and its photo or document files.</li>
     <li><strong>Activity history</strong> is kept for as long as the company's data is kept. When an item is permanently deleted, its history entries keep who made each change and when, but the old values (such as an earlier name or note) are replaced by a marker saying the item was deleted; the entry for the permanent deletion keeps a short summary, such as the item's name or title. If you need an entry removed, contact us.</li>
     <li><strong>Notification emails:</strong> the copy kept with the company's data is deleted 30 days after the email is sent, cancelled or given up.</li>
+    <li><strong>Phone notifications:</strong> a phone's notification token is kept until you sign out on that phone, delete your account, or Google reports it as no longer valid (we keep at most your 20 most recent phones). Our record of each notification (IDs only, no text) is deleted 7 days after it is sent or cancelled.</li>
+    <li><strong>Notification settings and mentions</strong> are kept while you are in the company; leaving the company or deleting your account deletes them.</li>
     <li><strong>Client link opens</strong> (time, hashed IP address and browser user agent) are deleted after 12 months.</li>
     <li><strong>Deletion records:</strong> see <a href="#delete-account">&ldquo;Deleting your account and your data&rdquo;</a> below.</li>
     <li><strong>Server logs</strong> at our providers: up to 7 days at Supabase, 30 days for sent emails at Resend, and a limited time at Cloudflare (see above).</li>
@@ -198,11 +217,12 @@
   <ul>
     <li>your sign-in account (your email address), your memberships, roles, crews and display name, and your read markers;</li>
     <li>your permission to create a company, and every notification email addressed to you, sent or waiting;</li>
+    <li>your notification settings, your phones' notification tokens and pending phone notifications, and the records of mentions of you;</li>
     <li>your client sign-in: links a company shared with you stay the company's record, but are no longer tied to your email address.</li>
   </ul>
   <p><strong>What stays with the company, and why:</strong> photos, notes, messages, approvals, payment notices and other work you added to a company's projects belong to that company, so they stay with it, but no longer show who you are:</p>
   <ul>
-    <li>on your messages, approvals and payment notices, your name and email address are removed, and they show "Former member" (or "Former client" for a client);</li>
+    <li>on your messages, approvals and payment notices, your name and email address are removed, and they show "Former member" (or "Former client" for a client); where someone @mentioned you in a message, the mention shows "Former member";</li>
     <li>your email address is removed from notification emails waiting to be sent and from the activity history text;</li>
     <li>history entries of changes you made keep an internal account ID, which no longer links to any person once your account is deleted.</li>
   </ul>
@@ -231,8 +251,8 @@
     <li><strong>Camera</strong> — Taking photos.</li>
     <li><strong>Location, only while the app is in use</strong> — Stamping each photo with where it was taken, and suggesting the job you are at. SiteProof never uses location in the background. With SiteProof Team, a company photo's location is synced with the photo.</li>
     <li><strong>Microphone (optional)</strong> — Voice notes and voice commands. Speech is recognised <strong>on the phone</strong> by Android's on-device recognizer. Audio is never recorded to a file, kept, or sent anywhere.</li>
-    <li><strong>Notifications (optional)</strong> — Progress while a report is being made, the status of "Share to computer", and sync.</li>
-    <li><strong>Network (internet, Wi-Fi state)</strong> — Looking up street addresses; Google Play purchases; "Share to computer" on your local Wi-Fi; SiteProof Team sign-in and sync, if you use it; downloading translation language packs, and ML Kit's diagnostics, if you use translation.</li>
+    <li><strong>Notifications (optional)</strong> — Progress while a report is being made, the status of "Share to computer", and sync; with SiteProof Team, team chat messages and @mentions (see <a href="#phone-notifications">&ldquo;Phone notifications&rdquo;</a>).</li>
+    <li><strong>Network (internet, Wi-Fi state)</strong> — Looking up street addresses; Google Play purchases; "Share to computer" on your local Wi-Fi; SiteProof Team sign-in, sync and team chat notifications (through Firebase Cloud Messaging), if you use it; downloading translation language packs, and ML Kit's diagnostics, if you use translation.</li>
   </ul>
 
   <h3 id="services-siteproof-relies-on">Services SiteProof relies on</h3>
@@ -242,7 +262,7 @@
   </ul>
 
   <h3 id="optional-translation-google-ml-kit">Optional translation (Pro): Google ML Kit</h3>
-  <p>SiteProof Pro can translate names, notes and checklist text between English and Spanish. This feature is <strong>off until you use it</strong>. Apart from SiteProof Team, which you choose to use, it is the only part of SiteProof that sends anything off the phone on its own.</p>
+  <p>SiteProof Pro can translate names, notes and checklist text between English and Spanish. This feature is <strong>off until you use it</strong>. Apart from SiteProof Team (including its phone notifications through Firebase Cloud Messaging), which you choose to use, it is the only part of SiteProof that sends anything off the phone on its own.</p>
   <ul>
     <li><strong>How it works.</strong> Translation uses Google's ML Kit on-device translation. It needs a language pack for each language (English and Spanish, about 30 MB each), which the app downloads from Google when you ask for it (by default over Wi-Fi only). After that, translation runs <strong>on your phone</strong>. The text you translate is not sent to Google or to anyone else. Google states that ML Kit translations "don't require you to send users' text to a remote server".</li>
     <li><strong>Nothing starts until you use it.</strong> SiteProof starts ML Kit only the first time you use translation. If you never translate anything, ML Kit sends nothing.</li>
@@ -254,7 +274,7 @@
     <li>API configuration;</li>
     <li>feature data: input and output size, feature version, event type and error codes;</li>
     <li>for translation, the configured source and target languages; for language identification, the languages identified.</li>
-    <li>Google also says the translation library uses Firebase remote config and Firebase installations for remote configuration and diagnostics.</li>
+    <li>Google also says the translation library uses Firebase remote config and Firebase installations for remote configuration and diagnostics. (This is separate from the Firebase Cloud Messaging that SiteProof Team uses for phone notifications; SiteProof uses no other Firebase product.)</li>
   </ul></li>
     <li><strong>Why.</strong> Google states the data is "used for diagnostics and usage analytics".</li>
     <li><strong>Protection and sharing.</strong> Google states that ML Kit encrypts this data in transit using HTTPS and does not transfer it to third parties. Google handles it under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
