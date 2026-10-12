@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>Politique de confidentialité de CallRules</h1>
-  <p class="updated">CallRules : anti-spam d’appels &middot; MJRed Dev LLC (faisant affaire sous le nom Plainform) &middot; En vigueur le 4 octobre 2026</p>
+  <p class="updated">CallRules : anti-spam d’appels &middot; MJRed Dev LLC (faisant affaire sous le nom Plainform) &middot; En vigueur le 9 octobre 2026</p>
   <nav class="policy-nav" aria-label="Politiques des applis Plainform"><span>Politiques des applis Plainform :</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="../filezone-privacy.html" hreflang="en">File Zone</a> <a href="../siteproof-privacy.html" hreflang="en">SiteProof</a></nav>
 
   <p class="notice">Cette traduction est fournie pour votre commodité. En cas de différence, la <a href="../callrules-privacy.html" hreflang="en">version anglaise</a> fait foi.</p>
@@ -77,13 +77,12 @@
         vos contacts sur l’appareil : lorsqu’un appel arrive, il cherche le nom
         du contact, son statut de favori et ses groupes de contacts pour appliquer
         les contacts autorisés et les règles de contact, de groupe de contacts et
-        de nom d’appelant; lorsque vous choisissez un contact ou un groupe pour
+        de nom du contact, et pour ne jamais raccrocher les appels d’un contact; lorsque vous choisissez un contact ou un groupe pour
         une règle, lancez la vérification des règles ou donnez une commande
         vocale sur un contact comme « bloque les appels de Marie Dupont », il lit
         les noms, les numéros de téléphone et l’appartenance aux groupes des
         contacts. Les notifications d’appel bloqué et l’historique des appels
-        affichent le nom du contact, ou le nom de l’appelant fourni par votre
-        fournisseur.</li>
+        affichent le nom du contact ou, pour un appel auquel CallRules a raccroché, le nom de l’afficheur que votre appli Téléphone a montré.</li>
     <li><strong>Localisation</strong> — facultative. La position approximative ou précise
         sert à appliquer les règles limitées à un emplacement. Si vous activez
         ces règles, la localisation en arrière-plan peut être nécessaire pour
@@ -103,6 +102,7 @@
         les incluez dans une exportation de la configuration. La localisation
         ne sert jamais à déduire ou à chercher l’endroit où se trouve un appelant.</li>
     <li><strong>Notifications de messagerie (textos en sourdine)</strong> — facultatif, désactivé par défaut et compris dans Pro. Si vous activez « Mettre en sourdine les textos des expéditeurs bloqués » et autorisez l’accès aux notifications d’Android, CallRules lit les notifications publiées par les applis de messagerie que vous choisissez : le numéro ou le nom de l’expéditeur et la partie du message que la notification affiche. Quand Android cache le contenu d’un texto, CallRules utilise le nom de la conversation qu’Android fournit encore (le numéro ou le nom du contact de l’expéditeur) pour vérifier l’expéditeur. L’accès aux notifications d’Android couvre toutes les notifications; CallRules ignore celles des autres applis et ne les conserve pas. Il vérifie les notifications de messagerie sur l’appareil selon vos numéros bloqués, vos règles, vos filtres de messages et ses motifs d’arnaque intégrés. S’il y a correspondance, il masque la notification et marque le texto comme lu au moyen de l’action de l’appli de messagerie elle-même. Les textos restent dans votre appli de messagerie; CallRules ne les envoie, ne les supprime ni ne les téléverse jamais. La liste des textos en sourdine (expéditeur, appli, heure, raison et, si « Conserver les aperçus des messages » est activé, jusqu’à 200 caractères du message) reste sur l’appareil, et chaque entrée est supprimée après 30 jours. Vous pouvez désactiver cette fonction, effacer la liste ou retirer l’accès aux notifications en tout temps.</li>
+    <li><strong>Notifications d’appel entrant (raccrochage des appels étiquetés)</strong> — facultatif, désactivé par défaut et compris dans Pro. Si vous activez « Raccrocher les appels étiquetés comme pourriel », un réglage « Raccrocher les appels étiquetés… » ou une règle de nom de l’afficheur, et autorisez l’accès aux notifications d’Android et la réponse aux appels, CallRules lit la notification d’appel entrant de votre appli Téléphone pendant que l’appel sonne : le nom de l’afficheur, l’étiquette ou l’avertissement qu’elle montre (comme « Spam probable ») et le numéro s’il est affiché. Il les vérifie sur l’appareil selon vos contacts, vos Numéros autorisés, vos règles d’autorisation, une liste intégrée d’étiquettes de pourriel, les catégories d’étiquettes que vous avez activées et vos règles de nom de l’afficheur. CallRules ne raccroche jamais les appels de vos contacts. Quand l’appel doit être bloqué, CallRules y met fin au moyen de la fonction de fin d’appel d’Android et ajoute le numéro aux Numéros bloqués; il ne répond jamais à l’appel et ne l’enregistre jamais. Rien de la notification ne quitte l’appareil ni n’est conservé, sauf l’entrée de l’historique des appels (numéro, nom de l’afficheur, heure et raison) et l’entrée des Numéros bloqués. Les notifications des autres applis sont ignorées. Vous pouvez désactiver ces réglages ou retirer l’accès aux notifications ou l’autorisation en tout temps.</li>
     <li><strong>Microphone</strong> — facultatif, utilisé seulement lorsque vous
         lancez une commande vocale ou la dictée d’un signalement de problème.
         Sur les appareils compatibles, CallRules utilise la reconnaissance
@@ -113,8 +113,7 @@
         l’appli.</li>
     <li>Les numéros bloqués, les numéros autorisés, les règles
         d’appel selon le sens, les lieux enregistrés, les réglages, les filtres de messages, la liste des textos en sourdine, un
-        historique des appels limité (y compris le nom du contact ou le nom de
-        l’appelant fourni par votre fournisseur) et, au besoin, une empreinte
+        historique des appels limité (y compris le nom du contact ou, pour un appel auquel CallRules a raccroché, le nom de l’afficheur que votre appli Téléphone a montré) et, au besoin, une empreinte
         salée du NIP peuvent être conservés dans le stockage privé de l’appli.
         Le NIP lui-même n’est pas conservé. Les approbations d’appels sortants
         en attente et les autorisations de rappel à usage unique restent en
@@ -134,7 +133,7 @@
         configuration sont créées seulement à votre demande et peuvent contenir
         les règles activées et désactivées, le sens de chaque règle et son
         exigence de NIP, les numéros bloqués, les numéros autorisés, les lieux enregistrés, les filtres de messages et certains réglages. Les règles
-        qui visent un contact, un groupe de contacts ou un nom d’appelant
+        qui visent un contact, un groupe de contacts, un nom de contact ou un nom de l’afficheur
         incluent le nom du contact et sa clé de recherche de contact Android,
         le nom et le compte du groupe, ou le texte du nom, pour pouvoir être
         associées de nouveau après l’importation. Elles excluent l’empreinte du

@@ -57,7 +57,7 @@
   </ul>
   <p><a href="#contacts">Contacts et noms</a></p>
   <ul>
-    <li><a href="#contact-rules">Règles de contact, de groupe et de nom de l’appelant</a></li>
+    <li><a href="#contact-rules">Règles de contact, de groupe et de nom</a></li>
     <li><a href="#caller-names">Comment les appelants sont nommés</a></li>
   </ul>
   <p><a href="#voice">Commandes vocales</a></p>
@@ -147,7 +147,7 @@
     <p class="summary">Les onglets Bloqués et Récents</p>
     <p>L’onglet Historique ouvre l’historique des appels, qui a deux onglets, et un onglet Textos quand les textos sont mis en sourdine.</p>
     <ul>
-      <li>Bloqués liste chaque appel que CallRules a rejeté ou mis en sourdine, avec la raison, comme Règle correspondante, Numéro bloqué, Étiquette de pourriel du fournisseur, Échec de la vérification, Numéro inconnu, Numéro confidentiel ou Heures de silence. Aujourd’hui, 7 jours et Tout, au-dessus de la liste, affichent ces périodes. Touchez le crochet (« Autoriser ce numéro ») pour ajouter le numéro aux Numéros autorisés et le retirer des numéros bloqués. Touchez la corbeille pour supprimer l’entrée.</li>
+      <li>Bloqués liste chaque appel que CallRules a rejeté ou mis en sourdine, avec la raison, comme Règle correspondante, Numéro bloqué, Étiquette de pourriel du fournisseur, Échec de la vérification, Numéro inconnu, Numéro confidentiel ou Heures de silence. Aujourd’hui, 7 jours et Tout, au-dessus de la liste, affichent ces périodes. Les appels auxquels CallRules a raccroché après une brève sonnerie affichent aussi « A sonné brièvement, puis CallRules a raccroché ». Touchez le crochet (« Autoriser ce numéro ») pour ajouter le numéro aux Numéros autorisés et le retirer des numéros bloqués. Touchez la corbeille pour supprimer l’entrée.</li>
       <li>Récents liste les appels entrants que CallRules a laissés passer. Touchez Bloquer pour bloquer ce numéro, son code régional ou son indicatif de pays; ANNULER s’affiche brièvement. Effacer vide la liste Récents. Autorisez l’accès aux contacts si vous voulez que les appels de vos contacts s’affichent aussi ici.</li>
       <li>Touchez un appel pour voir pourquoi il a été bloqué ou autorisé : la règle correspondante (avec Ouvrir la règle), le réglage qui a décidé et le résultat de la vérification de l’appelant. Les appels antérieurs à cette version affichent « Raison non enregistrée ». Touchez longuement un appel pour copier son numéro. Bloquer un code régional ou un indicatif de pays ajoute une règle de blocage, qui compte dans vos règles et demande d’abord une confirmation.</li>
     </ul>
@@ -191,7 +191,7 @@
       <li><strong>Expression régulière (Pro) :</strong> comparée au numéro international complet, par exemple \+1555\d{7}.</li>
       <li><strong>Appelants confidentiels / masqués :</strong> correspond aux appels entrants qui masquent leur identité. Utilisez-la pour bloquer, mettre en sourdine ou autoriser les appelants masqués, par exemple seulement selon un horaire ou à un lieu. Les règles confidentielles s’appliquent seulement aux appels entrants.</li>
       <li>Numéros inconnus (créés par commande vocale ou CSV des règles) : correspond à chaque appelant que les Numéros autorisés, vos contacts et les règles d’autorisation n’ont pas déjà laissé passer.</li>
-      <li>Règles Contact, Groupe de contacts et Nom de l’appelant : voir Contacts et noms.</li>
+      <li>Règles Contact, Groupe de contacts, Nom du contact et Nom de l’afficheur : voir Contacts et noms.</li>
     </ul>
     <p>Les règles de code régional, de pays et de ville correspondent à des préfixes de numéros. Elles ne peuvent pas savoir où se trouve physiquement l’appelant.</p>
   </article>
@@ -214,21 +214,21 @@
     <p>Pour chaque appel entrant, CallRules suit ces étapes dans l’ordre et s’arrête à la première qui décide de l’appel :</p>
     <ol class="flow-steps">
       <li><span class="step-title">La protection est désactivée ou suspendue</span><span class="outcome rings">Sonne</span><span class="detail">L’appel sonne.</span></li>
-      <li><span class="step-title">L’identité de l’appelant est masquée</span><span class="outcome depends">Selon le cas</span><span class="detail">Seules les règles confidentielles et Bloquer les numéros confidentiels s’appliquent : une règle de blocage confidentielle avec « Priorité sur les autorisations » activée, puis les règles d’autorisation confidentielles, puis les règles de blocage confidentielles (la sourdine avant le rejet). Si aucune ne correspond, l’appel est rejeté quand Bloquer les étiquettes de pourriel du fournisseur est activé et que le fournisseur l’a étiqueté comme pourriel, ou quand Bloquer les numéros confidentiels est activé; sinon, il sonne.</span></li>
+      <li><span class="step-title">L’identité de l’appelant est masquée</span><span class="outcome depends">Selon le cas</span><span class="detail">Seules les règles confidentielles et Bloquer les numéros confidentiels s’appliquent : une règle de blocage confidentielle avec « Priorité sur les autorisations » activée, puis les règles d’autorisation confidentielles, puis les règles de blocage confidentielles (la sourdine avant le rejet). Si aucune ne correspond, l’appel est rejeté quand Bloquer les numéros confidentiels est activé; sinon, il sonne.</span></li>
       <li><span class="step-title">Règles de blocage avec « Priorité sur les autorisations » activée</span><span class="outcome blocks">Bloque</span> <span class="tag">Priorité sur les autorisations</span><span class="detail">Les règles de sourdine avant les règles de rejet.</span></li>
       <li><span class="step-title">Numéros autorisés</span><span class="outcome rings">Sonne</span><span class="detail">Laisse sonner l’appel.</span></li>
       <li><span class="step-title">Vos contacts</span><span class="outcome rings">Sonne</span><span class="detail">Sonnent, selon le réglage Contacts autorisés.</span></li>
       <li><span class="step-title">Règles d’autorisation</span><span class="outcome rings">Sonne</span><span class="detail">Laissent sonner l’appel.</span></li>
       <li><span class="step-title">Autres règles de blocage</span><span class="outcome blocks">Bloque</span><span class="detail">La sourdine avant le rejet.</span></li>
       <li><span class="step-title">Numéros bloqués</span><span class="outcome blocks">Bloque</span></li>
-      <li><span class="step-title">Étiquettes de pourriel du fournisseur</span><span class="outcome blocks">Bloque</span><span class="detail">Quand Bloquer les étiquettes de pourriel du fournisseur est activé.</span></li>
       <li><span class="step-title">Vérification par le fournisseur</span><span class="outcome blocks">Bloque</span></li>
       <li><span class="step-title">Bloquer les numéros inconnus</span><span class="outcome blocks">Bloque</span><span class="detail">Les appelants qui ne sont pas dans vos contacts.</span></li>
       <li><span class="step-title">La liste locale de pourriels</span><span class="outcome blocks">Bloque</span><span class="detail">Elle est vide dans cette version, donc cette étape ne bloque rien.</span></li>
       <li><span class="step-title">Heures de silence</span><span class="outcome blocks">Bloque</span></li>
     </ol>
     <p>Si aucune étape ne décide de l’appel, il sonne.</p>
-    <p>Les étapes 3, 6 et 7 sont sautées quand Règles activées est désactivé. Les règles de contact, de groupe et de nom de l’appelant participent aux étapes 3, 6 et 7 comme toute autre règle; une règle de blocage de contact ne bloque donc pas un appelant que l’étape 5 laisse passer, sauf si « Priorité sur les autorisations » est activée.</p>
+    <p>Les étapes 3, 6 et 7 sont sautées quand Règles activées est désactivé. Les règles de contact, de groupe et de nom du contact participent aux étapes 3, 6 et 7 comme toute autre règle; une règle de blocage de contact ne bloque donc pas un appelant que l’étape 5 laisse passer, sauf si « Priorité sur les autorisations » est activée.</p>
+    <p>Une fois que le téléphone sonne (Pro) : si la notification d’appel de votre appli Téléphone montre une étiquette de pourriel, une étiquette que vous avez choisie sous « Raccrocher les appels étiquetés… », ou un nom qui correspond à une règle de nom de l’afficheur, CallRules raccroche environ une seconde après le début de la sonnerie et ajoute le numéro aux Numéros bloqués; son prochain appel est donc rejeté avant de sonner. Cela n’arrive jamais à vos contacts, à vos Numéros autorisés ni aux appelants qu’une règle d’autorisation laisse passer.</p>
     <p>Une règle est aussi sautée quand elle est désactivée, expirée, hors de son horaire ou loin de son emplacement (Règles d’emplacement explique ce qui se passe quand la position est inconnue). Si CallRules ne peut pas décider en environ 3,5 secondes, l’appel sonne.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>Pour les appels sortants, une règle de blocage correspondante avec « Priorité sur les autorisations » activée annule l’appel. Sinon, une règle d’autorisation correspondante laisse passer l’appel (en demandant le NIP si la règle l’exige), et une règle de blocage correspondante l’annule.</p></div>
   </article>
@@ -239,7 +239,7 @@
     <ul>
       <li><strong>Avertissements :</strong> « Règle de blocage contournée » signifie que des règles d’autorisation, des numéros autorisés ou des contacts passent outre à une règle de blocage. « La règle d’autorisation ne s’applique jamais » signifie qu’une règle de blocage avec « Priorité sur les autorisations » activée la couvre.</li>
       <li>« Contact introuvable » et « Groupe de contacts introuvable » signalent une règle de contact ou de groupe dont le contact ou le groupe a été supprimé; elle ne correspond donc à personne. Modifiez-la ou supprimez-la.</li>
-      <li><strong>Info :</strong> « Règles en double », « Des règles de sourdine et de rejet se chevauchent » et « Des règles pourraient entrer en conflit » (chevauchements possibles avec des motifs génériques, des expressions régulières, des noms d’appelant, des horaires ou des emplacements).</li>
+      <li><strong>Info :</strong> « Règles en double », « Des règles de sourdine et de rejet se chevauchent » et « Des règles pourraient entrer en conflit » (chevauchements possibles avec des motifs génériques, des expressions régulières, des noms de contact ou d’afficheur, des horaires ou des emplacements).</li>
     </ul>
     <p>Chaque problème propose des corrections, comme activer ou désactiver « Priorité sur les autorisations », désactiver ou supprimer une règle, retirer un numéro autorisé, ou Modifier. Ignorer masque un avertissement; activez « Afficher les éléments ignorés » et touchez Rétablir pour le faire revenir.</p>
     <p>Après les appels, CallRules vérifie de nouveau automatiquement, mais seulement si vos règles, vos Numéros autorisés, vos réglages de contacts ou vos contacts ont changé. Quand Alertes de vérification des règles est activé, une notification discrète signale les nouveaux avertissements. Le badge et la bannière de l’onglet Règles indiquent combien d’avertissements ne sont pas résolus.</p>
@@ -254,6 +254,7 @@
       <li><strong>Numéros bloqués :</strong> ces numéros sont toujours bloqués, sauf si une étape précédente les laisse passer. Pour ajouter un numéro, touchez Bloquer sur un appel récent, dites « bloque le dernier appel » ou « ajoute le 555 123 4567 à mes numéros bloqués », ou importez une sauvegarde JSON. La version gratuite permet 50 entrées.</li>
     </ul>
     <p>Une règle Numéro exact fait le même travail, mais elle compte plutôt dans votre limite de règles.</p>
+    <p>Chaque numéro bloqué indique pourquoi il est là, comme « Bloqué depuis l’historique des appels ». Touchez un numéro pour voir la raison complète, la date du blocage, Copier le numéro et Débloquer. Le bouton de tri de la barre du haut affiche les numéros des plus récents aux plus anciens, l’inverse, par numéro (regroupés par code régional) ou regroupés par raison.</p>
     <p class="in-app"><span>Dans l’appli :</span> Règles › Numéros autorisés</p>
     <p class="in-app"><span>Dans l’appli :</span> Règles › Numéros bloqués</p>
   </article>
@@ -261,23 +262,24 @@
 <section class="category" id="contacts">
   <h2>Contacts et noms</h2>
   <ul class="category-topics">
-    <li><a href="#contact-rules">Règles de contact, de groupe et de nom de l’appelant</a></li>
+    <li><a href="#contact-rules">Règles de contact, de groupe et de nom</a></li>
     <li><a href="#caller-names">Comment les appelants sont nommés</a></li>
   </ul>
   <article class="topic" id="contact-rules">
-    <h3>Règles de contact, de groupe et de nom de l’appelant <a class="anchor" href="#contact-rules" aria-label="Lien vers Règles de contact, de groupe et de nom de l’appelant">#</a></h3>
-    <p class="summary">Des règles qui suivent une personne, un groupe ou le nom d’un appelant</p>
+    <h3>Règles de contact, de groupe et de nom <a class="anchor" href="#contact-rules" aria-label="Lien vers Règles de contact, de groupe et de nom">#</a></h3>
+    <p class="summary">Des règles qui suivent une personne, un groupe, le nom d’un contact ou le nom de l’afficheur</p>
     <ul>
       <li><strong>Contact :</strong> touchez Choisir un contact et choisissez une personne. La règle correspond à tous les numéros de cette personne, y compris ceux que vous ajoutez ou changez plus tard. Le nom de la règle est d’abord celui du contact. Si le contact est supprimé, Modifier affiche « Contact introuvable » et la Vérification des règles vous avertit.</li>
       <li><strong>Groupe de contacts (Pro) :</strong> choisissez un groupe ou une étiquette de contacts, comme Famille ou Travail, dans la liste avec son nombre de membres. L’appartenance est lue au moment de l’appel, donc les personnes que vous ajoutez au groupe plus tard sont incluses.</li>
-      <li><strong>Nom de l’appelant (Pro) :</strong> choisissez Contient, Commence par ou Est exactement, et tapez le texte. Il correspond au nom enregistré de votre contact ou, pour les appelants qui ne sont pas des contacts, au nom d’affichage que le fournisseur envoie (comme « POSSIBLE FRAUDE »). La casse et les accents sont ignorés.</li>
+      <li><strong>Nom du contact (Pro) :</strong> choisissez Contient, Commence par ou Est exactement, et tapez le texte, comme Tremblay. Il correspond seulement aux noms enregistrés de vos contacts, avant que le téléphone sonne. La casse et les accents sont ignorés.</li>
+      <li>Nom de l’afficheur (Pro, blocage seulement) : correspond au nom de l’afficheur que votre appli Téléphone montre pour un appelant qui n’est pas un contact, comme « SPAM PROBABLE » ou le nom d’une entreprise, avec les mêmes choix Contient, Commence par ou Est exactement. Android ne donne pas ce nom au filtrage des appels; le téléphone sonne donc brièvement, puis CallRules raccroche et ajoute le numéro aux Numéros bloqués. Il faut l’accès aux notifications et l’autorisation de répondre aux appels, et CallRules ne raccroche jamais les appels de vos contacts, de vos Numéros autorisés ni des appelants qu’une règle d’autorisation laisse passer.</li>
     </ul>
     <p>Les règles de contact ont besoin de l’accès aux contacts; CallRules le demande quand vous choisissez un contact ou un groupe.</p>
   </article>
   <article class="topic" id="caller-names">
     <h3>Comment les appelants sont nommés <a class="anchor" href="#caller-names" aria-label="Lien vers Comment les appelants sont nommés">#</a></h3>
     <p class="summary">Noms des contacts et identité de l’appelant dans les listes et les alertes</p>
-    <p>Les deux onglets de l’historique des appels affichent d’abord le nom de l’appelant quand il y en a un : le nom de votre contact, sinon le nom que votre fournisseur a envoyé avec l’appel (l’identité de l’appelant, comme « POSSIBLE FRAUDE »). Le numéro suit, formaté pour votre pays d’appel. Les notifications d’appels bloqués nomment l’appelant de la même façon.</p>
+    <p>Les deux onglets de l’historique des appels affichent d’abord le nom de l’appelant quand il y en a un : le nom de votre contact ou, pour un appel auquel CallRules a raccroché après une brève sonnerie, le nom de l’afficheur que votre appli Téléphone a montré (comme « SPAM PROBABLE »). Le numéro suit, formaté pour votre pays d’appel. Les notifications d’appels bloqués nomment l’appelant de la même façon. Android ne donne pas au filtrage des appels le nom de l’afficheur des autres appelants; ils sont donc affichés par leur numéro seulement.</p>
     <p>Les entrées des Numéros autorisés et des numéros bloqués qui appartiennent à un contact affichent d’abord le nom du contact, puis le numéro. Les règles de numéro dans Règles font de même.</p>
   </article>
 </section>
@@ -328,12 +330,12 @@
         <li>laisse passer maman</li>
         <li>bloque les appels de mon père</li>
         <li>mets en sourdine mon groupe Travail</li>
-        <li>bloque les appelants nommés arnaque</li>
-        <li>bloque les noms qui contiennent pourriel</li>
-        <li>bloque les noms qui commencent par gagne</li>
+        <li>bloque les appelants nommés Tremblay</li>
+        <li>bloque les appels dont le nom de l’afficheur contient pourriel</li>
+        <li>bloque les appels dont le nom de l’afficheur commence par gagne</li>
       </ul>
     </div>
-    <p>Les commandes de groupe et de nom d’appelant (« mets en sourdine mon groupe Travail », « bloque les noms qui contiennent pourriel ») demandent Pro. CallRules trouve le contact ou le groupe avant d’afficher la carte, qui le montre, par exemple « Contact : oncle Bob (2 numéros) ». Si plusieurs contacts correspondent, il les liste pour que vous puissiez dire le nom complet. Les mots de famille fonctionnent aussi : « bloque les appels de mon père » trouve un contact enregistré sous Papa, Père ou « Papa Tremblay » si aucun ne s’appelle « mon père ».</p>
+    <p>Les commandes de groupe et de nom (« mets en sourdine mon groupe Travail », « bloque les appelants nommés Tremblay », « bloque les appels dont le nom de l’afficheur contient pourriel ») demandent Pro. Une commande de nom de l’afficheur crée une règle de blocage pour les appelants qui ne sont pas des contacts : le téléphone sonne brièvement, puis CallRules raccroche. CallRules trouve le contact ou le groupe avant d’afficher la carte, qui le montre, par exemple « Contact : oncle Bob (2 numéros) ». Si plusieurs contacts correspondent, il les liste pour que vous puissiez dire le nom complet. Les mots de famille fonctionnent aussi : « bloque les appels de mon père » trouve un contact enregistré sous Papa, Père ou « Papa Tremblay » si aucun ne s’appelle « mon père ».</p>
     <p>Les numéros, les pays et les villes passent en premier : « bloque les appels de l’Inde » bloque le pays, pas un contact nommé Inde.</p>
   </article>
   <article class="topic" id="voice-remove-rules">
@@ -370,7 +372,8 @@
       <p class="voice-label">Essayez de dire</p>
       <ul class="chips">
         <li>active le blocage des numéros confidentiels</li>
-        <li>bloque les étiquettes de pourriel du fournisseur</li>
+        <li>bloque les appels avec les étiquettes de pourriel</li>
+        <li>bloque les télévendeurs</li>
         <li>active les heures de silence</li>
         <li>mets les heures de silence de 22 h à 7 h</li>
         <li>laisse passer les contacts favoris pendant les heures de silence</li>
@@ -467,7 +470,8 @@
       <li><strong>Règles et lieux › Pays d’appel :</strong> comment CallRules lit les numéros entrés sans indicatif +, dans les règles, les commandes vocales et les importations.</li>
       <li>Bloquer automatiquement › Bloquer les numéros confidentiels : rejette les appels dont l’identité est masquée, sauf si une règle confidentielle décide de l’appel avant.</li>
       <li>Bloquer automatiquement › Bloquer les numéros inconnus : bloque les appelants qui ne sont pas dans vos contacts, sauf si les Numéros autorisés ou une règle d’autorisation les laisse passer. Il faut l’accès aux contacts.</li>
-      <li>Bloquer automatiquement › Bloquer les étiquettes de pourriel du fournisseur : rejette les appels que votre fournisseur étiquette comme pourriel dans le nom d’affichage, comme « Possible fraude », « Spam probable » ou « Scam Likely ». CallRules ne peut pas lire le verdict de pourriel de votre application Téléphone, mais il peut utiliser l’étiquette que votre fournisseur envoie. Seul le nom envoyé par le fournisseur est vérifié; les Numéros autorisés, vos contacts et les règles d’autorisation sonnent donc même quand le fournisseur les étiquette.</li>
+      <li>Bloquer automatiquement › Raccrocher les appels étiquetés comme pourriel (Pro) : quand la notification d’appel entrant de votre appli Téléphone étiquette comme pourriel un appelant qui n’est pas un contact, comme « Possible fraude », « Spam probable » ou « Scam Likely », CallRules raccroche et ajoute le numéro aux Numéros bloqués; son prochain appel est donc rejeté avant de sonner. Android ne donne pas le nom de l’afficheur au filtrage des appels; le téléphone sonne donc brièvement d’abord. Il faut l’accès aux notifications, l’autorisation de répondre aux appels et l’accès aux contacts; CallRules demande chacun quand vous activez le réglage. CallRules ne raccroche jamais les appels de vos contacts, de vos Numéros autorisés ni des appelants qu’une règle d’autorisation laisse passer.</li>
+      <li>Bloquer automatiquement › Raccrocher les appels étiquetés… (Pro) : des réglages distincts pour Télévendeur, Politique, Sondage, Organisme sans but lucratif, Soins de santé, Agent de recouvrement et Prison, tous désactivés par défaut. Seuls certains fournisseurs étiquettent ces appels (AT&amp;T, Verizon Call Filter Plus, T-Mobile), et beaucoup viennent de vrais appelants. Soins de santé peut raccrocher les appels de votre médecin ou de votre pharmacie.</li>
       <li><strong>Toujours autoriser › Contacts autorisés :</strong> choisissez Tous les contacts, Favoris seulement ou Aucun pour indiquer quels contacts sonnent toujours.</li>
       <li><strong>Règles et lieux › Règles activées :</strong> le désactiver suspend toutes les règles de blocage et d’autorisation pour les appels entrants.</li>
       <li>Bloquer automatiquement › Vérification par le fournisseur utilise le résultat STIR/SHAKEN que votre fournisseur joint à chaque appel. Désactivée l’ignore, Standard bloque les appels qui échouent à la vérification, et Stricte bloque aussi les appels sans vérification. Stricte peut bloquer de vrais appels de petits fournisseurs, de services VoIP et de certains numéros internationaux. Les Numéros autorisés, vos contacts et les règles d’autorisation laissent quand même passer les appels.</li>
@@ -528,7 +532,7 @@
     </ol>
     <ul>
       <li>Les numéros bloqués et Bloquer les numéros inconnus s’appliquent toujours. Quand « Appliquer mes règles de blocage d’appels aux textos » est activé, vos règles de blocage s’appliquent aussi. Les Numéros autorisés, les contacts et les règles d’autorisation ont toujours priorité, et les conversations de groupe ne sont jamais mises en sourdine.</li>
-      <li>Un expéditeur affiché par un nom, comme un magasin ou une banque, correspond seulement aux règles de nom de l’appelant.</li>
+      <li>Un expéditeur affiché par un nom, comme un magasin ou une banque, correspond seulement aux règles de nom : les règles de nom du contact quand c’est le nom d’un de vos contacts, sinon les règles de nom de l’afficheur.</li>
       <li>Les motifs d’arnaque sont intégrés à CallRules et vérifiés sur le téléphone : des signes comme un avis de colis, de péage, de prix ou de banque avec un lien court ou douteux. Prudent (par défaut) met en sourdine seulement les arnaques évidentes. Standard met aussi en sourdine les arnaques probables et peut parfois mettre en sourdine un vrai texto. Désactivés ne garde que vos blocages et vos filtres. Ils ne sont jamais utilisés pour les contacts, les numéros autorisés, les règles d’autorisation, les conversations de groupe ni les codes à usage unique.</li>
       <li>Les filtres de messages mettent les textos en sourdine selon leurs mots : Contient les mots, Phrase exacte, Commence par ou Expression régulière. Les majuscules et les accents ne comptent pas. Chaque filtre s’applique aux Expéditeurs inconnus seulement (par défaut) ou à Tout le monde.</li>
     </ul>
@@ -568,8 +572,8 @@
     <h3>Dépannage et soutien <a class="anchor" href="#troubleshooting" aria-label="Lien vers Dépannage et soutien">#</a></h3>
     <p class="summary">Régler des problèmes, envoyer des commentaires et exporter les diagnostics</p>
     <ul>
-      <li>L’écran Dépannage vérifie le rôle de filtrage des appels, la protection des appels, la vérification par le fournisseur, les règles suspendues, l’autorisation de notifications, les textos en sourdine (accès aux notifications et applis de messagerie), l’accès à la localisation et le signal de position, la configuration des appels sortants et la facturation Google Play. Touchez Corriger là où c’est offert. L’icône d’actualisation relance les vérifications, et « Exporter ou effacer les diagnostics » ouvre les outils de diagnostic.</li>
-      <li>Si un appel n’est pas bloqué, vérifiez que CallRules est votre appli d’identification et de filtrage des appels, que Protection des appels et Règles activées sont activés, et que la règle est activée, pas expirée et dans son horaire. Lancez ensuite Vérifier les règles pour voir si les Numéros autorisés, vos contacts ou une règle d’autorisation laissent passer l’appel.</li>
+      <li>L’écran Dépannage vérifie le rôle de filtrage des appels, la protection des appels, la vérification par le fournisseur, les règles suspendues, l’autorisation de notifications, les textos en sourdine (accès aux notifications et applis de messagerie), le raccrochage des appels étiquetés (accès aux notifications, réponse aux appels et accès aux contacts), l’accès à la localisation et le signal de position, la configuration des appels sortants et la facturation Google Play. Touchez Corriger là où c’est offert. L’icône d’actualisation relance les vérifications, et « Exporter ou effacer les diagnostics » ouvre les outils de diagnostic.</li>
+      <li>Si un appel n’est pas bloqué, vérifiez que CallRules est votre appli d’identification et de filtrage des appels, que Protection des appels et Règles activées sont activés, et que la règle est activée, pas expirée et dans son horaire. Lancez ensuite Vérifier les règles pour voir si les Numéros autorisés, vos contacts ou une règle d’autorisation laissent passer l’appel. Pour un appel que votre appli Téléphone a étiqueté comme pourriel, activez Raccrocher les appels étiquetés comme pourriel (Pro); le téléphone sonne brièvement avant que CallRules raccroche.</li>
       <li>Aide en ligne et Dépannage en ligne ouvrent les pages Web de CallRules.</li>
       <li>Envoyer des commentaires et Signaler un problème : tapez, ou touchez le microphone pour dicter sur l’appareil. Vous pouvez joindre les diagnostics. Touchez Aperçu, puis envoyez avec une application de courriel ou de partage, ou utilisez Copier ou Enregistrer.</li>
       <li>Exporter les diagnostics vous permet de prévisualiser, partager, enregistrer, copier ou effacer le journal local. Le journal exclut les numéros de téléphone, les contacts, les règles, les coordonnées, la parole et les jetons d’achat, et garde environ sept jours d’enregistrements.</li>
@@ -580,15 +584,15 @@
   <article class="topic" id="free-vs-pro">
     <h3>Gratuit ou Pro <a class="anchor" href="#free-vs-pro" aria-label="Lien vers Gratuit ou Pro">#</a></h3>
     <p class="summary">Ce qui est inclus, et restaurer un achat</p>
-    <p>Gratuit : filtrage des appels entrants; jusqu’à 10 règles, 50 numéros bloqués et 20 numéros autorisés; règles de numéro exact, de préfixe, de code régional, de groupe de codes régionaux, de ville, de pays et de contact; règles d’autorisation; Rejeter ou Mettre en sourdine; règles temporaires; « Priorité sur les autorisations »; historique des appels; blocage des numéros confidentiels et inconnus; étiquettes de pourriel du fournisseur; Contacts autorisés; vérification par le fournisseur; Vérification des règles; notifications; importation de fichiers CSV des règles et de sauvegardes JSON; apparence; et le NIP partagé avec Protéger les règles et les réglages par NIP.</p>
-    <p>Pro à vie est un achat unique qui ajoute un nombre illimité de règles, de numéros bloqués et de numéros autorisés; les règles à motif générique, à expression régulière, de groupe de contacts et de nom de l’appelant; les horaires; les règles d’emplacement; les heures de silence; les commandes vocales; l’importation depuis Google Sheets; l’exportation; les appels sortants (règles sortantes, NIP et appui long); et la mise en sourdine des textos des expéditeurs bloqués, avec les motifs d’arnaque et les filtres de messages.</p>
+    <p>Gratuit : filtrage des appels entrants; jusqu’à 10 règles, 50 numéros bloqués et 20 numéros autorisés; règles de numéro exact, de préfixe, de code régional, de groupe de codes régionaux, de ville, de pays et de contact; règles d’autorisation; Rejeter ou Mettre en sourdine; règles temporaires; « Priorité sur les autorisations »; historique des appels; blocage des numéros confidentiels et inconnus; Contacts autorisés; vérification par le fournisseur; Vérification des règles; notifications; importation de fichiers CSV des règles et de sauvegardes JSON; apparence; et le NIP partagé avec Protéger les règles et les réglages par NIP.</p>
+    <p>Pro à vie est un achat unique qui ajoute un nombre illimité de règles, de numéros bloqués et de numéros autorisés; les règles à motif générique, à expression régulière, de groupe de contacts, de nom du contact et de nom de l’afficheur; les horaires; les règles d’emplacement; les heures de silence; les commandes vocales; l’importation depuis Google Sheets; l’exportation; les appels sortants (règles sortantes, NIP et appui long); le raccrochage, après une brève sonnerie, des appels que votre appli Téléphone étiquette comme pourriel ou selon une catégorie choisie; et la mise en sourdine des textos des expéditeurs bloqués, avec les motifs d’arnaque et les filtres de messages.</p>
     <p>Google Play affiche le prix dans votre devise. Après une réinstallation ou un changement de téléphone avec le même compte Play, utilisez Passer à Pro › Restaurer l’achat. Si Pro n’est pas actif, les horaires, emplacements et motifs Pro déjà enregistrés sur des règles restent, mais ne peuvent pas être modifiés.</p>
     <p class="in-app"><span>Dans l’appli :</span> Réglages › Passer à CallRules Pro</p>
   </article>
   <article class="topic" id="privacy">
     <h3>Confidentialité <a class="anchor" href="#privacy" aria-label="Lien vers Confidentialité">#</a></h3>
     <p class="summary">Ce qui reste sur votre téléphone, et quand le réseau est utilisé</p>
-    <p>CallRules vérifie les appels sur votre téléphone, et vos règles, vos listes et votre historique des appels y restent. Il n’y a ni compte ni publicité, et aucune recherche de pourriels dans le nuage. Si vous mettez des textos en sourdine, CallRules lit les notifications des applis de messagerie choisies sur le téléphone, et n’y garde de courts aperçus que si vous le permettez.</p>
+    <p>CallRules vérifie les appels sur votre téléphone, et vos règles, vos listes et votre historique des appels y restent. Il n’y a ni compte ni publicité, et aucune recherche de pourriels dans le nuage. Si vous mettez des textos en sourdine, CallRules lit les notifications des applis de messagerie choisies sur le téléphone, et n’y garde de courts aperçus que si vous le permettez. Si vous activez le raccrochage des appels étiquetés, il lit la notification d’appel entrant de votre appli Téléphone sur le téléphone, seulement pour décider s’il doit raccrocher.</p>
     <p>CallRules utilise le réseau seulement pour la facturation Google Play, les recherches d’adresses que vous faites dans le sélecteur d’emplacement, l’importation depuis Google Sheets, les liens que vous ouvrez (aide en ligne, Google Maps, Google Play) et les applications avec lesquelles vous choisissez de partager.</p>
     <p>Les commandes vocales et la dictée utilisent la reconnaissance vocale sur l’appareil d’Android. Réglages › Politique de confidentialité donne les détails.</p>
   </article>

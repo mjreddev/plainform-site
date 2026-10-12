@@ -75,7 +75,7 @@
       <li>Check that Settings › Call protection and Rules enabled are on.</li>
       <li>Check that the rule is switched on, covers Incoming calls, hasn't expired, and is inside its schedule and at its location.</li>
       <li>Open Rules › Check rules. “Block rule is bypassed” means Allowed numbers, your contacts, or an allow rule lets the call through first.</li>
-      <li>For a call your Phone app marked as spam: CallRules can't read that verdict. Turn on Settings › Block automatically › Block carrier spam labels to block calls your carrier labels as spam, such as “Scam Likely”. Not every carrier sends a label.</li>
+      <li>For a call your Phone app labeled as spam, such as “Spam Risk”: turn on Settings › Block automatically › Hang up on spam-labeled calls (Pro). Android doesn't tell call screening the label, so the phone rings briefly; then CallRules hangs up and blocks the number, and its next call doesn't ring. Contacts are never hung up on.</li>
       <li>If CallRules can't decide within about 3.5 seconds, the call rings rather than risk blocking it wrongly.</li>
     </ul>
   </article>
@@ -84,7 +84,7 @@
     <ul>
       <li>Allowed numbers, your contacts (under Settings › Always allow › Allowed contacts), and allow rules are checked before ordinary block rules and blocked numbers.</li>
       <li>To block such a caller anyway, edit the block rule and turn on “Override allow rules”, or remove the number from Allowed numbers.</li>
-      <li>A contact, group, or caller-name block rule follows the same order, so it needs “Override allow rules” to block a contact Allowed contacts lets through.</li>
+      <li>A contact, group, or contact name block rule follows the same order, so it needs “Override allow rules” to block a contact Allowed contacts lets through. The hang-up switches and Caller ID name rules never hang up on contacts, Allowed numbers, or callers an allow rule lets through.</li>
     </ul>
   </article>
   <article class="card problem" id="rule-ignored">
@@ -102,7 +102,7 @@
     <ul>
       <li>Contact rules need contacts access. CallRules asks for it when you choose a contact or group.</li>
       <li>If the contact or group was deleted, the rule's Edit screen shows “Contact not found” and Rule check warns “Contact not found” or “Contact group not found”. Edit the rule or delete it.</li>
-      <li>Caller-name rules match your contact's saved name, or the caller-ID name your carrier sends. Not every carrier sends names.</li>
+      <li>Contact name rules match your contacts' saved names only. For the caller ID name a caller who isn't a contact shows, such as “SPAM RISK”, use a Caller ID name rule (Pro): the phone rings briefly, then CallRules hangs up.</li>
     </ul>
   </article>
   <article class="card problem" id="outgoing">
@@ -257,6 +257,23 @@
         <li>Open Settings › Texts and tap “Allow notification access”, then allow CallRules on Android's screen.</li>
         <li>Under “Messaging apps to watch”, turn on the app you use for texts. CallRules works with Google Messages, Samsung Messages, Messaging, Textra, and Verizon Messages.</li>
         <li>Android 15 and later hide texts that may contain a code. CallRules still silences those from blocked senders when Android says who the conversation is with; on phones with Google's “Enhanced notifications”, turning it off in Android Settings › Notifications lets CallRules check every text.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-labels">
+      <h3>Hang up on labeled calls</h3>
+      <p class="meta"><strong>Checks:</strong> Whether Android lets CallRules see your Phone app's call notification, whether CallRules may end calls, and whether it can read your contacts (contacts are never hung up on).</p>
+      <p class="meta"><strong>Shown:</strong> Only when A hang-up switch (“Hang up on spam-labeled calls” or “Hang up on calls labeled…”) or a caller ID name rule is on.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>Notification access, ending calls and contacts access are allowed</li>
+        <li><span class="status error">Problem</span>Notification access is off — CallRules can't see your Phone app's labels, so it can't hang up<span class="fix">Fix: Explains what CallRules reads, then opens Android's notification access setting for CallRules.</span></li>
+        <li><span class="status error">Problem</span>CallRules isn't allowed to answer and end phone calls, so it can't hang up on labeled calls<span class="fix">Fix: Asks for permission to answer and end phone calls, and to read your contacts.</span></li>
+        <li><span class="status error">Problem</span>Contacts access is off — CallRules never hangs up without checking that the caller isn't a contact<span class="fix">Fix: Asks for permission to answer and end phone calls, and to read your contacts.</span></li>
+      </ul>
+      <h4>How to fix it yourself</h4>
+      <ul>
+        <li>Open Settings › Block automatically and tap the button under Hang up on spam-labeled calls; it walks you through each step.</li>
+        <li>Allow notification access for CallRules on Android's screen.</li>
+        <li>When Android asks, allow CallRules to answer and end phone calls and to read your contacts. If you chose Don't allow, open Android Settings › Apps › CallRules › Permissions.</li>
       </ul>
     </article>
     <article class="card check" id="battery">

@@ -76,7 +76,7 @@
       <li>Vérifiez que Réglages › Protection des appels et Règles activées sont activés.</li>
       <li>Vérifiez que la règle est activée, couvre les appels entrants, n’a pas expiré, et est dans son horaire et à son emplacement.</li>
       <li>Ouvrez Règles › Vérifier les règles. « Règle de blocage contournée » signifie que les Numéros autorisés, vos contacts ou une règle d’autorisation laissent passer l’appel avant.</li>
-      <li>Pour un appel que votre application Téléphone a marqué comme pourriel : CallRules ne peut pas lire ce verdict. Activez Réglages › Bloquer automatiquement › Bloquer les étiquettes de pourriel du fournisseur pour bloquer les appels que votre fournisseur étiquette comme pourriel, comme « Possible fraude ». Ce ne sont pas tous les fournisseurs qui envoient une étiquette.</li>
+      <li>Pour un appel que votre appli Téléphone a étiqueté comme pourriel, comme « Spam probable » : activez Réglages › Bloquer automatiquement › Raccrocher les appels étiquetés comme pourriel (Pro). Android ne donne pas l’étiquette au filtrage des appels; le téléphone sonne donc brièvement, puis CallRules raccroche et bloque le numéro, et son prochain appel ne sonne pas. CallRules ne raccroche jamais les appels de vos contacts.</li>
       <li>Si CallRules ne peut pas décider en environ 3,5 secondes, l’appel sonne plutôt que de risquer un mauvais blocage.</li>
     </ul>
   </article>
@@ -85,7 +85,7 @@
     <ul>
       <li>Les Numéros autorisés, vos contacts (selon Réglages › Toujours autoriser › Contacts autorisés) et les règles d’autorisation sont vérifiés avant les règles de blocage ordinaires et les numéros bloqués.</li>
       <li>Pour bloquer quand même un tel appelant, modifiez la règle de blocage et activez « Priorité sur les autorisations », ou retirez le numéro des Numéros autorisés.</li>
-      <li>Une règle de blocage de contact, de groupe ou de nom de l’appelant suit le même ordre; elle a donc besoin de « Priorité sur les autorisations » pour bloquer un contact que Contacts autorisés laisse passer.</li>
+      <li>Une règle de blocage de contact, de groupe ou de nom du contact suit le même ordre; elle a donc besoin de « Priorité sur les autorisations » pour bloquer un contact que Contacts autorisés laisse passer. Les réglages de raccrochage et les règles de nom de l’afficheur ne raccrochent jamais les appels de vos contacts, de vos Numéros autorisés ni des appelants qu’une règle d’autorisation laisse passer.</li>
     </ul>
   </article>
   <article class="card problem" id="rule-ignored">
@@ -103,7 +103,7 @@
     <ul>
       <li>Les règles de contact ont besoin de l’accès aux contacts. CallRules le demande quand vous choisissez un contact ou un groupe.</li>
       <li>Si le contact ou le groupe a été supprimé, l’écran Modifier de la règle affiche « Contact introuvable » et la Vérification des règles avertit « Contact introuvable » ou « Groupe de contacts introuvable ». Modifiez la règle ou supprimez-la.</li>
-      <li>Les règles de nom de l’appelant correspondent au nom enregistré de votre contact, ou au nom d’affichage que votre fournisseur envoie. Ce ne sont pas tous les fournisseurs qui envoient des noms.</li>
+      <li>Les règles de nom du contact correspondent seulement aux noms enregistrés de vos contacts. Pour le nom de l’afficheur d’un appelant qui n’est pas un contact, comme « SPAM PROBABLE », utilisez une règle de nom de l’afficheur (Pro) : le téléphone sonne brièvement, puis CallRules raccroche.</li>
     </ul>
   </article>
   <article class="card problem" id="outgoing">
@@ -258,6 +258,23 @@
         <li>Ouvrez Réglages › Textos et touchez « Autoriser l’accès aux notifications », puis autorisez CallRules dans l’écran d’Android.</li>
         <li>Sous « Applis de messagerie à surveiller », activez l’appli que vous utilisez pour les textos. CallRules fonctionne avec Google Messages, Samsung Messages, Messaging, Textra et Verizon Messages.</li>
         <li>Android 15 et les versions suivantes cachent les textos qui pourraient contenir un code. CallRules met quand même en sourdine ceux des expéditeurs bloqués quand Android indique avec qui est la conversation; sur les téléphones qui ont les « Notifications améliorées » de Google, les désactiver dans Paramètres Android › Notifications permet à CallRules de vérifier chaque texto.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-labels">
+      <h3>Raccrocher les appels étiquetés</h3>
+      <p class="meta"><strong>Vérifie :</strong> Si Android permet à CallRules de voir la notification d’appel de votre appli Téléphone, si CallRules peut mettre fin aux appels et s’il peut lire vos contacts (il ne raccroche jamais les appels de vos contacts).</p>
+      <p class="meta"><strong>Affichée :</strong> Seulement quand un réglage de raccrochage (« Raccrocher les appels étiquetés comme pourriel » ou « Raccrocher les appels étiquetés… ») ou une règle de nom de l’afficheur est activé.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>L’accès aux notifications, la fin des appels et l’accès aux contacts sont autorisés</li>
+        <li><span class="status error">Problème</span>L’accès aux notifications est désactivé — CallRules ne voit pas les étiquettes de votre appli Téléphone et ne peut donc pas raccrocher<span class="fix">Corriger : Explique ce que CallRules lit, puis ouvre le réglage d’accès aux notifications d’Android pour CallRules.</span></li>
+        <li><span class="status error">Problème</span>CallRules n’est pas autorisé à répondre aux appels et à y mettre fin; il ne peut donc pas raccrocher les appels étiquetés<span class="fix">Corriger : Demande l’autorisation de répondre aux appels et d’y mettre fin, et de lire vos contacts.</span></li>
+        <li><span class="status error">Problème</span>L’accès aux contacts est désactivé — CallRules ne raccroche jamais sans vérifier que l’appelant n’est pas un contact<span class="fix">Corriger : Demande l’autorisation de répondre aux appels et d’y mettre fin, et de lire vos contacts.</span></li>
+      </ul>
+      <h4>Régler le problème vous-même</h4>
+      <ul>
+        <li>Ouvrez Réglages › Bloquer automatiquement et touchez le bouton sous Raccrocher les appels étiquetés comme pourriel; il vous guide à chaque étape.</li>
+        <li>Autorisez l’accès aux notifications pour CallRules dans l’écran d’Android.</li>
+        <li>Quand Android le demande, autorisez CallRules à répondre aux appels et à y mettre fin, et à lire vos contacts. Si vous avez refusé, ouvrez Paramètres Android › Applis › CallRules › Autorisations.</li>
       </ul>
     </article>
     <article class="card check" id="battery">

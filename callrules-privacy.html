@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>CallRules Privacy Policy</h1>
-  <p class="updated">CallRules: Spam Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 4 October 2026</p>
+  <p class="updated">CallRules: Spam Call Blocker &middot; MJRed Dev LLC (trading as Plainform) &middot; Effective 9 October 2026</p>
   <nav class="policy-nav" aria-label="Plainform apps policies"><span>Plainform apps policies:</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="filezone-privacy.html">File Zone</a> <a href="siteproof-privacy.html">SiteProof</a></nav>
 
   <div class="summary">
@@ -69,12 +69,11 @@
     <li><strong>Contacts</strong> — optional. With contacts access, CallRules reads
         your contacts on the device: when a call arrives, it looks up the
         caller's contact name, starred status, and contact groups to apply the
-        Allowed contacts setting and contact, contact group, and caller-name rules; when
+        Allowed contacts setting and contact, contact group, and contact name rules, and to make sure a contact is never hung up on; when
         you choose a contact or group for a rule, run Rule check, or give a voice
         contact command such as “block calls from Uncle Bob”, it reads contact
         names, phone numbers, and group membership. Blocked-call notifications
-        and call history show the caller's contact name, or the caller-ID name
-        your carrier provides.</li>
+        and call history show the caller's contact name, or, for a call CallRules hung up on, the caller-ID name your Phone app showed.</li>
     <li><strong>Location</strong> — optional approximate or precise location is
         used to evaluate location-constrained rules. If you enable those
         rules, background location may be needed so they can work when the app
@@ -90,6 +89,7 @@
         you include them in a configuration export. Location is never used to infer
         or look up where a caller is.</li>
     <li><strong>Message notifications (Silence texts)</strong> — optional, off by default, and part of Pro. If you turn on “Silence texts from blocked senders” and allow Android's notification access, CallRules reads the notifications posted by the messaging apps you choose: the sender's number or name and the part of the message the notification shows. When Android hides a text's content, CallRules uses the conversation name Android still provides (the sender's number or contact name) to check the sender. Android's notification access covers every notification; CallRules ignores those from other apps and doesn't keep them. It checks the messaging notifications on the device against your blocked numbers, rules, message filters, and built-in scam patterns. For a match, it hides the notification and marks the text read using the messaging app's own action. Texts stay in your messaging app; CallRules never sends, deletes, or uploads them. The list of silenced texts (sender, app, time, reason, and, if “Keep message previews” is on, up to 200 characters of the message) stays on the device, and each entry is deleted after 30 days. You can turn the feature off, clear the list, or remove notification access at any time.</li>
+    <li><strong>Incoming-call notifications (Hang up on labeled calls)</strong> — optional, off by default, and part of Pro. If you turn on “Hang up on spam-labeled calls”, a “Hang up on calls labeled…” switch, or a Caller ID name rule, and allow Android's notification access and permission to answer phone calls, CallRules reads your Phone app's incoming-call notification while the call rings: the caller-ID name, the label or warning it shows (such as “Spam Risk”), and the number when it is shown. It checks them on the device against your contacts, Allowed numbers, allow rules, a built-in list of spam labels, the label categories you turned on, and your Caller ID name rules. Your contacts are never hung up on. When the call should be blocked, CallRules ends it with Android's call-ending function and adds the number to Blocked numbers; it never answers or records the call. Nothing from the notification leaves the device or is kept, except the call history entry (number, caller-ID name, time, and reason) and the Blocked numbers entry. Notifications from other apps are ignored. You can turn the switches off or remove notification access or the permission at any time.</li>
     <li><strong>Microphone</strong> — optional, used only when you start a voice
         rule or problem-report dictation. On supported devices CallRules uses
         Android's on-device speech recognizer and does not silently substitute
@@ -98,7 +98,7 @@
         command or using the app's screens.</li>
     <li>Blocked numbers, allowed numbers, directional Call Rules, saved
         locations, settings, message filters, the silenced-texts list, limited call history (including the caller's
-        contact name or the caller-ID name your carrier provides), and an optional salted PIN
+        contact name or, for a call CallRules hung up on, the caller-ID name your Phone app showed), and an optional salted PIN
         hash may be stored in app-private storage. The PIN itself is not stored.
         Pending outgoing approvals and one-use redial authorizations remain in
         memory and expire automatically.</li>
@@ -115,7 +115,7 @@
         only when you request them and may include enabled and disabled rules,
         rule direction and per-rule PIN requirement, blocked numbers, allowed
         numbers, saved locations, message filters, and selected settings. Rules that target a
-        contact, contact group, or caller name include the contact's name and
+        contact, contact group, contact name, or caller ID name include the contact's name and
         Android contact lookup key, the group's name and account, or the name
         text, so they can be matched again after import. They exclude the PIN
         hash and attempt state, outgoing authorizations, purchase entitlements,

@@ -56,7 +56,7 @@
   </ul>
   <p><a href="#contacts">Contacts &amp; names</a></p>
   <ul>
-    <li><a href="#contact-rules">Contact, group, and caller-name rules</a></li>
+    <li><a href="#contact-rules">Contact, group, and name rules</a></li>
     <li><a href="#caller-names">How callers are named</a></li>
   </ul>
   <p><a href="#voice">Voice commands</a></p>
@@ -146,7 +146,7 @@
     <p class="summary">The Blocked and Recent tabs</p>
     <p>The History tab opens Call history, which has two tabs, and a Texts tab when Silence texts is on.</p>
     <ul>
-      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Today, 7 days, and All above the list show those periods. Tap the check mark (“Allow this number”) to add the number to Allowed numbers and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
+      <li>Blocked lists every call CallRules rejected or silenced, with the reason, such as Matched rule, Blocked number, Carrier spam label, Verification failed, Unknown number, Private number, or Quiet hours. Today, 7 days, and All above the list show those periods. Calls CallRules hung up on after a brief ring also show “Rang briefly, then CallRules hung up”. Tap the check mark (“Allow this number”) to add the number to Allowed numbers and remove it from Blocked numbers. Tap the trash icon to delete the entry.</li>
       <li>Recent lists incoming calls that CallRules let through. Tap Block to block this number, its area code, or its country code; UNDO appears briefly. Clear empties the Recent list. Allow contact access if you want calls from your contacts to appear here too.</li>
       <li>Tap any call to see why it was blocked or allowed: the rule that matched (with Open rule), the setting that decided, and the caller verification result. Calls from before this version show “Reason not recorded”. Long-press a call to copy its number. Blocking an area code or country code adds a block rule, which counts toward your rules and asks first.</li>
     </ul>
@@ -190,7 +190,7 @@
       <li><strong>Regular expression (Pro):</strong> matched against the full international number, for example \+1555\d{7}.</li>
       <li><strong>Private / hidden callers:</strong> matches incoming calls that hide their caller ID. Use it to block, silence, or allow hidden callers, for example only on a schedule or at a place. Private rules apply to incoming calls only.</li>
       <li>Unknown numbers (created by voice or Rules CSV): matches every caller that Allowed numbers, your contacts, and allow rules haven't already let through.</li>
-      <li>Contact, Contact group, and Caller name rules: see Contacts &amp; names.</li>
+      <li>Contact, Contact group, Contact name, and Caller ID name rules: see Contacts &amp; names.</li>
     </ul>
     <p>Area-code, country, and city rules match number prefixes. They can't tell where a caller physically is.</p>
   </article>
@@ -213,21 +213,21 @@
     <p>For each incoming call, CallRules takes these steps in order and stops at the first one that decides the call:</p>
     <ol class="flow-steps">
       <li><span class="step-title">Protection is off or paused</span><span class="outcome rings">Rings</span><span class="detail">The call rings.</span></li>
-      <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block carrier spam labels is on and the carrier labeled it as spam, or when Block private numbers is on, and rings otherwise.</span></li>
+      <li><span class="step-title">Caller ID is hidden</span><span class="outcome depends">Depends</span><span class="detail">Only Private rules and Block private numbers apply: a Private block rule with “Override allow rules” on, then Private allow rules, then Private block rules (Silence before Reject). If none matches, the call is rejected when Block private numbers is on, and rings otherwise.</span></li>
       <li><span class="step-title">Block rules with “Override allow rules” on</span><span class="outcome blocks">Blocks</span> <span class="tag">Override allow rules</span><span class="detail">Silence rules before Reject rules.</span></li>
       <li><span class="step-title">Allowed numbers</span><span class="outcome rings">Rings</span><span class="detail">Lets the call ring.</span></li>
       <li><span class="step-title">Your contacts</span><span class="outcome rings">Rings</span><span class="detail">Ring, depending on the Allowed contacts setting.</span></li>
       <li><span class="step-title">Allow rules</span><span class="outcome rings">Rings</span><span class="detail">Let the call ring.</span></li>
       <li><span class="step-title">Other block rules</span><span class="outcome blocks">Blocks</span><span class="detail">Silence before Reject.</span></li>
       <li><span class="step-title">Blocked numbers</span><span class="outcome blocks">Blocks</span></li>
-      <li><span class="step-title">Carrier spam labels</span><span class="outcome blocks">Blocks</span><span class="detail">When Block carrier spam labels is on.</span></li>
       <li><span class="step-title">Carrier verification</span><span class="outcome blocks">Blocks</span></li>
       <li><span class="step-title">Block unknown numbers</span><span class="outcome blocks">Blocks</span><span class="detail">Callers not in your contacts.</span></li>
       <li><span class="step-title">The local spam list</span><span class="outcome blocks">Blocks</span><span class="detail">It's empty in this version, so this step blocks nothing.</span></li>
       <li><span class="step-title">Quiet hours</span><span class="outcome blocks">Blocks</span></li>
     </ol>
     <p>If no step decides the call, it rings.</p>
-    <p>Steps 3, 6, and 7 are skipped while Rules enabled is off. Contact, group, and caller-name rules take part in steps 3, 6, and 7 like any other rule, so a contact block rule doesn't block a caller that step 5 lets through unless it has “Override allow rules” on.</p>
+    <p>Steps 3, 6, and 7 are skipped while Rules enabled is off. Contact, group, and contact name rules take part in steps 3, 6, and 7 like any other rule, so a contact block rule doesn't block a caller that step 5 lets through unless it has “Override allow rules” on.</p>
+    <p>After the phone starts ringing (Pro): if your Phone app's call notification shows a spam label, a label you chose under “Hang up on calls labeled…”, or a name that matches a Caller ID name rule, CallRules hangs up about a second into the ring and adds the number to Blocked numbers, so its next call is rejected before it rings. This never happens to your contacts, Allowed numbers, or callers an allow rule lets through.</p>
     <p>A rule is also skipped when it's switched off, expired, outside its schedule, or away from its location (Location rules explains what happens when the location is unknown). If CallRules can't decide within about 3.5 seconds, the call rings.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>For outgoing calls, a matching block rule with “Override allow rules” on cancels the call. Otherwise, a matching allow rule lets the call through (asking for the PIN if the rule requires it), and a matching block rule cancels it.</p></div>
   </article>
@@ -238,7 +238,7 @@
     <ul>
       <li><strong>Warnings:</strong> “Block rule is bypassed” means allow rules, allowed numbers, or contacts get past a block rule. “Allow rule never applies” means a block rule with “Override allow rules” on covers it.</li>
       <li>“Contact not found” and “Contact group not found” warn about a contact or group rule whose contact or group was deleted, so it matches nobody. Edit it or delete it.</li>
-      <li><strong>Info:</strong> “Duplicate rules”, “Silence and reject rules overlap”, and “Rules may conflict” (possible overlaps involving wildcards, regular expressions, caller names, schedules, or locations).</li>
+      <li><strong>Info:</strong> “Duplicate rules”, “Silence and reject rules overlap”, and “Rules may conflict” (possible overlaps involving wildcards, regular expressions, contact or caller ID names, schedules, or locations).</li>
     </ul>
     <p>Each issue offers fixes, such as turning “Override allow rules” on or off, disabling or deleting a rule, removing an allowed number, or Edit. Ignore hides a warning; turn on “Show ignored” and tap Restore to bring it back.</p>
     <p>After calls, CallRules checks again automatically, but only if your rules, Allowed numbers, contact settings, or contacts have changed. When Rule check alerts is on, it sends a quiet notification for new warnings. The Rules tab badge and banner show how many warnings are unresolved.</p>
@@ -253,6 +253,7 @@
       <li><strong>Blocked numbers:</strong> these numbers are always blocked unless something earlier lets them through. To add a number, tap Block on a Recent call, say “block the last call” or “add 555 123 4567 to my blocked numbers”, or import a JSON backup. The free version allows 50 entries.</li>
     </ul>
     <p>An Exact number rule does the same job, but it counts toward your rule limit instead.</p>
+    <p>Each blocked number says why it's there, such as “Blocked from call history” or “Hung up: labeled spam”. Tap a number to see the full reason, when it was blocked, Copy number and Unblock. The sort button in the top bar lists the numbers newest first, oldest first, by number (so they fall together by area code), or grouped by reason.</p>
     <p class="in-app"><span>In the app:</span> Rules › Allowed numbers</p>
     <p class="in-app"><span>In the app:</span> Rules › Blocked numbers</p>
   </article>
@@ -260,23 +261,24 @@
 <section class="category" id="contacts">
   <h2>Contacts &amp; names</h2>
   <ul class="category-topics">
-    <li><a href="#contact-rules">Contact, group, and caller-name rules</a></li>
+    <li><a href="#contact-rules">Contact, group, and name rules</a></li>
     <li><a href="#caller-names">How callers are named</a></li>
   </ul>
   <article class="topic" id="contact-rules">
-    <h3>Contact, group, and caller-name rules <a class="anchor" href="#contact-rules" aria-label="Link to Contact, group, and caller-name rules">#</a></h3>
-    <p class="summary">Rules that follow a person, a group, or a caller's name</p>
+    <h3>Contact, group, and name rules <a class="anchor" href="#contact-rules" aria-label="Link to Contact, group, and name rules">#</a></h3>
+    <p class="summary">Rules that follow a person, a group, a contact name, or a caller ID name</p>
     <ul>
       <li><strong>Contact:</strong> tap Choose contact and pick a person. The rule matches all of that person's numbers, including numbers you add or change later. The rule name starts as the contact's name. If the contact is deleted, Edit shows “Contact not found” and Rule check warns you.</li>
       <li><strong>Contact group (Pro):</strong> pick a contacts group or label, such as Family or Work, from the list with its member count. Membership is read at call time, so people you add to the group later are included.</li>
-      <li><strong>Caller name (Pro):</strong> choose Contains, Starts with, or Is exactly, and type the text. It matches your contact's saved name, or for callers who aren't contacts, the caller-ID name the carrier sends (such as “SCAM LIKELY”). Case and accents are ignored.</li>
+      <li><strong>Contact name (Pro):</strong> choose Contains, Starts with, or Is exactly, and type the text, such as Smith. It matches your contacts' saved names only, before the phone rings. Case and accents are ignored.</li>
+      <li><strong>Caller ID name (Pro, block only):</strong> matches the caller-ID name your Phone app shows for a caller who isn't a contact, such as “SPAM RISK” or a company name, with the same Contains, Starts with, or Is exactly. Android doesn't give call screening that name, so the phone rings briefly; then CallRules hangs up and adds the number to Blocked numbers. It needs notification access and permission to answer phone calls, and never hangs up on contacts, Allowed numbers, or callers an allow rule lets through.</li>
     </ul>
     <p>Contact rules need contacts access; CallRules asks when you choose a contact or group.</p>
   </article>
   <article class="topic" id="caller-names">
     <h3>How callers are named <a class="anchor" href="#caller-names" aria-label="Link to How callers are named">#</a></h3>
     <p class="summary">Contact names and caller ID in lists and alerts</p>
-    <p>Both Call history tabs show the caller's name first when there is one: your contact's name, or else the name your carrier sent with the call (caller ID, such as “SCAM LIKELY”). The number follows, formatted for your Calling country. Blocked-call notifications name the caller the same way.</p>
+    <p>Both Call history tabs show the caller's name first when there is one: your contact's name, or, for a call CallRules hung up on after a brief ring, the caller-ID name your Phone app showed (such as “SPAM RISK”). The number follows, formatted for your Calling country. Blocked-call notifications name the caller the same way. Android doesn't give call screening the caller-ID name of other callers, so they show their number only.</p>
     <p>Allowed numbers and Blocked numbers entries that belong to a contact show the contact's name first, then the number. Number rules on Rules do the same.</p>
   </article>
 </section>
@@ -327,12 +329,12 @@
         <li>allow Mom</li>
         <li>block calls from my dad</li>
         <li>silence my Work group</li>
-        <li>block callers named scam</li>
-        <li>block names containing spam</li>
-        <li>block names starting with win</li>
+        <li>block callers named Smith</li>
+        <li>block caller ID names containing spam</li>
+        <li>block caller ID names starting with win</li>
       </ul>
     </div>
-    <p>Group and caller-name commands (“silence my Work group”, “block names containing spam”) need Pro. CallRules finds the contact or group before the card, which shows it, for example “Contact: Uncle Bob (2 numbers)”. If several contacts match, it lists them so you can say the full name. Family words work too: “block calls from my dad” finds a contact saved as Dad, Papa, or “Dad Smith” when none is named “my dad”.</p>
+    <p>Group and name commands (“silence my Work group”, “block callers named Smith”, “block caller ID names containing spam”) need Pro. A caller ID name command makes a block rule for callers who aren't contacts: the phone rings briefly, then CallRules hangs up. CallRules finds the contact or group before the card, which shows it, for example “Contact: Uncle Bob (2 numbers)”. If several contacts match, it lists them so you can say the full name. Family words work too: “block calls from my dad” finds a contact saved as Dad, Papa, or “Dad Smith” when none is named “my dad”.</p>
     <p>Numbers, countries, and cities come first: “block calls from India” blocks the country, not a contact named India.</p>
   </article>
   <article class="topic" id="voice-remove-rules">
@@ -369,7 +371,8 @@
       <p class="voice-label">Try saying</p>
       <ul class="chips">
         <li>turn on private number blocking</li>
-        <li>block carrier spam labels</li>
+        <li>block calls with spam labels</li>
+        <li>block telemarketers</li>
         <li>turn on quiet hours</li>
         <li>set quiet hours from 10 pm to 7 am</li>
         <li>allow starred contacts during quiet hours</li>
@@ -466,7 +469,8 @@
       <li><strong>Rules &amp; places › Calling country:</strong> how CallRules reads numbers you type without a + code, in rules, voice commands, and imports.</li>
       <li>Block automatically › Block private numbers: rejects calls with hidden caller ID unless a Private rule decides the call first.</li>
       <li>Block automatically › Block unknown numbers: blocks callers who aren't in your contacts, unless Allowed numbers or an allow rule lets them through. This needs contact access.</li>
-      <li>Block automatically › Block carrier spam labels: rejects calls your carrier labels as spam in the caller-ID name, such as “Scam Likely”, “Spam Risk”, or “Potential Spam”. CallRules can't read your Phone app's spam verdict, but can use the label your carrier sends. Only the carrier's name is checked, so Allowed numbers, your contacts, and allow rules still ring even when the carrier labels them.</li>
+      <li>Block automatically › Hang up on spam-labeled calls (Pro): when your Phone app's incoming-call notification labels a caller who isn't a contact as spam, such as “Spam Risk”, “Scam Likely”, or “Potential Spam”, CallRules hangs up and adds the number to Blocked numbers, so its next call is rejected before it rings. Android doesn't give call screening the caller-ID name, so the phone rings briefly first. It needs notification access, permission to answer phone calls, and contacts access; CallRules asks for each when you turn it on. Your contacts, Allowed numbers, and callers an allow rule lets through are never hung up on.</li>
+      <li>Block automatically › Hang up on calls labeled… (Pro): separate switches for Telemarketer, Political, Survey, Nonprofit, Healthcare, Debt collector, and Prison/Jail, all off by default. Only some carriers label these calls (AT&amp;T, Verizon Call Filter Plus, T-Mobile), and many come from real callers. Healthcare may hang up on your doctor or pharmacy.</li>
       <li><strong>Always allow › Allowed contacts:</strong> choose All contacts, Starred only, or None to set which contacts always ring.</li>
       <li><strong>Rules &amp; places › Rules enabled:</strong> turning this off pauses all incoming block and allow rules.</li>
       <li>Block automatically › Carrier verification uses the STIR/SHAKEN result your carrier attaches to each call. Off ignores it, Standard blocks calls that fail verification, and Strict also blocks calls with no verification. Strict may block real calls from small carriers, VoIP services, and some international numbers. Allowed numbers, your contacts, and allow rules still let calls through.</li>
@@ -527,7 +531,7 @@
     </ol>
     <ul>
       <li>Blocked numbers and Block unknown numbers always apply. With “Apply my call block rules to texts” on, your block rules apply too. Allowed numbers, contacts, and allow rules still win, and group chats are never silenced.</li>
-      <li>A sender shown by name, such as a store or a bank, only matches caller-name rules.</li>
+      <li>A sender shown by name, such as a store or a bank, only matches name rules: Contact name rules when it's one of your contacts' names, Caller ID name rules otherwise.</li>
       <li>Scam patterns are built into CallRules and checked on the phone: signs such as a parcel, toll, prize, or bank notice with a short or odd link. Conservative (the default) silences only obvious scams. Standard also silences likely scams and may sometimes silence a real text. Off leaves only your blocks and filters. They're never used for contacts, allowed numbers, allow rules, group chats, or one-time codes.</li>
       <li>Message filters silence texts by their words: Contains words, Exact phrase, Starts with, or Regular expression. Capitals and accents don't matter. Each filter applies to Unknown senders only (the default) or to Everyone.</li>
     </ul>
@@ -567,8 +571,8 @@
     <h3>Troubleshooting and support <a class="anchor" href="#troubleshooting" aria-label="Link to Troubleshooting and support">#</a></h3>
     <p class="summary">Fix problems, send feedback, and export diagnostics</p>
     <ul>
-      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, Silence texts (notification access and messaging apps), location access and signal, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
-      <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether Allowed numbers, your contacts, or an allow rule is letting the call through.</li>
+      <li>Troubleshoot issues checks the call screening role, call protection, carrier verification, paused rules, notification permission, Silence texts (notification access and messaging apps), hanging up on labeled calls (notification access, answering calls, and contacts access), location access and signal, outgoing setup, and Google Play Billing. Tap Fix where it appears. The refresh icon runs the checks again, and “Export or clear diagnostics” opens the diagnostics tools.</li>
+      <li>If a call isn't blocked, check that CallRules is your Caller ID &amp; spam app, that Call protection and Rules enabled are on, and that the rule is on, not expired, and inside its schedule. Then run Check rules to see whether Allowed numbers, your contacts, or an allow rule is letting the call through. For a call your Phone app labeled as spam, turn on Hang up on spam-labeled calls (Pro); the phone rings briefly before CallRules hangs up.</li>
       <li>Online help and Online troubleshooting open the CallRules web pages.</li>
       <li><strong>Send feedback and Report a problem:</strong> type, or tap the microphone to dictate on the device. You can attach diagnostics. Tap Preview, then send with an email or sharing app, or use Copy or Save.</li>
       <li>Export diagnostics lets you preview, share, save, copy, or clear the local log. The log leaves out phone numbers, contacts, rules, coordinates, speech, and purchase tokens, and it keeps about seven days of records.</li>
@@ -579,15 +583,15 @@
   <article class="topic" id="free-vs-pro">
     <h3>Free vs Pro <a class="anchor" href="#free-vs-pro" aria-label="Link to Free vs Pro">#</a></h3>
     <p class="summary">What's included, and restoring a purchase</p>
-    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 allowed numbers; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; carrier spam labels; Allowed contacts; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
-    <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and allowed numbers; wildcard, regular-expression, contact group, and caller-name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; outgoing calls (outgoing rules, PIN, and long press); and silencing texts from blocked senders, with scam patterns and message filters.</p>
+    <p>Free: incoming screening; up to 10 rules, 50 blocked numbers, and 20 allowed numbers; exact-number, prefix, area-code, area-code group, city, country, and contact rules; allow rules; Reject or Silence; Temporary rules; “Override allow rules”; Call history; private and unknown blocking; Allowed contacts; carrier verification; Rule check; notifications; Rules CSV/JSON import; appearance; and the shared PIN with PIN-protect rules and settings.</p>
+    <p>Lifetime Pro is a one-time purchase that adds unlimited rules, blocked numbers, and allowed numbers; wildcard, regular-expression, contact group, contact name, and caller ID name rules; schedules; location rules; quiet hours; voice commands; Google Sheets import; export; outgoing calls (outgoing rules, PIN, and long press); hanging up, after a brief ring, on calls your Phone app labels as spam or as a category you choose; and silencing texts from blocked senders, with scam patterns and message filters.</p>
     <p>Google Play shows the price in your currency. After reinstalling or switching phones with the same Play account, use Upgrade › Restore purchase. If Pro isn't active, any Pro schedules, locations, and patterns already saved on rules stay but can't be changed.</p>
     <p class="in-app"><span>In the app:</span> Settings › Upgrade to CallRules Pro</p>
   </article>
   <article class="topic" id="privacy">
     <h3>Privacy <a class="anchor" href="#privacy" aria-label="Link to Privacy">#</a></h3>
     <p class="summary">What stays on your phone, and when the network is used</p>
-    <p>CallRules checks calls on your phone, and your rules, lists, and call history stay there. There are no accounts or ads, and no cloud spam lookup. If you silence texts, CallRules reads the notifications of the messaging apps you choose on the phone, and keeps short previews there only if you let it.</p>
+    <p>CallRules checks calls on your phone, and your rules, lists, and call history stay there. There are no accounts or ads, and no cloud spam lookup. If you silence texts, CallRules reads the notifications of the messaging apps you choose on the phone, and keeps short previews there only if you let it. If you turn on hanging up on labeled calls, it reads your Phone app's incoming-call notification on the phone, only to decide whether to hang up.</p>
     <p>CallRules uses the network only for Google Play Billing, address searches you run in the location picker, Google Sheets import, links you open (online help, Google Maps, Google Play), and apps you choose to share with.</p>
     <p>Voice commands and dictation use Android's on-device recognizer. Settings › Privacy policy has the details.</p>
   </article>

@@ -57,7 +57,7 @@
   </ul>
   <p><a href="#contacts">Contactos y nombres</a></p>
   <ul>
-    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre de quien llama</a></li>
+    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre</a></li>
     <li><a href="#caller-names">Cómo se nombra a quien llama</a></li>
   </ul>
   <p><a href="#voice">Comandos de voz</a></p>
@@ -147,7 +147,7 @@
     <p class="summary">Las pestañas Bloqueadas y Recientes</p>
     <p>La pestaña Historial abre el historial de llamadas, que tiene dos pestañas, y una pestaña Mensajes cuando silencias mensajes.</p>
     <ul>
-      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Regla coincidente, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Hoy, 7 días y Todo, arriba de la lista, muestran esos períodos. Toca la marca de verificación (“Permitir este número”) para agregar el número a Números permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
+      <li>Bloqueadas muestra cada llamada que CallRules rechazó o silenció, con el motivo, como Regla coincidente, Número bloqueado, Etiqueta de spam del operador, Verificación fallida, Número desconocido, Número privado u Horas de silencio. Hoy, 7 días y Todo, arriba de la lista, muestran esos períodos. Las llamadas que CallRules colgó después de un timbre breve también muestran “Sonó brevemente; luego CallRules colgó”. Toca la marca de verificación (“Permitir este número”) para agregar el número a Números permitidos y quitarlo de Números bloqueados. Toca el ícono de papelera para borrar la entrada.</li>
       <li>Recientes muestra las llamadas entrantes que CallRules dejó pasar. Toca Bloquear para bloquear este número, su código de área o su código de país; DESHACER aparece por un momento. Borrar vacía la lista Recientes. Permite el acceso a los contactos si quieres que las llamadas de tus contactos también aparezcan aquí.</li>
       <li>Toca una llamada para ver por qué se bloqueó o se permitió: la regla que coincidió (con Abrir la regla), el ajuste que decidió y el resultado de la verificación de quien llama. Las llamadas anteriores a esta versión muestran “No se guardó el motivo”. Mantén presionada una llamada para copiar su número. Bloquear un código de área o de país agrega una regla de bloqueo, que cuenta entre tus reglas y pide confirmación primero.</li>
     </ul>
@@ -191,7 +191,7 @@
       <li><strong>Expresión regular (Pro):</strong> se compara con el número internacional completo, por ejemplo \+1555\d{7}.</li>
       <li><strong>Llamadas privadas / ocultas:</strong> coincide con las llamadas entrantes que ocultan su identificador de llamadas. Úsala para bloquear, silenciar o permitir llamadas ocultas, por ejemplo solo en un horario o en un lugar. Las reglas de llamadas privadas se aplican solo a llamadas entrantes.</li>
       <li>Números desconocidos (se crean por voz o con el CSV de reglas): coincide con cada llamada que los Números permitidos, tus contactos y las reglas de permiso no dejaron pasar antes.</li>
-      <li>Reglas de contacto, grupo de contactos y nombre de quien llama: consulta Contactos y nombres.</li>
+      <li>Reglas de contacto, grupo de contactos, nombre del contacto e identificador de llamadas: consulta Contactos y nombres.</li>
     </ul>
     <p>Las reglas de código de área, país y ciudad coinciden con prefijos de números. No pueden saber dónde está físicamente la persona que llama.</p>
   </article>
@@ -214,21 +214,21 @@
     <p>Para cada llamada entrante, CallRules sigue estos pasos en orden y se detiene en el primero que decide la llamada:</p>
     <ol class="flow-steps">
       <li><span class="step-title">La protección está desactivada o en pausa</span><span class="outcome rings">Suena</span><span class="detail">La llamada suena.</span></li>
-      <li><span class="step-title">El identificador de llamadas está oculto</span><span class="outcome depends">Depende</span><span class="detail">Solo se aplican las reglas de llamadas privadas y Bloquear números privados: una regla de bloqueo de llamadas privadas con “Prioridad sobre los permisos” activada, luego las reglas de permiso de llamadas privadas y después las reglas de bloqueo de llamadas privadas (Silenciar antes que Rechazar). Si ninguna coincide, la llamada se rechaza cuando Bloquear las etiquetas de spam del operador está activado y el operador la marcó como spam, o cuando Bloquear números privados está activado; si no, suena.</span></li>
+      <li><span class="step-title">El identificador de llamadas está oculto</span><span class="outcome depends">Depende</span><span class="detail">Solo se aplican las reglas de llamadas privadas y Bloquear números privados: una regla de bloqueo de llamadas privadas con “Prioridad sobre los permisos” activada, luego las reglas de permiso de llamadas privadas y después las reglas de bloqueo de llamadas privadas (Silenciar antes que Rechazar). Si ninguna coincide, la llamada se rechaza cuando Bloquear números privados está activado; si no, suena.</span></li>
       <li><span class="step-title">Reglas de bloqueo con “Prioridad sobre los permisos” activada</span><span class="outcome blocks">Bloquea</span> <span class="tag">Prioridad sobre los permisos</span><span class="detail">Las reglas de Silenciar antes que las de Rechazar.</span></li>
       <li><span class="step-title">Números permitidos</span><span class="outcome rings">Suena</span><span class="detail">Deja sonar la llamada.</span></li>
       <li><span class="step-title">Tus contactos</span><span class="outcome rings">Suena</span><span class="detail">Suenan, según el ajuste Contactos permitidos.</span></li>
       <li><span class="step-title">Reglas de permiso</span><span class="outcome rings">Suena</span><span class="detail">Dejan sonar la llamada.</span></li>
       <li><span class="step-title">Otras reglas de bloqueo</span><span class="outcome blocks">Bloquea</span><span class="detail">Silenciar antes que Rechazar.</span></li>
       <li><span class="step-title">Números bloqueados</span><span class="outcome blocks">Bloquea</span></li>
-      <li><span class="step-title">Etiquetas de spam del operador</span><span class="outcome blocks">Bloquea</span><span class="detail">Cuando Bloquear las etiquetas de spam del operador está activado.</span></li>
       <li><span class="step-title">Verificación del operador</span><span class="outcome blocks">Bloquea</span></li>
       <li><span class="step-title">Bloquear números desconocidos</span><span class="outcome blocks">Bloquea</span><span class="detail">Llamadas de personas que no están en tus contactos.</span></li>
       <li><span class="step-title">La lista local de spam</span><span class="outcome blocks">Bloquea</span><span class="detail">Está vacía en esta versión, así que este paso no bloquea nada.</span></li>
       <li><span class="step-title">Horas de silencio</span><span class="outcome blocks">Bloquea</span></li>
     </ol>
     <p>Si ningún paso decide la llamada, suena.</p>
-    <p>Los pasos 3, 6 y 7 se omiten mientras Reglas activadas está desactivado. Las reglas de contacto, de grupo y de nombre de quien llama participan en los pasos 3, 6 y 7 como cualquier otra regla, así que una regla de bloqueo de contacto no bloquea una llamada que el paso 5 deja pasar, a menos que tenga “Prioridad sobre los permisos” activada.</p>
+    <p>Los pasos 3, 6 y 7 se omiten mientras Reglas activadas está desactivado. Las reglas de contacto, de grupo y de nombre del contacto participan en los pasos 3, 6 y 7 como cualquier otra regla, así que una regla de bloqueo de contacto no bloquea una llamada que el paso 5 deja pasar, a menos que tenga “Prioridad sobre los permisos” activada.</p>
+    <p>Cuando el teléfono ya está sonando (Pro): si la notificación de llamada de tu app de Teléfono muestra una etiqueta de spam, una etiqueta que elegiste en “Colgar las llamadas marcadas como…” o un nombre que coincide con una regla de identificador de llamadas, CallRules cuelga más o menos un segundo después de que empieza a sonar y agrega el número a Números bloqueados, así que su próxima llamada se rechaza antes de sonar. Esto nunca les pasa a tus contactos, a tus Números permitidos ni a quienes deja pasar una regla de permiso.</p>
     <p>Una regla también se omite cuando está desactivada, vencida, fuera de su horario o lejos de su ubicación (Reglas de ubicación explica qué pasa cuando la ubicación es desconocida). Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena.</p>
     <div class="hint"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg><p>En las llamadas salientes, una regla de bloqueo que coincide con “Prioridad sobre los permisos” activada cancela la llamada. Si no, una regla de permiso que coincide deja pasar la llamada (y pide el PIN si la regla lo exige), y una regla de bloqueo que coincide la cancela.</p></div>
   </article>
@@ -239,7 +239,7 @@
     <ul>
       <li><strong>Advertencias:</strong> “Se omite la regla de bloqueo” significa que reglas de permiso, números permitidos o contactos se saltan una regla de bloqueo. “La regla de permiso nunca se aplica” significa que la cubre una regla de bloqueo con “Prioridad sobre los permisos” activada.</li>
       <li>“No se encontró el contacto” y “No se encontró el grupo de contactos” avisan de una regla de contacto o de grupo cuyo contacto o grupo se borró, así que no coincide con nadie. Edítala o bórrala.</li>
-      <li><strong>Información:</strong> “Reglas duplicadas”, “Se superponen reglas de silenciar y rechazar” y “Las reglas podrían entrar en conflicto” (posibles superposiciones con comodines, expresiones regulares, nombres de quien llama, horarios o ubicaciones).</li>
+      <li><strong>Información:</strong> “Reglas duplicadas”, “Se superponen reglas de silenciar y rechazar” y “Las reglas podrían entrar en conflicto” (posibles superposiciones con comodines, expresiones regulares, nombres de contacto o de identificador de llamadas, horarios o ubicaciones).</li>
     </ul>
     <p>Cada problema ofrece correcciones, como activar o desactivar “Prioridad sobre los permisos”, desactivar o borrar una regla, quitar un número permitido, o Editar. Ignorar oculta una advertencia; activa “Mostrar ignorados” y toca Restaurar para que vuelva.</p>
     <p>Después de las llamadas, CallRules vuelve a revisar automáticamente, pero solo si cambiaron tus reglas, tus Números permitidos, tus ajustes de contactos o tus contactos. Cuando Alertas de revisión de reglas está activado, envía una notificación silenciosa por las advertencias nuevas. La insignia y el aviso de la pestaña Reglas muestran cuántas advertencias no están resueltas.</p>
@@ -254,6 +254,7 @@
       <li><strong>Números bloqueados:</strong> estos números siempre se bloquean, a menos que algo anterior los deje pasar. Para agregar un número, toca Bloquear en una llamada reciente, di “bloquea la última llamada” o “agrega el 555 123 4567 a mis números bloqueados”, o importa una copia de seguridad JSON. La versión gratuita permite 50 entradas.</li>
     </ul>
     <p>Una regla de Número exacto hace lo mismo, pero cuenta para tu límite de reglas.</p>
+    <p>Cada número bloqueado indica por qué está ahí, como “Bloqueado desde el historial de llamadas”. Toca un número para ver el motivo completo, cuándo se bloqueó, Copiar el número y Desbloquear. El botón para ordenar de la barra superior muestra los números de más recientes a más antiguos, al revés, por número (juntos por código de área) o agrupados por motivo.</p>
     <p class="in-app"><span>En la app:</span> Reglas › Números permitidos</p>
     <p class="in-app"><span>En la app:</span> Reglas › Números bloqueados</p>
   </article>
@@ -261,23 +262,24 @@
 <section class="category" id="contacts">
   <h2>Contactos y nombres</h2>
   <ul class="category-topics">
-    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre de quien llama</a></li>
+    <li><a href="#contact-rules">Reglas de contacto, de grupo y de nombre</a></li>
     <li><a href="#caller-names">Cómo se nombra a quien llama</a></li>
   </ul>
   <article class="topic" id="contact-rules">
-    <h3>Reglas de contacto, de grupo y de nombre de quien llama <a class="anchor" href="#contact-rules" aria-label="Enlace a Reglas de contacto, de grupo y de nombre de quien llama">#</a></h3>
-    <p class="summary">Reglas que siguen a una persona, un grupo o el nombre de quien llama</p>
+    <h3>Reglas de contacto, de grupo y de nombre <a class="anchor" href="#contact-rules" aria-label="Enlace a Reglas de contacto, de grupo y de nombre">#</a></h3>
+    <p class="summary">Reglas que siguen a una persona, un grupo, el nombre de un contacto o el identificador de llamadas</p>
     <ul>
       <li><strong>Contacto:</strong> toca Elegir contacto y elige a una persona. La regla coincide con todos los números de esa persona, incluidos los que agregues o cambies después. El nombre de la regla empieza siendo el del contacto. Si se borra el contacto, Editar muestra “No se encontró el contacto” y Revisión de reglas te avisa.</li>
       <li><strong>Grupo de contactos (Pro):</strong> elige un grupo o etiqueta de contactos, como Familia o Trabajo, de la lista con su cantidad de miembros. La pertenencia se lee al momento de la llamada, así que se incluyen las personas que agregues al grupo después.</li>
-      <li><strong>Nombre de quien llama (Pro):</strong> elige Contiene, Empieza con o Es exactamente, y escribe el texto. Coincide con el nombre guardado de tu contacto o, para las llamadas que no son de contactos, con el nombre del identificador de llamadas que envía el operador (como “SCAM LIKELY”). Se ignoran las mayúsculas y los acentos.</li>
+      <li><strong>Nombre del contacto (Pro):</strong> elige Contiene, Empieza con o Es exactamente, y escribe el texto, como García. Solo coincide con los nombres guardados de tus contactos, antes de que suene el teléfono. Se ignoran las mayúsculas y los acentos.</li>
+      <li>Identificador de llamadas (Pro, solo bloqueo): coincide con el nombre del identificador de llamadas que muestra tu app de Teléfono para quien no es un contacto, como “SPAM RISK” o el nombre de una empresa, con las mismas opciones Contiene, Empieza con o Es exactamente. Android no le da ese nombre al filtrado de llamadas, así que el teléfono suena brevemente; luego CallRules cuelga y agrega el número a Números bloqueados. Necesita el acceso a notificaciones y el permiso para contestar llamadas, y nunca les cuelga a tus contactos, a tus Números permitidos ni a quienes deja pasar una regla de permiso.</li>
     </ul>
     <p>Las reglas de contacto necesitan acceso a los contactos; CallRules lo pide cuando eliges un contacto o un grupo.</p>
   </article>
   <article class="topic" id="caller-names">
     <h3>Cómo se nombra a quien llama <a class="anchor" href="#caller-names" aria-label="Enlace a Cómo se nombra a quien llama">#</a></h3>
     <p class="summary">Nombres de contactos e identificador de llamadas en listas y alertas</p>
-    <p>Las dos pestañas del historial de llamadas muestran primero el nombre de quien llama cuando lo hay: el nombre de tu contacto o, si no, el nombre que tu operador envió con la llamada (el identificador de llamadas, como “SCAM LIKELY”). Después aparece el número, con el formato de tu país de llamada. Las notificaciones de llamadas bloqueadas nombran a quien llama de la misma forma.</p>
+    <p>Las dos pestañas del historial de llamadas muestran primero el nombre de quien llama cuando lo hay: el nombre de tu contacto o, para una llamada que CallRules colgó después de un timbre breve, el nombre del identificador de llamadas que mostró tu app de Teléfono (como “SPAM RISK”). Después aparece el número, con el formato de tu país de llamada. Las notificaciones de llamadas bloqueadas nombran a quien llama de la misma forma. Android no le da al filtrado de llamadas el nombre del identificador de las demás llamadas, así que solo muestran el número.</p>
     <p>Las entradas de Números permitidos y de números bloqueados que pertenecen a un contacto muestran primero el nombre del contacto y luego el número. Las reglas de número en Reglas hacen lo mismo.</p>
   </article>
 </section>
@@ -328,12 +330,12 @@
         <li>permite a mamá</li>
         <li>bloquea las llamadas de mi papá</li>
         <li>silencia mi grupo Trabajo</li>
-        <li>bloquea las llamadas con el nombre scam</li>
-        <li>bloquea las llamadas con nombres que contienen spam</li>
-        <li>bloquea las llamadas con nombres que empiezan con win</li>
+        <li>bloquea las llamadas con el nombre García</li>
+        <li>bloquea las llamadas con el identificador de llamadas que contiene spam</li>
+        <li>bloquea las llamadas con el identificador de llamadas que empieza con win</li>
       </ul>
     </div>
-    <p>Los comandos de grupo y de nombre de quien llama (“silencia mi grupo Trabajo”, “bloquea las llamadas con nombres que contienen spam”) necesitan Pro. CallRules encuentra el contacto o el grupo antes de mostrar la tarjeta, que lo indica, por ejemplo “Contacto: tío Bob (2 números)”. Si coinciden varios contactos, los muestra para que digas el nombre completo. Las palabras de familia también funcionan: “bloquea las llamadas de mi papá” encuentra un contacto guardado como Papá, Dad o “Papá Juan” si ninguno se llama “mi papá”.</p>
+    <p>Los comandos de grupo y de nombre (“silencia mi grupo Trabajo”, “bloquea las llamadas con el nombre García”, “bloquea las llamadas con el identificador de llamadas que contiene spam”) necesitan Pro. Un comando de identificador de llamadas crea una regla de bloqueo para quienes no son contactos: el teléfono suena brevemente y luego CallRules cuelga. CallRules encuentra el contacto o el grupo antes de mostrar la tarjeta, que lo indica, por ejemplo “Contacto: tío Bob (2 números)”. Si coinciden varios contactos, los muestra para que digas el nombre completo. Las palabras de familia también funcionan: “bloquea las llamadas de mi papá” encuentra un contacto guardado como Papá, Dad o “Papá Juan” si ninguno se llama “mi papá”.</p>
     <p>Los números, los países y las ciudades van primero: “bloquea las llamadas de la India” bloquea el país, no un contacto llamado India.</p>
   </article>
   <article class="topic" id="voice-remove-rules">
@@ -370,7 +372,8 @@
       <p class="voice-label">Intenta decir</p>
       <ul class="chips">
         <li>activa el bloqueo de números privados</li>
-        <li>bloquea las etiquetas de spam del operador</li>
+        <li>bloquea las llamadas con etiquetas de spam</li>
+        <li>bloquea el telemercadeo</li>
         <li>activa las horas de silencio</li>
         <li>pon las horas de silencio de 10 de la noche a 7 de la mañana</li>
         <li>permite los contactos favoritos durante las horas de silencio</li>
@@ -467,7 +470,8 @@
       <li><strong>Reglas y lugares › País de llamada:</strong> cómo CallRules lee los números que escribes sin código +, en las reglas, los comandos de voz y las importaciones.</li>
       <li>Bloquear automáticamente › Bloquear números privados: rechaza las llamadas con identificador de llamadas oculto, a menos que una regla de llamadas privadas decida la llamada antes.</li>
       <li>Bloquear automáticamente › Bloquear números desconocidos: bloquea las llamadas de personas que no están en tus contactos, a menos que los Números permitidos o una regla de permiso las deje pasar. Necesita acceso a los contactos.</li>
-      <li>Bloquear automáticamente › Bloquear las etiquetas de spam del operador: rechaza las llamadas que tu operador marca como spam en el nombre del identificador de llamadas, como “Scam Likely”, “Spam Risk” o “Potential Spam”. CallRules no puede leer la evaluación de spam de tu app de Teléfono, pero sí puede usar la etiqueta que envía tu operador. Solo se revisa el nombre que envía el operador, así que las llamadas de Números permitidos, de tus contactos y de las reglas de permiso siguen sonando aunque el operador las marque.</li>
+      <li>Bloquear automáticamente › Colgar las llamadas marcadas como spam (Pro): cuando la notificación de llamada entrante de tu app de Teléfono marca como spam a quien no es un contacto, como “Spam Risk”, “Scam Likely” o “Potential Spam”, CallRules cuelga y agrega el número a Números bloqueados, así que su próxima llamada se rechaza antes de sonar. Android no le da al filtrado de llamadas el nombre del identificador de llamadas, así que primero el teléfono suena brevemente. Necesita el acceso a notificaciones, el permiso para contestar llamadas y el acceso a los contactos; CallRules pide cada uno cuando lo activas. Nunca les cuelga a tus contactos, a tus Números permitidos ni a quienes deja pasar una regla de permiso.</li>
+      <li>Bloquear automáticamente › Colgar las llamadas marcadas como… (Pro): interruptores separados para Telemercadeo, Política, Encuesta, Sin fines de lucro, Atención de la salud, Cobrador de deudas y Prisión/cárcel, todos desactivados de forma predeterminada. Solo algunos operadores marcan estas llamadas (AT&amp;T, Verizon Call Filter Plus, T-Mobile), y muchas vienen de personas reales. Atención de la salud puede colgarle a tu médico o a tu farmacia.</li>
       <li><strong>Permitir siempre › Contactos permitidos:</strong> elige Todos los contactos, Solo favoritos o Ninguno para indicar qué contactos siempre suenan.</li>
       <li><strong>Reglas y lugares › Reglas activadas:</strong> desactivarlo pausa todas las reglas de bloqueo y de permiso de las llamadas entrantes.</li>
       <li>Bloquear automáticamente › Verificación del operador usa el resultado STIR/SHAKEN que tu operador agrega a cada llamada. Desactivada lo ignora, Estándar bloquea las llamadas que no pasan la verificación y Estricta también bloquea las llamadas sin verificación. Estricta puede bloquear llamadas reales de operadores pequeños, servicios de VoIP y algunos números internacionales. Los Números permitidos, tus contactos y las reglas de permiso siguen dejando pasar las llamadas.</li>
@@ -528,7 +532,7 @@
     </ol>
     <ul>
       <li>Los números bloqueados y Bloquear números desconocidos siempre se aplican. Con “Aplicar mis reglas de bloqueo de llamadas a los mensajes” activado, tus reglas de bloqueo también se aplican. Los Números permitidos, los contactos y las reglas de permiso siempre ganan, y los chats de grupo nunca se silencian.</li>
-      <li>Un remitente que aparece con un nombre, como una tienda o un banco, solo coincide con reglas de nombre de quien llama.</li>
+      <li>Un remitente que aparece con un nombre, como una tienda o un banco, solo coincide con reglas de nombre: las de nombre del contacto cuando es el nombre de uno de tus contactos y, si no, las de identificador de llamadas.</li>
       <li>Los patrones de estafa vienen integrados en CallRules y se revisan en el teléfono: señales como un aviso de paquete, peaje, premio o banco con un enlace corto o raro. Conservador (el predeterminado) solo silencia estafas evidentes. Estándar también silencia estafas probables y a veces puede silenciar un mensaje real. Desactivados deja solo tus bloqueos y filtros. Nunca se usan con contactos, números permitidos, reglas de permiso, chats de grupo ni códigos de un solo uso.</li>
       <li>Los filtros de mensajes silencian mensajes según sus palabras: Contiene las palabras, Frase exacta, Empieza con o Expresión regular. No importan las mayúsculas ni los acentos. Cada filtro se aplica a Solo remitentes desconocidos (el predeterminado) o a Todos.</li>
     </ul>
@@ -568,8 +572,8 @@
     <h3>Solución de problemas y asistencia <a class="anchor" href="#troubleshooting" aria-label="Enlace a Solución de problemas y asistencia">#</a></h3>
     <p class="summary">Soluciona problemas, envía comentarios y exporta el diagnóstico</p>
     <ul>
-      <li>Solucionar problemas revisa el rol de filtrado de llamadas, la protección de llamadas, la verificación del operador, las reglas en pausa, el permiso de notificaciones, Silenciar mensajes (acceso a notificaciones y apps de mensajes), el acceso y la señal de ubicación, la configuración de llamadas salientes y la facturación de Google Play. Toca Corregir donde aparezca. El ícono de actualizar vuelve a ejecutar las revisiones, y “Exportar o borrar el diagnóstico” abre las herramientas de diagnóstico.</li>
-      <li>Si una llamada no se bloquea, revisa que CallRules sea tu app de identificación de llamadas y filtro de spam, que Protección de llamadas y Reglas activadas estén activados, y que la regla esté activada, no esté vencida y esté dentro de su horario. Luego ejecuta Revisar reglas para ver si los Números permitidos, tus contactos o una regla de permiso dejan pasar la llamada.</li>
+      <li>Solucionar problemas revisa el rol de filtrado de llamadas, la protección de llamadas, la verificación del operador, las reglas en pausa, el permiso de notificaciones, Silenciar mensajes (acceso a notificaciones y apps de mensajes), Colgar las llamadas marcadas (acceso a notificaciones, permiso para contestar llamadas y acceso a los contactos), el acceso y la señal de ubicación, la configuración de llamadas salientes y la facturación de Google Play. Toca Corregir donde aparezca. El ícono de actualizar vuelve a ejecutar las revisiones, y “Exportar o borrar el diagnóstico” abre las herramientas de diagnóstico.</li>
+      <li>Si una llamada no se bloquea, revisa que CallRules sea tu app de identificación de llamadas y filtro de spam, que Protección de llamadas y Reglas activadas estén activados, y que la regla esté activada, no esté vencida y esté dentro de su horario. Luego ejecuta Revisar reglas para ver si los Números permitidos, tus contactos o una regla de permiso dejan pasar la llamada. Para una llamada que tu app de Teléfono marcó como spam, activa Colgar las llamadas marcadas como spam (Pro); el teléfono suena brevemente antes de que CallRules cuelgue.</li>
       <li>Ayuda en línea y Solución de problemas en línea abren las páginas web de CallRules.</li>
       <li>Enviar comentarios e Informar un problema: escribe, o toca el micrófono para dictar en el dispositivo. Puedes adjuntar el diagnóstico. Toca Vista previa y luego envía con una app de correo o para compartir, o usa Copiar o Guardar.</li>
       <li>Exportar el diagnóstico te permite ver, compartir, guardar, copiar o borrar el registro local. El registro no incluye números de teléfono, contactos, reglas, coordenadas, voz ni tokens de compra, y conserva unos siete días de registros.</li>
@@ -580,15 +584,15 @@
   <article class="topic" id="free-vs-pro">
     <h3>Gratis o Pro <a class="anchor" href="#free-vs-pro" aria-label="Enlace a Gratis o Pro">#</a></h3>
     <p class="summary">Qué incluye y cómo restaurar una compra</p>
-    <p>Gratis: filtrado de llamadas entrantes; hasta 10 reglas, 50 números bloqueados y 20 números permitidos; reglas de número exacto, prefijo, código de área, grupo de códigos de área, ciudad, país y contacto; reglas de permiso; Rechazar o Silenciar; reglas temporales; “Prioridad sobre los permisos”; historial de llamadas; bloqueo de números privados y desconocidos; etiquetas de spam del operador; Contactos permitidos; verificación del operador; Revisión de reglas; notificaciones; importación de CSV de reglas y JSON; apariencia; y el PIN compartido con Proteger reglas y ajustes con PIN.</p>
-    <p>Pro de por vida es una compra única que agrega reglas, números bloqueados y números permitidos ilimitados; reglas de comodín, expresión regular, grupo de contactos y nombre de quien llama; horarios; reglas de ubicación; horas de silencio; comandos de voz; importación desde Google Sheets; exportación; las llamadas salientes (reglas salientes, PIN y mantener presionado); y silenciar mensajes de remitentes bloqueados, con patrones de estafa y filtros de mensajes.</p>
+    <p>Gratis: filtrado de llamadas entrantes; hasta 10 reglas, 50 números bloqueados y 20 números permitidos; reglas de número exacto, prefijo, código de área, grupo de códigos de área, ciudad, país y contacto; reglas de permiso; Rechazar o Silenciar; reglas temporales; “Prioridad sobre los permisos”; historial de llamadas; bloqueo de números privados y desconocidos; Contactos permitidos; verificación del operador; Revisión de reglas; notificaciones; importación de CSV de reglas y JSON; apariencia; y el PIN compartido con Proteger reglas y ajustes con PIN.</p>
+    <p>Pro de por vida es una compra única que agrega reglas, números bloqueados y números permitidos ilimitados; reglas de comodín, expresión regular, grupo de contactos, nombre del contacto e identificador de llamadas; horarios; reglas de ubicación; horas de silencio; comandos de voz; importación desde Google Sheets; exportación; las llamadas salientes (reglas salientes, PIN y mantener presionado); colgar, después de un timbre breve, las llamadas que tu app de Teléfono marca como spam o con una categoría que elijas; y silenciar mensajes de remitentes bloqueados, con patrones de estafa y filtros de mensajes.</p>
     <p>Google Play muestra el precio en tu moneda. Después de reinstalar o cambiar de teléfono con la misma cuenta de Play, usa Obtener Pro › Restaurar compra. Si Pro no está activo, los horarios, ubicaciones y patrones de Pro que ya estén guardados en las reglas se mantienen, pero no se pueden cambiar.</p>
     <p class="in-app"><span>En la app:</span> Ajustes › Obtener CallRules Pro</p>
   </article>
   <article class="topic" id="privacy">
     <h3>Privacidad <a class="anchor" href="#privacy" aria-label="Enlace a Privacidad">#</a></h3>
     <p class="summary">Qué se queda en tu teléfono y cuándo se usa la red</p>
-    <p>CallRules revisa las llamadas en tu teléfono, y tus reglas, listas e historial de llamadas se quedan ahí. No hay cuentas ni anuncios, ni búsqueda de spam en la nube. Si silencias mensajes, CallRules lee las notificaciones de las apps de mensajes que elijas en el teléfono, y solo guarda ahí vistas previas cortas si lo permites.</p>
+    <p>CallRules revisa las llamadas en tu teléfono, y tus reglas, listas e historial de llamadas se quedan ahí. No hay cuentas ni anuncios, ni búsqueda de spam en la nube. Si silencias mensajes, CallRules lee las notificaciones de las apps de mensajes que elijas en el teléfono, y solo guarda ahí vistas previas cortas si lo permites. Si activas Colgar las llamadas marcadas, lee la notificación de llamada entrante de tu app de Teléfono en el teléfono, solo para decidir si debe colgar.</p>
     <p>CallRules usa la red solo para la facturación de Google Play, las búsquedas de direcciones que haces en el selector de ubicación, la importación desde Google Sheets, los enlaces que abres (ayuda en línea, Google Maps, Google Play) y las apps con las que eliges compartir.</p>
     <p>Los comandos de voz y el dictado usan el reconocedor de voz en el dispositivo de Android. Ajustes › Política de privacidad tiene los detalles.</p>
   </article>

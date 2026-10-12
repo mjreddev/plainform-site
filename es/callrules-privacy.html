@@ -31,7 +31,7 @@
 </header>
 <main id="main" class="wrap narrow prose">
   <h1>Política de privacidad de CallRules</h1>
-  <p class="updated">CallRules: bloqueador de spam &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 4 de octubre de 2026</p>
+  <p class="updated">CallRules: bloqueador de spam &middot; MJRed Dev LLC (con el nombre comercial Plainform) &middot; Vigente desde el 9 de octubre de 2026</p>
   <nav class="policy-nav" aria-label="Políticas de las apps de Plainform"><span>Políticas de las apps de Plainform:</span> <a href="callrules-privacy.html" aria-current="page">CallRules</a> <a href="../filezone-privacy.html" hreflang="en">File Zone</a> <a href="../siteproof-privacy.html" hreflang="en">SiteProof</a></nav>
 
   <p class="notice">Esta traducción se ofrece para tu comodidad. Si hay diferencias, prevalece la <a href="../callrules-privacy.html" hreflang="en">versión en inglés</a>.</p>
@@ -74,12 +74,11 @@
         tus contactos en el dispositivo: cuando entra una llamada, busca el nombre
         del contacto, si es favorito y sus grupos de contactos para aplicar los
         contactos permitidos y las reglas de contacto, de grupo de contactos y de
-        nombre de quien llama; cuando eliges un contacto o un grupo para una regla,
+        nombre del contacto, y para nunca colgarle a un contacto; cuando eliges un contacto o un grupo para una regla,
         ejecutas la revisión de reglas o das un comando de voz de contacto como
         “bloquea las llamadas de Tío Bob”, lee los nombres de los contactos, los
         números de teléfono y los grupos a los que pertenecen. Las notificaciones de
-        llamadas bloqueadas y el historial de llamadas muestran el nombre del
-        contacto, o el nombre del identificador de llamadas que envía tu operador.</li>
+        llamadas bloqueadas y el historial de llamadas muestran el nombre del contacto o, para una llamada que CallRules colgó, el nombre del identificador de llamadas que mostró tu app de Teléfono.</li>
     <li><strong>Ubicación</strong> — opcional. La ubicación aproximada o precisa se usa
         para evaluar las reglas con ubicación. Si activas esas reglas, puede hacer
         falta la ubicación en segundo plano para que funcionen cuando la app no está
@@ -96,6 +95,7 @@
         configuración. La ubicación nunca se usa para deducir ni buscar dónde está
         quien llama.</li>
     <li><strong>Notificaciones de mensajes (Silenciar mensajes)</strong> — opcional, desactivado de forma predeterminada y parte de Pro. Si activas “Silenciar mensajes de remitentes bloqueados” y permites el acceso a notificaciones de Android, CallRules lee las notificaciones que publican las apps de mensajes que eliges: el número o el nombre del remitente y la parte del mensaje que muestra la notificación. Cuando Android oculta el contenido de un mensaje, CallRules usa el nombre de la conversación que Android aún proporciona (el número o el nombre del contacto del remitente) para revisar al remitente. El acceso a notificaciones de Android abarca todas las notificaciones; CallRules ignora las de otras apps y no las guarda. Revisa las notificaciones de mensajes en el dispositivo según tus números bloqueados, tus reglas, tus filtros de mensajes y sus patrones de estafa integrados. Si hay coincidencia, oculta la notificación y marca el mensaje como leído con la acción de la propia app de mensajes. Los mensajes se quedan en tu app de mensajes; CallRules nunca los envía, borra ni sube. La lista de mensajes silenciados (remitente, app, hora, motivo y, si “Guardar vistas previas de los mensajes” está activado, hasta 200 caracteres del mensaje) se queda en el dispositivo, y cada entrada se borra después de 30 días. Puedes desactivar la función, borrar la lista o quitar el acceso a notificaciones en cualquier momento.</li>
+    <li><strong>Notificaciones de llamadas entrantes (Colgar las llamadas marcadas)</strong> — opcional, desactivado de forma predeterminada y parte de Pro. Si activas “Colgar las llamadas marcadas como spam”, un interruptor de “Colgar las llamadas marcadas como…” o una regla de identificador de llamadas, y permites el acceso a notificaciones de Android y el permiso para contestar llamadas, CallRules lee la notificación de llamada entrante de tu app de Teléfono mientras la llamada suena: el nombre del identificador de llamadas, la etiqueta o advertencia que muestra (como “Spam Risk”) y el número cuando aparece. Los revisa en el dispositivo con tus contactos, tus Números permitidos, tus reglas de permiso, una lista integrada de etiquetas de spam, las categorías de etiquetas que activaste y tus reglas de identificador de llamadas. Nunca les cuelga a tus contactos. Cuando la llamada se debe bloquear, CallRules la termina con la función de Android para finalizar llamadas y agrega el número a Números bloqueados; nunca contesta ni graba la llamada. Nada de la notificación sale del dispositivo ni se guarda, excepto la entrada del historial de llamadas (número, nombre del identificador de llamadas, hora y motivo) y la entrada de Números bloqueados. Las notificaciones de otras apps se ignoran. Puedes desactivar los interruptores o quitar el acceso a notificaciones o el permiso en cualquier momento.</li>
     <li><strong>Micrófono</strong> — opcional; se usa solo cuando inicias un comando de
         voz o el dictado de un informe de problema. En los dispositivos compatibles,
         CallRules usa el reconocimiento de voz de Android en el dispositivo y no lo
@@ -104,8 +104,7 @@
         se puede hacer escribiendo un comando o con las pantallas de la app.</li>
     <li>Los números bloqueados, los números permitidos, las reglas de
         llamadas por dirección, los lugares guardados, los ajustes, los filtros de mensajes, la lista de mensajes silenciados, un historial de
-        llamadas limitado (con el nombre del contacto o el nombre del identificador
-        de llamadas que envía tu operador) y un hash opcional del PIN con sal pueden
+        llamadas limitado (con el nombre del contacto o, para una llamada que CallRules colgó, el nombre del identificador de llamadas que mostró tu app de Teléfono) y un hash opcional del PIN con sal pueden
         guardarse en el almacenamiento privado de la app. El PIN en sí no se guarda.
         Las aprobaciones pendientes de llamadas salientes y las autorizaciones de
         rellamada de un solo uso quedan en la memoria y vencen automáticamente.</li>
@@ -123,7 +122,7 @@
         se crean solo cuando las pides y pueden incluir reglas activadas y
         desactivadas, la dirección de cada regla y si pide PIN, números bloqueados,
         números permitidos, lugares guardados, filtros de mensajes y algunos ajustes. Las
-        reglas de contacto, de grupo de contactos o de nombre de quien llama incluyen
+        reglas de contacto, de grupo de contactos, de nombre del contacto o de identificador de llamadas incluyen
         el nombre del contacto y su clave de búsqueda de contactos de Android, el
         nombre y la cuenta del grupo, o el texto del nombre, para poder volver a
         encontrarlos después de importarlas. Excluyen el hash del PIN y su estado de

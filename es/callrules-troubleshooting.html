@@ -76,7 +76,7 @@
       <li>Revisa que Ajustes › Protección de llamadas y Reglas activadas estén activados.</li>
       <li>Revisa que la regla esté activada, cubra las llamadas entrantes, no esté vencida y esté dentro de su horario y en su ubicación.</li>
       <li>Abre Reglas › Revisar reglas. “Se omite la regla de bloqueo” significa que los Números permitidos, tus contactos o una regla de permiso dejan pasar la llamada antes.</li>
-      <li>Para una llamada que tu app de Teléfono marcó como spam: CallRules no puede leer esa evaluación. Activa Ajustes › Bloquear automáticamente › Bloquear las etiquetas de spam del operador para bloquear las llamadas que tu operador marca como spam, como “Scam Likely”. No todos los operadores envían una etiqueta.</li>
+      <li>Para una llamada que tu app de Teléfono marcó como spam, como “Spam Risk”: activa Ajustes › Bloquear automáticamente › Colgar las llamadas marcadas como spam (Pro). Android no entrega la etiqueta al filtrado de llamadas, así que el teléfono suena brevemente; luego CallRules cuelga y bloquea el número, y su próxima llamada no suena. Nunca les cuelga a tus contactos.</li>
       <li>Si CallRules no puede decidir en unos 3.5 segundos, la llamada suena en lugar de arriesgarse a bloquearla por error.</li>
     </ul>
   </article>
@@ -85,7 +85,7 @@
     <ul>
       <li>Los Números permitidos, tus contactos (según Ajustes › Permitir siempre › Contactos permitidos) y las reglas de permiso se revisan antes que las reglas de bloqueo comunes y los números bloqueados.</li>
       <li>Para bloquear esa llamada de todos modos, edita la regla de bloqueo y activa “Prioridad sobre los permisos”, o quita el número de Números permitidos.</li>
-      <li>Una regla de bloqueo de contacto, de grupo o de nombre de quien llama sigue el mismo orden, así que necesita “Prioridad sobre los permisos” para bloquear un contacto que Contactos permitidos deja pasar.</li>
+      <li>Una regla de bloqueo de contacto, de grupo o de nombre del contacto sigue el mismo orden, así que necesita “Prioridad sobre los permisos” para bloquear un contacto que Contactos permitidos deja pasar. Los ajustes para colgar y las reglas de identificador de llamadas nunca les cuelgan a tus contactos, a tus Números permitidos ni a quienes deja pasar una regla de permiso.</li>
     </ul>
   </article>
   <article class="card problem" id="rule-ignored">
@@ -103,7 +103,7 @@
     <ul>
       <li>Las reglas de contacto necesitan acceso a los contactos. CallRules lo pide cuando eliges un contacto o un grupo.</li>
       <li>Si se borró el contacto o el grupo, la pantalla Editar de la regla muestra “No se encontró el contacto” y Revisión de reglas avisa “No se encontró el contacto” o “No se encontró el grupo de contactos”. Edita la regla o bórrala.</li>
-      <li>Las reglas de nombre de quien llama coinciden con el nombre guardado de tu contacto o con el nombre del identificador de llamadas que envía tu operador. No todos los operadores envían nombres.</li>
+      <li>Las reglas de nombre del contacto solo coinciden con los nombres guardados de tus contactos. Para el nombre del identificador de llamadas de quien no es un contacto, como “SPAM RISK”, usa una regla de identificador de llamadas (Pro): el teléfono suena brevemente y luego CallRules cuelga.</li>
     </ul>
   </article>
   <article class="card problem" id="outgoing">
@@ -258,6 +258,23 @@
         <li>Abre Ajustes › Mensajes de texto y toca “Permitir el acceso a notificaciones”, luego permite CallRules en la pantalla de Android.</li>
         <li>En “Apps de mensajes que se revisan”, activa la app que usas para los mensajes. CallRules funciona con Google Messages, Samsung Messages, Messaging, Textra y Verizon Messages.</li>
         <li>Android 15 y versiones posteriores ocultan los mensajes que podrían contener un código. CallRules igual silencia los de remitentes bloqueados cuando Android indica con quién es la conversación; en los teléfonos con las “Notificaciones mejoradas” de Google, si las desactivas en Configuración de Android › Notificaciones, CallRules puede revisar todos los mensajes.</li>
+      </ul>
+    </article>
+    <article class="card check" id="call-labels">
+      <h3>Colgar las llamadas marcadas</h3>
+      <p class="meta"><strong>Revisa:</strong> Si Android permite que CallRules vea la notificación de llamada de tu app de Teléfono, si CallRules puede finalizar llamadas y si puede leer tus contactos (nunca les cuelga a tus contactos).</p>
+      <p class="meta"><strong>Se muestra:</strong> Solo si un ajuste para colgar (“Colgar las llamadas marcadas como spam” o “Colgar las llamadas marcadas como…”) o una regla de identificador de llamadas está activado.</p>
+      <ul class="results">
+        <li><span class="status ok">OK</span>El acceso a notificaciones, la finalización de llamadas y el acceso a los contactos están permitidos</li>
+        <li><span class="status error">Problema</span>El acceso a notificaciones está desactivado — CallRules no ve las etiquetas de tu app de Teléfono, así que no puede colgar<span class="fix">Corregir: Explica lo que CallRules lee y luego abre el ajuste de acceso a notificaciones de Android para CallRules.</span></li>
+        <li><span class="status error">Problema</span>CallRules no tiene permiso para contestar y finalizar llamadas, así que no puede colgar las llamadas marcadas<span class="fix">Corregir: Pide permiso para contestar y finalizar llamadas, y para leer tus contactos.</span></li>
+        <li><span class="status error">Problema</span>El acceso a los contactos está desactivado — CallRules nunca cuelga sin comprobar que quien llama no es un contacto<span class="fix">Corregir: Pide permiso para contestar y finalizar llamadas, y para leer tus contactos.</span></li>
+      </ul>
+      <h4>Cómo solucionarlo por tu cuenta</h4>
+      <ul>
+        <li>Abre Ajustes › Bloquear automáticamente y toca el botón debajo de Colgar las llamadas marcadas como spam; te guía en cada paso.</li>
+        <li>Permite el acceso a notificaciones para CallRules en la pantalla de Android.</li>
+        <li>Cuando Android lo pida, permite que CallRules conteste y finalice llamadas y que lea tus contactos. Si elegiste No permitir, abre Configuración (Android) › Apps › CallRules › Permisos.</li>
       </ul>
     </article>
     <article class="card check" id="battery">
